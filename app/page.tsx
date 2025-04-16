@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
-      <ImmigrationProcess/>
+      {/* <ImmigrationProcess/> */}
       <VisaSection/>
       {/* <CountryFlags /> */}
       <FeaturedSection />
