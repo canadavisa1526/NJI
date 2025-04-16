@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useParams } from 'next/navigation';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { 
-  GraduationCap, 
-  Building2, 
-  Globe2, 
+import { useParams } from "next/navigation";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  GraduationCap,
+  Building2,
+  Globe2,
   Users,
   BookOpen,
   Award,
@@ -14,118 +14,122 @@ import {
   DollarSign,
   Briefcase,
   CheckCircle,
-  MapPin
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import ConsultationDialog from '@/components/ConsultationDialog';
-import { useState } from 'react';
+  MapPin,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import ConsultationDialog from "@/components/ConsultationDialog";
+import { useState } from "react";
 
 const countryData = {
-  'canada': {
-    name: 'Canada',
-    hero: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&auto=format&fit=crop&q=60',
-    description: 'Canada offers world-class education with a multicultural environment and post-study work opportunities.',
+  canada: {
+    name: "Canada",
+    hero: "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&auto=format&fit=crop&q=60",
+    description:
+      "Canada offers world-class education with a multicultural environment and post-study work opportunities.",
     universities: [
-      'University of Toronto',
-      'McGill University',
-      'University of British Columbia',
-      'University of Waterloo',
-      'University of Alberta'
+      "University of Toronto",
+      "McGill University",
+      "University of British Columbia",
+      "University of Waterloo",
+      "University of Alberta",
     ],
     stats: {
-      universities: '100+',
-      intlStudents: '640,000+',
-      workPermit: '3 years',
-      avgTuition: '$20,000-35,000'
+      universities: "100+",
+      intlStudents: "640,000+",
+      workPermit: "3 years",
+      avgTuition: "$20,000-35,000",
     },
     features: [
-      'Post-Graduation Work Permit',
-      'Multicultural Environment',
-      'High Quality of Life',
-      'Healthcare Coverage'
-    ]
+      "Post-Graduation Work Permit",
+      "Multicultural Environment",
+      "High Quality of Life",
+      "Healthcare Coverage",
+    ],
   },
-  'usa': {
-    name: 'United States',
-    hero: 'https://images.unsplash.com/photo-1569982175971-d92b01cf8694?w=800&auto=format&fit=crop&q=60',
-    description: 'The USA offers diverse educational opportunities with cutting-edge research facilities and global recognition.',
+  usa: {
+    name: "United States",
+    hero: "https://images.unsplash.com/photo-1569982175971-d92b01cf8694?w=800&auto=format&fit=crop&q=60",
+    description:
+      "The USA offers diverse educational opportunities with cutting-edge research facilities and global recognition.",
     universities: [
-      'Harvard University',
-      'MIT',
-      'Stanford University',
-      'Yale University',
-      'Columbia University'
+      "Harvard University",
+      "MIT",
+      "Stanford University",
+      "Yale University",
+      "Columbia University",
     ],
     stats: {
-      universities: '4,000+',
-      intlStudents: '1 million+',
-      workPermit: 'OPT up to 3 years',
-      avgTuition: '$25,000-55,000'
+      universities: "4,000+",
+      intlStudents: "1 million+",
+      workPermit: "OPT up to 3 years",
+      avgTuition: "$25,000-55,000",
     },
     features: [
-      'Optional Practical Training',
-      'Research Opportunities',
-      'Diverse Campus Life',
-      'Strong Alumni Network'
-    ]
+      "Optional Practical Training",
+      "Research Opportunities",
+      "Diverse Campus Life",
+      "Strong Alumni Network",
+    ],
   },
-  'uk': {
-    name: 'United Kingdom',
-    hero: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&auto=format&fit=crop&q=60',
-    description: 'The UK offers prestigious education with shorter program durations and rich cultural experiences.',
+  uk: {
+    name: "United Kingdom",
+    hero: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&auto=format&fit=crop&q=60",
+    description:
+      "The UK offers prestigious education with shorter program durations and rich cultural experiences.",
     universities: [
-      'University of Oxford',
-      'University of Cambridge',
-      'Imperial College London',
-      'UCL',
-      'LSE'
+      "University of Oxford",
+      "University of Cambridge",
+      "Imperial College London",
+      "UCL",
+      "LSE",
     ],
     stats: {
-      universities: '150+',
-      intlStudents: '680,000+',
-      workPermit: '2 years',
-      avgTuition: '£15,000-35,000'
+      universities: "150+",
+      intlStudents: "680,000+",
+      workPermit: "2 years",
+      avgTuition: "£15,000-35,000",
     },
     features: [
-      'Graduate Route Visa',
-      'Shorter Programs',
-      'Historic Universities',
-      'Global Recognition'
-    ]
+      "Graduate Route Visa",
+      "Shorter Programs",
+      "Historic Universities",
+      "Global Recognition",
+    ],
   },
-  'australia': {
-    name: 'Australia',
-    hero: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&auto=format&fit=crop&q=60',
-    description: 'Australia offers high-quality education with excellent post-study work opportunities in a multicultural environment.',
+  australia: {
+    name: "Australia",
+    hero: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&auto=format&fit=crop&q=60",
+    description:
+      "Australia offers high-quality education with excellent post-study work opportunities in a multicultural environment.",
     universities: [
-      'University of Melbourne',
-      'University of Sydney',
-      'Australian National University',
-      'University of Queensland',
-      'Monash University'
+      "University of Melbourne",
+      "University of Sydney",
+      "Australian National University",
+      "University of Queensland",
+      "Monash University",
     ],
     stats: {
-      universities: '43+',
-      intlStudents: '750,000+',
-      workPermit: 'Up to 4 years',
-      avgTuition: 'A$20,000-45,000'
+      universities: "43+",
+      intlStudents: "750,000+",
+      workPermit: "Up to 4 years",
+      avgTuition: "A$20,000-45,000",
     },
     features: [
-      'Post-Study Work Visa',
-      'High Living Standards',
-      'World-Class Research',
-      'Work While Studying'
-    ]
-  }
+      "Post-Study Work Visa",
+      "High Living Standards",
+      "World-Class Research",
+      "Work While Studying",
+    ],
+  },
 };
 
 const CountryPage = () => {
   const params = useParams();
   const slug = params.slug as string;
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  
+
   const country = countryData[slug as keyof typeof countryData];
-  
+
   if (!country) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -196,7 +200,9 @@ const CountryPage = () => {
               <div className="text-2xl font-bold text-gray-900 dark:text-white">
                 {country.stats.universities}
               </div>
-              <div className="text-gray-600 dark:text-gray-300">Universities</div>
+              <div className="text-gray-600 dark:text-gray-300">
+                Universities
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -207,7 +213,9 @@ const CountryPage = () => {
               <div className="text-2xl font-bold text-gray-900 dark:text-white">
                 {country.stats.intlStudents}
               </div>
-              <div className="text-gray-600 dark:text-gray-300">International Students</div>
+              <div className="text-gray-600 dark:text-gray-300">
+                International Students
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -218,7 +226,9 @@ const CountryPage = () => {
               <div className="text-2xl font-bold text-gray-900 dark:text-white">
                 {country.stats.workPermit}
               </div>
-              <div className="text-gray-600 dark:text-gray-300">Work Permit</div>
+              <div className="text-gray-600 dark:text-gray-300">
+                Work Permit
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -229,7 +239,9 @@ const CountryPage = () => {
               <div className="text-2xl font-bold text-gray-900 dark:text-white">
                 {country.stats.avgTuition}
               </div>
-              <div className="text-gray-600 dark:text-gray-300">Average Tuition/Year</div>
+              <div className="text-gray-600 dark:text-gray-300">
+                Average Tuition/Year
+              </div>
             </motion.div>
           </div>
         </div>
@@ -333,7 +345,9 @@ const CountryPage = () => {
               >
                 <div className="relative h-48">
                   <Image
-                    src={`https://images.unsplash.com/photo-${1500 + index}?w=800&auto=format&fit=crop&q=60`}
+                    src={`https://images.unsplash.com/photo-${
+                      1500 + index
+                    }?w=800&auto=format&fit=crop&q=60`}
                     alt="Student"
                     fill
                     className="object-cover"
@@ -344,8 +358,9 @@ const CountryPage = () => {
                     Student Name
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua."
                   </p>
                   <div className="flex items-center text-sm text-gray-500">
                     <MapPin className="h-4 w-4 mr-1" />

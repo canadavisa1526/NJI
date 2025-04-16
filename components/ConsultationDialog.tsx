@@ -1,34 +1,37 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Textarea } from '@/components/ui/textarea';
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 interface ConsultationDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
-const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => {
-  const [source, setSource] = useState('');
-  const [referralDetails, setReferralDetails] = useState('');
+const ConsultationDialog = ({
+  open,
+  onOpenChange,
+}: ConsultationDialogProps) => {
+  const [source, setSource] = useState("");
+  const [referralDetails, setReferralDetails] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,7 +46,8 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
             Book Your Free Consultation
           </DialogTitle>
           <DialogDescription>
-            Fill out the form below and our experts will get back to you within 24 hours
+            Fill out the form below and our experts will get back to you within
+            24 hours
           </DialogDescription>
         </DialogHeader>
 
@@ -56,21 +60,21 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Full Name</Label>
-                <Input 
-                  id="name" 
-                  placeholder="Enter your full name" 
+                <Input
+                  id="name"
+                  placeholder="Enter your full name"
                   className="border-orange-200 focus:border-orange-500"
-                  required 
+                  required
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email Address</Label>
-                <Input 
-                  id="email" 
-                  type="email" 
+                <Input
+                  id="email"
+                  type="email"
                   placeholder="Enter your email"
                   className="border-orange-200 focus:border-orange-500"
-                  required 
+                  required
                 />
               </div>
             </div>
@@ -78,11 +82,11 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
-                <Input 
-                  id="phone" 
+                <Input
+                  id="phone"
                   placeholder="Enter your phone number"
                   className="border-orange-200 focus:border-orange-500"
-                  required 
+                  required
                 />
               </div>
               <div className="space-y-2">
@@ -118,21 +122,25 @@ const ConsultationDialog = ({ open, onOpenChange }: ConsultationDialogProps) => 
               </Select>
             </div>
 
-            {(source === 'friend' || source === 'other') && (
+            {(source === "friend" || source === "other") && (
               <motion.div
                 initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
+                animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 className="space-y-2"
               >
                 <Label htmlFor="referral-details">
-                  {source === 'friend' ? "Friend's Name" : 'Please Specify'}
+                  {source === "friend" ? "Friend's Name" : "Please Specify"}
                 </Label>
                 <Input
                   id="referral-details"
                   value={referralDetails}
                   onChange={(e) => setReferralDetails(e.target.value)}
-                  placeholder={source === 'friend' ? "Enter your friend's name" : 'Please specify'}
+                  placeholder={
+                    source === "friend"
+                      ? "Enter your friend's name"
+                      : "Please specify"
+                  }
                   className="border-orange-200 focus:border-orange-500"
                   required
                 />

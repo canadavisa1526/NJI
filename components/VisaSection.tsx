@@ -115,7 +115,10 @@ const VisaSection: FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <span className="inline-block bg-orange-100px-4 py-1 rounded-full text-sm font-semibold shadow-sm w-fit">
+            {/* <span className="inline-block bg-orange-100px-4 py-1 rounded-full text-sm font-semibold shadow-sm w-fit">
+              Welcome to New Journey Immigration
+            </span>  */}
+            <span className="inline-block bg-orange-100 dark:bg-orange-800 text-purple-800 dark:text-white px-4 py-1 rounded-full text-sm font-semibold shadow-sm w-fit">
               Welcome to New Journey Immigration
             </span>
 

@@ -118,6 +118,7 @@ const Navbar = () => {
       title: "Contact",
       icon: Phone,
       onClick: () => setIsConsultationOpen(true),
+      href: "/contact",
     },
   ];
   const LogoSVG = () => (
