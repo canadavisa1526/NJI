@@ -120,7 +120,7 @@ const AboutPage = () => {
       name: "Dimple Nayak",
       role: "Visa Specialist & Director of Canada Branch",
       image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop&q=60",
+        "/team/dimple.jpeg",
       description:
         "20+ years of experience in Canadian immigration processes, guiding clients with personalized, transparent advice.",
       expertise: [
@@ -133,7 +133,7 @@ const AboutPage = () => {
       name: "Vinay Bhojak",
       role: "Branch Manager (North Gujarat)",
       image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=60",
+        "/team/vinay.JPG",
       description:
         "Instrumental in streamlining operations and ensuring outstanding client service in North Gujarat.",
       expertise: ["Branch Operations", "Client Service", "Process Improvement"],
