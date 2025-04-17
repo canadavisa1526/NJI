@@ -1,118 +1,166 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { 
-  GraduationCap, Award, Globe2, Users, MapPin, Star, Clock, CheckCircle,
-  BookOpen, Briefcase, Target, Heart, Coffee, Lightbulb, Shield, Rocket,
-  MessageSquare, UserCheck, Building, Plane, History, Users2, Trophy,
-  Quote, Sparkles
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  GraduationCap,
+  Award,
+  Globe2,
+  Users,
+  MapPin,
+  Star,
+  Clock,
+  CheckCircle,
+  BookOpen,
+  Briefcase,
+  Target,
+  Heart,
+  Coffee,
+  Lightbulb,
+  Shield,
+  Rocket,
+  MessageSquare,
+  UserCheck,
+  Building,
+  Plane,
+  History,
+  Users2,
+  Trophy,
+  Quote,
+  Sparkles,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const AboutPage = () => {
   // Stats data
   const stats = [
-    { icon: Users2, value: '28,000+', label: 'Successful Cases' },
-    { icon: Globe2, value: '50+', label: 'Countries Served' },
-    { icon: Trophy, value: '5+', label: 'Years Experience' },
-    { icon: Star, value: '99%', label: 'Success Rate' }
+    { icon: Users2, value: "28,000+", label: "Successful Cases" },
+    { icon: Globe2, value: "50+", label: "Countries Served" },
+    { icon: Trophy, value: "5+", label: "Years Experience" },
+    { icon: Star, value: "99%", label: "Success Rate" },
   ];
 
   // Values data
   const values = [
     {
       icon: Heart,
-      title: 'Client-Centric Approach',
-      description: 'Your success is our priority. We provide personalized solutions tailored to your unique needs.'
+      title: "Client-Centric Approach",
+      description:
+        "Your success is our priority. We provide personalized solutions tailored to your unique needs.",
     },
     {
       icon: Shield,
-      title: 'Integrity & Transparency',
-      description: 'We believe in honest communication and maintaining the highest ethical standards.'
+      title: "Integrity & Transparency",
+      description:
+        "We believe in honest communication and maintaining the highest ethical standards.",
     },
     {
       icon: Target,
-      title: 'Excellence',
-      description: 'We strive for excellence in every aspect of our service delivery.'
+      title: "Excellence",
+      description:
+        "We strive for excellence in every aspect of our service delivery.",
     },
     {
       icon: Users,
-      title: 'Cultural Sensitivity',
-      description: 'We respect and embrace cultural differences in our global community.'
-    }
+      title: "Cultural Sensitivity",
+      description:
+        "We respect and embrace cultural differences in our global community.",
+    },
   ];
 
   // Global presence data
   const locations = [
     {
-      city: 'Mehsana',
-      country: 'India',
-      address: 'City Center, Mehsana',
-      services: ['Immigration Services', 'IELTS Coaching', 'Student Counseling']
+      city: "Mehsana",
+      country: "India",
+      address: "City Center, Mehsana",
+      services: [
+        "Immigration Services",
+        "IELTS Coaching",
+        "Student Counseling",
+      ],
     },
     {
-      city: 'Toronto',
-      country: 'Canada',
-      address: 'Downtown Toronto',
-      services: ['Immigration Processing', 'Settlement Services', 'Job Assistance']
+      city: "Toronto",
+      country: "Canada",
+      address: "Downtown Toronto",
+      services: [
+        "Immigration Processing",
+        "Settlement Services",
+        "Job Assistance",
+      ],
     },
     {
-      city: 'Sydney',
-      country: 'Australia',
-      address: 'CBD Sydney',
-      services: ['Student Services', 'Visa Processing', 'Career Guidance']
-    }
+      city: "Sydney",
+      country: "Australia",
+      address: "CBD Sydney",
+      services: ["Student Services", "Visa Processing", "Career Guidance"],
+    },
   ];
 
   const founder = {
-    name: 'Karan Bhojak',
-    role: 'Founder & CEO',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&auto=format&fit=crop&q=60',
+    name: "Karan Bhojak",
+    role: "Founder & CEO",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&auto=format&fit=crop&q=60",
     quote: "Immigration shouldn't be overwhelming, it should be empowering.",
     description: `Driven by a strong belief that success isn't just about crossing borders but about making meaningful connections, Karan Bhojak's journey in founding New Journey Immigration began with a simple yet powerful idea. With years of hands-on experience in the industry, he recognized that the immigration field lacked true transparency and personalized support.
 
     Under his leadership, what started as a modest one-person operation in Mehsana has grown into a trusted international brand. Karan's vision of providing clear, honest guidance has shaped NJI's core values and operational philosophy. His hands-on approach and commitment to client success have been instrumental in building a team that shares his passion for making immigration accessible and empowering.`,
     achievements: [
-      'Pioneer in transparent immigration services',
-      'Expanded operations to multiple countries',
-      'Built a team of certified experts',
-      'Established international partnerships'
-    ]
+      "Pioneer in transparent immigration services",
+      "Expanded operations to multiple countries",
+      "Built a team of certified experts",
+      "Established international partnerships",
+    ],
   };
 
   const teamMembers = [
     {
-      name: 'Dimple Nayak',
-      role: 'Visa Specialist & Director of Canada Branch',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop&q=60',
-      description: '20+ years of experience in Canadian immigration processes, guiding clients with personalized, transparent advice.',
-      expertise: ['Canadian Immigration', 'Visa Processing', 'Client Relations']
+      name: "Dimple Nayak",
+      role: "Visa Specialist & Director of Canada Branch",
+      image:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop&q=60",
+      description:
+        "20+ years of experience in Canadian immigration processes, guiding clients with personalized, transparent advice.",
+      expertise: [
+        "Canadian Immigration",
+        "Visa Processing",
+        "Client Relations",
+      ],
     },
     {
-      name: 'Vinay Bhojak',
-      role: 'Branch Manager (North Gujarat)',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=60',
-      description: 'Instrumental in streamlining operations and ensuring outstanding client service in North Gujarat.',
-      expertise: ['Branch Operations', 'Client Service', 'Process Improvement']
+      name: "Vinay Bhojak",
+      role: "Branch Manager (North Gujarat)",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=60",
+      description:
+        "Instrumental in streamlining operations and ensuring outstanding client service in North Gujarat.",
+      expertise: ["Branch Operations", "Client Service", "Process Improvement"],
     },
     {
-      name: 'Monika Nayak',
-      role: 'Account Manager',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&auto=format&fit=crop&q=60',
-      description: 'Financial backbone of NJI, ensuring precision and transparency in all financial operations.',
-      expertise: ['Financial Management', 'Client Transactions', 'Process Optimization']
-    }
+      name: "Monika Nayak",
+      role: "Account Manager",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&auto=format&fit=crop&q=60",
+      description:
+        "Financial backbone of NJI, ensuring precision and transparency in all financial operations.",
+      expertise: [
+        "Financial Management",
+        "Client Transactions",
+        "Process Optimization",
+      ],
+    },
   ];
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    visible: { opacity: 1, y: 0 },
   };
 
   const scaleIn = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1 }
+    visible: { opacity: 1, scale: 1 },
   };
 
   return (
@@ -128,7 +176,7 @@ const AboutPage = () => {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80" />
-          
+
           {/* Decorative Elements */}
           <div className="absolute inset-0 opacity-30">
             <div className="absolute top-20 left-20 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
@@ -136,7 +184,7 @@ const AboutPage = () => {
             <div className="absolute bottom-20 left-1/2 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
           </div>
         </div>
-        
+
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -144,7 +192,9 @@ const AboutPage = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <span className="inline-block text-orange-400 text-lg font-semibold mb-4">Welcome to New Journey Immigration</span>
+            <span className="inline-block text-orange-400 text-lg font-semibold mb-4">
+              Welcome to New Journey Immigration
+            </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
               Your Journey,{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-pink-600">
@@ -152,7 +202,8 @@ const AboutPage = () => {
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Transforming dreams into reality through expert guidance and unwavering support
+              Transforming dreams into reality through expert guidance and
+              unwavering support
             </p>
             <div className="flex items-center justify-center gap-4">
               <Button
@@ -288,8 +339,11 @@ const AboutPage = () => {
                   {founder.role}
                 </p>
                 <div className="prose dark:prose-invert max-w-none space-y-6">
-                  {founder.description.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {founder.description.split("\n\n").map((paragraph, index) => (
+                    <p
+                      key={index}
+                      className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+                    >
                       {paragraph}
                     </p>
                   ))}
@@ -371,9 +425,7 @@ const AboutPage = () => {
                       <h3 className="text-2xl font-bold text-white mb-1">
                         {member.name}
                       </h3>
-                      <p className="text-orange-400 text-lg">
-                        {member.role}
-                      </p>
+                      <p className="text-orange-400 text-lg">{member.role}</p>
                     </div>
                   </div>
                   <div className="p-8">
@@ -382,8 +434,8 @@ const AboutPage = () => {
                     </p>
                     <div className="space-y-3">
                       {member.expertise.map((skill) => (
-                        <div 
-                          key={skill} 
+                        <div
+                          key={skill}
                           className="flex items-center text-gray-600 dark:text-gray-300 group-hover:text-orange-500 transition-colors duration-300"
                         >
                           <CheckCircle className="h-5 w-5 text-orange-500 mr-3" />
