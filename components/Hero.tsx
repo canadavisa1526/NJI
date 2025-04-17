@@ -1,20 +1,30 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, GraduationCap, Globe2, Award, Users, Sparkles, BookOpen, Target, Plane } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import ConsultationDialog from './ConsultationDialog';
-import { useState } from 'react';
+import { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  ArrowRight,
+  GraduationCap,
+  Globe2,
+  Award,
+  Users,
+  Sparkles,
+  BookOpen,
+  Target,
+  Plane,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import ConsultationDialog from "./ConsultationDialog";
+import { useState } from "react";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start start', 'end start'],
+    offset: ["start start", "end start"],
   });
 
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
@@ -27,10 +37,10 @@ const Hero = () => {
   }, []);
 
   const stats = [
-    { icon: GraduationCap, value: '15,000+', label: 'Students Placed' },
-    { icon: Globe2, value: '50+', label: 'Countries' },
-    { icon: Award, value: '98%', label: 'Success Rate' },
-    { icon: Users, value: '24/7', label: 'Support' },
+    { icon: GraduationCap, value: "15,000+", label: "Students Placed" },
+    { icon: Globe2, value: "50+", label: "Countries" },
+    { icon: Award, value: "98%", label: "Success Rate" },
+    { icon: Users, value: "24/7", label: "Support" },
   ];
 
   return (
@@ -46,49 +56,53 @@ const Hero = () => {
             loop
             playsInline
           >
-            <source src="https://res.cloudinary.com/dka63iohc/video/upload/v1743511417/6013002_People_Person_1920x1080_vz6omj.mp4" type="video/mp4" />
+            <source
+              src="https://res.cloudinary.com/dka63iohc/video/upload/v1743511417/6013002_People_Person_1920x1080_vz6omj.mp4"
+              type="video/mp4"
+            />
           </video>
           <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]" />
-          
+
           {/* Flying planes */}
           {[...Array(3)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute"
-              initial={{ 
+              initial={{
                 x: -100,
-                y: 100 + (i * 200)
+                y: 100 + i * 200,
               }}
-              animate={{ 
-                x: '120vw',
-                y: [100 + (i * 200), 50 + (i * 200), 100 + (i * 200)]
+              animate={{
+                x: "120vw",
+                y: [100 + i * 200, 50 + i * 200, 100 + i * 200],
               }}
               transition={{
-                duration: 20 - (i * 2),
+                duration: 20 - i * 2,
                 repeat: Infinity,
                 ease: "linear",
                 y: {
                   duration: 10 - i,
                   repeat: Infinity,
-                  ease: "easeInOut"
-                }
+                  ease: "easeInOut",
+                },
               }}
             >
               <Plane className="h-8 w-8 text-white/30 transform -rotate-45" />
               <motion.div
                 className="absolute top-1/2 right-0 h-0.5 w-20 origin-left"
                 style={{
-                  background: "linear-gradient(to right, rgba(255,255,255,0.3), transparent)"
+                  background:
+                    "linear-gradient(to right, rgba(255,255,255,0.3), transparent)",
                 }}
                 initial={{ scaleX: 0, opacity: 0 }}
-                animate={{ 
+                animate={{
                   scaleX: [0, 1, 0],
-                  opacity: [0, 0.5, 0]
+                  opacity: [0, 0.5, 0],
                 }}
                 transition={{
                   duration: 2,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "linear",
                 }}
               />
             </motion.div>
@@ -101,16 +115,16 @@ const Hero = () => {
               className="absolute w-1 h-1 bg-white/30 rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`
+                top: `${Math.random() * 100}%`,
               }}
               animate={{
                 scale: [1, 1.5, 1],
-                opacity: [0.3, 0.7, 0.3]
+                opacity: [0.3, 0.7, 0.3],
               }}
               transition={{
                 duration: 2 + Math.random() * 2,
                 repeat: Infinity,
-                delay: Math.random() * 2
+                delay: Math.random() * 2,
               }}
             />
           ))}
@@ -128,7 +142,9 @@ const Hero = () => {
           >
             <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
               <Sparkles className="h-5 w-5 text-yellow-300 mr-2" />
-              <span className="text-white">Transform Your Future with NJI Education</span>
+              <span className="text-white">
+                Transform Your Future with NJI Education
+              </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Your Gateway to
@@ -138,8 +154,8 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto">
-              Join thousands of successful students who have achieved their dreams with NJI's
-              expert guidance and comprehensive support.
+              Join thousands of successful students who have achieved their
+              dreams with NJI's expert guidance and comprehensive support.
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Button
@@ -150,7 +166,6 @@ const Hero = () => {
                 <BookOpen className="mr-2 h-5 w-5" />
                 Get Free Consultation
               </Button>
-            
             </div>
           </motion.div>
 
@@ -193,9 +208,9 @@ const Hero = () => {
         </div>
       </section>
 
-      <ConsultationDialog 
-        open={isConsultationOpen} 
-        onOpenChange={setIsConsultationOpen} 
+      <ConsultationDialog
+        open={isConsultationOpen}
+        onOpenChange={setIsConsultationOpen}
       />
     </div>
   );

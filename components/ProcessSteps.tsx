@@ -99,11 +99,11 @@ const ProcessSteps = () => {
                 </p>
               </div>
 
-              {index < steps.length - 1 && (
+              {/* {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-1/3 left-full w-full h-0.5 bg-gradient-to-r from-orange-500 to-orange-200 dark:from-orange-600 dark:to-orange-800 -translate-y-1/2 transform translate-x-4">
                   <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-orange-500 rounded-full" />
                 </div>
-              )}
+              )} */}
             </motion.div>
           ))}
         </div>

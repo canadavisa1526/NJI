@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import { Suspense } from "react";
 import Loading from "./loading";
+import Footer from "@/components/Footer";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -80,6 +82,7 @@ export default function RootLayout({
           <Suspense fallback={<Loading />}>
             <Navbar />
             {children}
+            <Footer />
           </Suspense>
         </ThemeProvider>
       </body>
