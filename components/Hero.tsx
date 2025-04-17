@@ -37,9 +37,9 @@ const Hero = () => {
   }, []);
 
   const stats = [
-    { icon: GraduationCap, value: "15,000+", label: "Students Placed" },
+    { icon: GraduationCap, value: "28,000+", label: "Students Placed" },
     { icon: Globe2, value: "50+", label: "Countries" },
-    { icon: Award, value: "98%", label: "Success Rate" },
+    { icon: Award, value: "99%", label: "Success Rate" },
     { icon: Users, value: "24/7", label: "Support" },
   ];
 

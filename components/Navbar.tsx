@@ -1,17 +1,11 @@
 "use client";
-import dynamic from "next/dynamic";
-
-const Button = dynamic(
-  () => import("@/components/ui/button").then((mod) => mod.Button),
-  {
-    ssr: false,
-  }
-);
-
-import Image from "next/image";
 import Logo from "@/public/logo.png";
-import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
   BookOpen,
@@ -35,14 +29,18 @@ import {
   Sparkles,
   MapPin,
   Info,
+  Banknote,
 } from "lucide-react";
-// const Button = dynamic(() => import("@/components/ui/button"), { ssr: false });
 
-import { useTheme } from "next-themes";
-import { motion, AnimatePresence } from "framer-motion";
+const Button = dynamic(
+  () => import("@/components/ui/button").then((mod) => mod.Button),
+  {
+    ssr: false,
+  }
+);
+
 import AppointmentDialog from "./AppointmentDialog";
 import ConsultationDialog from "./ConsultationDialog";
-import React from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +70,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Close mobile menu when screen size changes
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -85,27 +82,98 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const navItems = [
-    {
-      title: "Study Programs",
-      icon: GraduationCap,
-      submenu: [
-        { title: "Undergraduate", icon: School },
-        { title: "Postgraduate", icon: BookOpen },
-        { title: "Research", icon: Lightbulb },
-        { title: "Professional", icon: Target },
-        { title: "Short Courses", icon: Rocket },
-      ],
-    },
+  interface SubMenuItem {
+    title: string;
+    icon: any;
+    href: string;
+    description?: string;
+  }
+
+  interface NavItem {
+    title: string;
+    icon: any;
+    href?: string;
+    onClick?: () => void;
+    submenu?: SubMenuItem[];
+  }
+
+  const navItems: NavItem[] = [
+    // {
+    //   title: "Study Programs",
+    //   icon: GraduationCap,
+    //   submenu: [
+    //     {
+    //       title: "Undergraduate",
+    //       icon: School,
+    //       href: "/programs/undergraduate",
+    //       description: "Bachelor's degree programs for high school graduates",
+    //     },
+    //     {
+    //       title: "Postgraduate",
+    //       icon: BookOpen,
+    //       href: "/programs/postgraduate",
+    //       description: "Master's and doctoral programs for graduates",
+    //     },
+    //     {
+    //       title: "Research",
+    //       icon: Lightbulb,
+    //       href: "/programs/research",
+    //       description: "Research opportunities and PhD programs",
+    //     },
+    //     {
+    //       title: "Professional",
+    //       icon: Target,
+    //       href: "/programs/professional",
+    //       description: "Career-focused certification programs",
+    //     },
+    //     {
+    //       title: "Short Courses",
+    //       icon: Rocket,
+    //       href: "/programs/short-courses",
+    //       description: "Intensive short-term learning programs",
+    //     },
+    //   ],
+    // },
     {
       title: "Destinations",
       icon: Globe2,
       submenu: [
-        { title: "Study in Canada", icon: MapPin },
-        { title: "Study in USA", icon: MapPin },
-        { title: "Study in UK", icon: MapPin },
-        { title: "Study in Australia", icon: MapPin },
-        { title: "View All", icon: Sparkles },
+        {
+          title: "Study in Canada",
+          icon: MapPin,
+          href: "/country/canada",
+          description: "World-class education in a multicultural environment",
+        },
+        {
+          title: "Study in USA",
+          icon: MapPin,
+          href: "/country/usa",
+          description: "Top-ranked universities and diverse opportunities",
+        },
+        {
+          title: "Study in UK",
+          icon: MapPin,
+          href: "/country/uk",
+          description: "Traditional excellence in education",
+        },
+        {
+          title: "Study in Australia",
+          icon: MapPin,
+          href: "/country/australia",
+          description: "Quality education in a beautiful setting",
+        },
+        {
+          title: "Study in Germany",
+          icon: MapPin,
+          href: "/country/germany",
+          description: "Innovation and engineering excellence",
+        },
+        {
+          title: "Study in New Zealand",
+          icon: MapPin,
+          href: "/country/new-zealand",
+          description: "Quality education in a scenic environment",
+        },
       ],
     },
     {
@@ -113,7 +181,45 @@ const Navbar = () => {
       icon: Info,
       href: "/about",
     },
-    
+
+    {
+      title: "Other Services",
+      icon: Building2,
+      submenu: [
+        { title: "Visitor Visa", icon: FileText, href: "#" },
+        { title: "Dependent Visa", icon: FileText, href: "#" },
+        { title: "Insurance", icon: FileText, href: "#" },
+        { title: "Air Ticket", icon: FileText, href: "#" },
+        { title: "Career Counseling", icon: Sparkles, href: "#" },
+        { title: "Study Tours (EduQuest)", icon: Library, href: "#" },
+        { title: "NASA Abroad Tours", icon: Library, href: "#" },
+        { title: "Industrial Tours", icon: Library, href: "#" },
+        { title: "Document Preparation", icon: Library, href: "#" },
+        { title: "Finance (Forex and Loan)", icon: Banknote, href: "#" },
+        { title: "Education Loans", icon: Banknote, href: "#" },
+        { title: "Small Finance", icon: Banknote, href: "#" },
+        { title: "Forex", icon: Banknote, href: "#" },
+        { title: "Job Placement", icon: Award, href: "#" },
+      ],
+    },
+    {
+      title: "Coaching",
+      icon: Users,
+      submenu: [
+        {
+          title: "IELTS",
+          icon: BarChart,
+          href: "#",
+          description: "Comprehensive IELTS preparation courses",
+        },
+        {
+          title: "PTE",
+          icon: BarChart,
+          href: "#",
+          description: "Expert guidance for PTE Academic",
+        },
+      ],
+    },
     {
       title: "Contact",
       icon: Phone,
@@ -121,36 +227,24 @@ const Navbar = () => {
       href: "/contact",
     },
   ];
+
   const LogoSVG = () => (
-    <div className="flex items-center space-x-3">
-      <div className="relative w-16 h-16 sm:w-14 sm:h-14">
-        {/* Animated Gradient Background */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-orange-500 to-blue-600 animate-pulse z-0" />
-        
-        {/* Inner Circle Background */}
-        <div className="absolute inset-0.5 rounded-full bg-white dark:bg-gray-900 z-10" />
-        
-        {/* Logo Image */}
-        <Image
-          src={Logo}
-          alt="logo"
-          fill
-          className="object-contain rounded-full z-20"
-        />
+    <div className="flex items-center space-x-1 ">
+      <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-15 md:h-15">
+        <div className="absolute inset-0 flex items-center justify-center z-20  overflow-hidden">
+          <Image src={Logo} alt="logo" fill className="object-cover z-20" />
+        </div>
       </div>
-  
-      {/* Brand Text */}
       <div className="flex flex-col leading-tight">
-        <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-orange-500 to-blue-600 bg-clip-text text-transparent">
+        <span className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white">
           IMMIGRATION
         </span>
-        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+        <span className="text-[10px] sm:text-xs md:text-sm text-gray-500 dark:text-gray-400">
           Your Education Journey
         </span>
       </div>
     </div>
   );
-  
 
   const toggleSubmenu = (title: string) => {
     setActiveSubmenu(activeSubmenu === title ? null : title);
@@ -167,10 +261,10 @@ const Navbar = () => {
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-lg"
-          : "bg-transparent"
+          : "bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-lg"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -221,16 +315,31 @@ const Navbar = () => {
                   </button>
                 )}
                 {item.submenu && (
-                  <div className="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <div className="py-2 bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg rounded-xl shadow-lg ring-1 ring-black/5">
+                  <div className="absolute left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <div
+                      className={`p-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg rounded-xl shadow-lg ring-1 ring-black/5 ${
+                        item.submenu.length > 4
+                          ? "w-[600px] grid grid-cols-2 gap-2"
+                          : "w-[300px]"
+                      }`}
+                    >
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.title}
-                          href="#"
-                          className="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-orange-900/50 hover:text-orange-500 transition-colors duration-200"
+                          href={subItem.href}
+                          className="flex flex-col p-3 rounded-lg hover:bg-orange-50 dark:hover:bg-orange-900/50 transition-colors duration-200 group/item"
                         >
-                          <subItem.icon className="h-4 w-4 mr-2" />
-                          <span>{subItem.title}</span>
+                          <div className="flex items-center space-x-2">
+                            <subItem.icon className="h-5 w-5 text-orange-500 dark:text-orange-400" />
+                            <span className="font-medium text-gray-900 dark:text-gray-100 group-hover/item:text-orange-500 dark:group-hover/item:text-orange-400">
+                              {subItem.title}
+                            </span>
+                          </div>
+                          {subItem.description && (
+                            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                              {subItem.description}
+                            </p>
+                          )}
                         </Link>
                       ))}
                     </div>
@@ -350,17 +459,26 @@ const Navbar = () => {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
-                          className="pl-4 mt-2 space-y-2"
+                          className="grid grid-cols-1 gap-2 pl-4 mt-2"
                         >
                           {item.submenu.map((subItem) => (
                             <Link
                               key={subItem.title}
-                              href="#"
-                              className="flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 px-4 py-1.5 rounded-lg"
+                              href={subItem.href}
+                              className="flex flex-col p-2 rounded-lg hover:bg-orange-50 dark:hover:bg-orange-900/50 transition-colors duration-200"
                               onClick={() => setIsOpen(false)}
                             >
-                              <subItem.icon className="h-4 w-4 mr-2" />
-                              <span>{subItem.title}</span>
+                              <div className="flex items-center space-x-2">
+                                <subItem.icon className="h-4 w-4 text-orange-500" />
+                                <span className="text-gray-900 dark:text-gray-100">
+                                  {subItem.title}
+                                </span>
+                              </div>
+                              {subItem.description && (
+                                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 pl-6">
+                                  {subItem.description}
+                                </p>
+                              )}
                             </Link>
                           ))}
                         </motion.div>

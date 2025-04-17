@@ -1,182 +1,39 @@
 "use client";
 
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { MapPin, GraduationCap, Briefcase, Users, Star } from "lucide-react";
-import Link from "next/link";
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const CountryList = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
-  const controls = useAnimation();
+import { countriesData } from "@/data/countries-data";
+import { useAutoSlider } from "@/hooks/use-auto-slider";
+import AutoSlider from "./ui/auto-slider";
+import CountryCard from "./country-card";
 
-  const countries = [
-    {
-      name: "Canada",
-      slug: "canada",
-      flag: "https://media.istockphoto.com/id/626545182/photo/toronto-skyline-with-purple-light-toronto-ontario-canada.jpg?s=612x612&w=0&k=20&c=gTfPgxMvsUZaz7YS3EF2voErqf2MmQRpwlHnO1jVBBc=",
-      description: "World-class education and quality of life",
-      features: [
-        "Express Entry",
-        "Study Permits",
-        "Work Permits",
-        "Family Sponsorship",
-      ],
-      stats: {
-        universities: "100+",
-        students: "15K+",
-        success: "98%",
-      },
+export default function CountryList() {
+  const {
+    currentIndex,
+    setCurrentIndex,
+    direction,
+    setDirection,
+    paginate,
+    isPaused,
+    setIsPaused,
+    visibleCount,
+  } = useAutoSlider({
+    totalItems: countriesData.length,
+    visibleItems: {
+      mobile: 1,
+      tablet: 2,
+      desktop: 4,
     },
-    {
-      name: "United States",
-      slug: "usa",
-      flag: "https://png.pngtree.com/thumb_back/fh260/background/20241112/pngtree-usa-new-york-city-silhouette-at-sunset-image_16541830.jpg",
-      description: "Land of opportunities and innovation",
-      features: ["H1-B Visa", "Student Visa", "Green Card", "Business Visa"],
-      stats: {
-        universities: "200+",
-        students: "20K+",
-        success: "96%",
-      },
-    },
-    {
-      name: "United Kingdom",
-      slug: "uk",
-      flag: "https://images.unsplash.com/photo-1520986606214-8b456906c813?w=800&auto=format&fit=crop&q=60",
-      description: "Rich heritage and academic excellence",
-      features: [
-        "Skilled Worker Visa",
-        "Student Visa",
-        "Family Visa",
-        "Innovator Visa",
-      ],
-      stats: {
-        universities: "150+",
-        students: "18K+",
-        success: "97%",
-      },
-    },
-    {
-      name: "Australia",
-      slug: "australia",
-      flag: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&auto=format&fit=crop&q=60",
-      description: "Beautiful landscapes and high living standards",
-      features: [
-        "Skilled Migration",
-        "Student Visa",
-        "Working Holiday",
-        "Partner Visa",
-      ],
-      stats: {
-        universities: "80+",
-        students: "12K+",
-        success: "95%",
-      },
-    },
-    {
-      name: "New Zealand",
-      slug: "new-zealand",
-      flag: "https://cdn.britannica.com/25/180825-050-B4693350/Wellington-Harbour-New-Zealand.jpg",
-      description: "Breathtaking nature and world-class universities",
-      features: ["Student Visa", "Work to Residence", "Skilled Migrant Visa"],
-      stats: {
-        universities: "30+",
-        students: "5K+",
-        success: "94%",
-      },
-    },
-    {
-      name: "Germany",
-      slug: "germany",
-      flag: "https://t3.ftcdn.net/jpg/00/84/15/38/360_F_84153835_k3tFP45bb2TVC9t4N84fpAo41cbNKzyv.jpg",
-      description: "Engineering hub with free education options",
-      features: [
-        "Free Education",
-        "Job Seeker Visa",
-        "Blue Card",
-        "Student Visa",
-      ],
-      stats: {
-        universities: "120+",
-        students: "14K+",
-        success: "93%",
-      },
-    },
-  ];
+    autoSlideInterval: 5000,
+  });
 
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.8,
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-      scale: 1,
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.8,
-    }),
-  };
-
-  const cardVariants = {
-    hover: {
-      scale: 1.05,
-      y: -10,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const statsVariants = {
-    initial: { scale: 0, opacity: 0 },
-    animate: (i: number) => ({
-      scale: 1,
-      opacity: 1,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5,
-        type: "spring",
-        stiffness: 100,
-      },
-    }),
-  };
-
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
-
-  const paginate = (newDirection: number) => {
-    setDirection(newDirection);
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex + newDirection + countries.length) % countries.length
-    );
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      paginate(1);
-    }, 5000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const visibleCountries = [
-    countries[currentIndex],
-    countries[(currentIndex + 1) % countries.length],
-    countries[(currentIndex + 2) % countries.length],
-    countries[(currentIndex + 3) % countries.length],
-  ];
+  // Get visible countries based on current index
+  const visibleCountries = Array.from({ length: 4 }, (_, i) => {
+    const index = (currentIndex + i) % countriesData.length;
+    return countriesData[index];
+  });
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
@@ -210,127 +67,55 @@ const CountryList = () => {
         </motion.div>
 
         <div className="relative">
-          <AnimatePresence initial={false} custom={direction}>
+          <AutoSlider
+            currentIndex={currentIndex}
+            totalItems={countriesData.length}
+            visibleItems={visibleCount}
+            onChangeIndex={(newIndex, newDirection) => {
+              setDirection(newDirection);
+              setCurrentIndex(newIndex);
+            }}
+            autoSlideInterval={5000}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {visibleCountries.map((country, index) => (
-                <Link href={`/country/${country.slug}`} key={country.name}>
-                  <motion.div
-                    key={`${country.name}-${index}`}
-                    custom={direction}
-                    variants={{
-                      ...slideVariants,
-                      ...cardVariants,
-                    }}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    whileHover="hover"
-                    transition={{
-                      x: { type: "spring", stiffness: 300, damping: 30 },
-                      opacity: { duration: 0.2 },
-                      scale: { duration: 0.2 },
-                    }}
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={1}
-                    onDragEnd={(e, { offset, velocity }) => {
-                      const swipe = swipePower(offset.x, velocity.x);
-                      if (swipe < -swipeConfidenceThreshold) {
-                        paginate(1);
-                      } else if (swipe > swipeConfidenceThreshold) {
-                        paginate(-1);
-                      }
-                    }}
-                    className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group"
-                  >
-                    <div className="relative h-48">
-                      <img
-                        src={country.flag}
-                        alt={`${country.name} Flag`}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="absolute bottom-4 left-4 right-4"
-                      >
-                        <div className="flex items-center space-x-2">
-                          <MapPin className="h-5 w-5 text-orange-500" />
-                          <h3 className="text-2xl font-bold text-white">
-                            {country.name}
-                          </h3>
-                        </div>
-                      </motion.div>
-                    </div>
-                    <div className="p-6">
-                      <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                        className="text-gray-600 dark:text-gray-300 mb-4"
-                      >
-                        {country.description}
-                      </motion.p>
-                      <div className="grid grid-cols-3 gap-4">
-                        {[
-                          {
-                            icon: GraduationCap,
-                            label: "Universities",
-                            value: country.stats.universities,
-                          },
-                          {
-                            icon: Users,
-                            label: "Students",
-                            value: country.stats.students,
-                          },
-                          {
-                            icon: Star,
-                            label: "Success",
-                            value: country.stats.success,
-                          },
-                        ].map((stat, i) => (
-                          <motion.div
-                            key={stat.label}
-                            custom={i}
-                            variants={statsVariants}
-                            initial="initial"
-                            animate="animate"
-                            className="text-center"
-                          >
-                            <stat.icon className="h-6 w-6 mx-auto mb-2 text-orange-500" />
-                            <p className="text-sm font-semibold">
-                              {stat.value}
-                            </p>
-                            <p className="text-xs text-gray-500">
-                              {stat.label}
-                            </p>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                </Link>
+                <motion.div
+                  key={`${country.name}-${index}`}
+                  initial={{ opacity: 0, x: direction > 0 ? 100 : -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: direction > 0 ? -100 : 100 }}
+                  transition={{ duration: 0.5 }}
+                  className={index >= visibleCount ? "hidden" : ""}
+                >
+                  <CountryCard
+                    country={country}
+                    direction={direction}
+                    onSwipe={paginate}
+                  />
+                </motion.div>
               ))}
             </div>
-          </AnimatePresence>
+          </AutoSlider>
 
-          {/* Navigation Dots */}
-          <div className="flex justify-center mt-8 gap-2">
-            {countries.map((_, index) => (
+          {/* {/* Navigation Controls */}
+
+          {/* Progress Indicators */}
+          <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-2">
+            {Array.from({ length: countriesData.length }, (_, i) => (
               <motion.button
-                key={index}
+                key={i}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  const newDirection = index > currentIndex ? 1 : -1;
+                  const newDirection = i > currentIndex ? 1 : -1;
                   setDirection(newDirection);
-                  setCurrentIndex(index);
+                  setCurrentIndex(i);
                 }}
-                className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                  index === currentIndex
-                    ? "bg-orange-500 shadow-lg shadow-orange-500/50"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  i === currentIndex
+                    ? "bg-orange-500 w-6"
                     : "bg-gray-300 dark:bg-gray-600 hover:bg-orange-400"
                 }`}
               />
@@ -340,6 +125,4 @@ const CountryList = () => {
       </div>
     </section>
   );
-};
-
-export default CountryList;
+}
