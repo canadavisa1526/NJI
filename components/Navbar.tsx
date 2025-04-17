@@ -190,36 +190,11 @@ const Navbar = () => {
         { title: "Dependent Visa", icon: FileText, href: "#" },
         { title: "Insurance", icon: FileText, href: "#" },
         { title: "Air Ticket", icon: FileText, href: "#" },
-        { title: "Career Counseling", icon: Sparkles, href: "#" },
-        { title: "Study Tours (EduQuest)", icon: Library, href: "#" },
-        { title: "NASA Abroad Tours", icon: Library, href: "#" },
-        { title: "Industrial Tours", icon: Library, href: "#" },
-        { title: "Document Preparation", icon: Library, href: "#" },
         { title: "Finance (Forex and Loan)", icon: Banknote, href: "#" },
-        { title: "Education Loans", icon: Banknote, href: "#" },
-        { title: "Small Finance", icon: Banknote, href: "#" },
-        { title: "Forex", icon: Banknote, href: "#" },
-        { title: "Job Placement", icon: Award, href: "#" },
+        { title: "Coaching", icon: Users, href: "#" },
       ],
     },
-    {
-      title: "Coaching",
-      icon: Users,
-      submenu: [
-        {
-          title: "IELTS",
-          icon: BarChart,
-          href: "#",
-          description: "Comprehensive IELTS preparation courses",
-        },
-        {
-          title: "PTE",
-          icon: BarChart,
-          href: "#",
-          description: "Expert guidance for PTE Academic",
-        },
-      ],
-    },
+
     {
       title: "Contact",
       icon: Phone,
