@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import { Suspense } from "react";
 import Loading from "./loading";
 import Footer from "@/components/Footer";
-
+import { PostHogProvider } from "@/components/PostHogProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -73,18 +73,20 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Suspense fallback={<Loading />}>
-            <Navbar />
-            {children}
-            <Footer />
-          </Suspense>
-        </ThemeProvider>
+        <PostHogProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Suspense fallback={<Loading />}>
+              <Navbar />
+              {children}
+              <Footer />
+            </Suspense>
+          </ThemeProvider>
+        </PostHogProvider>
       </body>
     </html>
   );

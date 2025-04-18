@@ -191,7 +191,7 @@ const Navbar = () => {
         { title: "Insurance", icon: FileText, href: "#" },
         { title: "Air Ticket", icon: FileText, href: "#" },
         { title: "Finance (Forex and Loan)", icon: Banknote, href: "#" },
-        {title:"Work Permit", icon: FileText, href:"#"},
+        { title: "Work Permit", icon: FileText, href: "#" },
         { title: "Permanent Residency", icon: FileText, href: "#" },
         { title: "Coaching", icon: Users, href: "#" },
       ],

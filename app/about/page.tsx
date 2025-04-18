@@ -212,13 +212,7 @@ const AboutPage = () => {
               >
                 Start Your Journey
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full transition-all duration-300"
-              >
-                Learn More
-              </Button>
+             
             </div>
           </motion.div>
         </div>
@@ -565,7 +559,7 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
+      {/* <section className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-pink-600/10" />
           <div className="absolute inset-0 bg-grid-pattern opacity-5" />
@@ -601,7 +595,7 @@ const AboutPage = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
