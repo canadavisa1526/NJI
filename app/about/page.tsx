@@ -119,8 +119,7 @@ const AboutPage = () => {
     {
       name: "Dimple Nayak",
       role: "Visa Specialist & Director of Canada Branch",
-      image:
-        "/team/dimple.jpeg",
+      image: "/team/dimple.jpeg",
       description:
         "20+ years of experience in Canadian immigration processes, guiding clients with personalized, transparent advice.",
       expertise: [
@@ -132,8 +131,7 @@ const AboutPage = () => {
     {
       name: "Vinay Bhojak",
       role: "Branch Manager (North Gujarat)",
-      image:
-        "/team/vinay.JPG",
+      image: "/team/vinay.JPG",
       description:
         "Instrumental in streamlining operations and ensuring outstanding client service in North Gujarat.",
       expertise: ["Branch Operations", "Client Service", "Process Improvement"],
@@ -212,7 +210,6 @@ const AboutPage = () => {
               >
                 Start Your Journey
               </Button>
-             
             </div>
           </motion.div>
         </div>
@@ -306,11 +303,11 @@ const AboutPage = () => {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-2xl p-8 transform group-hover:translate-y-[-10px] transition-transform duration-300">
-                    <Quote className="h-10 w-10 text-orange-500 mb-4" />
-                    <p className="text-2xl font-semibold text-gray-900 dark:text-white italic">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 px-4">
+                  <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg transition-transform duration-300 group-hover:-translate-y-2">
+                    {/* <Quote className="h-6 w-6 text-orange-500 mb-2" /> */}
+                    <p className="text-sm text-gray-900 dark:text-white italic text-center">
                       "{founder.quote}"
                     </p>
                   </div>
@@ -395,47 +392,69 @@ const AboutPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="space-y-20">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
                 initial="hidden"
                 whileInView="visible"
-                variants={scaleIn}
+                variants={fadeInUp}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="group"
+                className={`flex flex-col ${
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                } gap-12 items-center group`}
               >
-                <div className="relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform group-hover:scale-[1.02]">
-                  <div className="relative h-64">
+                {/* Image Container */}
+                <div className="w-full lg:w-1/2 relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-pink-600 rounded-3xl transform rotate-6 group-hover:rotate-0 transition-transform duration-300" />
+                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-2xl font-bold text-white mb-1">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </div>
+
+                {/* Content Container */}
+                <div className="w-full lg:w-1/2 space-y-6">
+                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div className="space-y-4">
+                      <h3 className="text-3xl font-bold text-gray-900 dark:text-white">
                         {member.name}
                       </h3>
-                      <p className="text-orange-400 text-lg">{member.role}</p>
+                      <p className="text-xl text-orange-500 font-semibold">
+                        {member.role}
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                        {member.description}
+                      </p>
                     </div>
-                  </div>
-                  <div className="p-8">
-                    <p className="text-gray-600 dark:text-gray-300 text-lg mb-6 leading-relaxed">
-                      {member.description}
-                    </p>
-                    <div className="space-y-3">
-                      {member.expertise.map((skill) => (
-                        <div
-                          key={skill}
-                          className="flex items-center text-gray-600 dark:text-gray-300 group-hover:text-orange-500 transition-colors duration-300"
-                        >
-                          <CheckCircle className="h-5 w-5 text-orange-500 mr-3" />
-                          <span className="text-base">{skill}</span>
-                        </div>
-                      ))}
+
+                    <div className="mt-8 space-y-4">
+                      <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                        Areas of Expertise
+                      </h4>
+                      <div className="grid grid-cols-1 gap-3">
+                        {member.expertise.map((skill) => (
+                          <div
+                            key={skill}
+                            className="flex items-center space-x-3 bg-gradient-to-r from-orange-50 to-pink-50 dark:from-orange-900/20 dark:to-pink-900/20 p-4 rounded-xl group-hover:shadow-md transition-all duration-300"
+                          >
+                            <div className="flex-shrink-0">
+                              <div className="p-2 bg-gradient-to-r from-orange-400 to-pink-600 rounded-lg">
+                                <CheckCircle className="h-5 w-5 text-white" />
+                              </div>
+                            </div>
+                            <span className="text-gray-700 dark:text-gray-300 font-medium">
+                              {skill}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -557,45 +576,6 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      {/* <section className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-pink-600/10" />
-          <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeInUp}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Ready to Start Your Journey?
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12">
-              Let us help you achieve your immigration and education goals
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-pink-600 hover:from-orange-600 hover:to-pink-700 text-white px-8 py-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
-              >
-                Contact Us Today
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 dark:hover:bg-orange-950/30 px-8 py-6 text-lg rounded-full transition-all duration-300 w-full sm:w-auto"
-              >
-                Schedule a Consultation
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section> */}
     </div>
   );
 };
