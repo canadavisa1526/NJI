@@ -4,7 +4,7 @@ import React from "react";
 import { Facebook, Twitter, Instagram, Linkedin, DivideIcon as LucideIcon } from "lucide-react";
 import { socialLinks } from "@/data/social-links-data";
 
-const iconMap: Record<string, LucideIcon> = {
+const iconMap: Record<string, typeof LucideIcon> = {
   facebook: Facebook,
   twitter: Twitter,
   instagram: Instagram,

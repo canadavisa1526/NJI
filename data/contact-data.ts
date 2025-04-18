@@ -1,7 +1,7 @@
 import { Phone, Mail, Clock, MapPin, Users, Globe, Target, Briefcase, Star, Heart, CircleDollarSign, MessageCircle, BookOpen, Award, DivideIcon as LucideIcon } from "lucide-react";
 
 interface ContactInfo {
-  icon: LucideIcon;
+  icon: typeof LucideIcon;
   title: string;
   details: string[];
 }
@@ -34,7 +34,7 @@ export const contactInfo: ContactInfo[] = [
 ];
 
 interface StatData {
-  icon: LucideIcon;
+  icon: typeof LucideIcon;
   value: string;
   label: string;
 }
@@ -90,7 +90,7 @@ export const locations: LocationData[] = [
 ];
 
 interface PartnerBenefit {
-  icon: LucideIcon;
+  icon: typeof LucideIcon;
   title: string;
   description: string;
 }
