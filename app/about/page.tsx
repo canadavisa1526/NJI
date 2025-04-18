@@ -403,12 +403,12 @@ const AboutPage = () => {
                 transition={{ delay: index * 0.2 }}
                 className={`flex flex-col ${
                   index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } gap-12 items-center group`}
+                } gap-12 items-stretch group h-auto lg:h-[500px]`}
               >
                 {/* Image Container */}
-                <div className="w-full lg:w-1/2 relative">
+                <div className="w-full lg:w-1/2 h-full relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-pink-600 rounded-3xl transform rotate-6 group-hover:rotate-0 transition-transform duration-300" />
-                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300">
+                  <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -420,8 +420,8 @@ const AboutPage = () => {
                 </div>
 
                 {/* Content Container */}
-                <div className="w-full lg:w-1/2 space-y-6">
-                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="w-full lg:w-1/2 h-full">
+                  <div className="bg-white dark:bg-gray-800 h-full rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
                     <div className="space-y-4">
                       <h3 className="text-3xl font-bold text-gray-900 dark:text-white">
                         {member.name}
@@ -429,17 +429,17 @@ const AboutPage = () => {
                       <p className="text-xl text-orange-500 font-semibold">
                         {member.role}
                       </p>
-                      <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                      <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed line-clamp-4">
                         {member.description}
                       </p>
                     </div>
 
-                    <div className="mt-8 space-y-4">
-                      <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                    <div className="mt-6 space-y-4">
+                      <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
                         Areas of Expertise
                       </h4>
                       <div className="grid grid-cols-1 gap-3">
-                        {member.expertise.map((skill) => (
+                        {member.expertise.slice(0, 3).map((skill) => (
                           <div
                             key={skill}
                             className="flex items-center space-x-3 bg-gradient-to-r from-orange-50 to-pink-50 dark:from-orange-900/20 dark:to-pink-900/20 p-4 rounded-xl group-hover:shadow-md transition-all duration-300"

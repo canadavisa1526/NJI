@@ -186,14 +186,30 @@ const Navbar = () => {
       title: "Other Services",
       icon: Building2,
       submenu: [
-        { title: "Visitor Visa", icon: FileText, href: "#" },
-        { title: "Dependent Visa", icon: FileText, href: "#" },
-        { title: "Insurance", icon: FileText, href: "#" },
-        { title: "Air Ticket", icon: FileText, href: "#" },
-        { title: "Finance (Forex and Loan)", icon: Banknote, href: "#" },
-        { title: "Work Permit", icon: FileText, href: "#" },
-        { title: "Permanent Residency", icon: FileText, href: "#" },
-        { title: "Coaching", icon: Users, href: "#" },
+        {
+          title: "Visitor Visa",
+          icon: FileText,
+          href: "/services/visitor-visa",
+        },
+        {
+          title: "Dependent Visa",
+          icon: FileText,
+          href: "/services/dependent-visa",
+        },
+        { title: "Insurance", icon: FileText, href: "/services/insurance" },
+        { title: "Air Ticket", icon: FileText, href: "/services/air-ticket" },
+        {
+          title: "Finance (Forex and Loan)",
+          icon: Banknote,
+          href: "/services/finance",
+        },
+        { title: "Work Permit", icon: FileText, href: "/services/work-permit" },
+        {
+          title: "Permanent Residency",
+          icon: FileText,
+          href: "/services/permanent-residency",
+        },
+        { title: "Coaching", icon: Users, href: "/services/coaching" },
       ],
     },
 
