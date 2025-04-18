@@ -36,7 +36,7 @@ export const services = [
     slug: "dependent-visa",
     description:
       "Reunite with your family abroad through our reliable dependent visa services.",
-    details: `The Dependent Visa allows family members such as spouses, children, and sometimes even parents to accompany individuals who are legally residing or studying/working abroad. Shreehari Education Consultants Pvt. Ltd. specializes in preparing dependent visa applications for countries including Canada, Australia, the USA, UK, and New Zealand.
+    details: `The Dependent Visa allows family members such as spouses, children, and sometimes even parents to accompany individuals who are legally residing or studying/working abroad. New Journey Immigration Education Consultants Pvt. Ltd. specializes in preparing dependent visa applications for countries including Canada, Australia, the USA, UK, and New Zealand.
       
       We help you determine eligibility based on your relationship, sponsor status, and host country policies. Some countries allow even unmarried partners under de facto relationships, provided there is proof of cohabitation.
       
@@ -63,11 +63,11 @@ export const services = [
     slug: "insurance",
     description:
       "Protect your international journey with complete travel and health insurance coverage.",
-    details: `Studying or traveling abroad involves many uncertainties. That's why Shreehari Education Consultants Pvt. Ltd. provides access to trusted travel and health insurance plans to safeguard your journey. We offer complete coverage options tailored for students, tourists, and professionals traveling abroad.
+    details: `Studying or traveling abroad involves many uncertainties. That's why New Journey Immigration Education Consultants Pvt. Ltd. provides access to trusted travel and health insurance plans to safeguard your journey. We offer complete coverage options tailored for students, tourists, and professionals traveling abroad.
       
       Our team helps you choose policies that include coverage for hospitalization, outpatient treatments, emergency medical evacuation, accidental death, permanent disability, and personal liability abroad. In addition, we guide you through plans that cover trip cancellation, flight delays, lost baggage, and repatriation of remains.
       
-      Shreehari collaborates with reputed insurance providers to offer cost-effective and reliable solutions. We assist in application, policy understanding, document submission, and payment methods. Whether you're enrolling in short-term or long-term coverage, our insurance support ensures peace of mind while you focus on your studies or exploration.
+      New Journey Immigration collaborates with reputed insurance providers to offer cost-effective and reliable solutions. We assist in application, policy understanding, document submission, and payment methods. Whether you're enrolling in short-term or long-term coverage, our insurance support ensures peace of mind while you focus on your studies or exploration.
       
       International laws and university guidelines often mandate insurance — we ensure compliance with local requirements and help you avoid policy gaps that could affect your visa or admission. Travel safe, study stress-free, and protect yourself from unexpected disruptions with our expert insurance guidance.`,
     images: [
@@ -88,11 +88,11 @@ export const services = [
     slug: "air-ticket",
     description:
       "Book your flight with full support on cost, timing, and visa-compliant travel routes.",
-    details: `Air travel is a major part of international education and immigration, and Shreehari Education Consultants Pvt. Ltd. ensures that our clients get the best deals and travel experiences. We offer competitive and flexible air ticket booking options customized for students, families, and professionals.
+    details: `Air travel is a major part of international education and immigration, and New Journey Immigration Education Consultants Pvt. Ltd. ensures that our clients get the best deals and travel experiences. We offer competitive and flexible air ticket booking options customized for students, families, and professionals.
       
       We understand the urgency and uncertainty that can come with visa processes, so our team offers expert booking management to accommodate delays or changes. We help you find the most affordable, convenient, and visa-compliant flight options that align with your travel goals and visa requirements.
       
-      Shreehari's air ticket services include airline preference guidance, optimal routes, stopover analysis, early-bird discounts, group bookings, student fares, and real-time booking confirmation. We also advise you on baggage allowances, customs, airport transfers, and connecting flights.
+      New Journey Immigration's air ticket services include airline preference guidance, optimal routes, stopover analysis, early-bird discounts, group bookings, student fares, and real-time booking confirmation. We also advise you on baggage allowances, customs, airport transfers, and connecting flights.
       
       In addition, we help students purchase travel insurance alongside ticket bookings for added safety. Our personalized booking services reduce stress and ensure your flight plans are accurate, secure, and affordable.`,
     images: [
@@ -113,7 +113,7 @@ export const services = [
     slug: "finance",
     description:
       "Ease your financial journey abroad with expert forex and education loan assistance.",
-    details: `Managing finances is a key aspect of studying or settling abroad. Shreehari Education Consultants Pvt. Ltd. offers professional assistance in arranging education loans, foreign exchange (forex), and financial planning to support your global ambitions.
+    details: `Managing finances is a key aspect of studying or settling abroad. New Journey Immigration Education Consultants Pvt. Ltd. offers professional assistance in arranging education loans, foreign exchange (forex), and financial planning to support your global ambitions.
       
       We help students and their families access bank loans with favorable interest rates, covering tuition fees, accommodation, living costs, and travel expenses. Our experts guide you through documentation, eligibility checks, and application submissions with nationalized and private banks.
       
@@ -138,7 +138,7 @@ export const services = [
     slug: "work-permit",
     description:
       "Pave your way to global employment with expert assistance on international work permits.",
-    details: `Work permits are crucial for individuals planning to work abroad after studies or as skilled migrants. Shreehari Education Consultants Pvt. Ltd. helps you apply for country-specific work permits through legally compliant and career-aligned pathways.
+    details: `Work permits are crucial for individuals planning to work abroad after studies or as skilled migrants. New Journey Immigration Education Consultants Pvt. Ltd. helps you apply for country-specific work permits through legally compliant and career-aligned pathways.
       
       We provide support for open work permits, employer-sponsored permits, and post-study work visas. Countries like Canada, UK, and Australia offer different streams — each with its own timelines, rules, and eligibility requirements. Our consultants ensure your resume, job offer letters, education credentials, and language scores are all properly aligned.
       
@@ -170,7 +170,7 @@ export const services = [
     slug: "permanent-residency",
     description:
       "Secure your long-term future abroad with permanent residency programs for Canada, Australia, and more.",
-    details: `Permanent Residency (PR) is a major milestone for anyone looking to settle abroad. At Shreehari Education Consultants Pvt. Ltd., we provide in-depth consultation and application support for obtaining PR in countries such as Canada, Australia, and New Zealand.
+    details: `Permanent Residency (PR) is a major milestone for anyone looking to settle abroad. At New Journey Immigration Education Consultants Pvt. Ltd., we provide in-depth consultation and application support for obtaining PR in countries such as Canada, Australia, and New Zealand.
       
       We assess your eligibility through points-based systems, occupation lists, and immigration pathways like Express Entry, Provincial Nominee Programs (PNPs), or skilled migration programs. Our team helps you prepare an impeccable application including your language test results, ECA (education credential assessment), employment history, and proof of funds.
       
@@ -195,7 +195,7 @@ export const services = [
     slug: "coaching",
     description:
       "Ace your language proficiency test with tailored IELTS and PTE training programs.",
-    details: `At Shreehari, we understand how crucial English proficiency tests like IELTS and PTE are for your international dreams. Whether it's for university admission, visa eligibility, or PR, scoring high in these exams boosts your chances significantly.
+    details: `At New Journey Immigration, we understand how crucial English proficiency tests like IELTS and PTE are for your international dreams. Whether it's for university admission, visa eligibility, or PR, scoring high in these exams boosts your chances significantly.
       
       Our certified trainers conduct regular batches with structured lesson plans, practice exams, speaking drills, and mock interviews. We provide personalized strategies based on your current skill level, target band score, and time availability.
       
@@ -220,7 +220,7 @@ export const services = [
     slug: "immigration-citizenship",
     description:
       "Build a secure future in your dream country with end-to-end immigration and citizenship support.",
-    details: `Immigrating to a new country and eventually acquiring citizenship is a life-changing decision. At Shreehari Education Consultants Pvt. Ltd., we walk you through every stage — from selecting the right country and visa type to achieving permanent residency and eventually applying for citizenship.
+    details: `Immigrating to a new country and eventually acquiring citizenship is a life-changing decision. At New Journey Immigration Education Consultants Pvt. Ltd., we walk you through every stage — from selecting the right country and visa type to achieving permanent residency and eventually applying for citizenship.
       
       Our immigration services include profile evaluation, points-based assessments, occupation matching, and guidance on family and employer-sponsored migration. We handle all types of immigration — skilled workers, entrepreneurs, family reunification, and students transitioning to PR.
       
