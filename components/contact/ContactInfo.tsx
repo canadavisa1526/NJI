@@ -16,80 +16,93 @@ export default function ContactInfo() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   return (
-    <section className="py-16 bg-white dark:bg-[#13294e]">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
-          >
-            {/* Info Section */}
-            <div className="space-y-8">
-              <div className="bg-[#AFC1DB] dark:bg-[#AFC1DB] p-8 rounded-xl shadow-md">
-                <h3 className="text-2xl font-bold mb-6 text-[#faa71a]">
-                  Why Choose Us?
-                </h3>
-                <div className="space-y-4">
-                  {[
-                    "Expert guidance from certified consultants",
-                    "Personalized attention to your needs",
-                    "Comprehensive support services",
-                    "High success rate in visa approvals",
-                    "Global network of partners",
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-[#faa71a] flex-shrink-0 mt-1" />
-                      <span className="text-[#13294e] dark:text-white">
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-[#AFC1DB] dark:bg-[#AFC1DB] p-8 rounded-xl shadow-md">
-                <h3 className="text-2xl font-bold mb-6 text-[#faa71a]">
-                  Connect With Us
-                </h3>
-                <SocialLinks />
+    <section className="py-16 md:py-24 bg-gradient-to-r from-[#AFC1DB]/20 to-white dark:from-[#13294e]/80 dark:to-[#13294e] relative">
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+        >
+          {/* Left Column */}
+          <div className="space-y-8">
+            {/* Why Choose Us */}
+            <div className="relative bg-white dark:bg-[#13294e] rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#faa71a]/10 to-amber-600/10 rounded-bl-full" />
+              <h3 className="text-2xl font-bold text-[#13294E] dark:text-white mb-6">
+                Why Choose Us?
+              </h3>
+              <div className="space-y-4">
+                {[
+                  "Expert guidance from certified consultants",
+                  "Personalized attention to your needs",
+                  "Comprehensive support services",
+                  "High success rate in visa approvals",
+                  "Global network of partners",
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start text-[#13294E] dark:text-gray-300 group-hover:text-[#13294E] dark:group-hover:text-[#faa71a] transition-colors"
+                  >
+                    <CheckCircle className="h-5 w-5 text-[#faa71a] mr-3 mt-1" />
+                    <span className="text-sm md:text-base">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Form/CTA Section */}
-            <div className="space-y-8">
-              <div className="bg-[#AFC1DB] dark:bg-[#AFC1DB] p-8 rounded-xl shadow-md">
-                <h3 className="text-2xl font-bold mb-6 text-[#faa71a]">
-                  Interested in Partnering?
-                </h3>
-                <p className="text-[#13294e] dark:text-white mb-6">
-                  Join our global network of partners and grow your business
-                  with us. We offer extensive support, training, and resources
-                  to help you succeed.
-                </p>
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="w-full py-3 px-6 bg-gradient-to-r from-[#faa71a] to-[#faa71a] text-[#13294e] font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                >
-                  Become a Partner
-                </button>
-              </div>
-
-              <div className="bg-[#AFC1DB] dark:bg-[#AFC1DB] p-8 rounded-xl shadow-md">
-                <h3 className="text-2xl font-bold mb-6 text-[#faa71a]">
-                  Our Mission
-                </h3>
-                <p className="text-[#13294e] dark:text-white">
-                  We are dedicated to providing expert immigration services with
-                  integrity and transparency. Our mission is to help students
-                  and professionals achieve their dreams of studying and working
-                  abroad.
-                </p>
-              </div>
+            {/* Connect with us */}
+            <div className="relative bg-white dark:bg-[#13294e] rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#faa71a]/10 to-amber-600/10 rounded-bl-full" />
+              <h3 className="text-2xl font-bold text-[#13294E] dark:text-white mb-6">
+                Connect With Us
+              </h3>
+              <SocialLinks />
             </div>
-          </motion.div>
-        </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-8">
+            {/* Partner CTA */}
+            <div className="relative bg-white dark:bg-[#13294e] rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#faa71a]/10 to-amber-600/10 rounded-bl-full" />
+              <h3 className="text-2xl font-bold text-[#13294E] dark:text-white mb-6">
+                Interested in Partnering?
+              </h3>
+              <p className="text-[#13294E] dark:text-gray-300 mb-6">
+                Join our global network of partners and grow your business with
+                us. We offer extensive support, training, and resources to help
+                you succeed.
+              </p>
+              <br />
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="w-full py-3 px-6 bg-gradient-to-r from-[#FAA71A] to-[#F97316] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Become a Partner
+              </button>
+              <br />
+              <br />
+              <br />
+            </div>
+
+            {/* Mission */}
+            <div className="relative bg-white dark:bg-[#13294e] rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#faa71a]/10 to-amber-600/10 rounded-bl-full" />
+              <h3 className="text-2xl font-bold text-[#13294E] dark:text-white mb-6">
+                Our Mission
+              </h3>
+              <p className="text-[#13294E] dark:text-gray-300">
+                We are dedicated to providing expert immigration services with
+                integrity and transparency. Our mission is to help students and
+                professionals achieve their dreams of studying and working
+                abroad.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       <PartnerModal

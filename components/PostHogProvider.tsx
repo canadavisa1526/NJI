@@ -4,6 +4,7 @@ import posthog from "posthog-js"
 import { PostHogProvider as PHProvider, usePostHog } from "posthog-js/react"
 import { Suspense, useEffect } from "react"
 import { usePathname, useSearchParams } from "next/navigation"
+import PostHogInputTracker from "./posthog/capture"
 
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -19,6 +20,7 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
   return (
     <PHProvider client={posthog}>
       <SuspendedPostHogPageView />
+      <PostHogInputTracker />
       {children}
     </PHProvider>
   )

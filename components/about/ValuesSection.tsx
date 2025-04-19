@@ -45,8 +45,9 @@ const ValuesSection = () => {
             >
               {value.title == "Excellence" ? (
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#faa71a] to-amber-600 rounded-2xl transform -rotate-3 group-hover:rotate-0 transition-transform duration-300" />
-                  <div className="relative bg-white dark:bg-[#13294e]/80 p-6 md:p-8 rounded-2xl shadow-xl h-full">
+                  <div className="absolute inset-0 bg-[#faa71a] dark:bg-[#faa71a]/50 rounded-2xl transform -rotate-3 group-hover:rotate-0 transition-transform duration-300" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#faa71a]/10 to-amber-600/10 rounded-bl-full" />
+                  <div className="relative bg-white dark:bg-[#13294e] p-6 sm:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
                     <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#faa71a] to-amber-600 rounded-xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                       <value.icon className="h-7 w-7 md:h-8 md:w-8 text-white" />
                     </div>
@@ -63,8 +64,9 @@ const ValuesSection = () => {
                 </div>
               ) : (
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#faa71a] to-amber-600 rounded-2xl transform -rotate-3 group-hover:rotate-0 transition-transform duration-300" />
-                  <div className="relative bg-white dark:bg-[#13294e]/80 p-6 md:p-8 rounded-2xl shadow-xl h-full">
+                  <div className="absolute inset-0 bg-[#faa71a] dark:bg-[#faa71a]/50 rounded-2xl transform -rotate-3 group-hover:rotate-0 transition-transform duration-300" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#faa71a]/10 to-amber-600/10 rounded-bl-full" />
+                  <div className="relative bg-white dark:bg-[#13294e] p-6 sm:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
                     <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#faa71a] to-amber-600 rounded-xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                       <value.icon className="h-7 w-7 md:h-8 md:w-8 text-white" />
                     </div>

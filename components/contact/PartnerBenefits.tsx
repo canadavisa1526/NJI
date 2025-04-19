@@ -21,19 +21,20 @@ const staggerContainer = {
 
 export default function PartnerBenefits() {
   return (
-    <section className="py-16 bg-white dark:bg-gray-800">
+    <section className="py-16 md:py-24 bg-gradient-to-r from-[#AFC1DB]/20 to-white dark:from-[#13294e]/80 dark:to-[#13294e] relative">
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"
           variants={fadeInUp}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-pink-600">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#13294e] dark:text-white mb-6">
             Partnership Benefits
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Join our network and grow your business with us
           </p>
         </motion.div>
@@ -43,21 +44,27 @@ export default function PartnerBenefits() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
         >
-          {partnerBenefits.map((benefit) => (
+          {partnerBenefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
               variants={fadeInUp}
-              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+              transition={{ delay: index * 0.1 }}
+              className="group"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-orange-400 to-pink-600 rounded-xl mb-6">
-                <benefit.icon className="h-7 w-7 text-white" />
+              <div className="relative bg-white dark:bg-[#13294e] rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform group-hover:scale-[1.02] h-full text-center">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#faa71a]/10 to-amber-600/10 rounded-bl-full" />
+                <div className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#FAA71A] to-[#F97316] rounded-xl mb-4 md:mb-6 z-10 relative">
+                  <benefit.icon className="h-6 w-6 md:h-7 md:w-7 text-white" />
+                </div>
+                <h3 className="text-lg md:text-xl font-semibold mb-2 text-[#13294e] dark:text-white z-10 relative">
+                  {benefit.title}
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 z-10 relative">
+                  {benefit.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                {benefit.description}
-              </p>
             </motion.div>
           ))}
         </motion.div>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { CheckCircle, MapPin } from "lucide-react";
 import { locations } from "@/data/aboutData";
 
-const GlobalPresenceSection = () => {
+const Card = () => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -26,10 +26,11 @@ const GlobalPresenceSection = () => {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#13294e] dark:text-white mb-6">
-            Global Presence
+            Get in Touch
           </h2>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Serving clients worldwide with local expertise
+            We're here to help with your immigration needs. Reach out to our
+            team for expert guidance and personalized support.
           </p>
         </motion.div>
 
@@ -79,4 +80,4 @@ const GlobalPresenceSection = () => {
   );
 };
 
-export default GlobalPresenceSection;
+export default Card;

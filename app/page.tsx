@@ -19,22 +19,19 @@ import Footer from "@/components/Footer";
 import FeaturedSection from "@/components/FeaturedSection";
 // import ImmigrationProcess from "@/components/ImmigrationProcess"
 import VisaSection from "@/components/VisaSection";
+import CountrySlider from "@/components/CountryScroll/CountrySlider";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
-
+      <CountrySlider />
       <VisaSection />
-
       <FeaturedSection />
-
       <CountryList />
-
       <WhyChooseUs />
       <Benefits />
       <ProcessSteps />
-
       <Testimonials />
     </main>
   );
