@@ -145,21 +145,11 @@ const Hero = () => {
                 Transform Your Future with NJI Education
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Your Gateway to
-              <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300">
-                Global Education Excellence
-              </span>
-            </h1>
-            <p className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto">
-              Join thousands of successful students who have achieved their
-              dreams with NJI's expert guidance and comprehensive support.
-            </p>
+          
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Button
                 size="lg"
-                className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white font-semibold border border-white/30"
+                className="bg-[#FAA71A] backdrop-blur-md hover:bg-white/30 text-white font-semibold border border-white/30"
                 onClick={() => setIsConsultationOpen(true)}
               >
                 <BookOpen className="mr-2 h-5 w-5" />
@@ -170,7 +160,28 @@ const Hero = () => {
         </motion.div>
 
         {/* Stats - now at the bottom */}
-        <div className="relative z-10 mt-20 px-4 sm:px-6 lg:px-8">
+
+        {/* Gradient Wave */}
+        <div className="absolute bottom-0 left-0 right-0 z-0">
+          <svg
+            viewBox="0 0 1440 320"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-auto"
+          >
+            <defs>
+              <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#13294E" stopOpacity="1" />
+              </linearGradient>
+            </defs>
+            <path
+              fill="url(#waveGradient)"
+              fillOpacity="1"
+              d="M0 192L48 197.3C96 203 192 213 288 192C384 171 480 117 576 117.3C672 117 768 171 864 197.3C960 224 1056 224 1152 208C1248 192 1344 160 1392 144L1440 128V320H0V192Z"
+            />
+          </svg>
+        </div>
+        <div className="absolute bottom-3 left-0 right-0 z-0">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <motion.div
@@ -189,27 +200,6 @@ const Hero = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-
-        {/* Gradient Wave */}
-        <div className="absolute bottom-0 left-0 right-0 z-0">
-          <svg
-            viewBox="0 0 1440 320"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-auto"
-          >
-            <defs>
-              <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%"  stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#13294E" stopOpacity="1" />
-              </linearGradient>
-            </defs>
-            <path
-              fill="url(#waveGradient)"
-              fillOpacity="1"
-              d="M0 192L48 197.3C96 203 192 213 288 192C384 171 480 117 576 117.3C672 117 768 171 864 197.3C960 224 1056 224 1152 208C1248 192 1344 160 1392 144L1440 128V320H0V192Z"
-            />
-          </svg>
         </div>
       </section>
 

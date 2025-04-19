@@ -68,17 +68,17 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <section className="relative py-20 bg-gradient-to-b from-white to-orange-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
-      {/* Decorative SVG Background */}
+    <section className="relative py-20 bg-gradient-to-b from-[#ffffff] to-[#AFC1DB]/20 dark:from-[#13294e] dark:to-[#13294e]/80 overflow-hidden">
+      {/* Decorative SVG */}
       <svg
-        className="absolute top-0 left-0 w-72 h-72 text-orange-100 dark:text-orange-900/10"
+        className="absolute top-0 left-0 w-72 h-72 text-[#faa71a]/10"
         fill="currentColor"
         viewBox="0 0 200 200"
       >
         <circle cx="100" cy="100" r="100" />
       </svg>
       <svg
-        className="absolute bottom-0 right-0 w-96 h-96 text-blue-100 dark:text-blue-900/10"
+        className="absolute bottom-0 right-0 w-96 h-96 text-[#AFC1DB]/20"
         fill="currentColor"
         viewBox="0 0 200 200"
       >
@@ -88,17 +88,17 @@ const WhyChooseUs = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+          <h2 className="text-4xl font-extrabold tracking-tight text-[#13294e] dark:text-white">
             Why Choose{" "}
-            <span className="text-orange-500">New Journey Immigration</span>?
+            <span className="text-[#faa71a]">New Journey Immigration</span>?
           </h2>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-[#13294e]/80 dark:text-gray-300 max-w-2xl mx-auto">
             We're committed to making your immigration journey smooth, secure,
             and successful.
           </p>
         </div>
 
-        {/* Animated Card Slider */}
+        {/* Animated Cards */}
         <div className="h-[320px] sm:h-auto">
           <AnimatePresence mode="wait">
             <motion.div
@@ -113,15 +113,15 @@ const WhyChooseUs = () => {
               {slides[currentIndex].map((reason) => (
                 <div
                   key={reason.title}
-                  className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300 border border-orange-100 dark:border-orange-900/10"
+                  className="bg-white dark:bg-[#13294e] rounded-2xl p-6 shadow-xl hover:shadow-2xl transition duration-300 border border-[#faa71a]/20 dark:border-[#faa71a]/10"
                 >
                   <div className="flex items-center gap-4 mb-4">
-                    <reason.icon className="w-9 h-9 text-orange-500" />
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    <reason.icon className="w-9 h-9 text-[#faa71a]" />
+                    <h3 className="text-xl font-semibold text-[#13294e] dark:text-white">
                       {reason.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="text-[#13294e]/80 dark:text-gray-300 leading-relaxed">
                     {reason.description}
                   </p>
                 </div>

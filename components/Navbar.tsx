@@ -347,7 +347,7 @@ const Navbar = () => {
               className="hidden lg:block"
             >
               <Button
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-[#FAA71A] hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => setIsAppointmentOpen(true)}
               >
                 Book Consultation

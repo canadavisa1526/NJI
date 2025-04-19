@@ -1,7 +1,5 @@
 import { Country } from "../types/country";
 
-
-
 export const countriesData: Country[] = [
   {
     name: "Canada",
