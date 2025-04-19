@@ -215,7 +215,7 @@ const Navbar = () => {
       <div className="relative w-48 h-16 sm:w-36 sm:h-12 md:w-60 md:h-20">
         <div className="absolute inset-0 flex items-center justify-center z-20 overflow-hidden">
           <Image
-            src={isDark ? DarkLogo : LightLogo}
+            src={isDark ? LightLogo : DarkLogo}
             alt="logo"
             fill
             className="object-contain z-20"

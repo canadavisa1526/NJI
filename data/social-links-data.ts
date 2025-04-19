@@ -1,12 +1,12 @@
 export const socialLinks = [
   {
     title: "Facebook",
-    url: "https://facebook.com/newjourneyimmigration",
+    url: "https://www.facebook.com/share/1BTpFournw/?mibextid=wwXIfr",
     icon: "facebook"
   },
   {
     title: "Instagram",
-    url: "https://instagram.com/newjourneyimmigration",
+    url: "https://www.instagram.com/new.journey.holiday?igsh=MXNlZ216bTdmOHJjZw==",
     icon: "instagram"
   },
   {
@@ -16,7 +16,7 @@ export const socialLinks = [
   },
   {
     title: "LinkedIn",
-    url: "https://linkedin.com/company/newjourneyimmigration",
+    url: "https://www.linkedin.com/company/newjourney-i/about/",
     icon: "linkedin"
   }
 ];

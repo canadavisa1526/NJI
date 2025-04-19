@@ -48,7 +48,7 @@ const Footer = () => {
       <div className="relative w-52 h-20 sm:w-36 sm:h-12 md:w-60 md:h-20">
         <div className="absolute inset-0 flex items-center justify-center z-20 overflow-hidden">
           <Image
-            src={isDark ? DarkLogo : LightLogo}
+            src={LightLogo }
             alt="logo"
             fill
             className="object-contain z-20"
@@ -88,13 +88,13 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Link
-                href="https://facebook.com/newjourneyimmigration"
+                href="https://www.facebook.com/share/1BTpFournw/?mibextid=wwXIfr"
                 className="text-gray-400 hover:text-orange-500 transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
-                href="https://instagram.com/newjourneyimmigration"
+                href="https://www.instagram.com/new.journey.holiday?igsh=MXNlZ216bTdmOHJjZw=="
                 className="text-gray-400 hover:text-orange-500 transition-colors"
               >
                 <Instagram className="h-5 w-5" />
@@ -106,7 +106,7 @@ const Footer = () => {
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link
-                href="https://linkedin.com/company/newjourneyimmigration"
+                href="https://www.linkedin.com/company/newjourney-i/about/"
                 className="text-gray-400 hover:text-orange-500 transition-colors"
               >
                 <Linkedin className="h-5 w-5" />

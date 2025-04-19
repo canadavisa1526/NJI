@@ -23,7 +23,7 @@ const StatsSection = () => {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-[#faa71a]/10 dark:bg-[#faa71a]/20 rounded-2xl transform -rotate-3 group-hover:rotate-0 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-[#faa71a] dark:bg-[#faa71a]/50 rounded-2xl transform -rotate-3 group-hover:rotate-0 transition-transform duration-300" />
               <div className="relative bg-white dark:bg-[#13294e] p-6 sm:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#faa71a] to-amber-600 rounded-xl mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
