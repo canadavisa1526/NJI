@@ -28,7 +28,11 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
     website: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -40,21 +44,36 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
     e.preventDefault();
     // Here you would typically send the data to your backend
     console.log("Form submitted:", formData);
-    
+
     // Show success message and close modal
     alert("Thank you for your interest! We'll get back to you soon.");
     onClose();
   };
 
   const formFields = [
-    { name: "businessName", label: "Business Entity Name", type: "text", required: true },
-    { name: "ownerName", label: "Name of Business Owner", type: "text", required: true },
-    { 
-      name: "designation", 
-      label: "Designation", 
-      type: "select", 
+    {
+      name: "businessName",
+      label: "Business Entity Name",
+      type: "text",
       required: true,
-      options: ["Proprietor/Owner", "Director", "Partner", "Other Decision Maker"] 
+    },
+    {
+      name: "ownerName",
+      label: "Name of Business Owner",
+      type: "text",
+      required: true,
+    },
+    {
+      name: "designation",
+      label: "Designation",
+      type: "select",
+      required: true,
+      options: [
+        "Proprietor/Owner",
+        "Director",
+        "Partner",
+        "Other Decision Maker",
+      ],
     },
     { name: "mobile", label: "Mobile Number", type: "tel", required: true },
     { name: "email", label: "Email Address", type: "email", required: true },
@@ -63,16 +82,36 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
     { name: "state", label: "State/Province", type: "text" },
     { name: "zipCode", label: "Zip/Postal Code", type: "text" },
     { name: "country", label: "Country", type: "text" },
-    { name: "targetCountries", label: "Target Countries", type: "text", placeholder: "Which countries do you plan to work with us?" },
-    { name: "businessAge", label: "Business Age", type: "text", placeholder: "How old is your organization?" },
-    { name: "visasPerYear", label: "Visas Per Year", type: "number", placeholder: "How many student visas do you process annually?" },
-    { 
-      name: "referenceSource", 
-      label: "How did you find us?", 
-      type: "select",
-      options: ["Search Engine", "Social Media", "Referral", "Event", "Other"] 
+    {
+      name: "targetCountries",
+      label: "Target Countries",
+      type: "text",
+      placeholder: "Which countries do you plan to work with us?",
     },
-    { name: "website", label: "Website/Social Media", type: "text", placeholder: "Your website or social media pages" },
+    {
+      name: "businessAge",
+      label: "Business Age",
+      type: "text",
+      placeholder: "How old is your organization?",
+    },
+    {
+      name: "visasPerYear",
+      label: "Visas Per Year",
+      type: "number",
+      placeholder: "How many student visas do you process annually?",
+    },
+    {
+      name: "referenceSource",
+      label: "How did you find us?",
+      type: "select",
+      options: ["Search Engine", "Social Media", "Referral", "Event", "Other"],
+    },
+    {
+      name: "website",
+      label: "Website/Social Media",
+      type: "text",
+      placeholder: "Your website or social media pages",
+    },
   ];
 
   const modalVariants = {
@@ -82,7 +121,11 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
 
   const modalContentVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 25, stiffness: 500 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", damping: 25, stiffness: 500 },
+    },
     exit: { opacity: 0, y: 50 },
   };
 
@@ -118,17 +161,29 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
 
             <div className="p-6">
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Please fill out the form below to join our partner network. We'll review your application and get back to you soon.
+                Please fill out the form below to join our partner network.
+                We'll review your application and get back to you soon.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {formFields.map((field) => (
-                    <div key={field.name} className={field.name === "address" ? "md:col-span-2" : ""}>
-                      <label htmlFor={field.name} className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        {field.label} {field.required && <span className="text-red-500">*</span>}
+                    <div
+                      key={field.name}
+                      className={
+                        field.name === "address" ? "md:col-span-2" : ""
+                      }
+                    >
+                      <label
+                        htmlFor={field.name}
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                      >
+                        {field.label}{" "}
+                        {field.required && (
+                          <span className="text-red-500">*</span>
+                        )}
                       </label>
-                      
+
                       {field.type === "select" ? (
                         <select
                           id={field.name}
@@ -139,8 +194,10 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
                           className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 dark:bg-gray-700 dark:text-white"
                         >
                           <option value="">Select {field.label}</option>
-                          {field.options?.map(option => (
-                            <option key={option} value={option}>{option}</option>
+                          {field.options?.map((option) => (
+                            <option key={option} value={option}>
+                              {option}
+                            </option>
                           ))}
                         </select>
                       ) : field.type === "textarea" ? (

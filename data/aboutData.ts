@@ -91,7 +91,7 @@ export const founder = {
 export const teamMembers = [
   {
     name: "Dimple Nayak",
-    role: "Visa Specialist & Director of Canada Branch",
+    role: "Director of Canada Branch",
     image:
       "team/dimple.jpeg",
   },
@@ -99,7 +99,7 @@ export const teamMembers = [
     name: "Vinay Bhojak",
     role: "Branch Manager (North Gujarat)",
     image:
-      "team/vinay.jpg",
+      "/team/vinay.jpg",
   },
   {
     name: "Monika Nayak",

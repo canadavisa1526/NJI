@@ -1,26 +1,26 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar } from '@/components/ui/calendar';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Calendar } from "@/components/ui/calendar";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { toast } from 'sonner';
+} from "@/components/ui/select";
+import { toast } from "sonner";
 
 interface AppointmentDialogProps {
   open: boolean;
@@ -30,35 +30,40 @@ interface AppointmentDialogProps {
 const AppointmentDialog = ({ open, onOpenChange }: AppointmentDialogProps) => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [step, setStep] = useState(1);
-  const [selectedTime, setSelectedTime] = useState<string>('');
+  const [selectedTime, setSelectedTime] = useState<string>("");
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    consultationType: '',
+    name: "",
+    email: "",
+    phone: "",
+    consultationType: "",
   });
 
   const timeSlots = [
-    '09:00 AM', '10:00 AM', '11:00 AM',
-    '12:00 PM', '02:00 PM', '03:00 PM',
-    '04:00 PM', '05:00 PM'
+    "09:00 AM",
+    "10:00 AM",
+    "11:00 AM",
+    "12:00 PM",
+    "02:00 PM",
+    "03:00 PM",
+    "04:00 PM",
+    "05:00 PM",
   ];
 
   const consultationTypes = [
-    'Student Visa Consultation',
-    'Work Visa Consultation',
-    'PR Consultation',
-    'Business Visa Consultation',
-    'Family Immigration Consultation'
+    "Student Visa Consultation",
+    "Work Visa Consultation",
+    "PR Consultation",
+    "Business Visa Consultation",
+    "Family Immigration Consultation",
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSelectChange = (value: string) => {
-    setFormData(prev => ({ ...prev, consultationType: value }));
+    setFormData((prev) => ({ ...prev, consultationType: value }));
   };
 
   const handleTimeSelect = (time: string) => {
@@ -66,8 +71,13 @@ const AppointmentDialog = ({ open, onOpenChange }: AppointmentDialogProps) => {
   };
 
   const validateStep1 = () => {
-    if (!formData.name || !formData.email || !formData.phone || !formData.consultationType) {
-      toast.error('Please fill in all required fields');
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.consultationType
+    ) {
+      toast.error("Please fill in all required fields");
       return false;
     }
     return true;
@@ -75,7 +85,7 @@ const AppointmentDialog = ({ open, onOpenChange }: AppointmentDialogProps) => {
 
   const validateStep2 = () => {
     if (!date || !selectedTime) {
-      toast.error('Please select both date and time');
+      toast.error("Please select both date and time");
       return false;
     }
     return true;
@@ -87,19 +97,19 @@ const AppointmentDialog = ({ open, onOpenChange }: AppointmentDialogProps) => {
 
     try {
       // Here you would typically make an API call to save the appointment
-      toast.success('Appointment booked successfully!');
+      toast.success("Appointment booked successfully!");
       onOpenChange(false);
       setStep(1);
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        consultationType: '',
+        name: "",
+        email: "",
+        phone: "",
+        consultationType: "",
       });
-      setSelectedTime('');
+      setSelectedTime("");
       setDate(new Date());
     } catch (error) {
-      toast.error('Failed to book appointment. Please try again.');
+      toast.error("Failed to book appointment. Please try again.");
     }
   };
 
