@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
@@ -10,12 +10,10 @@ import {
   Users,
   Sparkles,
   BookOpen,
-  Target,
   Plane,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ConsultationDialog from "./ConsultationDialog";
-import { useState } from "react";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -44,10 +42,10 @@ const Hero = () => {
   ];
 
   return (
-    <div ref={containerRef}>
-      <section className="relative min-h-screen pt-20">
+    <div ref={containerRef} className="relative overflow-hidden">
+      <section className="relative min-h-screen pt-20 pb-52">
         {/* Video Background */}
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden z-0">
           <video
             ref={videoRef}
             className="absolute w-full h-full object-cover"
@@ -57,13 +55,13 @@ const Hero = () => {
             playsInline
           >
             <source
-              src="https://res.cloudinary.com/dka63iohc/video/upload/v1743511417/6013002_People_Person_1920x1080_vz6omj.mp4"
+              src="https://res.cloudinary.com/dka63iohc/video/upload/v1744996007/nji-hero_ltq8dm.mp4"
               type="video/mp4"
             />
           </video>
           <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]" />
 
-          {/* Flying planes */}
+          {/* Flying Planes */}
           {[...Array(3)].map((_, i) => (
             <motion.div
               key={i}
@@ -108,7 +106,7 @@ const Hero = () => {
             </motion.div>
           ))}
 
-          {/* Animated dots */}
+          {/* Animated Dots */}
           {[...Array(50)].map((_, i) => (
             <motion.div
               key={i}
@@ -130,9 +128,10 @@ const Hero = () => {
           ))}
         </div>
 
+        {/* Hero Content */}
         <motion.div
           style={{ opacity, scale }}
-          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16"
+          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -168,17 +167,19 @@ const Hero = () => {
               </Button>
             </div>
           </motion.div>
+        </motion.div>
 
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+        {/* Stats - now at the bottom */}
+        <div className="relative z-10 mt-20 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm text-white mb-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#FAA71A]/20 text-[#FAA71A] mb-4 hover:scale-110 transition-transform">
                   <stat.icon className="h-6 w-6" />
                 </div>
                 <div className="text-3xl font-bold text-white mb-2">
@@ -188,21 +189,25 @@ const Hero = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        {/* Wave SVG */}
-        <div className="absolute bottom-0 left-0 right-0">
+        {/* Gradient Wave */}
+        <div className="absolute bottom-0 left-0 right-0 z-0">
           <svg
             viewBox="0 0 1440 320"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="text-white/10"
+            className="w-full h-auto"
           >
+            <defs>
+              <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#FAA71A" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#13294E" stopOpacity="1" />
+              </linearGradient>
+            </defs>
             <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M0 192L48 197.3C96 203 192 213 288 192C384 171 480 117 576 117.3C672 117 768 171 864 197.3C960 224 1056 224 1152 208C1248 192 1344 160 1392 144L1440 128V320H1392C1344 320 1248 320 1152 320C1056 320 960 320 864 320C768 320 672 320 576 320C480 320 384 320 288 320C192 320 96 320 48 320H0V192Z"
-              fill="currentColor"
+              fill="url(#waveGradient)"
+              fillOpacity="1"
+              d="M0 192L48 197.3C96 203 192 213 288 192C384 171 480 117 576 117.3C672 117 768 171 864 197.3C960 224 1056 224 1152 208C1248 192 1344 160 1392 144L1440 128V320H0V192Z"
             />
           </svg>
         </div>

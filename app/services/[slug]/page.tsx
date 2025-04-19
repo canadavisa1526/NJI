@@ -230,11 +230,11 @@ const ServicePage = () => {
 
       {/* Details Section */}
       <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
-                <div className="absolute top-20 left-20 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
-                <div className="absolute top-40 right-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
-                <div className="absolute bottom-20 left-1/2 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
-              </div>
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
+          <div className="absolute top-40 right-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
+          <div className="absolute bottom-20 left-1/2 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
+        </div>
         <ShapePattern variant="circles" className="z-0" color="orange" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -295,7 +295,7 @@ const ServicePage = () => {
               className="bg-card rounded-2xl p-8 shadow-xl border border-border/50 relative overflow-hidden"
             >
               {/* <ShapePattern variant="circles" className="z-0" /> */}
-              
+
               <div className="relative z-10 align-middle">
                 <h3 className="text-2xl font-bold text-foreground mb-6">
                   Inquire About This Service

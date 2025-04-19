@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
   ShieldCheck,
   Users,
@@ -9,38 +9,38 @@ import {
   Award,
   CheckCircle,
   ThumbsUp,
-} from 'lucide-react';
+} from "lucide-react";
 
 const reasons = [
   {
     icon: ShieldCheck,
-    title: 'Licensed & Certified',
-    description: 'Registered immigration consultants with proven expertise',
+    title: "Licensed & Certified",
+    description: "Registered immigration consultants with proven expertise",
   },
   {
     icon: Users,
-    title: 'Expert Team',
-    description: 'Dedicated professionals with years of experience',
+    title: "Expert Team",
+    description: "Dedicated professionals with years of experience",
   },
   {
     icon: Clock,
-    title: 'Fast Processing',
-    description: 'Efficient handling of visa applications and paperwork',
+    title: "Fast Processing",
+    description: "Efficient handling of visa applications and paperwork",
   },
   {
     icon: Award,
-    title: 'High Success Rate',
-    description: '98% visa approval success rate across multiple countries',
+    title: "High Success Rate",
+    description: "98% visa approval success rate across multiple countries",
   },
   {
     icon: CheckCircle,
-    title: 'End-to-End Support',
-    description: 'From application to settlement, we’ve got you covered',
+    title: "End-to-End Support",
+    description: "From application to settlement, we’ve got you covered",
   },
   {
     icon: ThumbsUp,
-    title: 'Personalized Service',
-    description: 'We understand your goals and tailor every step accordingly',
+    title: "Personalized Service",
+    description: "We understand your goals and tailor every step accordingly",
   },
 ];
 
@@ -70,10 +70,18 @@ const WhyChooseUs = () => {
   return (
     <section className="relative py-20 bg-gradient-to-b from-white to-orange-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
       {/* Decorative SVG Background */}
-      <svg className="absolute top-0 left-0 w-72 h-72 text-orange-100 dark:text-orange-900/10" fill="currentColor" viewBox="0 0 200 200">
+      <svg
+        className="absolute top-0 left-0 w-72 h-72 text-orange-100 dark:text-orange-900/10"
+        fill="currentColor"
+        viewBox="0 0 200 200"
+      >
         <circle cx="100" cy="100" r="100" />
       </svg>
-      <svg className="absolute bottom-0 right-0 w-96 h-96 text-blue-100 dark:text-blue-900/10" fill="currentColor" viewBox="0 0 200 200">
+      <svg
+        className="absolute bottom-0 right-0 w-96 h-96 text-blue-100 dark:text-blue-900/10"
+        fill="currentColor"
+        viewBox="0 0 200 200"
+      >
         <circle cx="100" cy="100" r="100" />
       </svg>
 
@@ -81,10 +89,12 @@ const WhyChooseUs = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-            Why Choose <span className="text-orange-500">New Journey Immigration</span>?
+            Why Choose{" "}
+            <span className="text-orange-500">New Journey Immigration</span>?
           </h2>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            We're committed to making your immigration journey smooth, secure, and successful.
+            We're committed to making your immigration journey smooth, secure,
+            and successful.
           </p>
         </div>
 

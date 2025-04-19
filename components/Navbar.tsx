@@ -1,5 +1,7 @@
 "use client";
 import Logo from "@/public/logo.png";
+import LightLogo from "@/public/svg/Asset_4.svg";
+import DarkLogo from "@/public/svg/Asset_3.svg";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,13 +43,14 @@ const Button = dynamic(
 
 import AppointmentDialog from "./AppointmentDialog";
 import ConsultationDialog from "./ConsultationDialog";
+import { NavItem } from "@/types/navbar";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
@@ -81,21 +84,6 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  interface SubMenuItem {
-    title: string;
-    icon: any;
-    href: string;
-    description?: string;
-  }
-
-  interface NavItem {
-    title: string;
-    icon: any;
-    href?: string;
-    onClick?: () => void;
-    submenu?: SubMenuItem[];
-  }
 
   const navItems: NavItem[] = [
     // {
@@ -221,20 +209,20 @@ const Navbar = () => {
     },
   ];
 
+  const isDark = theme === "dark" || resolvedTheme === "dark";
   const LogoSVG = () => (
-    <div className="flex items-center space-x-1 ">
-      <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-15 md:h-15">
-        <div className="absolute inset-0 flex items-center justify-center z-20  overflow-hidden">
-          <Image src={Logo} alt="logo" fill className="object-cover z-20" />
+    <div className="flex items-center">
+      <div className="relative w-48 h-16 sm:w-36 sm:h-12 md:w-60 md:h-20">
+        <div className="absolute inset-0 flex items-center justify-center z-20 overflow-hidden">
+          <Image
+            src={isDark ? DarkLogo : LightLogo}
+            alt="logo"
+            fill
+            className="object-contain z-20"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority
+          />
         </div>
-      </div>
-      <div className="flex flex-col leading-tight">
-        <span className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white">
-          IMMIGRATION
-        </span>
-        <span className="text-[10px] sm:text-xs md:text-sm text-gray-500 dark:text-gray-400">
-          Your Education Journey
-        </span>
       </div>
     </div>
   );
