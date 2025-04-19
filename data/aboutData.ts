@@ -92,14 +92,13 @@ export const teamMembers = [
   {
     name: "Dimple Nayak",
     role: "Director of Canada Branch",
-    image:
-      "team/dimple.jpeg",
+    image: "team/dimple.jpeg",
   },
   {
     name: "Vinay Bhojak",
     role: "Branch Manager (North Gujarat)",
     image:
-      "/team/vinay.jpg",
+      "https://res.cloudinary.com/dka63iohc/image/upload/v1745101802/vinay_vfcqod.jpg",
   },
   {
     name: "Monika Nayak",
