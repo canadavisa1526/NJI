@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { FAQ } from '@/lib/services';
+import { FAQ } from '@/data/services-data';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface FAQAccordionProps {
