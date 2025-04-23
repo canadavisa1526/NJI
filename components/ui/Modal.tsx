@@ -6,15 +6,12 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
-  onSubmit: () => void;
+  onSubmit?: () => void;
   children: React.ReactNode;
 }
 
-export const Modal = ({ isOpen, onClose, title, onSubmit, children }: ModalProps) => {
-  const handleFormSubmit = () => {
-    onSubmit(); // Trigger onSubmit when the form is submitted
-    onClose();  // Close the modal after submission
-  };
+export const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
+
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>

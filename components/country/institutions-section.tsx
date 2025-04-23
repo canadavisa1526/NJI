@@ -1,7 +1,8 @@
 import Image from 'next/image';
-import { DetailedCountry } from '@/types/country';
+// import { DetailedCountry } from '@/types/country';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { ExternalLink, Trophy, MapPin, GraduationCap } from 'lucide-react';
+import { DetailedCountry } from '@/types/country';
 
 interface InstitutionsSectionProps {
   country: DetailedCountry;
@@ -49,7 +50,7 @@ export function InstitutionsSection({ country }: InstitutionsSectionProps) {
                 
                 <div className="flex items-center text-sm text-muted-foreground">
                   <GraduationCap size={14} className="mr-1" />
-                  {institution.programs} Programs
+                  {/* {institution?.programs || 0} Programs */}
                 </div>
               </CardContent>
               
