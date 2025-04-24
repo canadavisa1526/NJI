@@ -22,7 +22,7 @@ export default function CountriesList({ countries }: CountriesListProps) {
       <h2 className="text-2xl font-bold text-[#13294E] dark:text-white mb-6 border-b border-[#AFC1DB] dark:border-gray-700 pb-2">
         {isGlobal ? "Coverage" : "Countries Covered"}
       </h2>
-      <CountrySlider />
+      {/* <CountrySlider /> */}
       {isGlobal ? (
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

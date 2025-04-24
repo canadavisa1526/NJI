@@ -12,6 +12,7 @@ export interface Country {
 }
 
 export interface DetailedCountry extends Country {
+  about: About;
   whyChoose: string[];
   topInstitutions: Institution[];
   topCourses: Course[];
@@ -20,6 +21,12 @@ export interface DetailedCountry extends Country {
   costOfStudy: CostInfo;
   successStories: SuccessStory[];
   faqs: FAQ[];
+}
+
+export interface About {
+  description: string;
+  keyPoints: string[];
+  image: string;
 }
 
 export interface Institution {
@@ -68,4 +75,11 @@ export interface SuccessStory {
 export interface FAQ {
   question: string;
   answer: string;
+}
+export interface CountryInquiry {
+  name: string;
+  email: string;
+  phone: string;
+  country: string;
+  message: string;
 }

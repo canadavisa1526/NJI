@@ -104,6 +104,6 @@ export const teamMembers = [
     name: "Monika",
     role: "Account Manager",
     image:
-      "team/monika.jpeg",
+      "https://res.cloudinary.com/dka63iohc/image/upload/v1745486517/WhatsApp_Image_2025-04-22_at_8.32.03_PM_tysfmr.jpg",
   },
 ];

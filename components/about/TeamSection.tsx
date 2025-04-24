@@ -55,13 +55,13 @@ const TeamSection = () => {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#13294e]/70 via-[#13294e]/40 to-transparent dark:from-black dark:via-black/60 dark:to-black/10" />
       <div className="absolute bottom-4 left-4 right-4 px-4">
-        <div className="bg-white dark:bg-[#13294e] backdrop-blur-md rounded-xl p-4 shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
+        <div className="bg-white dark:bg-[#13294e] backdrop-blur-md rounded-xl p-1 shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
           <h3 className="text-lg font-bold text-[#13294e] dark:text-white text-center">
             {member.name}
           </h3>
-          <p className="text-[#faa71a] font-semibold text-sm text-center mt-1">
+          {/* <p className="text-[#faa71a] font-semibold text-sm text-center mt-1">
             {member.role}
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

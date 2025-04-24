@@ -20,7 +20,7 @@ export default function ContactPage() {
       <div className="bg-[#F8FAFC] dark:bg-[#1E3A8A] py-8 md:py-16">
         <StatsSection />
       </div>
-      <CountrySlider />
+      {/* <CountrySlider /> */}
       <ContactInfo />
       <LocationsMap />
       <PartnerBenefits />

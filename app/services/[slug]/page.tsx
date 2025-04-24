@@ -116,7 +116,7 @@ export default function ServiceDetailsPage() {
             >
               <ServiceBenefits benefits={service.benefits} />
             </motion.section>
-          
+
             <motion.section
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

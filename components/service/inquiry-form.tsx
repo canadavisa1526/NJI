@@ -30,13 +30,11 @@ export default function InquiryForm({
     const newErrors: Record<string, string> = {};
 
     if (!formData.name.trim()) newErrors.name = "Name is required";
-
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Please enter a valid email";
     }
-
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
     } else if (
@@ -44,7 +42,6 @@ export default function InquiryForm({
     ) {
       newErrors.phone = "Please enter a valid phone number";
     }
-
     if (!formData.service) newErrors.service = "Please select a service";
 
     setErrors(newErrors);
@@ -66,10 +63,8 @@ export default function InquiryForm({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
     if (validateForm()) {
       setIsSubmitting(true);
-
       setTimeout(() => {
         setIsSubmitting(false);
         setIsSubmitted(true);
@@ -80,7 +75,6 @@ export default function InquiryForm({
           service: defaultService || "",
           message: "",
         });
-
         setTimeout(() => setIsSubmitted(false), 5000);
       }, 1000);
     }
@@ -125,19 +119,13 @@ export default function InquiryForm({
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className={`w-full px-3 py-2 bg-white dark:bg-gray-700 border rounded-md shadow-sm focus:ring-[#FAA71A] focus:border-[#FAA71A] ${
-                errors.name
-                  ? "border-red-300 dark:border-red-500"
-                  : "border-gray-300 dark:border-gray-600"
-              } dark:text-white dark:placeholder-[#AFC1DB]`}
+              className={`w-full px-3 py-2 bg-transparent border rounded-md shadow-sm focus:ring-[#FAA71A] focus:border-[#FAA71A] ${
+                errors.name ? "border-red-300 dark:border-red-500" : "border-gray-300 dark:border-gray-600"
+              } text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-[#AFC1DB]`}
               placeholder="John Doe"
             />
             {errors.name && (
-              <motion.p
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-red-500 dark:text-red-400 text-xs mt-1 flex items-center"
-              >
+              <motion.p initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }} className="text-red-500 dark:text-red-400 text-xs mt-1 flex items-center">
                 <AlertCircle className="h-3 w-3 mr-1" />
                 {errors.name}
               </motion.p>
@@ -155,19 +143,13 @@ export default function InquiryForm({
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-3 py-2 bg-white dark:bg-gray-700 border rounded-md shadow-sm focus:ring-[#FAA71A] focus:border-[#FAA71A] ${
-                errors.email
-                  ? "border-red-300 dark:border-red-500"
-                  : "border-gray-300 dark:border-gray-600"
-              } dark:text-white dark:placeholder-[#AFC1DB]`}
+              className={`w-full px-3 py-2 bg-transparent border rounded-md shadow-sm focus:ring-[#FAA71A] focus:border-[#FAA71A] ${
+                errors.email ? "border-red-300 dark:border-red-500" : "border-gray-300 dark:border-gray-600"
+              } text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-[#AFC1DB]`}
               placeholder="john@example.com"
             />
             {errors.email && (
-              <motion.p
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-red-500 dark:text-red-400 text-xs mt-1 flex items-center"
-              >
+              <motion.p initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }} className="text-red-500 dark:text-red-400 text-xs mt-1 flex items-center">
                 <AlertCircle className="h-3 w-3 mr-1" />
                 {errors.email}
               </motion.p>
@@ -185,19 +167,13 @@ export default function InquiryForm({
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className={`w-full px-3 py-2 bg-white dark:bg-gray-700 border rounded-md shadow-sm focus:ring-[#FAA71A] focus:border-[#FAA71A] ${
-                errors.phone
-                  ? "border-red-300 dark:border-red-500"
-                  : "border-gray-300 dark:border-gray-600"
-              } dark:text-white dark:placeholder-[#AFC1DB]`}
+              className={`w-full px-3 py-2 bg-transparent border rounded-md shadow-sm focus:ring-[#FAA71A] focus:border-[#FAA71A] ${
+                errors.phone ? "border-red-300 dark:border-red-500" : "border-gray-300 dark:border-gray-600"
+              } text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-[#AFC1DB]`}
               placeholder="+1 (123) 456-7890"
             />
             {errors.phone && (
-              <motion.p
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-red-500 dark:text-red-400 text-xs mt-1 flex items-center"
-              >
+              <motion.p initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }} className="text-red-500 dark:text-red-400 text-xs mt-1 flex items-center">
                 <AlertCircle className="h-3 w-3 mr-1" />
                 {errors.phone}
               </motion.p>
@@ -214,11 +190,9 @@ export default function InquiryForm({
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className={`w-full appearance-none px-3 py-2 pr-10 bg-white dark:bg-gray-700 border rounded-md shadow-sm focus:ring-[#FAA71A] focus:border-[#FAA71A] ${
-                errors.service
-                  ? "border-red-300 dark:border-red-500"
-                  : "border-gray-300 dark:border-gray-600"
-              } dark:text-white`}
+              className={`w-full appearance-none px-3 py-2 pr-10 bg-transparent border rounded-md shadow-sm focus:ring-[#FAA71A] focus:border-[#FAA71A] ${
+                errors.service ? "border-red-300 dark:border-red-500" : "border-gray-300 dark:border-gray-600"
+              } text-black dark:text-white`}
             >
               <option value="">Select a service</option>
               {services.map((service) => (
@@ -229,11 +203,7 @@ export default function InquiryForm({
             </select>
             <ChevronDown className="absolute right-3 top-[38px] pointer-events-none h-4 w-4 text-[#FAA71A]" />
             {errors.service && (
-              <motion.p
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-red-500 dark:text-red-400 text-xs mt-1 flex items-center"
-              >
+              <motion.p initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }} className="text-red-500 dark:text-red-400 text-xs mt-1 flex items-center">
                 <AlertCircle className="h-3 w-3 mr-1" />
                 {errors.service}
               </motion.p>
@@ -251,7 +221,7 @@ export default function InquiryForm({
               rows={3}
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-[#FAA71A] focus:border-[#FAA71A] dark:text-white dark:placeholder-[#AFC1DB]"
+              className="w-full px-3 py-2 bg-transparent border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-[#FAA71A] focus:border-[#FAA71A] text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-[#AFC1DB]"
               placeholder="Your inquiry details..."
             ></textarea>
           </div>
