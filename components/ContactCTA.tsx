@@ -11,7 +11,7 @@ import dynamic from "next/dynamic";
 // Dynamically import Lottie with SSR disabled
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
-import paperPlaneAnim from "@/public/Animation-1.json";
+// import paperPlaneAnim from "@/public/Animation-1.json";
 // import paperPlane from "@/public/Animation-3.json";
 
 const ContactCTA = () => {
@@ -112,10 +112,10 @@ const ContactCTA = () => {
 
       {/* Floating Lottie Animations */}
       <div className="absolute top-12 right-12 z-10 w-10 h-10 opacity-80 pointer-events-none">
-        <Lottie animationData={paperPlaneAnim} loop />
+        {/* <Lottie animationData={paperPlaneAnim} loop /> */}
       </div>
       <div className="absolute top-12 left-12 z-10 w-10 h-10 opacity-80 pointer-events-none">
-        <Lottie animationData={paperPlaneAnim} loop />
+        {/* <Lottie animationData={paperPlaneAnim} loop /> */}
       </div>
 
       {/* Main CTA Box */}
