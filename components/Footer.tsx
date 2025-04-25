@@ -12,7 +12,7 @@ import {
   Twitter,
 } from "lucide-react";
 import Image from "next/image";
-import LightLogo from "@/public/svg/Asset_2.svg";
+import LightLogo from "@/public/svg/Asset_4.svg";
 import DarkLogo from "@/public/svg/Asset_1.svg";
 import { useTheme } from "next-themes";
 
@@ -27,10 +27,10 @@ const Footer = () => {
     { name: "Study in USA", href: "/country/usa" },
     { name: "Study in Australia", href: "/country/australia" },
     { name: "Study in UK", href: "/country/uk" },
-    { name: "IELTS Coaching", href: "#" },
-    { name: "PTE Coaching", href: "#" },
-    { name: "Student Visa", href: "#" },
-    { name: "PR Visa", href: "#" },
+    { name: "IELTS Coaching", href: "/services/coaching" },
+    { name: "Study Visa", href: "/services/study-visa" },
+    { name: "Visitor Visa", href: "/services/visitor-visa" },
+    { name: "PR Visa", href: "/services/permanent-residency" },
   ];
 
   const quickLinks = [
@@ -47,7 +47,7 @@ const Footer = () => {
     <div className="flex items-center">
       <div className="relative w-64 h-24 md:w-72 md:h-28">
         <Image
-          src={isDark ? DarkLogo : LightLogo}
+          src={LightLogo}
           alt="New Journey Immigration Logo"
           fill
           className="object-contain"
@@ -73,16 +73,28 @@ const Footer = () => {
               abroad with expert guidance at every step.
             </p>
             <div className="flex space-x-4">
-              <Link href="https://www.facebook.com/share/1BTpFournw/?mibextid=wwXIfr" className="text-gray-400 hover:text-[#faa71a] transition-colors">
+              <Link
+                href="https://www.facebook.com/share/1BTpFournw/?mibextid=wwXIfr"
+                className="text-gray-400 hover:text-[#faa71a] transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
               </Link>
-              <Link href="https://www.instagram.com/new.journey.holiday?igsh=MXNlZ216bTdmOHJjZw==" className="text-gray-400 hover:text-[#faa71a] transition-colors">
+              <Link
+                href="https://www.instagram.com/new.journey.holiday?igsh=MXNlZ216bTdmOHJjZw=="
+                className="text-gray-400 hover:text-[#faa71a] transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="https://twitter.com/newjourneyimm" className="text-gray-400 hover:text-[#faa71a] transition-colors">
+              <Link
+                href="https://twitter.com/newjourneyimm"
+                className="text-gray-400 hover:text-[#faa71a] transition-colors"
+              >
                 <Twitter className="h-5 w-5" />
               </Link>
-              <Link href="https://www.linkedin.com/company/newjourney-i/about/" className="text-gray-400 hover:text-[#faa71a] transition-colors">
+              <Link
+                href="https://www.linkedin.com/company/newjourney-i/about/"
+                className="text-gray-400 hover:text-[#faa71a] transition-colors"
+              >
                 <Linkedin className="h-5 w-5" />
               </Link>
             </div>
@@ -91,12 +103,15 @@ const Footer = () => {
           {/* Feature Links */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-6 bg-gradient-to-r from-[#faa71a] to-orange-600 bg-clip-text text-transparent">
-              Our Services
+              Quick Links
             </h3>
             <ul className="space-y-3">
               {featureLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-300 hover:text-[#faa71a] flex items-center transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-[#faa71a] flex items-center transition-colors"
+                  >
                     <span className="w-1.5 h-1.5 bg-[#faa71a] rounded-full mr-2" />
                     {link.name}
                   </Link>
@@ -108,12 +123,15 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-6 bg-gradient-to-r from-[#faa71a] to-orange-600 bg-clip-text text-transparent">
-              Quick Links
+              Our Services
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-300 hover:text-[#faa71a] flex items-center transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-[#faa71a] flex items-center transition-colors"
+                  >
                     <span className="w-1.5 h-1.5 bg-[#faa71a] rounded-full mr-2" />
                     {link.name}
                   </Link>
@@ -129,10 +147,12 @@ const Footer = () => {
             </h3>
             <div className="space-y-6">
               <div>
-                <h4 className="text-[#faa71a] font-semibold mb-3">India Office</h4>
+                <h4 className="text-[#faa71a] font-semibold mb-3">
+                  India Office
+                </h4>
                 <p className="flex items-start space-x-3 text-gray-300 mb-2">
                   <MapPin className="h-5 w-5 mt-1 text-[#faa71a]" />
-                  <span>123 Main Street, Mehsana, Gujarat, India</span>
+                  <span>Vaishnodevi circle, SG Highway, Ahmedbad</span>
                 </p>
                 <p className="text-gray-300 flex items-center space-x-3 mb-2">
                   <Mail className="h-5 w-5 text-[#faa71a]" />
@@ -145,14 +165,16 @@ const Footer = () => {
               </div>
 
               <div>
-                <h4 className="text-[#faa71a] font-semibold mb-3">Canada Office</h4>
+                <h4 className="text-[#faa71a] font-semibold mb-3">
+                  Canada Office
+                </h4>
                 <p className="flex items-start space-x-3 text-gray-300 mb-2">
                   <MapPin className="h-5 w-5 mt-1 text-[#faa71a]" />
-                  <span>789 College Street, Toronto, ON</span>
+                  <span>Steels Ave W, Brampton,ON, Canada, L6Y 2R7</span>
                 </p>
                 <p className="text-gray-300 flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-[#faa71a]" />
-                  <span>+1 XXXXXXXXXX</span>
+                  <span>+1 437-663-5437</span>
                 </p>
               </div>
             </div>
@@ -163,9 +185,13 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-400">
             © {currentYear} New Journey Immigration. All rights reserved |{" "}
-            <Link href="#" className="hover:text-[#faa71a] transition-colors">Privacy Policy</Link>{" "}
+            <Link href="#" className="hover:text-[#faa71a] transition-colors">
+              Privacy Policy
+            </Link>{" "}
             |{" "}
-            <Link href="#" className="hover:text-[#faa71a] transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-[#faa71a] transition-colors">
+              Terms of Service
+            </Link>
           </p>
         </div>
       </div>

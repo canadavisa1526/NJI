@@ -37,6 +37,16 @@ export default function PartnerBenefits() {
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Join our network and grow your business with us
           </p>
+
+          {/* Open Locations */}
+          {/* <motion.div
+            variants={fadeInUp}
+            className="mt-4 text-sm md:text-base text-[#13294e] dark:text-white font-medium"
+          >
+            <span className="inline-block bg-[#faa71a]/20 dark:bg-white/10 text-[#13294e] dark:text-white px-4 py-2 rounded-xl">
+              📍 Open for: Ahmedabad, Surat, Vadodara, Mumbai
+            </span>
+          </motion.div> */}
         </motion.div>
 
         <motion.div

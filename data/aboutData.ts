@@ -75,7 +75,7 @@ export const founder = {
   name: "Karan Bhojak",
   role: "Founder & CEO",
   image:
-    "team/karan.jpeg",
+    "https://res.cloudinary.com/dka63iohc/image/upload/v1745562355/WhatsApp_Image_2025-04-22_at_9.30.16_PM_2_wnpf49.jpg",
   quote: "Immigration shouldn't be overwhelming, it should be empowering.",
   description: `Driven by a strong belief that success isn't just about crossing borders but about making meaningful connections, Karan Bhojak's journey in founding New Journey Immigration began with a simple yet powerful idea. With years of hands-on experience in the industry, he recognized that the immigration field lacked true transparency and personalized support.
 

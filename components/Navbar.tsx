@@ -1,5 +1,5 @@
 "use client";
-import Logo from "@/public/logo.png";
+
 import LightLogo from "@/public/svg/Asset_4.svg";
 import DarkLogo from "@/public/svg/Asset_3.svg";
 import dynamic from "next/dynamic";
@@ -348,7 +348,14 @@ const Navbar = () => {
             >
               <Button
                 className="bg-[#FAA71A] hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                onClick={() => setIsAppointmentOpen(true)}
+                onClick={() => {
+                  // setIsAppointmentOpen(true)
+                  window.open(
+                    "https://calendly.com/d/cnc3-xq7-62j/15-minute-meeting",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }}
               >
                 Book Consultation
               </Button>
@@ -472,8 +479,13 @@ const Navbar = () => {
                 <Button
                   className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
                   onClick={() => {
-                    setIsAppointmentOpen(true);
-                    setIsOpen(false);
+                    window.open(
+                      "https://calendly.com/d/cnc3-xq7-62j/15-minute-meeting",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                    // setIsAppointmentOpen(true);
+                    // setIsOpen(false);
                   }}
                 >
                   Book Consultation

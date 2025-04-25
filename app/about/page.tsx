@@ -588,9 +588,10 @@ import React from 'react';
 import HeroSection from '@/components/about/HeroSection';
 import StatsSection from '@/components/about/StatsSection';
 import FounderSection from '@/components/about/FounderSection';
-import TeamSection from '@/components/about/TeamSection';
+// import TeamSection from '@/components/about/TeamSection';
 import ValuesSection from '@/components/about/ValuesSection';
 import GlobalPresenceSection from '@/components/about/GlobalPresenceSection';
+import { TeamSection } from '@/components/about/team-section';
 
 const AboutPage = () => {
   return (
@@ -598,7 +599,8 @@ const AboutPage = () => {
       <HeroSection />
       <StatsSection />
       <FounderSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
+      <TeamSection/>
       <ValuesSection />
       <GlobalPresenceSection />
     </div>

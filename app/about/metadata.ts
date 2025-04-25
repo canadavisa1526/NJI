@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "New Journey Immigration",
     images: [
       {
-        url: "https://newjourneyimmigration.com/images/about-og.jpg",
+        url: "/svg/Asset_4.svg",
         width: 1200,
         height: 630,
         alt: "New Journey Immigration - Global Education Experts",
@@ -47,6 +47,6 @@ export const metadata: Metadata = {
       "Get to know our team and services at New Journey Immigration. Your pathway to global education starts here.",
     site: "@newjourneyimmi", // Replace with actual handle
     creator: "@newjourneyimmi",
-    images: ["https://newjourneyimmigration.com/images/about-og.jpg"],
+    images: ["/svg/Asset_4.svg"],
   },
 };

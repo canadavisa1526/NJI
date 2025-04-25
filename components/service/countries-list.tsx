@@ -1,12 +1,50 @@
+"use client";
+
 import { MapPin, Globe } from "lucide-react";
 import { motion } from "framer-motion";
-import CountrySlider from "../CountryScroll/CountrySlider";
+import { useState, useEffect } from "react";
 
 interface CountriesListProps {
   countries: string[];
 }
 
+// Define a type for the flag data
+interface FlagData {
+  [key: string]: string;
+}
+
 export default function CountriesList({ countries }: CountriesListProps) {
+  const [flagMap, setFlagMap] = useState<FlagData>({});
+
+  useEffect(() => {
+    // Fetch flag URLs from the API
+    const fetchFlags = async () => {
+      const newFlagMap: FlagData = {};
+      for (const country of countries) {
+        try {
+          const response = await fetch(
+            `https://restcountries.com/v3.1/name/${country}`
+          );
+          if (!response.ok) {
+            console.error(`Failed to fetch flag for ${country}`);
+            continue;
+          }
+          const data = await response.json();
+          if (data && data[0] && data[0].flags && data[0].flags.svg) {
+            newFlagMap[country] = data[0].flags.svg;
+          } else {
+            console.error(`No flag found for ${country}`);
+          }
+        } catch (error) {
+          console.error(`Error fetching flag for ${country}:`, error);
+        }
+      }
+      setFlagMap(newFlagMap);
+    };
+
+    fetchFlags();
+  }, [countries]);
+
   if (!countries.length) return null;
 
   const isGlobal =
@@ -22,7 +60,7 @@ export default function CountriesList({ countries }: CountriesListProps) {
       <h2 className="text-2xl font-bold text-[#13294E] dark:text-white mb-6 border-b border-[#AFC1DB] dark:border-gray-700 pb-2">
         {isGlobal ? "Coverage" : "Countries Covered"}
       </h2>
-      {/* <CountrySlider /> */}
+
       {isGlobal ? (
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -44,10 +82,14 @@ export default function CountriesList({ countries }: CountriesListProps) {
               transition={{ delay: index * 0.1 }}
               className="flex items-center space-x-2 p-3 rounded-md bg-gray-50 dark:bg-gray-800 border border-[#AFC1DB]/20 dark:border-gray-700 transition-all hover:border-[#AFC1DB] dark:hover:border-[#FAA71A]/50 hover:shadow-sm"
             >
-              <MapPin className="h-4 w-4 text-[#FAA71A]" />
-              <span className="text-gray-700 dark:text-gray-300">
-                {country}
-              </span>
+              {flagMap[country] && (
+                <img
+                  src={flagMap[country]}
+                  alt={`${country} flag`}
+                  className="w-6 h-4 object-cover rounded-sm"
+                />
+              )}
+              <span className="text-gray-700 dark:text-gray-300">{country}</span>
             </motion.div>
           ))}
         </div>

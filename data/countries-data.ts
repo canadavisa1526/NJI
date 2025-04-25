@@ -670,7 +670,7 @@ export const countriesDetailData = {
   australia: {
     name: "Australia",
     slug: "australia",
-    flag: "https://media.licdn.com/dms/image/v2/D4D12AQEvF06uFdNKYQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1669614170195?e=2147483647&v=beta&t=v_oAbkyFP6grZuGDVas4EXqbPgAfMVSdMLeoQCG7YUU",
+    flag: "https://ychef.files.bbci.co.uk/1280x720/p0gp95cq.jpg",
     description: "Quality education in a beautiful setting",
     about: {
       description:

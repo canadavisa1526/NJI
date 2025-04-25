@@ -83,9 +83,15 @@ export default function ContactInfo() {
               >
                 Become a Partner
               </button>
-              <br />
-              <br />
-              <br />
+
+              <motion.div
+                variants={fadeInUp}
+                className="mt-4 text-sm md:text-base text-[#13294e] dark:text-white font-medium"
+              >
+                <span className="inline-block bg-[#faa71a]/20 dark:bg-white/10 text-[#13294e] dark:text-white px-4 py-2 rounded-xl">
+                  📍 Open for: Ahmedabad, Surat, Vadodara, Mumbai
+                </span>
+              </motion.div>
             </div>
 
             {/* Mission */}
