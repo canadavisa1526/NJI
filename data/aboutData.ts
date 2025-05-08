@@ -93,17 +93,41 @@ export const teamMembers = [
     name: "Dimple",
     role: "Director of Canada Branch",
     image: "team/dimple.jpeg",
+    bio: "20+ years of experience in Canadian immigration processes, guiding clients with personalized, transparent advice.",
+    location: "Toronto, Canada",
+    phone: "+1 (123) 456-7890",
+    socialLinks: {
+      linkedin: "https://linkedin.com/in/dimple",
+      email: "dimple@newjourneyimmigration.com",
+      website: "https://newjourneyimmigration.com",
+    },
   },
   {
     name: "Vinay",
     role: "Branch Manager (North Gujarat)",
     image:
       "https://res.cloudinary.com/dka63iohc/image/upload/v1745101802/vinay_vfcqod.jpg",
+    bio: "Instrumental in streamlining operations and ensuring outstanding client service in North Gujarat.",
+    location: "Mehsana, India",
+    phone: "+91 98765 43210",
+    socialLinks: {
+      linkedin: "https://linkedin.com/in/vinay",
+      email: "vinay@newjourneyimmigration.com",
+      twitter: "https://twitter.com/vinay",
+    },
   },
   {
     name: "Monika",
     role: "Account Manager",
     image:
       "https://res.cloudinary.com/dka63iohc/image/upload/v1745486517/WhatsApp_Image_2025-04-22_at_8.32.03_PM_tysfmr.jpg",
+    bio: "Financial backbone of NJI, ensuring precision and transparency in all financial operations.",
+    location: "Sydney, Australia",
+    phone: "+61 2 1234 5678",
+    socialLinks: {
+      linkedin: "https://linkedin.com/in/monika",
+      email: "monika@newjourneyimmigration.com",
+      website: "https://newjourneyimmigration.com",
+    },
   },
 ];

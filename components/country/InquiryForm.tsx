@@ -1,5 +1,6 @@
 "use client";
 
+import api from "@/lib/api";
 import { useState, FormEvent } from "react";
 
 interface InquiryFormProps {
@@ -14,6 +15,7 @@ export default function InquiryForm({ country }: InquiryFormProps) {
     message: "",
     howDidYouHear: "",
     agreeToTerms: false,
+    country: country, // Include the country from props
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -31,17 +33,21 @@ export default function InquiryForm({ country }: InquiryFormProps) {
     }
     if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
     if (!formData.message.trim()) newErrors.message = "Message is required";
-    if (!formData.agreeToTerms) newErrors.agreeToTerms = "You must agree to the terms";
+    if (!formData.agreeToTerms)
+      newErrors.agreeToTerms = "You must agree to the terms";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value, type } = e.target;
-    const checked = type === "checkbox" ? (e.target as HTMLInputElement).checked : undefined;
+    const checked =
+      type === "checkbox" ? (e.target as HTMLInputElement).checked : undefined;
 
     setFormData({
       ...formData,
@@ -53,22 +59,41 @@ export default function InquiryForm({ country }: InquiryFormProps) {
     }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const [submissionError, setSubmissionError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmissionError(null);
+
     if (validateForm()) {
       setIsSubmitting(true);
-      setTimeout(() => {
+
+      try {
+        // Send the form data to our API endpoint
+        const response = await api.post("/inquiry", formData);
+
+        if (response.data.success) {
+          // On successful submission
+          setIsSubmitted(true);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+            howDidYouHear: "",
+            agreeToTerms: false,
+            country: country,
+          });
+        } else {
+          // Handle API error response
+          setSubmissionError(response.data.error || "Failed to submit inquiry. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setSubmissionError("An error occurred while submitting your inquiry. Please try again later.");
+      } finally {
         setIsSubmitting(false);
-        setIsSubmitted(true);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-          howDidYouHear: "",
-          agreeToTerms: false,
-        });
-      }, 1500);
+      }
     }
   };
 
@@ -84,13 +109,26 @@ export default function InquiryForm({ country }: InquiryFormProps) {
             {isSubmitted ? (
               <div className="text-center py-8">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-                  <svg className="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <svg
+                    className="h-8 w-8 text-green-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-[#13294E] mb-2">Thank You!</h3>
+                <h3 className="text-2xl font-bold text-[#13294E] mb-2">
+                  Thank You!
+                </h3>
                 <p className="text-gray-600 mb-4">
-                  Your inquiry has been submitted successfully. Our team will get back to you shortly.
+                  Your inquiry has been submitted successfully. Our team will
+                  get back to you shortly.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
@@ -103,7 +141,10 @@ export default function InquiryForm({ country }: InquiryFormProps) {
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -112,15 +153,20 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors ${
+                      className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors text-black ${
                         errors.name ? "border-red-500" : "border-gray-300"
                       }`}
                     />
-                    {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                    )}
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -129,17 +175,24 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors ${
+                      className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors text-black ${
                         errors.email ? "border-red-500" : "border-gray-300"
                       }`}
                     />
-                    {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Phone Number <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -148,16 +201,23 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors ${
+                      className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors text-black ${
                         errors.phone ? "border-red-500" : "border-gray-300"
                       }`}
                     />
-                    {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
+                    {errors.phone && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {errors.phone}
+                      </p>
+                    )}
                   </div>
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="howDidYouHear" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="howDidYouHear"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     How did you hear about us?
                   </label>
                   <select
@@ -177,7 +237,10 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
@@ -186,12 +249,16 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors ${
+                    className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors text-black ${
                       errors.message ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder={`I'm interested in studying in ${country}...`}
                   />
-                  {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-500">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
 
                 <div className="mb-6">
@@ -204,22 +271,39 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                       onChange={handleChange}
                       className="mt-1 h-4 w-4 text-[#FAA71A] focus:ring-[#FAA71A] border-gray-300 rounded"
                     />
-                    <label htmlFor="agreeToTerms" className="ml-2 block text-sm text-gray-700">
+                    <label
+                      htmlFor="agreeToTerms"
+                      className="ml-2 block text-sm text-gray-700"
+                    >
                       I agree to the{" "}
-                      <a href="#" className="text-[#13294E] hover:text-[#FAA71A]">
+                      <a
+                        href="#"
+                        className="text-[#13294E] hover:text-[#FAA71A]"
+                      >
                         Terms and Conditions
                       </a>{" "}
                       and{" "}
-                      <a href="#" className="text-[#13294E] hover:text-[#FAA71A]">
+                      <a
+                        href="#"
+                        className="text-[#13294E] hover:text-[#FAA71A]"
+                      >
                         Privacy Policy
                       </a>{" "}
                       <span className="text-red-500">*</span>
                     </label>
                   </div>
                   {errors.agreeToTerms && (
-                    <p className="mt-1 text-sm text-red-500">{errors.agreeToTerms}</p>
+                    <p className="mt-1 text-sm text-red-500">
+                      {errors.agreeToTerms}
+                    </p>
                   )}
                 </div>
+
+                {submissionError && (
+                  <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-lg">
+                    <p>{submissionError}</p>
+                  </div>
+                )}
 
                 <div>
                   <button
@@ -419,8 +503,6 @@ export default function InquiryForm({ country }: InquiryFormProps) {
             </div>
           </div>
         </div>
-      
-     
       </div>
     </section>
   );

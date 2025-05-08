@@ -29,7 +29,7 @@ export default function ExploreCountriesSection({ currentCountry }: ExploreCount
               viewport={{ once: true }}
             >
               <Link 
-                href={`/countries/${country.slug}`}
+                href={`/country/${country.slug}`}
                 className="block group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
               >
                 <div className="relative h-48 overflow-hidden">

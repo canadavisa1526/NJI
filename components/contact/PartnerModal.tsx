@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import api from "@/lib/api";
+import { toast, useToast } from "@/hooks/use-toast";
 
 interface PartnerModalProps {
   isOpen: boolean;
@@ -27,7 +29,7 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
     referenceSource: "",
     website: "",
   });
-
+  const { toast } = useToast()
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -40,13 +42,24 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
+    try {
+      let res = await api.post("/business", formData);
+      console.log("Form submitted successfully:", res);
 
-    // Show success message and close modal
-    alert("Thank you for your interest! We'll get back to you soon.");
+      toast({
+        title: "Success!",
+        description: "Business created successfully.",
+      });
+    } catch (error: any) {
+      toast({
+        title: "error!",
+        description: error.message,
+        variant: "destructive",
+      });
+    }
     onClose();
   };
 

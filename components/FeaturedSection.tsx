@@ -1,8 +1,66 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { GraduationCap, Award, Globe2, Users } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+// CountUp component to animate numbers from 0 to target value
+const CountUp = ({
+  end,
+  suffix = "",
+  duration = 2,
+}: {
+  end: string;
+  suffix?: string;
+  duration?: number;
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const [count, setCount] = useState(0);
+
+  // Parse the numeric part of the end value
+  const numericEnd = parseInt(end.replace(/,/g, "").replace(/\D/g, ""));
+  const isNumeric = !isNaN(numericEnd);
+
+  useEffect(() => {
+    // Reset counter when component mounts or goes out of view
+    if (!isInView) {
+      setCount(0);
+      return;
+    }
+
+    // Start animation when in view
+    if (!isNumeric) return;
+
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+      const currentCount = Math.floor(progress * numericEnd);
+
+      setCount(currentCount);
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    };
+  }, [isInView, numericEnd, duration, isNumeric]);
+
+  return (
+    <div ref={ref} className="text-2xl font-bold text-[#faa71a]">
+      {isNumeric ? (isInView ? count.toLocaleString() : "0") + suffix : end}
+    </div>
+  );
+};
 
 const FeaturedSection = () => {
   const features = [
@@ -62,12 +120,15 @@ const FeaturedSection = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              <span className="text-[#faa71a]">Transform Your Future</span> with Global Education
+              <span className="text-[#faa71a]">Transform Your Future</span> with
+              Global Education
             </h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-10">
               Take the first step towards your international education journey
               with our{" "}
-              <span className="text-[#faa71a] font-semibold">expert support and guidance.</span>
+              <span className="text-[#faa71a] font-semibold">
+                expert support and guidance.
+              </span>
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
@@ -119,17 +180,13 @@ const FeaturedSection = () => {
                 <div className="bg-white/90 dark:bg-[#AFC1DB]/10 border border-gray-200 dark:border-white/20 backdrop-blur-md rounded-xl p-6 shadow-xl">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-[#faa71a]">
-                        15,000+
-                      </div>
+                      <CountUp end="15000" suffix="+" duration={2.5} />
                       <div className="text-sm text-gray-800 dark:text-white">
                         Students Placed
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-[#faa71a]">
-                        98%
-                      </div>
+                      <CountUp end="99" suffix="%" duration={2.5} />
                       <div className="text-sm text-gray-800 dark:text-white">
                         Success Rate
                       </div>

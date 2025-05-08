@@ -1,26 +1,27 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
+import api from "@/lib/api";
 
 const formSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().min(10, 'Phone number must be at least 10 digits'),
-  hearAbout: z.string().min(1, 'Please tell us how you heard about us'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(10, "Phone number must be at least 10 digits"),
+  hearAbout: z.string().min(1, "Please tell us how you heard about us"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
 interface CountryInquiryModalProps {
@@ -28,7 +29,10 @@ interface CountryInquiryModalProps {
   onSubmit: () => void;
 }
 
-export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalProps) {
+export function CountryInquiryModal({
+  country,
+  onSubmit,
+}: CountryInquiryModalProps) {
   const [isOpen, setIsOpen] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -36,11 +40,11 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
-      email: '',
-      phone: '',
-      hearAbout: '',
-      message: '',
+      name: "",
+      email: "",
+      phone: "",
+      hearAbout: "",
+      message: "",
     },
   });
 
@@ -48,15 +52,30 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
     try {
       setIsSubmitting(true);
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form submitted:', data);
+      let res = await api.post("/inquiry", {
+        ...data,
+        country,
+      });
+      // let res = await api.post("/inquiry", {
+      //   name: "John Doe",
+      //   email: "johndoe@example.com",
+      //   phone: "+1-234-567-8901",
+      //   hearAbout: "Google Ads",
+      //   message: "I would like to know more about your visa services.",
+      //   country: "Canada",
+      //   service: "Student Visa",
+      // });
+      console.log("Form submitted:", data);
+      console.log("Response:", res);
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
       setSubmitted(true);
       setTimeout(() => {
         setIsOpen(false);
         onSubmit();
       }, 2000);
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -83,7 +102,8 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
                   Study in {country}
                 </DialogTitle>
                 <DialogDescription className="text-gray-600 dark:text-gray-300">
-                  Fill out this form to receive detailed information about studying in {country}.
+                  Fill out this form to receive detailed information about
+                  studying in {country}.
                 </DialogDescription>
               </DialogHeader>
 
@@ -100,11 +120,14 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
                   </p>
                 </div>
               ) : (
-                <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4 mt-6">
+                <form
+                  onSubmit={form.handleSubmit(handleSubmit)}
+                  className="space-y-4 mt-6"
+                >
                   <div>
                     <Input
                       placeholder="Your Name"
-                      {...form.register('name')}
+                      {...form.register("name")}
                       className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700"
                     />
                     {form.formState.errors.name && (
@@ -118,7 +141,7 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
                     <Input
                       type="email"
                       placeholder="Email Address"
-                      {...form.register('email')}
+                      {...form.register("email")}
                       className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700"
                     />
                     {form.formState.errors.email && (
@@ -132,7 +155,7 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
                     <Input
                       type="tel"
                       placeholder="Phone Number"
-                      {...form.register('phone')}
+                      {...form.register("phone")}
                       className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700"
                     />
                     {form.formState.errors.phone && (
@@ -144,7 +167,7 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
 
                   <div>
                     <select
-                      {...form.register('hearAbout')}
+                      {...form.register("hearAbout")}
                       className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md"
                     >
                       <option value="">How did you hear about us?</option>
@@ -164,7 +187,7 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
                   <div>
                     <Textarea
                       placeholder={`I'm interested in studying in ${country}...`}
-                      {...form.register('message')}
+                      {...form.register("message")}
                       className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700"
                       rows={4}
                     />
@@ -181,7 +204,7 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
                       variant="outline"
                       onClick={() => {
                         setIsOpen(false);
-                        // onSubmit();
+                        onSubmit();
                       }}
                       className="border-gray-200 dark:border-gray-700"
                     >
@@ -198,7 +221,7 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
                           Submitting...
                         </div>
                       ) : (
-                        'Submit Inquiry'
+                        "Submit Inquiry"
                       )}
                     </Button>
                   </div>
@@ -209,7 +232,7 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
             {/* Info Side */}
             <div className="hidden md:block md:col-span-2 bg-gradient-to-br from-[#13294E] to-[#0d1b33] dark:from-[#FAA71A] dark:to-[#f39c00] text-white dark:text-[#13294E] p-8">
               <h3 className="text-xl font-semibold mb-6">Why Choose Us?</h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0 w-8 h-8 bg-white/10 dark:bg-[#13294E]/10 rounded-lg flex items-center justify-center">
@@ -250,7 +273,8 @@ export function CountryInquiryModal({ country, onSubmit }: CountryInquiryModalPr
 
               <div className="mt-8 pt-8 border-t border-white/10 dark:border-[#13294E]/10">
                 <p className="text-sm text-white/80 dark:text-[#13294E]/80">
-                  Join thousands of successful students who have achieved their dreams of studying abroad with our help.
+                  Join thousands of successful students who have achieved their
+                  dreams of studying abroad with our help.
                 </p>
               </div>
             </div>

@@ -56,11 +56,11 @@ const VisaSection: FC = () => {
               destination.
             </p>
 
-            <div>
+            {/* <div>
               <button className="bg-[#FAA71A] text-black px-6 py-3 rounded-xl text-sm font-semibold hover:bg-[#e69c14] transition-all shadow-md">
                 Get Free Consultation
               </button>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Image */}

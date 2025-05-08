@@ -45,13 +45,13 @@ const Footer = () => {
 
   const LogoSVG = () => (
     <div className="flex items-center">
-      <div className="relative w-64 h-24 md:w-72 md:h-28">
+      <div className="relative w-40 h-16 sm:w-48 sm:h-18 md:w-52 md:h-20">
         <Image
           src={LightLogo}
           alt="New Journey Immigration Logo"
           fill
           className="object-contain"
-          sizes="(max-width: 768px) 100vw, 33vw"
+          sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 208px"
           priority
         />
       </div>
@@ -80,18 +80,24 @@ const Footer = () => {
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.instagram.com/new.journey.holiday?igsh=MXNlZ216bTdmOHJjZw=="
                 className="text-gray-400 hover:text-[#faa71a] transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://twitter.com/newjourneyimm"
                 className="text-gray-400 hover:text-[#faa71a] transition-colors"
               >
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/company/newjourney-i/about/"
                 className="text-gray-400 hover:text-[#faa71a] transition-colors"
               >
@@ -152,7 +158,7 @@ const Footer = () => {
                 </h4>
                 <p className="flex items-start space-x-3 text-gray-300 mb-2">
                   <MapPin className="h-5 w-5 mt-1 text-[#faa71a]" />
-                  <span>Vaishnodevi circle, SG Highway, Ahmedbad</span>
+                  <span>Vaishnodevi circle, SG Highway, Ahmedabad, 382421</span>
                 </p>
                 <p className="text-gray-300 flex items-center space-x-3 mb-2">
                   <Mail className="h-5 w-5 text-[#faa71a]" />
@@ -160,7 +166,7 @@ const Footer = () => {
                 </p>
                 <p className="text-gray-300 flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-[#faa71a]" />
-                  <span>+91 XXXXXXXXXX</span>
+                  <span>+91 987-654-3210</span>
                 </p>
               </div>
 

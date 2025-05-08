@@ -8,14 +8,14 @@ import { TeamMemberCard } from "./team-member-card";
 
 export function TeamSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-white to-[#AFC1DB]/10 dark:from-[#13294E] dark:to-[#13294E]/90 overflow-hidden">
       <Container>
         <SectionHeader
           title="Our Leadership Team"
           subtitle="Meet the experts who make your immigration journey successful with years of experience and dedication to client success."
         />
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -23,11 +23,15 @@ export function TeamSection() {
         >
           {teamMembers.map((member, index) => (
             <TeamMemberCard
+              key={member.name}
               index={index}
               name={member.name}
               role={member.role}
+              bio={member.bio}
+              location={member.location}
+              phone={member.phone}
               image={member.image}
-              
+              socialLinks={member.socialLinks}
             />
           ))}
         </motion.div>

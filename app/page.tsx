@@ -6,6 +6,7 @@ import ProcessSteps from "@/components/ProcessSteps";
 import Testimonials from "@/components/Testimonials";
 import FeaturedSection from "@/components/FeaturedSection";
 import VisaSection from "@/components/VisaSection";
+import Partners from "@/components/Partners";
 import CountrySlider from "@/components/CountryScroll/CountrySlider";
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <WhyChooseUs />
       <Benefits />
       <ProcessSteps />
+      <Partners />
       <Testimonials />
     </main>
   );
