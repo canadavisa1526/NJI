@@ -90,10 +90,10 @@ const Footer = () => {
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://twitter.com/newjourneyimm"
+                href="https://youtube.com/@newjourneyimmigration?si=6xMRoyH27YPEdRvi"
                 className="text-gray-400 hover:text-[#faa71a] transition-colors"
               >
-                <Twitter className="h-5 w-5" />
+                <Youtube className="h-5 w-5" />
               </Link>
               <Link
                 target="_blank"
@@ -158,15 +158,15 @@ const Footer = () => {
                 </h4>
                 <p className="flex items-start space-x-3 text-gray-300 mb-2">
                   <MapPin className="h-5 w-5 mt-1 text-[#faa71a]" />
-                  <span>Vaishnodevi circle, SG Highway, Ahmedabad, 382421</span>
+                  <span>Mehsana, India</span>
                 </p>
                 <p className="text-gray-300 flex items-center space-x-3 mb-2">
                   <Mail className="h-5 w-5 text-[#faa71a]" />
-                  <span>info@nji.com</span>
+                  <span>support@newjourneyworld.com</span>
                 </p>
                 <p className="text-gray-300 flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-[#faa71a]" />
-                  <span>+91 987-654-3210</span>
+                  <span>+91 7623 043 499</span>
                 </p>
               </div>
 
@@ -191,13 +191,17 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-400">
             © {currentYear} New Journey Immigration. All rights reserved |{" "}
-            <Link href="#" className="hover:text-[#faa71a] transition-colors">
-              Privacy Policy
-            </Link>{" "}
-            |{" "}
-            <Link href="#" className="hover:text-[#faa71a] transition-colors">
-              Terms of Service
-            </Link>
+            <span>
+              Design and Developed by{" "}
+              <Link
+                href="https://wa.me/917046272137"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#faa71a] hover:text-orange-500 transition-colors"
+              >
+                V&V Digital
+              </Link>
+            </span>
           </p>
         </div>
       </div>

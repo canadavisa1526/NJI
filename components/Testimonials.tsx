@@ -2,8 +2,15 @@
 
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { useState } from "react";
 
 const Testimonials = () => {
+  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
+
   const testimonials = [
     {
       name: "Patel Axay",
@@ -26,6 +33,40 @@ const Testimonials = () => {
       rating: 5,
       href: "https://g.co/kgs/ZVHSpc6",
     },
+    {
+      name: "Jainish Nareshbhai Patel",
+      content:
+        "I had a wonderful experience with New Journey Immigration. Their team is highly professional, knowledgeable, and genuinely supportive throughout the entire process. They guided me step-by-step, answered all my questions patiently, and made the immigration journey much smoother than I expected. I truly appreciate their transparency, timely communication, and attention to detail. I would definitely recommend them to anyone looking for reliable immigration services. Thank you, New Journey Immigration, for your excellent support!",
+      rating: 5,
+      href: "https://maps.app.goo.gl/ajKjhQ6rezjvoemX6",
+    },
+    {
+      name: "Masum Salvi",
+      content:
+        "I applied for my PGWP through New Journey Immigration, and the entire process was smooth and transparent. The team was professional, responsive, and guided me every step of the way. Highly recommend their services!",
+      rating: 5,
+      href: "https://maps.app.goo.gl/HuziQc6Kjvt3rg1h7",
+    },
+    {
+      name: "Dipak Patel",
+      content:
+        "Absolutely fantastic experience with new journey immigration the team is very professional responsive and truly the care about their client",
+      rating: 5,
+      href: "https://maps.app.goo.gl/WpwfuyVM7qVTziz18",
+    },
+    {
+      name: "vidhi trivedi",
+      content:
+        "Immigration goes above and beyond the patiently answer all my question and made sure I understood every step it's rare to find a consultant whose both knowledgeable and genuinely caring...",
+      rating: 5,
+      href: "https://maps.app.goo.gl/EWmqEdhXdEcwTsbKA",
+    },
+    {
+      name: "Khushi Gupta",
+      content: "Good experience, professional staff",
+      rating: 5,
+      href: "https://maps.app.goo.gl/tyLqoVC5k7eXf7WM8",
+    },
   ];
 
   return (
@@ -46,43 +87,72 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              className="bg-[#AFC1DB]/20 dark:bg-white/5 border border-[#AFC1DB]/30 dark:border-white/10 rounded-xl p-6 shadow-md"
-            >
-              <div className="flex mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="h-5 w-5 text-[#faa71a] fill-current"
-                  />
-                ))}
-              </div>
-              <p className="text-[#13294e]/80 dark:text-gray-300 mb-4 italic line-clamp-2">
-                {testimonial.content}
-              </p>
-              <div>
-                <p className="font-semibold text-[#13294e] dark:text-white">
-                  {testimonial.name}
-                </p>
-                <p className="text-sm text-[#13294e]/60 dark:text-gray-400">
-                  <a
-                    href={testimonial.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline hover:text-[#faa71a] transition-colors"
-                  >
-                    Read more
-                  </a>
-                </p>
-              </div>
-            </motion.div>
-          ))}
+        <div
+          className="relative group"
+          onMouseEnter={() => setIsAutoplayPaused(true)}
+          onMouseLeave={() => setIsAutoplayPaused(false)}
+        >
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            pagination={{
+              clickable: true,
+              bulletActiveClass: "swiper-pagination-bullet-active bg-[#faa71a]",
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            className="pb-12"
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={testimonial.name}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-[#AFC1DB]/20 dark:bg-white/5 border border-[#AFC1DB]/30 dark:border-white/10 rounded-xl p-6 shadow-md h-full flex flex-col"
+                >
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-5 w-5 text-[#faa71a] fill-current"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-[#13294e]/80 dark:text-gray-300 mb-4 italic line-clamp-4 flex-grow">
+                    {testimonial.content}
+                  </p>
+                  <div className="mt-auto">
+                    <p className="font-semibold text-[#13294e] dark:text-white">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-[#13294e]/60 dark:text-gray-400">
+                      <a
+                        href={testimonial.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-[#faa71a] transition-colors"
+                      >
+                        Read more
+                      </a>
+                    </p>
+                  </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

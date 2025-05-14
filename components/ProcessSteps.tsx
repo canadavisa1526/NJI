@@ -41,8 +41,13 @@ const ProcessSteps = () => {
 
   return (
     <section className="py-20 bg-white dark:bg-[#13294e] relative overflow-hidden">
-      {/* Decorative SVG shapes */}
-      <div className="absolute top-0 right-0 w-64 h-64 -translate-y-1/4 translate-x-1/4 opacity-10 dark:opacity-5 pointer-events-none">
+      {/* Enhanced Decorative SVG shapes with animations */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.1, scale: 1 }}
+        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+        className="absolute top-0 right-0 w-64 h-64 -translate-y-1/4 translate-x-1/4 opacity-10 dark:opacity-5 pointer-events-none"
+      >
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <path
             fill="#FAA71A"
@@ -50,9 +55,19 @@ const ProcessSteps = () => {
             transform="translate(100 100)"
           />
         </svg>
-      </div>
+      </motion.div>
 
-      <div className="absolute bottom-0 left-0 w-80 h-80 translate-y-1/4 -translate-x-1/4 opacity-10 dark:opacity-5 pointer-events-none">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.1, scale: 1 }}
+        transition={{
+          duration: 2.5,
+          delay: 0.5,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+        className="absolute bottom-0 left-0 w-80 h-80 translate-y-1/4 -translate-x-1/4 opacity-10 dark:opacity-5 pointer-events-none"
+      >
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <path
             fill="#AFC1DB"
@@ -60,13 +75,18 @@ const ProcessSteps = () => {
             transform="translate(100 100)"
           />
         </svg>
-      </div>
+      </motion.div>
 
-      <div className="absolute top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 opacity-5 dark:opacity-3 pointer-events-none">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.05 }}
+        transition={{ duration: 1 }}
+        className="absolute top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 opacity-5 dark:opacity-3 pointer-events-none"
+      >
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <circle cx="100" cy="100" r="80" fill="#13294E" />
         </svg>
-      </div>
+      </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
@@ -84,17 +104,89 @@ const ProcessSteps = () => {
             <span className="text-[#FAA71A] font-medium">How We Work</span>
           </motion.div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-[#13294e] dark:text-white mb-6">
-            Our <span className="text-[#FAA71A]">Process</span>
-          </h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl md:text-4xl font-bold text-[#13294e] dark:text-white mb-6"
+          >
+            Our{" "}
+            <span className="text-[#FAA71A] relative">
+              Process
+              <motion.span
+                className="absolute -bottom-2 left-0 w-full h-1 bg-[#FAA71A]/30 rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              />
+            </span>
+          </motion.h2>
 
-          <p className="text-lg text-[#13294e]/80 dark:text-gray-300 max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-lg text-[#13294e]/80 dark:text-gray-300 max-w-3xl mx-auto"
+          >
             A simple and transparent process to help you achieve your
             immigration goals with confidence and peace of mind
-          </p>
+          </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Progress bar for all steps */}
+        <motion.div
+          initial={{ opacity: 0, width: 0 }}
+          whileInView={{ opacity: 1, width: "100%" }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+          className="relative h-2 bg-[#AFC1DB]/20 rounded-full mb-16 overflow-hidden max-w-4xl mx-auto"
+        >
+          <motion.div
+            className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#FAA71A] to-[#FAA71A]/70 rounded-full"
+            initial={{ width: "0%" }}
+            whileInView={{ width: "100%" }}
+            transition={{ duration: 2, delay: 0.8 }}
+          />
+          {steps.map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#FAA71A] z-10"
+              style={{ left: `calc(${(i / (steps.length - 1)) * 100}% - 8px)` }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.8 + i * 0.2 }}
+            />
+          ))}
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          {/* Connector lines between cards */}
+          {[0, 1, 2].map((i) => (
+            <motion.div
+              key={`connector-${i}`}
+              className="hidden lg:block absolute top-1/3 h-0.5 bg-gradient-to-r from-[#FAA71A] to-[#FAA71A]/50 z-0"
+              style={{
+                left: `calc(${(i + 1) * 25}% - 4%)`,
+                width: "8%",
+                transform: "translateY(-50%)",
+              }}
+              initial={{ opacity: 0, width: 0 }}
+              whileInView={{ opacity: 1, width: "8%" }}
+              transition={{ duration: 0.6, delay: 1 + i * 0.2 }}
+            >
+              <motion.div
+                className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-[#FAA71A] rounded-full"
+                animate={{ x: ["-50px", "0px"] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeatType: "loop",
+                  repeatDelay: 0.5,
+                }}
+              />
+            </motion.div>
+          ))}
+
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
@@ -104,85 +196,106 @@ const ProcessSteps = () => {
               whileHover={{ y: -5 }}
               className="relative group"
             >
-              {/* Step number indicator with animated ring */}
+              {/* Step number indicator with enhanced animated ring */}
               <div className="absolute -top-3 -left-3 z-10 w-16 h-16 flex items-center justify-center">
-                <div className="absolute inset-0 rounded-full bg-[#faa71a]/20 animate-ping opacity-75 duration-1000 group-hover:opacity-100"></div>
-                <div className="absolute w-14 h-14 rounded-full bg-[#faa71a] flex items-center justify-center text-white font-bold shadow-lg">
+                <motion.div
+                  className="absolute inset-0 rounded-full bg-[#FAA71A]/20"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.5, 0.8, 0.5],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                  }}
+                />
+                <motion.div
+                  className="absolute w-14 h-14 rounded-full bg-gradient-to-br from-[#FAA71A] to-[#FAA71A]/80 flex items-center justify-center text-white font-bold shadow-lg"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
                   {index + 1}
-                </div>
+                </motion.div>
               </div>
 
-              {/* Image container with fixed height and object-position:top */}
+              {/* Enhanced image container with improved hover effects */}
               <div className="relative rounded-t-xl overflow-hidden h-48 shadow-lg">
                 <Image
                   src={step.image}
                   alt={step.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover object-top transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-t from-[#13294E]/90 via-[#13294E]/40 to-transparent"
+                  whileHover={{ opacity: 0.7 }}
+                  transition={{ duration: 0.3 }}
+                />
 
-                {/* Small decorative SVG in corner */}
-                <div className="absolute bottom-0 right-0 w-16 h-16 opacity-30">
+                {/* Enhanced decorative element */}
+                <motion.div
+                  className="absolute bottom-0 right-0 w-16 h-16 opacity-30"
+                  animate={{
+                    rotate: [0, 10, 0],
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                  }}
+                >
                   <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="80" cy="80" r="30" fill="#FAA71A" />
                   </svg>
-                </div>
+                </motion.div>
               </div>
 
-              {/* Content area with fixed height */}
-              <div className="bg-white dark:bg-[#13294e]/80 rounded-b-xl p-6 border border-[#AFC1DB]/40 dark:border-white/10 shadow-lg h-64 flex flex-col">
-                <div className="flex items-center mb-4">
-                  <div className="p-2 bg-[#FAA71A]/10 dark:bg-[#FAA71A]/20 rounded-lg mr-3">
-                    <step.icon className="h-6 w-6 text-[#faa71a]" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-[#13294e] dark:text-white">
+              {/* Enhanced content area with better styling */}
+              <div className="bg-white dark:bg-[#13294E]/90 rounded-b-xl p-6 border border-[#AFC1DB]/40 dark:border-[#FAA71A]/10 shadow-lg h-64 flex flex-col relative overflow-hidden">
+                {/* Background decorative element */}
+                <div className="absolute -right-12 -bottom-12 w-32 h-32 rounded-full bg-[#FAA71A]/5 dark:bg-[#FAA71A]/5 pointer-events-none" />
+
+                <div className="flex items-center mb-4 relative z-10">
+                  <motion.div
+                    className="p-3 bg-[#FAA71A]/10 dark:bg-[#FAA71A]/20 rounded-lg mr-3"
+                    whileHover={{
+                      scale: 1.1,
+                      backgroundColor: "rgba(250, 167, 26, 0.3)",
+                    }}
+                  >
+                    <step.icon className="h-6 w-6 text-[#FAA71A]" />
+                  </motion.div>
+                  <h3 className="text-xl font-semibold text-[#13294E] dark:text-white">
                     {step.title}
                   </h3>
                 </div>
 
-                <div className="flex-grow">
-                  {step.title === "Application Filing" ? (
-                    <>
-                      <p className="text-[#13294e]/80 dark:text-gray-300">
-                        {step.description}
-                      </p>
-                    </>
-                  ) : (
-                    <p className="text-[#13294e]/80 dark:text-gray-300">
-                      {step.description}
-                    </p>
-                  )}
+                <div className="flex-grow relative z-10">
+                  <p className="text-[#13294E]/80 dark:text-gray-300">
+                    {step.description}
+                  </p>
                 </div>
 
-                {/* Step indicator */}
-                <div className="mt-4 pt-3 border-t border-[#AFC1DB]/30 dark:border-white/10 flex justify-between items-center">
-                  <span className="text-xs font-medium text-[#13294e]/60 dark:text-gray-400">
+                {/* Enhanced step indicator with animated progress */}
+                <div className="mt-4 pt-3 border-t border-[#AFC1DB]/30 dark:border-white/10 flex justify-between items-center relative z-10">
+                  <span className="text-xs font-medium text-[#13294E]/60 dark:text-gray-400">
                     Step {index + 1} of {steps.length}
                   </span>
-                  <div className="w-8 h-1 bg-[#FAA71A] rounded-full"></div>
+                  <div className="w-16 h-2 bg-[#AFC1DB]/30 dark:bg-[#AFC1DB]/10 rounded-full overflow-hidden">
+                    <motion.div
+                      className="h-full bg-[#FAA71A] rounded-full"
+                      initial={{ width: 0 }}
+                      whileInView={{
+                        width: `${((index + 1) / steps.length) * 100}%`,
+                      }}
+                      transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
+                    />
+                  </div>
                 </div>
               </div>
-
-              {/* Connector Line for Desktop */}
-              {
-                // index < steps.length - 1 && (
-                //   <div className="hidden lg:block absolute top-1/3 left-full w-full h-0.5 bg-gradient-to-r from-[#faa71a] to-[#ffc95f] dark:from-[#faa71a]/80 dark:to-[#faa71a]/30 -translate-y-1/2 transform translate-x-4 z-10">
-                //     {/* Animated dots */}
-                //     <motion.div
-                //       className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-[#faa71a] rounded-full shadow-sm"
-                //       animate={{ x: [0, 100, 0] }}
-                //       transition={{
-                //         repeat: Infinity,
-                //         duration: 3,
-                //         ease: "linear",
-                //       }}
-                //     />
-                //     <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#faa71a] rounded-full shadow-sm" />
-                //   </div>
-                // )
-              }
             </motion.div>
           ))}
         </div>

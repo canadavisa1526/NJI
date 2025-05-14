@@ -16,7 +16,7 @@ export const stats = [
   { icon: Users2, value: "28,000+", label: "Successful Cases" },
   { icon: Globe2, value: "50+", label: "Countries Served" },
   { icon: Trophy, value: "5+", label: "Years Experience" },
-  { icon: Star, value: "99%", label: "Success Rate" },
+  { icon: Star, value: "99%", label: "Success  Rate" },
 ];
 
 export const values = [
@@ -64,9 +64,9 @@ export const locations = [
     ],
   },
   {
-    city: "Sydney",
-    country: "Australia",
-    address: "CBD Sydney",
+    city: "Ahmedabad",
+    country: "India",
+    address: "Vaishnodevi circle",
     services: ["Student Services", "Visa Processing", "Career Guidance"],
   },
 ];

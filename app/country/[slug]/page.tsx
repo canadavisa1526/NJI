@@ -72,7 +72,6 @@ export default function CountryDetail() {
     { id: "courses", label: "Top Courses" },
     { id: "job-opportunities", label: "Job Opportunities" },
     { id: "cost", label: "Cost Breakdown" },
-    { id: "success-stories", label: "Success Stories" },
     { id: "faq", label: "FAQ" },
     { id: "inquire", label: "Inquire Now" },
   ];
@@ -122,9 +121,9 @@ export default function CountryDetail() {
             <CostSection country={country} />
           </div>
 
-          <div id="success-stories" className="my-16">
+          {/* <div id="success-stories" className="my-16">
             <SuccessStoriesSection country={country} />
-          </div>
+          </div> */}
 
           <div id="faq" className="my-16">
             <FaqSection country={country} />

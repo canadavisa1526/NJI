@@ -67,13 +67,25 @@ export default function InquiryForm({ country }: InquiryFormProps) {
 
     if (validateForm()) {
       setIsSubmitting(true);
+      console.log("Form submitted:", formData);
 
       try {
+        // Make sure country is included in the form data
+        const formDataWithCountry = {
+          ...formData,
+          country: country, // Ensure country is always set
+        };
+
+        console.log("Sending data to API:", formDataWithCountry);
+
         // Send the form data to our API endpoint
-        const response = await api.post("/inquiry", formData);
+        const response = await api.post("/inquiry", formDataWithCountry);
+
+        console.log("API response:", response.data);
 
         if (response.data.success) {
           // On successful submission
+          console.log("Form submission successful!");
           setIsSubmitted(true);
           setFormData({
             name: "",
@@ -86,11 +98,38 @@ export default function InquiryForm({ country }: InquiryFormProps) {
           });
         } else {
           // Handle API error response
-          setSubmissionError(response.data.error || "Failed to submit inquiry. Please try again.");
+          console.error("API returned error:", response.data.error);
+          setSubmissionError(
+            response.data.error || "Failed to submit inquiry. Please try again."
+          );
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error("Error submitting form:", error);
-        setSubmissionError("An error occurred while submitting your inquiry. Please try again later.");
+
+        // More detailed error logging
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.error("Error response data:", error.response.data);
+          console.error("Error response status:", error.response.status);
+          console.error("Error response headers:", error.response.headers);
+
+          setSubmissionError(
+            `Server error: ${error.response.status}. Please try again later.`
+          );
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.error("No response received:", error.request);
+          setSubmissionError(
+            "No response from server. Please check your internet connection and try again."
+          );
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.error("Error message:", error.message);
+          setSubmissionError(
+            "An error occurred while submitting your inquiry. Please try again later."
+          );
+        }
       } finally {
         setIsSubmitting(false);
       }

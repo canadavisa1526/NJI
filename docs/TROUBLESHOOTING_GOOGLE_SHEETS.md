@@ -46,6 +46,7 @@ This error occurs when the service account doesn't have access to the spreadshee
 This error occurs when the private key is not formatted correctly.
 
 **Solution:** Make sure the private key:
+
 - Includes all the `\n` characters
 - Is enclosed in quotes
 - Has not been corrupted during copying
@@ -56,27 +57,35 @@ This error occurs when the spreadsheet ID is incorrect.
 
 **Solution:** Double-check the spreadsheet ID in your Google Sheets URL.
 
-### "Sheet not found"
+### "Unable to parse range" or "Sheet not found"
 
-This error occurs when the sheet name doesn't match.
+This error can occur if there's an issue with the Google Sheets API or permissions.
 
-**Solution:** Make sure the first sheet in your spreadsheet is named "Inquiries" or update the `SHEET_NAME` constant in the code.
+**Solution:**
+
+1. Make sure your Google Spreadsheet exists and is accessible
+2. Verify that you've shared the spreadsheet with the service account email
+3. Check that the service account has Editor access to the spreadsheet
+4. Ensure your spreadsheet ID is correct in the `.env.local` file
 
 ## Complete Setup Process
 
 If you haven't completed the Google Sheets setup yet, follow these steps:
 
 1. **Create a Google Spreadsheet**:
+
    - Go to [Google Sheets](https://sheets.google.com) and create a new spreadsheet
    - Rename the first sheet to "Inquiries"
    - Add headers: Timestamp, Name, Email, Phone, Message, How Did You Hear, Country
 
 2. **Set Up Google Cloud Project**:
+
    - Go to the [Google Cloud Console](https://console.cloud.google.com/)
    - Create a new project or select an existing one
    - Enable the Google Sheets API
 
 3. **Create Service Account Credentials**:
+
    - In the Google Cloud Console, go to "APIs & Services" > "Credentials"
    - Create a service account and download the credentials
    - Share your spreadsheet with the service account email

@@ -89,7 +89,7 @@ const FeaturedSection = () => {
   return (
     <section className="relative py-24 bg-white dark:bg-[#13294e] transition-colors overflow-hidden">
       {/* SVG Decorations */}
-      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+      {/* <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <svg
           className="absolute top-[-80px] left-[-80px] w-[300px] h-[300px] opacity-20 dark:opacity-10"
           viewBox="0 0 200 200"
@@ -109,7 +109,7 @@ const FeaturedSection = () => {
         >
           <circle cx="50" cy="50" r="50" fill="#AFC1DB" />
         </svg>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

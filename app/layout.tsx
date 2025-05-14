@@ -6,14 +6,17 @@ import Navbar from "@/components/Navbar";
 import { Suspense } from "react";
 import Loading from "./loading";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 import { PostHogProvider } from "@/components/PostHogProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "New Journey Immigration & More",
-  description:
-    "Trusted immigration and education consultants. Let New Journey be your guide to studying, working, and settling abroad.",
+  title: {
+    default: "New Journey Immigration | Education & Immigration Consultancy",
+    template: "%s | New Journey Immigration"
+  },
+  description: "New Journey Immigration is a trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and settling abroad. Expert guidance for visas, university admissions, and immigration services.",
   keywords: [
     "Immigration services",
     "Study abroad",
@@ -25,8 +28,34 @@ export const metadata: Metadata = {
     "Canada visa",
     "Australia immigration",
     "Global education partner",
+    "UK visa",
+    "USA visa",
+    "New Zealand visa",
+    "Germany visa",
+    "Singapore visa",
+    "Education services",
+    "Overseas education",
+    "International education",
+    "Immigration consultant",
+    "Visa application",
+    "Visa processing",
+    "Study permit",
+    "Work permit",
+    "Permanent residency",
+    "Express entry",
+    "Skilled migration",
+    "Student counseling",
+    "Career guidance",
+    "University admission",
+    "College application",
+    "Scholarship assistance",
+    "Best immigration consultancy",
+    "Top education consultancy",
+    "Affordable visa services",
+    "Trusted immigration experts",
+    "Successful visa applications"
   ],
-  authors: [{ name: "New Journey Immigration" }],
+  authors: [{ name: "New Journey Immigration", url: "https://www.newjourneyworld.com" }],
   creator: "New Journey Immigration",
   publisher: "New Journey Immigration",
   icons: {
@@ -34,18 +63,29 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://www.newjourneyworld.com"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      'en-US': "/en-US",
+    },
+  },
   openGraph: {
-    title: "New Journey Immigration & More",
-    description:
-      "Explore global opportunities with New Journey — Your trusted partner for study, work, and immigration services.",
-    url: "https://yourdomain.com", // Replace with your real domain
+    title: "New Journey Immigration | Education & Immigration Experts",
+    description: "Trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and living abroad. Expert guidance for visas, university admissions, and immigration services.",
+    url: "https://www.newjourneyworld.com",
     siteName: "New Journey Immigration",
     images: [
       {
-        url: "/og-image.png", // Optional: add this image in public folder
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "New Journey Immigration & More",
+        alt: "New Journey Immigration - Education & Immigration Consultancy",
       },
     ],
     locale: "en_US",
@@ -53,13 +93,23 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "New Journey Immigration & More",
-    description:
-      "Trusted education and immigration experts. Start your journey with us today!",
+    title: "New Journey Immigration | Education & Immigration Experts",
+    description: "Trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and living abroad.",
     images: ["/og-image.png"],
-    creator: "@newjourney", // Optional
+    creator: "@newjourneyimm",
   },
-  metadataBase: new URL("https://yourdomain.com"), // Replace with actual domain
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  category: "Education & Immigration"
 };
 
 export default function RootLayout({
@@ -71,8 +121,132 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
+        <Script
+          id="schema-organization"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "New Journey Immigration",
+              "url": "https://www.newjourneyworld.com",
+              "logo": "https://www.newjourneyworld.com/logo.png",
+              "sameAs": [
+                "https://www.facebook.com/newjourneyimmigration",
+                "https://www.instagram.com/newjourneyimmigration",
+                "https://twitter.com/newjourneyimm"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91 987-654-3210",
+                "contactType": "customer service",
+                "availableLanguage": ["English", "Hindi"]
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Your Street Address",
+                "addressLocality": "Your City",
+                "addressRegion": "Your Region",
+                "postalCode": "Your Postal Code",
+                "addressCountry": "IN"
+              },
+              "description": "New Journey Immigration is a trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and living abroad."
+            })
+          }}
+        />
+        <Script
+          id="schema-local-business"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "New Journey Immigration",
+              "image": "https://www.newjourneyworld.com/og-image.png",
+              "priceRange": "$$",
+              "telephone": "++91 987-654-3210",
+              "email": "support@newjourneyworld.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Your Street Address",
+                "addressLocality": "Your City",
+                "addressRegion": "Your Region",
+                "postalCode": "Your Postal Code",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "YOUR_LATITUDE",
+                "longitude": "YOUR_LONGITUDE"
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "09:00",
+                  "closes": "18:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Saturday"],
+                  "opens": "10:00",
+                  "closes": "16:00"
+                }
+              ],
+              "url": "https://www.newjourneyworld.com"
+            })
+          }}
+        />
+        <Script
+          id="schema-educational-organization"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "EducationalOrganization",
+              "name": "New Journey Immigration",
+              "url": "https://www.newjourneyworld.com",
+              "logo": "https://www.newjourneyworld.com/logo.png",
+              "description": "New Journey Immigration provides expert guidance for international education, visa applications, and immigration services.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Your Street Address",
+                "addressLocality": "Your City",
+                "addressRegion": "Your Region",
+                "postalCode": "Your Postal Code",
+                "addressCountry": "IN"
+              },
+              "telephone": "+91-7046272137",
+              "email": "info@newjourneyworld.com"
+            })
+          }}
+        />
+
+        {/* Google Tag Manager */}
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-XXXXXXX');
+            `
+          }}
+        />
       </head>
       <body className={inter.className}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <PostHogProvider>
           <ThemeProvider
             attribute="class"

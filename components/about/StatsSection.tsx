@@ -31,9 +31,16 @@ const StatsSection = () => {
                 <div className="text-3xl sm:text-4xl font-bold text-[#13294e] dark:text-white mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-600 dark:text-gray-300 font-medium">
-                  {stat.label}
-                </div>
+                {stat.label == "Success  Rate" ? (
+                  <div className="text-gray-600 dark:text-gray-300 font-medium">
+                    {stat.label}
+                    <br />
+                  </div>
+                ) : (
+                  <div className="text-gray-600 dark:text-gray-300 font-medium">
+                    {stat.label}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

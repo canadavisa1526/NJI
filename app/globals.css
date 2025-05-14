@@ -380,6 +380,64 @@
   .theme-textarea:focus {
     @apply ring-2 ring-blue-500;
   }
-/*  #FAA71A */
-/* #13294E */
-/* #AFC1DB */
+/*  #FAA71A - Orange/Gold */
+/* #13294E - Dark Blue */
+/* #AFC1DB - Light Blue/Gray */
+
+/* Success Stories Slider Styles */
+.success-swiper {
+  padding: 60px 0;
+  overflow: visible !important;
+  margin: 0 -20px;
+}
+
+.success-swiper .swiper-slide {
+  height: auto;
+  transition: all 0.6s ease;
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+
+.success-swiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+/* Add a subtle glow to active slide */
+.success-swiper .swiper-slide-active::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle at center, rgba(250, 167, 26, 0.15) 0%, rgba(250, 167, 26, 0) 70%);
+  z-index: -1;
+  border-radius: 20px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Add hover effect to slides */
+.success-swiper .swiper-slide:hover {
+  transform: translateY(-5px);
+}
+
+/* Add pagination styles */
+.success-swiper .swiper-pagination {
+  position: relative;
+  margin-top: 30px;
+}
+
+.success-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #AFC1DB;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.success-swiper .swiper-pagination-bullet-active {
+  width: 20px;
+  border-radius: 5px;
+  background: #FAA71A;
+  opacity: 1;
+}

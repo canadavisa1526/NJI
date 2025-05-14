@@ -356,7 +356,7 @@ const Navbar = () => {
                 onClick={() => {
                   // setIsAppointmentOpen(true)
                   window.open(
-                    "https://calendly.com/canada-visa1526/15-minute-meeting-clone",
+                    "https://calendly.com/newjourneyworld-support/30min",
                     "_blank",
                     "noopener,noreferrer"
                   );

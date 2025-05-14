@@ -7,13 +7,13 @@ const VisaSection: FC = () => {
   return (
     <section className="relative overflow-hidden py-16 lg:py-24 bg-white dark:bg-[#13294E] transition-colors">
       {/* Decorative Circles */}
-      <div className="absolute top-0 right-0 w-32 h-32 md:w-48 md:h-48 bg-[#FAA71A] rounded-bl-full opacity-30 z-0" />
+      {/* <div className="absolute top-0 right-0 w-32 h-32 md:w-48 md:h-48 bg-[#FAA71A] rounded-bl-full opacity-30 z-0" />
       <div className="absolute bottom-0 left-0 w-32 h-32 md:w-48 md:h-48 bg-[#AFC1DB] rounded-tr-full opacity-30 z-0" />
       <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-20 left-20 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
-            <div className="absolute top-40 right-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
-            <div className="absolute bottom-20 left-1/2 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
-          </div>
+        <div className="absolute top-20 left-20 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
+        <div className="absolute top-40 right-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
+        <div className="absolute bottom-20 left-1/2 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
+      </div> */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
