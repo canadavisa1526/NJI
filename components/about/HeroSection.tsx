@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[50vh] md:h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="https://images.pexels.com/photos/313691/pexels-photo-313691.jpeg?auto=compress&cs=tinysrgb&w=1600"

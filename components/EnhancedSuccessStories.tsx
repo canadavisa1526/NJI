@@ -37,7 +37,8 @@ const EnhancedSuccessStories = () => {
       name: "Ayush Patel",
       country: "Australia",
       flag: "🇦🇺",
-      image: "https://instagram.fdel73-1.fna.fbcdn.net/v/t51.2885-15/491444689_17907693579127657_4528966839075443443_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjk2NXg5NjEuc2RyLmY3NTc2MS5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fdel73-1.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGIZ6WpkBQaNH9Yqu1bsUMnjveHJCouv9-hx5OXZZdnsUcQoUWFCfUX-5aFWxCMWm0&_nc_ohc=PUBTrIrE3h8Q7kNvwHNcJvv&_nc_gid=Ygz-q1BZDSM1Sth0_wJhVQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzYxNTM3ODg4NDE1ODU2ODUwMQ%3D%3D.3-ccb7-5&oh=00_AfIWn2cxOXs6FgiVCDFW2c_oM8lV0IlOHZ0Vvtl7DtcsFA&oe=682AC1B4&_nc_sid=10d13b",
+      image:
+        "https://instagram.fdel73-1.fna.fbcdn.net/v/t51.2885-15/491444689_17907693579127657_4528966839075443443_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjk2NXg5NjEuc2RyLmY3NTc2MS5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fdel73-1.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGIZ6WpkBQaNH9Yqu1bsUMnjveHJCouv9-hx5OXZZdnsUcQoUWFCfUX-5aFWxCMWm0&_nc_ohc=PUBTrIrE3h8Q7kNvwHNcJvv&_nc_gid=Ygz-q1BZDSM1Sth0_wJhVQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzYxNTM3ODg4NDE1ODU2ODUwMQ%3D%3D.3-ccb7-5&oh=00_AfIWn2cxOXs6FgiVCDFW2c_oM8lV0IlOHZ0Vvtl7DtcsFA&oe=682AC1B4&_nc_sid=10d13b",
       imageFallback:
         "https://instagram.fdel73-1.fna.fbcdn.net/v/t51.2885-15/491444689_17907693579127657_4528966839075443443_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjk2NXg5NjEuc2RyLmY3NTc2MS5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fdel73-1.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGIZ6WpkBQaNH9Yqu1bsUMnjveHJCouv9-hx5OXZZdnsUcQoUWFCfUX-5aFWxCMWm0&_nc_ohc=PUBTrIrE3h8Q7kNvwHNcJvv&_nc_gid=Ygz-q1BZDSM1Sth0_wJhVQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzYxNTM3ODg4NDE1ODU2ODUwMQ%3D%3D.3-ccb7-5&oh=00_AfIWn2cxOXs6FgiVCDFW2c_oM8lV0IlOHZ0Vvtl7DtcsFA&oe=682AC1B4&_nc_sid=10d13b",
     },
@@ -45,7 +46,8 @@ const EnhancedSuccessStories = () => {
       name: " Janvi Chavan",
       country: "United Kingdom",
       flag: "🇬🇧",
-      image: "https://instagram.fdel73-1.fna.fbcdn.net/v/t51.2885-15/491215202_17907693528127657_8749340633794729902_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjk3Mng5Njkuc2RyLmY3NTc2MS5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fdel73-1.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QE4uM59vdTURTMr1sTJgCo59mVuOZwz1d0HgEGfd25l4liIl2uMafOVr8SffXuArkE&_nc_ohc=eJxfx-tiYGYQ7kNvwHFbMRT&_nc_gid=IaxjCtF3aEZ-s9HzTfUwkw&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzYxNTM3ODYyNTQ1NDAzNTY1MQ%3D%3D.3-ccb7-5&oh=00_AfJA5QB1rmFKoPIxLZtVJUeLlchPBHgKkPPiCnSV8J2s0Q&oe=682ACDC4&_nc_sid=10d13b",
+      image:
+        "https://instagram.fdel73-1.fna.fbcdn.net/v/t51.2885-15/491215202_17907693528127657_8749340633794729902_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjk3Mng5Njkuc2RyLmY3NTc2MS5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fdel73-1.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QE4uM59vdTURTMr1sTJgCo59mVuOZwz1d0HgEGfd25l4liIl2uMafOVr8SffXuArkE&_nc_ohc=eJxfx-tiYGYQ7kNvwHFbMRT&_nc_gid=IaxjCtF3aEZ-s9HzTfUwkw&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzYxNTM3ODYyNTQ1NDAzNTY1MQ%3D%3D.3-ccb7-5&oh=00_AfJA5QB1rmFKoPIxLZtVJUeLlchPBHgKkPPiCnSV8J2s0Q&oe=682ACDC4&_nc_sid=10d13b",
       imageFallback:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=60",
     },
@@ -240,18 +242,18 @@ const EnhancedSuccessStories = () => {
 
         <Swiper
           grabCursor={true}
-          slidesPerView={2}
+          slidesPerView={1}
           spaceBetween={30}
           breakpoints={{
             640: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 20,
             },
             768: {
               slidesPerView: 2,
               spaceBetween: 30,
             },
-            1024: {
+            1280: {
               slidesPerView: 2,
               spaceBetween: 40,
             },
@@ -277,7 +279,7 @@ const EnhancedSuccessStories = () => {
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-[#AFC1DB]/20 h-full">
-                  <div className="relative h-80">
+                  <div className="relative h-[50vh] md:h-[70vh]">
                     <Image
                       src={story.image}
                       alt={`${story.name} Success Story`}
@@ -292,16 +294,16 @@ const EnhancedSuccessStories = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#13294E]/80 to-transparent"></div>
 
                     {/* Country flag badge */}
-                    <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-lg flex items-center space-x-2 text-sm">
-                      <span className="text-lg">{story.flag}</span>
-                      <span className="font-medium text-[#13294E]">
+                    <div className="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg flex items-center space-x-2">
+                      <span className="text-xl">{story.flag}</span>
+                      <span className="font-medium text-[#13294E] text-base">
                         {story.country}
                       </span>
                     </div>
 
                     {/* Name at bottom */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#13294E] to-transparent">
-                      <h3 className="text-white text-2xl font-bold tracking-wide">
+                    <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-[#13294E] to-transparent">
+                      <h3 className="text-white text-3xl font-bold tracking-wide">
                         {story.name}
                       </h3>
                     </div>

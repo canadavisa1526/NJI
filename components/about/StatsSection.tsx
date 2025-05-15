@@ -1,6 +1,61 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { stats } from "@/data/aboutData";
+import { useEffect, useRef, useState } from "react";
+
+// CountUp component to animate numbers from 0 to target value
+const CountUp = ({
+  end,
+  suffix = "",
+  duration = 2.5,
+}: {
+  end: number;
+  suffix?: string;
+  duration?: number;
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    // Reset counter when component mounts or goes out of view
+    if (!isInView) {
+      setCount(0);
+      return;
+    }
+
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+      const currentCount = Math.floor(progress * end);
+
+      setCount(currentCount);
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    };
+  }, [isInView, end, duration]);
+
+  return (
+    <div
+      ref={ref}
+      className="text-3xl sm:text-4xl font-bold text-[#13294e] dark:text-white mb-2"
+    >
+      {isInView ? count.toLocaleString() : "0"}
+      {suffix}
+    </div>
+  );
+};
 
 const StatsSection = () => {
   const scaleIn = {
@@ -28,9 +83,11 @@ const StatsSection = () => {
                 <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#faa71a] to-amber-600 rounded-xl mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                 </div>
-                <div className="text-3xl sm:text-4xl font-bold text-[#13294e] dark:text-white mb-2">
-                  {stat.value}
-                </div>
+                <CountUp
+                  end={stat.numericValue}
+                  suffix={stat.suffix}
+                  duration={2.5}
+                />
                 {stat.label == "Success  Rate" ? (
                   <div className="text-gray-600 dark:text-gray-300 font-medium">
                     {stat.label}

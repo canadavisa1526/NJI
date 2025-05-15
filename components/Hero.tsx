@@ -134,7 +134,7 @@ const Hero = () => {
 
   return (
     <div ref={containerRef} className="relative overflow-hidden">
-      <section className="relative h-[80vh] md:min-h-screen pt-12 md:pt-20 pb-24 md:pb-52 flex flex-col">
+      <section className="relative h-[50vh] md:h-[70vh] pt-12 md:pt-20 pb-24 md:pb-52 flex flex-col">
         {/* Video Background */}
         <div className="absolute inset-0 overflow-hidden z-0">
           <video

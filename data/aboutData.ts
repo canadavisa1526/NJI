@@ -13,10 +13,34 @@ import {
 } from "lucide-react";
 
 export const stats = [
-  { icon: Users2, value: "28,000+", label: "Successful Cases" },
-  { icon: Globe2, value: "50+", label: "Countries Served" },
-  { icon: Trophy, value: "5+", label: "Years Experience" },
-  { icon: Star, value: "99%", label: "Success  Rate" },
+  {
+    icon: Users2,
+    value: "15000+",
+    label: "Successful Cases",
+    numericValue: 15000,
+    suffix: "+",
+  },
+  {
+    icon: Globe2,
+    value: "50+",
+    label: "Countries Served",
+    numericValue: 50,
+    suffix: "+",
+  },
+  {
+    icon: Trophy,
+    value: "5+",
+    label: "Years Experience",
+    numericValue: 5,
+    suffix: "+",
+  },
+  {
+    icon: Star,
+    value: "99%",
+    label: "Success  Rate",
+    numericValue: 99,
+    suffix: "%",
+  },
 ];
 
 export const values = [

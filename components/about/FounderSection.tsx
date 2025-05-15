@@ -40,15 +40,59 @@ const FounderSection = () => {
             viewport={{ once: true }}
             className="relative group"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#faa71a] to-amber-600 rounded-3xl transform rotate-3 group-hover:rotate-0 transition-transform duration-300" />
-            <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300">
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-[#faa71a] to-amber-600 rounded-3xl transform rotate-3 group-hover:rotate-0 transition-transform duration-300"
+              style={{
+                maxWidth: "90%",
+                margin: "0 auto",
+                left: "5%",
+                right: "5%"
+              }}
+            />
+            <motion.div
+              className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
+              initial={{ perspective: 1000, rotateX: 1, rotateY: -1 }}
+              whileHover={{ rotateX: 0, rotateY: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              style={{
+                position: "relative",
+                maxWidth: "90%", /* Ensure container isn't too wide */
+                margin: "0 auto" /* Center the container */
+              }}
+            >
               <Image
                 src={founder.image}
                 alt={founder.name}
                 fill
-                className="object-cover"
+                className="object-cover object-[center_20%]"
+                style={{
+                  transform: "scale(1.25)",  /* Increased scale to crop sides more */
+                  transformOrigin: "center 15%", /* Adjusted to focus more on face */
+                  filter: "brightness(1.05) contrast(1.05) saturate(1.05)",
+                  /* Clip the image on left and right sides */
+                  clipPath: "inset(0 12% 0 12%)" /* Increased cropping */
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#13294e]/70 via-[#13294e]/20 to-transparent pointer-events-none" />
+              {/* Enhanced gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#13294e]/80 via-[#13294e]/30 to-transparent pointer-events-none shadow-inner" />
+
+              {/* 3D effect shadow */}
+              <div className="absolute inset-0 shadow-[inset_0_-10px_20px_rgba(0,0,0,0.2)] pointer-events-none z-10"></div>
+
+              {/* 3D effect highlight */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-white/10 pointer-events-none z-5"
+                initial={{ opacity: 0.3 }}
+                animate={{
+                  opacity: [0.3, 0.4, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut"
+                }}
+              />
               <div className="absolute bottom-4 left-4 right-4 px-4">
                 <div className="bg-white/90 dark:bg-[#13294e]/90 backdrop-blur-md rounded-xl p-4 shadow-lg transition-transform duration-300 group-hover:-translate-y-2">
                   <p className="text-sm text-[#13294e] dark:text-white italic text-center">
@@ -56,7 +100,7 @@ const FounderSection = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
           <motion.div

@@ -225,6 +225,10 @@
 
 /* ====== Custom Components Layer ====== */
 @layer components {
+  /* Clipped corner for team member cards */
+  .clip-corner {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+  }
   .theme-section {
     @apply bg-white dark:bg-gray-900 transition-colors duration-300;
   }

@@ -409,9 +409,7 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                   <h4 className="text-lg font-semibold text-[#FAA71A]">
                     Email Us
                   </h4>
-                  <p className="text-[#AFC1DB]">
-                    contact@educationservices.com
-                  </p>
+                  <p className="text-[#AFC1DB]">support@newjourneyworld.com</p>
                   <p className="text-sm text-white/70 mt-1">
                     We'll respond within 24 hours
                   </p>
@@ -439,7 +437,9 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                   <h4 className="text-lg font-semibold text-[#FAA71A]">
                     Call Us
                   </h4>
-                  <p className="text-[#AFC1DB]">+1 (123) 456-7890</p>
+                  <p className="text-[#AFC1DB]">
+                    +91 7623 043 499 | +1 437-663-5437
+                  </p>
                   <p className="text-sm text-white/70 mt-1">
                     Mon-Fri from 9am to 6pm
                   </p>
@@ -473,9 +473,7 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                   <h4 className="text-lg font-semibold text-[#FAA71A]">
                     Visit Us
                   </h4>
-                  <p className="text-[#AFC1DB]">
-                    123 Education Street, Suite 101
-                  </p>
+                  <p className="text-[#AFC1DB]">India | Canada,</p>
                   <p className="text-sm text-white/70 mt-1">
                     Book an appointment
                   </p>

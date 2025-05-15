@@ -28,7 +28,7 @@ const Footer = () => {
     { name: "Study in Australia", href: "/country/australia" },
     { name: "Study in UK", href: "/country/uk" },
     { name: "IELTS Coaching", href: "/services/coaching" },
-    { name: "Study Visa", href: "/services/study-visa" },
+    { name: "Insurance", href: "/services/insurance" },
     { name: "Visitor Visa", href: "/services/visitor-visa" },
     { name: "PR Visa", href: "/services/permanent-residency" },
   ];

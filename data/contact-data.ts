@@ -12,15 +12,14 @@ export const contactInfo: ContactInfo[] = [
     title: "Phone",
     details: [
       "+1 437-663-5437 (Canada)",
-      "+91 987-654-3210 (India)"
+      "+91 7623 043 499 (India)"
     ]
   },
   {
     icon: Mail,
     title: "Email",
     details: [
-      "info@newjourneyimmigration.com",
-      "support@newjourneyimmigration.com"
+      "support@newjourneyworld.com"
     ]
   },
   {
@@ -40,7 +39,7 @@ interface StatData {
 }
 
 export const statsData: StatData[] = [
-  { icon: Users, value: "28,000+", label: "Successful Cases" },
+  { icon: Users, value: "15,000+", label: "Successful Cases" },
   { icon: Globe, value: "50+", label: "Countries Served" },
   { icon: Star, value: "5+", label: "Years Experience" },
   { icon: Heart, value: "99%", label: "Success Rate" }
