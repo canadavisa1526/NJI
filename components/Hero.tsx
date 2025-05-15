@@ -226,30 +226,32 @@ const Hero = () => {
           style={{ opacity, scale }}
           className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-32 flex-grow flex items-center"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4 md:mb-8">
-              <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-yellow-300 mr-1.5 md:mr-2" />
-              <span className="text-white text-sm md:text-base">
-                Transform Your Future with NJI Education
-              </span>
-            </div>
+          {isMobile ? null : (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4 md:mb-8">
+                <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-yellow-300 mr-1.5 md:mr-2" />
+                <span className="text-white text-sm md:text-base">
+                  Transform Your Future with NJI Education
+                </span>
+              </div>
 
-            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
-              <Button
-                size="lg"
-                className="bg-[#FAA71A] backdrop-blur-md hover:bg-white/30 text-white font-semibold border border-white/30 text-sm md:text-base py-5 px-4"
-                onClick={() => setIsConsultationOpen(true)}
-              >
-                <BookOpen className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                Get Free Consultation
-              </Button>
-            </div>
-          </motion.div>
+              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
+                <Button
+                  size="lg"
+                  className="bg-[#FAA71A] backdrop-blur-md hover:bg-white/30 text-white font-semibold border border-white/30 text-sm md:text-base py-5 px-4"
+                  onClick={() => setIsConsultationOpen(true)}
+                >
+                  <BookOpen className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                  Get Free Consultation
+                </Button>
+              </div>
+            </motion.div>
+          )}
         </motion.div>
 
         {/* Stats - now at the bottom with improved responsive layout */}
@@ -286,7 +288,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
-                  className="backdrop-blur-sm rounded-lg p-1.5 md:p-4"
+                  className=" rounded-lg p-1.5 md:p-4"
                 >
                   <div className="inline-flex items-center justify-center w-7 h-7 md:w-12 md:h-12 rounded-full bg-[#FAA71A]/20 text-[#FAA71A] mb-1 md:mb-4 hover:scale-110 transition-transform">
                     <stat.icon className="h-3.5 w-3.5 md:h-6 md:w-6" />
