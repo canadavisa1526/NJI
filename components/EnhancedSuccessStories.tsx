@@ -29,57 +29,53 @@ const EnhancedSuccessStories = () => {
       country: "Canada",
       flag: "🇨🇦",
       image:
-        "https://instagram.fdel73-1.fna.fbcdn.net/v/t51.29350-15/456426116_527800262942667_858711896244406302_n.heic?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjEwODB4MTA4MC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fdel73-1.fna.fbcdn.net&_nc_cat=103&_nc_oc=Q6cZ2QHTWHldCpOKag_IHXhdqrtanWFiKzrWn4W6b1psDTiOKg0PYZl_ETwGnJ1ygmyoToU&_nc_ohc=jZ2fGQAMwAIQ7kNvwHZg5dG&_nc_gid=qyoemkrS72OSvZ0AUR7_qw&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzQ0MDc0NDcwNjMyMzc1MzM0Mg%3D%3D.3-ccb7-5&oh=00_AfIb7zB7tQ625NyBNwyO-TbVs33djt2yWCxfdbdsvpt0Ew&oe=682AB533&_nc_sid=10d13b",
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1747366190/hardik_s0epvq.jpg",
       imageFallback:
         "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&auto=format&fit=crop&q=60",
     },
-    {
-      name: "Ayush Patel",
-      country: "Australia",
-      flag: "🇦🇺",
-      image:
-        "https://instagram.fdel73-1.fna.fbcdn.net/v/t51.2885-15/491444689_17907693579127657_4528966839075443443_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjk2NXg5NjEuc2RyLmY3NTc2MS5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fdel73-1.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGIZ6WpkBQaNH9Yqu1bsUMnjveHJCouv9-hx5OXZZdnsUcQoUWFCfUX-5aFWxCMWm0&_nc_ohc=PUBTrIrE3h8Q7kNvwHNcJvv&_nc_gid=Ygz-q1BZDSM1Sth0_wJhVQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzYxNTM3ODg4NDE1ODU2ODUwMQ%3D%3D.3-ccb7-5&oh=00_AfIWn2cxOXs6FgiVCDFW2c_oM8lV0IlOHZ0Vvtl7DtcsFA&oe=682AC1B4&_nc_sid=10d13b",
-      imageFallback:
-        "https://instagram.fdel73-1.fna.fbcdn.net/v/t51.2885-15/491444689_17907693579127657_4528966839075443443_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjk2NXg5NjEuc2RyLmY3NTc2MS5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fdel73-1.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGIZ6WpkBQaNH9Yqu1bsUMnjveHJCouv9-hx5OXZZdnsUcQoUWFCfUX-5aFWxCMWm0&_nc_ohc=PUBTrIrE3h8Q7kNvwHNcJvv&_nc_gid=Ygz-q1BZDSM1Sth0_wJhVQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzYxNTM3ODg4NDE1ODU2ODUwMQ%3D%3D.3-ccb7-5&oh=00_AfIWn2cxOXs6FgiVCDFW2c_oM8lV0IlOHZ0Vvtl7DtcsFA&oe=682AC1B4&_nc_sid=10d13b",
-    },
+   
     {
       name: " Janvi Chavan",
       country: "United Kingdom",
       flag: "🇬🇧",
       image:
-        "https://instagram.fdel73-1.fna.fbcdn.net/v/t51.2885-15/491215202_17907693528127657_8749340633794729902_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjk3Mng5Njkuc2RyLmY3NTc2MS5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fdel73-1.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QE4uM59vdTURTMr1sTJgCo59mVuOZwz1d0HgEGfd25l4liIl2uMafOVr8SffXuArkE&_nc_ohc=eJxfx-tiYGYQ7kNvwHFbMRT&_nc_gid=IaxjCtF3aEZ-s9HzTfUwkw&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzYxNTM3ODYyNTQ1NDAzNTY1MQ%3D%3D.3-ccb7-5&oh=00_AfJA5QB1rmFKoPIxLZtVJUeLlchPBHgKkPPiCnSV8J2s0Q&oe=682ACDC4&_nc_sid=10d13b",
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1747366159/janvi_whsxns.jpg",
       imageFallback:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=60",
     },
     {
-      name: "Vikram Singh",
+      name: "Neel Modi",
       country: "New Zealand",
       flag: "🇳🇿",
-      image: "/success-stories/newzealand-student.jpg",
+      image:
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1747366131/neel_kv5tsp.jpg",
       imageFallback:
         "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=800&auto=format&fit=crop&q=60",
     },
     {
-      name: "Mei Lin",
+      name: "Yash Pandit",
       country: "Germany",
       flag: "🇩🇪",
-      image: "/success-stories/germany-student.jpg",
+      image:
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1747366137/yash_fqj296.jpg",
       imageFallback:
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop&q=60",
     },
     {
-      name: "Arjun Mehta",
+      name: "Ayush Patel",
       country: "USA",
       flag: "🇺🇸",
-      image: "/success-stories/usa-student.jpg",
+      image:
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1747366225/ayush_whqccb.jpg",
       imageFallback:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=60",
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1747366225/ayush_whqccb.jpg",
     },
     {
-      name: "Sophia Chen",
+      name: "Mihir patel",
       country: "Singapore",
       flag: "🇸🇬",
-      image: "/success-stories/singapore-student.jpg",
+      image:
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1747366153/mihir_smhmfq.jpg",
       imageFallback:
         "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60",
     },

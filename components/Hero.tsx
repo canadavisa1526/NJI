@@ -240,7 +240,7 @@ const Hero = () => {
                 </span>
               </div>
 
-              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
+              {/* <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
                 <Button
                   size="lg"
                   className="bg-[#FAA71A] backdrop-blur-md hover:bg-white/30 text-white font-semibold border border-white/30 text-sm md:text-base py-5 px-4"
@@ -249,7 +249,7 @@ const Hero = () => {
                   <BookOpen className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                   Get Free Consultation
                 </Button>
-              </div>
+              </div> */}
             </motion.div>
           )}
         </motion.div>
