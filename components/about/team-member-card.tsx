@@ -2,14 +2,15 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  Linkedin,
-  Mail,
-  MessageCircle, // Using MessageCircle instead of deprecated Twitter
-  Globe,
-  MapPin,
-  Phone,
-} from "lucide-react";
+// Icons available for future use
+// import {
+//   Linkedin,
+//   Mail,
+//   MessageCircle,
+//   Globe,
+//   MapPin,
+//   Phone,
+// } from "lucide-react";
 
 interface SocialLinks {
   linkedin?: string;

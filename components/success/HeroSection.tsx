@@ -25,7 +25,7 @@ const SuccessHero = () => {
               Our <span className="text-[#FAA71A]">Success</span> Stories
             </h1>
             <p className="text-lg md:text-xl text-[#AFC1DB] mb-8 max-w-2xl mx-auto lg:mx-0">
-              Discover how we've helped thousands of individuals achieve their dreams of studying, working, and living abroad. Real stories, real results.
+              Discover how we&apos;ve helped thousands of individuals achieve their dreams of studying, working, and living abroad. Real stories, real results.
             </p>
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
               <button className="px-6 py-3 bg-[#FAA71A] hover:bg-[#FAA71A]/90 text-[#13294E] font-semibold rounded-lg transition-colors duration-300">
@@ -52,9 +52,9 @@ const SuccessHero = () => {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#13294E]/80 to-transparent"></div>
-              
+
               {/* Success badges */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
@@ -62,8 +62,8 @@ const SuccessHero = () => {
               >
                 <p className="text-[#13294E] font-bold">1000+ Study Visas</p>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}

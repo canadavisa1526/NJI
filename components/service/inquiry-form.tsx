@@ -169,7 +169,7 @@ export default function InquiryForm({
               Thank you for your inquiry!
             </h4>
             <p className="text-sm text-green-700 dark:text-green-400">
-              We'll get back to you as soon as possible.
+              We&apos;ll get back to you as soon as possible.
             </p>
           </div>
         </motion.div>

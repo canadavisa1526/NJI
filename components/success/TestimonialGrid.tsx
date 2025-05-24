@@ -133,7 +133,7 @@ const TestimonialGrid = () => {
                 </div>
               </div>
 
-              <p className="text-gray-600 mb-4 italic">"{testimonial.quote}"</p>
+              <p className="text-gray-600 mb-4 italic">&ldquo;{testimonial.quote}&rdquo;</p>
 
               <div className="flex items-center">
                 {[...Array(testimonial.rating)].map((_, i) => (

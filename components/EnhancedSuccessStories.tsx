@@ -8,14 +8,12 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Plane } from "lucide-react";
-import { useTheme } from "next-themes";
 
 const EnhancedSuccessStories = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
   const controls = useAnimation();
-  const { theme, resolvedTheme } = useTheme();
-  const isDark = theme === "dark" || resolvedTheme === "dark";
+  // Theme detection removed as not currently used
 
   useEffect(() => {
     if (isInView) {

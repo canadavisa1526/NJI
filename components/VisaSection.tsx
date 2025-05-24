@@ -5,11 +5,9 @@ import { motion } from "framer-motion";
 import { ShapePattern } from "./shape-patterns";
 import {
   GraduationCap,
-  Globe2,
   Plane,
   Award,
   Sparkles,
-  BookOpen,
 } from "lucide-react";
 
 const VisaSection: FC = () => {

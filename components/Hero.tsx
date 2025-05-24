@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import {
@@ -8,9 +8,7 @@ import {
   Globe2,
   Award,
   Users,
-  Sparkles,
   BookOpen,
-  Plane,
   ArrowRight,
   Star,
 } from "lucide-react";
@@ -235,7 +233,7 @@ const Hero = () => {
         </div>
 
         {/* Enhanced Hero Content */}
-       
+
 
         {/* Stats - now at the bottom with improved responsive layout */}
 

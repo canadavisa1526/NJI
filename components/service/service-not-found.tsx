@@ -23,7 +23,7 @@ export default function ServiceNotFound() {
         </div>
         <h1 className="text-2xl font-bold text-[#13294E] mb-2">Service Not Found</h1>
         <p className="text-gray-600 mb-6">
-          We couldn't find the service you're looking for. It may have been moved or doesn't exist.
+          We couldn&apos;t find the service you&apos;re looking for. It may have been moved or doesn&apos;t exist.
         </p>
         <Link
           href="/services"

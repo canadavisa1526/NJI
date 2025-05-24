@@ -13,7 +13,7 @@ import TopInstitutionsSection from "@/components/country/TopInstitutionsSection"
 import CourseSection from "@/components/country/CourseSection";
 import CostSection from "@/components/country/CostSection";
 import JobOpportunitiesSection from "@/components/country/JobOpportunitiesSection";
-import SuccessStoriesSection from "@/components/country/SuccessStoriesSection";
+// import SuccessStoriesSection from "@/components/country/SuccessStoriesSection"; // Not currently used
 import FaqSection from "@/components/country/FaqSection";
 import InquiryForm from "@/components/country/InquiryForm";
 import ExploreCountriesSection from "@/components/country/ExploreCountriesSection";
