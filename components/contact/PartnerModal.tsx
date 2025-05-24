@@ -175,7 +175,7 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
             <div className="p-6">
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 Please fill out the form below to join our partner network.
-                We'll review your application and get back to you soon.
+                We&apos;ll review your application and get back to you soon.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">

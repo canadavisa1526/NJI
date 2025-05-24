@@ -116,7 +116,7 @@ export function CountryInquiryModal({
                     Thank You!
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    We'll get back to you shortly with detailed information.
+                    We&apos;ll get back to you shortly with detailed information.
                   </p>
                 </div>
               ) : (

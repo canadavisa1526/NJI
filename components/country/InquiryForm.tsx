@@ -411,7 +411,7 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                   </h4>
                   <p className="text-[#AFC1DB]">support@newjourneyworld.com</p>
                   <p className="text-sm text-white/70 mt-1">
-                    We'll respond within 24 hours
+                    We&apos;ll respond within 24 hours
                   </p>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { countriesData } from '@/data/countries-data';
 // import { countriesData } from '@/app/data/countries-data';
@@ -28,38 +29,39 @@ export default function ExploreCountriesSection({ currentCountry }: ExploreCount
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Link 
+              <Link
                 href={`/country/${country.slug}`}
                 className="block group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
               >
                 <div className="relative h-48 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
-                  <img 
-                    src={country.flag} 
-                    alt={country.name} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  <Image
+                    src={country.flag}
+                    alt={country.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
                     <h3 className="text-xl font-bold text-white">{country.name}</h3>
                   </div>
                 </div>
-                
+
                 <div className="p-4">
                   <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
                     {country.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {country.features.slice(0, 2).map((feature, index) => (
-                      <span 
-                        key={index} 
+                      <span
+                        key={index}
                         className="bg-[#AFC1DB]/20 dark:bg-[#AFC1DB]/10 text-[#13294E] dark:text-white text-xs py-1 px-2 rounded-full"
                       >
                         {feature}
                       </span>
                     ))}
                   </div>
-                  
+
                   <button className="w-full bg-[#13294E] dark:bg-[#FAA71A] hover:bg-[#193966] dark:hover:bg-[#f39c00] text-white dark:text-[#13294E] py-2 rounded-lg font-medium text-sm group-hover:bg-[#FAA71A] group-hover:text-[#13294E] transition-colors duration-300">
                     Learn More
                   </button>
