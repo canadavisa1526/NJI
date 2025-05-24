@@ -14,9 +14,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: {
     default: "New Journey Immigration | Education & Immigration Consultancy",
-    template: "%s | New Journey Immigration"
+    template: "%s | New Journey Immigration",
   },
-  description: "New Journey Immigration is a trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and settling abroad. Expert guidance for visas, university admissions, and immigration services.",
+  description:
+    "New Journey Immigration is a trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and settling abroad. Expert guidance for visas, university admissions, and immigration services.",
   keywords: [
     "Immigration services",
     "Study abroad",
@@ -53,9 +54,11 @@ export const metadata: Metadata = {
     "Top education consultancy",
     "Affordable visa services",
     "Trusted immigration experts",
-    "Successful visa applications"
+    "Successful visa applications",
   ],
-  authors: [{ name: "New Journey Immigration", url: "https://www.newjourneyworld.com" }],
+  authors: [
+    { name: "New Journey Immigration", url: "https://www.newjourneyworld.com" },
+  ],
   creator: "New Journey Immigration",
   publisher: "New Journey Immigration",
   icons: {
@@ -72,12 +75,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      'en-US': "/en-US",
+      "en-US": "/en-US",
     },
   },
   openGraph: {
     title: "New Journey Immigration | Education & Immigration Experts",
-    description: "Trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and living abroad. Expert guidance for visas, university admissions, and immigration services.",
+    description:
+      "Trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and living abroad. Expert guidance for visas, university admissions, and immigration services.",
     url: "https://www.newjourneyworld.com",
     siteName: "New Journey Immigration",
     images: [
@@ -94,7 +98,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "New Journey Immigration | Education & Immigration Experts",
-    description: "Trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and living abroad.",
+    description:
+      "Trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and living abroad.",
     images: ["/og-image.png"],
     creator: "@newjourneyimm",
   },
@@ -104,12 +109,12 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  category: "Education & Immigration"
+  category: "Education & Immigration",
 };
 
 export default function RootLayout({
@@ -128,30 +133,31 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "New Journey Immigration",
-              "url": "https://www.newjourneyworld.com",
-              "logo": "https://www.newjourneyworld.com/logo.png",
-              "sameAs": [
+              name: "New Journey Immigration",
+              url: "https://www.newjourneyworld.com",
+              logo: "https://www.newjourneyworld.com/logo.png",
+              sameAs: [
                 "https://www.facebook.com/newjourneyimmigration",
                 "https://www.instagram.com/newjourneyimmigration",
-                "https://twitter.com/newjourneyimm"
+                "https://twitter.com/newjourneyimm",
               ],
-              "contactPoint": {
+              contactPoint: {
                 "@type": "ContactPoint",
-                "telephone": "+91 987-654-3210",
-                "contactType": "customer service",
-                "availableLanguage": ["English", "Hindi"]
+                telephone: "+91 987-654-3210",
+                contactType: "customer service",
+                availableLanguage: ["English", "Hindi"],
               },
-              "address": {
+              address: {
                 "@type": "PostalAddress",
-                "streetAddress": "Your Street Address",
-                "addressLocality": "Your City",
-                "addressRegion": "Your Region",
-                "postalCode": "Your Postal Code",
-                "addressCountry": "IN"
+                streetAddress: "Your Street Address",
+                addressLocality: "Your City",
+                addressRegion: "Your Region",
+                postalCode: "Your Postal Code",
+                addressCountry: "IN",
               },
-              "description": "New Journey Immigration is a trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and living abroad."
-            })
+              description:
+                "New Journey Immigration is a trusted education and immigration consultancy helping students and professionals achieve their dreams of studying, working, and living abroad.",
+            }),
           }}
         />
         <Script
@@ -161,40 +167,46 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "New Journey Immigration",
-              "image": "https://www.newjourneyworld.com/og-image.png",
-              "priceRange": "$$",
-              "telephone": "++91 987-654-3210",
-              "email": "support@newjourneyworld.com",
-              "address": {
+              name: "New Journey Immigration",
+              image: "https://www.newjourneyworld.com/og-image.png",
+              priceRange: "$$",
+              telephone: "++91 987-654-3210",
+              email: "support@newjourneyworld.com",
+              address: {
                 "@type": "PostalAddress",
-                "streetAddress": "Your Street Address",
-                "addressLocality": "Your City",
-                "addressRegion": "Your Region",
-                "postalCode": "Your Postal Code",
-                "addressCountry": "IN"
+                streetAddress: "Your Street Address",
+                addressLocality: "Your City",
+                addressRegion: "Your Region",
+                postalCode: "Your Postal Code",
+                addressCountry: "IN",
               },
-              "geo": {
+              geo: {
                 "@type": "GeoCoordinates",
-                "latitude": "YOUR_LATITUDE",
-                "longitude": "YOUR_LONGITUDE"
+                latitude: "YOUR_LATITUDE",
+                longitude: "YOUR_LONGITUDE",
               },
-              "openingHoursSpecification": [
+              openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  "opens": "09:00",
-                  "closes": "18:00"
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                  ],
+                  opens: "09:00",
+                  closes: "18:00",
                 },
                 {
                   "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Saturday"],
-                  "opens": "10:00",
-                  "closes": "16:00"
-                }
+                  dayOfWeek: ["Saturday"],
+                  opens: "10:00",
+                  closes: "16:00",
+                },
               ],
-              "url": "https://www.newjourneyworld.com"
-            })
+              url: "https://www.newjourneyworld.com",
+            }),
           }}
         />
         <Script
@@ -204,23 +216,38 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "EducationalOrganization",
-              "name": "New Journey Immigration",
-              "url": "https://www.newjourneyworld.com",
-              "logo": "https://www.newjourneyworld.com/logo.png",
-              "description": "New Journey Immigration provides expert guidance for international education, visa applications, and immigration services.",
-              "address": {
+              name: "New Journey Immigration",
+              url: "https://www.newjourneyworld.com",
+              logo: "https://www.newjourneyworld.com/logo.png",
+              description:
+                "New Journey Immigration provides expert guidance for international education, visa applications, and immigration services.",
+              address: {
                 "@type": "PostalAddress",
-                "streetAddress": "Your Street Address",
-                "addressLocality": "Your City",
-                "addressRegion": "Your Region",
-                "postalCode": "Your Postal Code",
-                "addressCountry": "IN"
+                streetAddress: "Your Street Address",
+                addressLocality: "Your City",
+                addressRegion: "Your Region",
+                postalCode: "Your Postal Code",
+                addressCountry: "IN",
               },
-              "telephone": "+91-7046272137",
-              "email": "info@newjourneyworld.com"
-            })
+              telephone: "+91-7046272137",
+              email: "info@newjourneyworld.com",
+            }),
           }}
         />
+
+        {/* Performance optimizations */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+        {/* Preload critical resources */}
+        <link rel="preload" href="/hero-poster.jpg" as="image" />
+        <link rel="preload" href="/logo.png" as="image" />
 
         {/* Google Tag Manager */}
         <Script
@@ -233,7 +260,7 @@ export default function RootLayout({
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-XXXXXXX');
-            `
+            `,
           }}
         />
       </head>
@@ -244,7 +271,7 @@ export default function RootLayout({
             src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
             height="0"
             width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
+            style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
         <PostHogProvider>

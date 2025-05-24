@@ -1,6 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
-import { google } from "googleapis";
 import { saveSubmissionLocally } from "./local-storage";
+import {
+  appendToGoogleSheets,
+  sendToWebhook,
+  sendEmailNotification,
+} from "./google-sheets-native";
+
+// Dynamic import for googleapis to avoid build issues
+let google: any = null;
+
+async function getGoogleAPI() {
+  if (!google) {
+    try {
+      const googleapis = await import("googleapis");
+      google = googleapis.google;
+    } catch (error) {
+      console.error("Failed to import googleapis:", error);
+      throw new Error("Google APIs not available");
+    }
+  }
+  return google;
+}
 
 // Google Sheets configuration
 const GOOGLE_SHEETS_CLIENT_EMAIL = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
@@ -11,13 +31,15 @@ const GOOGLE_SHEETS_SPREADSHEET_ID = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
 // Initialize Google Sheets API
 async function getGoogleSheetsClient() {
   try {
-    const auth = new google.auth.JWT({
+    const googleAPI = await getGoogleAPI();
+
+    const auth = new googleAPI.auth.JWT({
       email: GOOGLE_SHEETS_CLIENT_EMAIL,
       key: GOOGLE_SHEETS_PRIVATE_KEY,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
 
-    const sheets = google.sheets({ version: "v4", auth });
+    const sheets = googleAPI.sheets({ version: "v4", auth });
     return sheets;
   } catch (error) {
     console.error("Error initializing Google Sheets client:", error);
@@ -145,25 +167,71 @@ export async function POST(request: NextRequest) {
     console.log("Private Key configured:", !!GOOGLE_SHEETS_PRIVATE_KEY);
     console.log("Spreadsheet ID configured:", !!GOOGLE_SHEETS_SPREADSHEET_ID);
 
-    // Append data to Google Sheets
+    // Try multiple methods to save the data
+    let dataSaved = false;
+
+    // Method 1: Try Google Sheets API with googleapis
     if (
       GOOGLE_SHEETS_CLIENT_EMAIL &&
       GOOGLE_SHEETS_PRIVATE_KEY &&
       GOOGLE_SHEETS_SPREADSHEET_ID
     ) {
-      console.log("Attempting to append data to Google Sheets...");
+      console.log(
+        "Attempting to append data to Google Sheets using googleapis..."
+      );
       try {
         const result = await appendToSheet(data);
         console.log("Successfully appended data to Google Sheets:", result);
+        dataSaved = true;
       } catch (sheetError) {
-        console.error("Error appending to Google Sheets:", sheetError);
-        // Continue execution even if Google Sheets update fails
-        // This way the form submission is still considered successful
+        console.error(
+          "Error appending to Google Sheets with googleapis:",
+          sheetError
+        );
+
+        // Method 2: Try native fetch implementation
+        console.log("Trying native Google Sheets implementation...");
+        try {
+          const nativeResult = await appendToGoogleSheets(data, {
+            clientEmail: GOOGLE_SHEETS_CLIENT_EMAIL,
+            privateKey: GOOGLE_SHEETS_PRIVATE_KEY,
+            spreadsheetId: GOOGLE_SHEETS_SPREADSHEET_ID,
+          });
+          if (nativeResult) {
+            console.log("Successfully saved using native implementation");
+            dataSaved = true;
+          }
+        } catch (nativeError) {
+          console.error(
+            "Native Google Sheets implementation also failed:",
+            nativeError
+          );
+        }
       }
-    } else {
-      console.warn(
-        "Google Sheets credentials not configured. Skipping sheet update."
-      );
+    }
+
+    // Method 3: Try webhook if Google Sheets failed
+    if (!dataSaved) {
+      console.log("Trying webhook submission...");
+      try {
+        const webhookResult = await sendToWebhook(data);
+        if (webhookResult) {
+          console.log("Successfully sent to webhook");
+          dataSaved = true;
+        }
+      } catch (webhookError) {
+        console.error("Webhook submission failed:", webhookError);
+      }
+    }
+
+    // Method 4: Try email notification
+    try {
+      const emailResult = await sendEmailNotification(data);
+      if (emailResult) {
+        console.log("Successfully sent email notification");
+      }
+    } catch (emailError) {
+      console.error("Email notification failed:", emailError);
     }
 
     // For testing purposes, let's save the form data to a local file

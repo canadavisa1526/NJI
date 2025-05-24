@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import {
@@ -11,9 +11,12 @@ import {
   Sparkles,
   BookOpen,
   Plane,
+  ArrowRight,
+  Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ConsultationDialog from "./ConsultationDialog";
+import Image from "next/image";
 
 // CountUp component to animate numbers from 0 to target value
 const CountUp = ({
@@ -135,7 +138,7 @@ const Hero = () => {
   return (
     <div ref={containerRef} className="relative overflow-hidden">
       <section className="relative h-[50vh] md:h-[70vh] pt-12 md:pt-20 pb-24 md:pb-52 flex flex-col">
-        {/* Video Background */}
+        {/* Optimized Video Background */}
         <div className="absolute inset-0 overflow-hidden z-0">
           <video
             ref={videoRef}
@@ -144,13 +147,23 @@ const Hero = () => {
             muted
             loop
             playsInline
+            preload="metadata"
+            poster="/hero-poster.jpg"
           >
             <source
               src="https://res.cloudinary.com/dka63iohc/video/upload/v1748101668/videoplayback_gmr4o5.mp4"
               type="video/mp4"
             />
+            {/* Fallback for browsers that don't support video */}
+            <Image
+              src="/hero-fallback.jpg"
+              alt="Global destinations background"
+              fill
+              className="object-cover"
+              priority
+            />
           </video>
-          <div className="absolute inset-0 bg-black/30 md:bg-black/20 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
 
           {/* Flying Planes - Hide on small screens, show on medium and up */}
           {/* <div className="hidden md:block">
@@ -221,38 +234,8 @@ const Hero = () => {
           ))} */}
         </div>
 
-        {/* Hero Content */}
-        <motion.div
-          style={{ opacity, scale }}
-          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-32 flex-grow flex items-center"
-        >
-          {isMobile ? null : (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              {/* <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4 md:mb-8">
-                <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-yellow-300 mr-1.5 md:mr-2" />
-                <span className="text-white text-sm md:text-base">
-                  Transform Your Future with NJI Education
-                </span>
-              </div> */}
-
-              {/* <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
-                <Button
-                  size="lg"
-                  className="bg-[#FAA71A] backdrop-blur-md hover:bg-white/30 text-white font-semibold border border-white/30 text-sm md:text-base py-5 px-4"
-                  onClick={() => setIsConsultationOpen(true)}
-                >
-                  <BookOpen className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                  Get Free Consultation
-                </Button>
-              </div> */}
-            </motion.div>
-          )}
-        </motion.div>
+        {/* Enhanced Hero Content */}
+       
 
         {/* Stats - now at the bottom with improved responsive layout */}
 

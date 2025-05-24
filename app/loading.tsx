@@ -391,7 +391,7 @@ const Loading = () => {
             </motion.div>
 
             {/* Footer credit */}
-            <motion.div
+            {/* <motion.div
               className="absolute bottom-6 left-0 right-0 text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -414,7 +414,7 @@ const Loading = () => {
                  
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </div>

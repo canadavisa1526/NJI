@@ -445,9 +445,101 @@
   background: #FAA71A;
   opacity: 1;
 }
-*{
+/* ====== Performance Optimizations ====== */
+* {
   scrollbar-width: none;
   -ms-overflow-style: none;
   scrollbar-color: transparent transparent;
   /* overflow-x: hidden; */
+}
+
+/* Hide scrollbars for webkit browsers */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Optimize animations for better performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* GPU acceleration for smooth animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize images and videos */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+  outline: 2px solid #FAA71A;
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  @apply bg-[#FAA71A] hover:bg-[#e8961a] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#FAA71A] focus:ring-opacity-50;
+}
+
+.btn-secondary {
+  @apply bg-[#13294E] hover:bg-[#1a365d] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#13294E] focus:ring-opacity-50;
+}
+
+/* Enhanced card styles */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, #FAA71A 0%, #e8961a 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #13294E 0%, #1a365d 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #AFC1DB 0%, #8FA8C8 100%);
+}
+
+/* Text gradients */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #FAA71A 0%, #e8961a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-secondary {
+  background: linear-gradient(135deg, #13294E 0%, #1a365d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
