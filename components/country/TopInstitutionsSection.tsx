@@ -43,28 +43,29 @@ export default function TopInstitutionsSection({ country }: TopInstitutionsSecti
   }
 
   const allInstitutions = [...country.topInstitutions, ...placeholderInstitutions];
-  
+
   // Show only first 8 by default, and allow "View More" functionality
   const [showAll, setShowAll] = useState(false);
   const displayedInstitutions = showAll ? allInstitutions : allInstitutions.slice(0, 8);
-  
+
   return (
     <section className="py-12">
       <h2 className="text-3xl md:text-4xl font-bold text-[#13294E] mb-8 text-center">
         Top Institutions in <span className="text-[#FAA71A]">{country.name}</span>
       </h2>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {displayedInstitutions.map((institution, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:translate-y-[-5px]"
           >
             <div className="relative h-40 overflow-hidden">
-              <img 
-                src={institution.image} 
-                alt={institution.name} 
-                className="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110"
+              <Image
+                src={institution.image}
+                alt={institution.name}
+                fill
+                className="object-cover transform transition-transform duration-500 hover:scale-110"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
                 <div className="inline-block px-2 py-1 bg-[#FAA71A] text-[#13294E] text-xs font-semibold rounded">
@@ -72,15 +73,15 @@ export default function TopInstitutionsSection({ country }: TopInstitutionsSecti
                 </div>
               </div>
             </div>
-            
+
             <div className="p-4">
               <h3 className="text-lg font-semibold text-[#13294E] mb-1 line-clamp-1">{institution.name}</h3>
               <p className="text-sm text-gray-500 mb-2">{institution.location}</p>
               <p className="text-sm text-gray-700 mb-4 line-clamp-2">{institution.description}</p>
-              
-              <a 
-                href={institution.website} 
-                target="_blank" 
+
+              <a
+                href={institution.website}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block text-[#13294E] hover:text-[#FAA71A] text-sm font-medium transition-colors duration-200"
               >
@@ -90,7 +91,7 @@ export default function TopInstitutionsSection({ country }: TopInstitutionsSecti
           </div>
         ))}
       </div>
-      
+
       {allInstitutions.length > 8 && (
         <div className="mt-8 text-center">
           <button

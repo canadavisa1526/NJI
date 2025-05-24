@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, GraduationCap, Users, Star } from "lucide-react";
 import { type Country } from "@/types/country";
 import { cn } from "@/lib/utils";
@@ -14,14 +15,14 @@ interface CountryCardProps {
 
 export default function CountryCard({ country, direction, onSwipe }: CountryCardProps) {
   const cardVariants = {
-    initial: { 
+    initial: {
       scale: 0.95,
-      y: 10, 
+      y: 10,
       opacity: 0.8
     },
-    animate: { 
-      scale: 1, 
-      y: 0, 
+    animate: {
+      scale: 1,
+      y: 0,
       opacity: 1,
       transition: {
         duration: 0.4,
@@ -67,10 +68,11 @@ export default function CountryCard({ country, direction, onSwipe }: CountryCard
         )}
       >
         <div className="relative h-48 overflow-hidden">
-          <img
+          <Image
             src={country.flag}
             alt={`${country.name} landscape`}
-            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+            fill
+            className="object-cover transform group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#13294E]/60 via-[#13294E]/20 to-transparent" />
           <motion.div

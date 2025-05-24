@@ -3,6 +3,7 @@
 import { MapPin, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface CountriesListProps {
   countries: string[];
@@ -83,11 +84,14 @@ export default function CountriesList({ countries }: CountriesListProps) {
               className="flex items-center space-x-2 p-3 rounded-md bg-gray-50 dark:bg-gray-800 border border-[#AFC1DB]/20 dark:border-gray-700 transition-all hover:border-[#AFC1DB] dark:hover:border-[#FAA71A]/50 hover:shadow-sm"
             >
               {flagMap[country] && (
-                <img
-                  src={flagMap[country]}
-                  alt={`${country} flag`}
-                  className="w-6 h-4 object-cover rounded-sm"
-                />
+                <div className="relative w-6 h-4">
+                  <Image
+                    src={flagMap[country]}
+                    alt={`${country} flag`}
+                    fill
+                    className="object-cover rounded-sm"
+                  />
+                </div>
               )}
               <span className="text-gray-700 dark:text-gray-300">{country}</span>
             </motion.div>
