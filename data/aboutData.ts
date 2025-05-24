@@ -116,7 +116,7 @@ export const teamMembers = [
   {
     name: "Dimple",
     role: "Director of Canada Branch",
-    image: "team/dimple.jpeg",
+    image: "/team/dimple.jpeg",
     bio: "20+ years of experience in Canadian immigration processes, guiding clients with personalized, transparent advice.",
     location: "Toronto, Canada",
     phone: "+1 (123) 456-7890",

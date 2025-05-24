@@ -8,6 +8,7 @@ interface HeroSectionProps {
     name: string;
     flag: string;
     description: string;
+    timelapseVideo?: string;
   };
 }
 
@@ -32,18 +33,69 @@ export default function HeroSection({ country }: HeroSectionProps) {
 
   return (
     <div className="relative w-full h-[50vh] md:h-[70vh] lg:h-[70vh] overflow-hidden">
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${country.flag})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          transform: scrolled ? "scale(1.05)" : "scale(1)",
-          transition: "transform 0.5s ease-out",
-        }}
-      />
+      {/* Video Background */}
+      {country.timelapseVideo ? (
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {country.timelapseVideo.includes("youtube.com") ||
+          country.timelapseVideo.includes("youtu.be") ? (
+            // YouTube iframe
+            <iframe
+              src={country.timelapseVideo}
+              title={`${country.name} Time-lapse Video`}
+              className="absolute top-1/2 left-1/2 w-full h-full"
+              style={{
+                transform: scrolled
+                  ? "translate(-50%, -50%) scale(1.05)"
+                  : "translate(-50%, -50%) scale(1)",
+                transition: "transform 0.5s ease-out",
+                width: "100vw",
+                height: "56.25vw", // 16:9 aspect ratio
+                minHeight: "100vh",
+                objectFit: "cover",
+                border: "none",
+              }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+            />
+          ) : (
+            // Direct video file
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute top-1/2 left-1/2 w-full h-full object-cover"
+              style={{
+                transform: scrolled
+                  ? "translate(-50%, -50%) scale(1.05)"
+                  : "translate(-50%, -50%) scale(1)",
+                transition: "transform 0.5s ease-out",
+                width: "100vw",
+                height: "56.25vw", // 16:9 aspect ratio
+                minHeight: "100vh",
+              }}
+            >
+              <source src={country.timelapseVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
+        </div>
+      ) : (
+        /* Fallback to image background */
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${country.flag})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            transform: scrolled ? "scale(1.05)" : "scale(1)",
+            transition: "transform 0.5s ease-out",
+          }}
+        />
+      )}
 
       <div className="relative z-20 h-full flex flex-col items-center justify-center text-white px-4 md:px-8">
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 text-center">

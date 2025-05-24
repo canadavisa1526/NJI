@@ -80,7 +80,7 @@ const VisaSection: FC = () => {
           animate={{ opacity: 0.6, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <Globe2 className="w-8 h-8 text-[#AFC1DB]" />
+          {/* <Globe2 className="w-8 h-8 text-[#AFC1DB]" /> */}
         </motion.div>
         <motion.div
           className="absolute top-[40%] left-[5%]"
@@ -88,7 +88,7 @@ const VisaSection: FC = () => {
           animate={{ opacity: 0.6, x: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          <BookOpen className="w-6 h-6 text-[#FAA71A]" />
+          {/* <BookOpen className="w-6 h-6 text-[#FAA71A]" /> */}
         </motion.div>
         <motion.div
           className="absolute bottom-[30%] right-[8%]"

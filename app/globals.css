@@ -445,3 +445,9 @@
   background: #FAA71A;
   opacity: 1;
 }
+*{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-color: transparent transparent;
+  /* overflow-x: hidden; */
+}

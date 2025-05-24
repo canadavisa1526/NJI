@@ -232,9 +232,9 @@ export function TeamMemberCard({
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3 group-hover:line-clamp-none transition-all duration-500 leading-relaxed">
+              {/* <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3 group-hover:line-clamp-none transition-all duration-500 leading-relaxed">
                 {bio}
-              </p>
+              </p> */}
               <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white dark:from-[#13294E] to-transparent group-hover:opacity-0 transition-opacity duration-500"></div>
             </motion.div>
           )}

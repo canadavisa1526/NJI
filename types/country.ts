@@ -3,6 +3,7 @@ export interface Country {
   slug: string;
   flag: string;
   description: string;
+  timelapseVideo?: string;
   features: string[];
   stats: {
     universities: string;

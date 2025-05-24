@@ -146,7 +146,7 @@ const Hero = () => {
             playsInline
           >
             <source
-              src="https://res.cloudinary.com/dka63iohc/video/upload/v1744996007/nji-hero_ltq8dm.mp4"
+              src="https://res.cloudinary.com/dka63iohc/video/upload/v1748101668/videoplayback_gmr4o5.mp4"
               type="video/mp4"
             />
           </video>
@@ -233,12 +233,12 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4 md:mb-8">
+              {/* <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4 md:mb-8">
                 <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-yellow-300 mr-1.5 md:mr-2" />
                 <span className="text-white text-sm md:text-base">
                   Transform Your Future with NJI Education
                 </span>
-              </div>
+              </div> */}
 
               {/* <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
                 <Button
@@ -259,7 +259,7 @@ const Hero = () => {
         {/* Gradient Wave */}
         <div className="absolute bottom-0 left-0 right-0 z-0">
           <svg
-            viewBox="0 0 1440 280"
+            viewBox="0 0 1440 200"
             xmlns="http://www.w3.org/2000/svg"
             className="w-full h-auto"
             preserveAspectRatio="none"
@@ -278,27 +278,33 @@ const Hero = () => {
           </svg>
         </div>
 
-        {/* Stats section with improved responsive layout */}
-        <div className="absolute bottom-2 md:bottom-3 left-0 right-0 z-10 px-3 md:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-8 text-center">
+        {/* Stats section - smaller and positioned inside the wave */}
+        <div className="absolute bottom-8 md:bottom-12 left-0 right-0 z-20 px-4 md:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-center">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
-                  className=" rounded-lg p-1.5 md:p-4"
+                  className=" rounded-xl p-2 md:p-3  hover:bg-white/15 transition-all duration-300"
                 >
-                  <div className="inline-flex items-center justify-center w-7 h-7 md:w-12 md:h-12 rounded-full bg-[#FAA71A]/20 text-[#FAA71A] mb-1 md:mb-4 hover:scale-110 transition-transform">
-                    <stat.icon className="h-3.5 w-3.5 md:h-6 md:w-6" />
+                  <div className="inline-flex items-center justify-center w-6 h-6 md:w-10 md:h-10 rounded-full bg-[#FAA71A]/30 text-[#FAA71A] mb-1 md:mb-2 hover:scale-110 transition-transform">
+                    <stat.icon className="h-3 w-3 md:h-5 md:w-5" />
                   </div>
-                  <CountUp
-                    end={stat.numericValue}
-                    suffix={stat.suffix}
-                    duration={2.5}
-                  />
-                  <div className="text-[10px] md:text-base text-gray-200 leading-tight">
+                  <div className="text-sm md:text-2xl font-bold text-white mb-0 md:mb-1">
+                    {stat.numericValue === "24/7" ? (
+                      "24/7"
+                    ) : (
+                      <CountUp
+                        end={stat.numericValue}
+                        suffix={stat.suffix}
+                        duration={2.5}
+                      />
+                    )}
+                  </div>
+                  <div className="text-[9px] md:text-sm text-gray-200 leading-tight font-medium">
                     {stat.label}
                   </div>
                 </motion.div>

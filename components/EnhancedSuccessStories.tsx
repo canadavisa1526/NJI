@@ -33,7 +33,7 @@ const EnhancedSuccessStories = () => {
       imageFallback:
         "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&auto=format&fit=crop&q=60",
     },
-   
+
     {
       name: " Janvi Chavan",
       country: "United Kingdom",
@@ -275,12 +275,12 @@ const EnhancedSuccessStories = () => {
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-[#AFC1DB]/20 h-full">
-                  <div className="relative h-[50vh] md:h-[70vh]">
+                  <div className="relative h-[50vh] md:h-[70vh] w-full">
                     <Image
                       src={story.image}
                       alt={`${story.name} Success Story`}
                       fill
-                      className="object-cover"
+                      className="object-cover w-full h-full"
                       priority={index < 2}
                       onError={(e) => {
                         // Fallback to alternative image if main image fails to load
@@ -290,12 +290,12 @@ const EnhancedSuccessStories = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#13294E]/80 to-transparent"></div>
 
                     {/* Country flag badge */}
-                    <div className="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg flex items-center space-x-2">
+                    {/* <div className="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg flex items-center space-x-2">
                       <span className="text-xl">{story.flag}</span>
                       <span className="font-medium text-[#13294E] text-base">
                         {story.country}
                       </span>
-                    </div>
+                    </div> */}
 
                     {/* Name at bottom */}
                     <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-[#13294E] to-transparent">

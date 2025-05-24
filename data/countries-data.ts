@@ -4,6 +4,8 @@ export const countriesDetailData = {
     slug: "canada",
     flag: "https://media.istockphoto.com/id/626545182/photo/toronto-skyline-with-purple-light-toronto-ontario-canada.jpg?s=612x612&w=0&k=20&c=gTfPgxMvsUZaz7YS3EF2voErqf2MmQRpwlHnO1jVBBc=",
     description: "World-class education and quality of life",
+    timelapseVideo:
+      "https://res.cloudinary.com/dka63iohc/video/upload/v1748058916/5922_Tower_New_1920x1080_l4g07n.mp4",
     about: {
       description:
         "Canada stands as a beacon of educational excellence and multicultural harmony, offering international students a unique blend of high-quality education and exceptional quality of life. With its diverse landscape spanning from the Rocky Mountains to vibrant urban centers, Canada provides a safe, welcoming environment for students from around the globe. The country's education system is renowned for its research-driven approach, practical learning opportunities, and strong emphasis on innovation and technology.",
@@ -229,6 +231,8 @@ export const countriesDetailData = {
     slug: "usa",
     flag: "https://png.pngtree.com/thumb_back/fh260/background/20241112/pngtree-usa-new-york-city-silhouette-at-sunset-image_16541830.jpg",
     description: "Land of opportunities and innovation",
+    timelapseVideo:
+      "https://res.cloudinary.com/dka63iohc/video/upload/v1748058305/WhatsApp_Video_2025-05-17_at_6.10.35_PM_nypviy.mp4",
     about: {
       description:
         "The United States represents the pinnacle of higher education and technological innovation, hosting many of the world's top-ranked universities and research institutions. As a global leader in education, research, and innovation, the US offers students unparalleled opportunities for academic and professional growth. The country's diverse landscape, from bustling metropolises to serene college towns, provides an enriching environment for international students to pursue their educational dreams.",
@@ -447,6 +451,8 @@ export const countriesDetailData = {
     slug: "uk",
     flag: "https://images.pexels.com/photos/726484/pexels-photo-726484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     description: "Traditional excellence in education",
+    timelapseVideo:
+      "https://res.cloudinary.com/dka63iohc/video/upload/v1748058305/WhatsApp_Video_2025-05-17_at_6.10.35_PM_nypviy.mp4",
     about: {
       description:
         "The United Kingdom combines centuries of academic tradition with modern innovation, offering students an educational experience steeped in history yet focused on the future. Home to some of the world's oldest and most prestigious universities, the UK provides a unique learning environment where traditional scholarship meets cutting-edge research. The country's compact size allows students to easily explore its rich cultural heritage, from historic castles to contemporary art scenes.",
@@ -672,6 +678,8 @@ export const countriesDetailData = {
     slug: "australia",
     flag: "https://ychef.files.bbci.co.uk/1280x720/p0gp95cq.jpg",
     description: "Quality education in a beautiful setting",
+    timelapseVideo:
+      "https://res.cloudinary.com/dka63iohc/video/upload/v1748058303/WhatsApp_Video_2025-05-17_at_6.10.34_PM_1_fe8pyu.mp4",
     about: {
       description:
         "Australia combines world-class education with an unparalleled quality of life, offering students a unique blend of academic excellence and outdoor adventure. Known for its innovative research, practical approach to learning, and stunning natural landscapes, Australia provides international students with a supportive environment for both study and personal growth. The country's unique wildlife, beautiful beaches, and vibrant cities create an exceptional setting for educational pursuits.",
@@ -896,6 +904,8 @@ export const countriesDetailData = {
     slug: "germany",
     flag: "https://images.pexels.com/photos/109629/pexels-photo-109629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     description: "Innovation and engineering excellence",
+    timelapseVideo:
+      "https://res.cloudinary.com/dka63iohc/video/upload/v1748058943/5922_Tower_New_1920x1080_jqitpw.mp4",
     about: {
       description:
         "Germany stands at the forefront of technological innovation and engineering excellence, offering students a unique combination of high-quality education and industrial expertise. Known for its strong economy, precision engineering, and commitment to research and development, Germany provides international students with practical, industry-focused education. The country's central European location, rich cultural heritage, and modern infrastructure create an ideal environment for academic pursuit.",
@@ -1116,6 +1126,8 @@ export const countriesDetailData = {
     slug: "new-zealand",
     flag: "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     description: "Quality education in a scenic environment",
+    timelapseVideo:
+      "https://res.cloudinary.com/dka63iohc/video/upload/v1748058304/WhatsApp_Video_2025-05-17_at_6.10.34_PM_uwjcjc.mp4",
     about: {
       description:
         "New Zealand offers a unique educational experience combining academic excellence with stunning natural beauty and a welcoming culture. Known for its innovative teaching methods, practical learning approach, and commitment to sustainability, New Zealand provides students with a supportive environment for both academic and personal growth. The country's breathtaking landscapes, from snow-capped mountains to pristine beaches, create an extraordinary backdrop for educational pursuits.",
