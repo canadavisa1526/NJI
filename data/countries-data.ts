@@ -232,7 +232,7 @@ export const countriesDetailData = {
     flag: "https://png.pngtree.com/thumb_back/fh260/background/20241112/pngtree-usa-new-york-city-silhouette-at-sunset-image_16541830.jpg",
     description: "Land of opportunities and innovation",
     timelapseVideo:
-      "https://res.cloudinary.com/dka63iohc/video/upload/v1748058305/WhatsApp_Video_2025-05-17_at_6.10.35_PM_nypviy.mp4",
+      "https://res.cloudinary.com/dka63iohc/video/upload/v1748198684/us_ehvnqi.mp4",
     about: {
       description:
         "The United States represents the pinnacle of higher education and technological innovation, hosting many of the world's top-ranked universities and research institutions. As a global leader in education, research, and innovation, the US offers students unparalleled opportunities for academic and professional growth. The country's diverse landscape, from bustling metropolises to serene college towns, provides an enriching environment for international students to pursue their educational dreams.",
@@ -452,7 +452,8 @@ export const countriesDetailData = {
     flag: "https://images.pexels.com/photos/726484/pexels-photo-726484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     description: "Traditional excellence in education",
     timelapseVideo:
-      "https://res.cloudinary.com/dka63iohc/video/upload/v1748198684/us_ehvnqi.mp4",
+      "https://res.cloudinary.com/dka63iohc/video/upload/v1748058305/WhatsApp_Video_2025-05-17_at_6.10.35_PM_nypviy.mp4",
+
     about: {
       description:
         "The United Kingdom combines centuries of academic tradition with modern innovation, offering students an educational experience steeped in history yet focused on the future. Home to some of the world's oldest and most prestigious universities, the UK provides a unique learning environment where traditional scholarship meets cutting-edge research. The country's compact size allows students to easily explore its rich cultural heritage, from historic castles to contemporary art scenes.",

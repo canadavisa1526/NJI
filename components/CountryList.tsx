@@ -11,12 +11,8 @@ import { type Country } from "@/types/country";
 
 export default function CountryList() {
   return (
-    <section className="py-12 bg-gradient-to-b from-white/50 to-[#AFC1DB]/20 dark:from-[#13294E]/50 dark:to-[#13294E]/20 relative overflow-hidden rounded-2xl">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(250,167,26,0.1),transparent_50%)]" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-6">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="inline-block bg-[#FAA71A]/10 dark:bg-[#FAA71A]/20 text-[#FAA71A] text-sm font-semibold px-4 py-2 rounded-full mb-4">
             Featured Destinations

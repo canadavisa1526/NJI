@@ -3,120 +3,12 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
 import { ShapePattern } from "./shape-patterns";
-import {
-  GraduationCap,
-  Plane,
-  Award,
-  Sparkles,
-} from "lucide-react";
+import { GraduationCap, Plane, Award, Sparkles } from "lucide-react";
 
 const VisaSection: FC = () => {
   return (
-    <section className="relative overflow-hidden py-16 lg:py-24 bg-white dark:bg-[#13294E] transition-colors min-h-[70vh] flex items-center">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-32 h-32 md:w-48 md:h-48 bg-[#FAA71A] rounded-bl-full opacity-30 z-0" />
-      <div className="absolute bottom-0 left-0 w-32 h-32 md:w-48 md:h-48 bg-[#AFC1DB] rounded-tr-full opacity-30 z-0" />
-
-      {/* Animated Blobs */}
-      <div className="absolute inset-0 opacity-20">
-        <motion.div
-          className="absolute top-20 left-20 w-64 h-64 bg-[#FAA71A] rounded-full mix-blend-multiply filter blur-xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.2, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-        />
-        <motion.div
-          className="absolute top-40 right-20 w-64 h-64 bg-[#13294E] rounded-full mix-blend-multiply filter blur-xl"
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.2, 0.3, 0.2],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            repeatType: "reverse",
-            delay: 1,
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-1/2 w-64 h-64 bg-[#AFC1DB] rounded-full mix-blend-multiply filter blur-xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.1, 0.2],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            repeatType: "reverse",
-            delay: 2,
-          }}
-        />
-      </div>
-
-      {/* Pattern Background */}
-      <ShapePattern variant="circles" color="#FAA71A" className="opacity-5" />
-
-      {/* Floating Icons */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          className="absolute top-[15%] right-[10%]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 0.6, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <GraduationCap className="w-8 h-8 text-[#FAA71A]" />
-        </motion.div>
-        <motion.div
-          className="absolute bottom-[20%] left-[15%]"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 0.6, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          {/* <Globe2 className="w-8 h-8 text-[#AFC1DB]" /> */}
-        </motion.div>
-        <motion.div
-          className="absolute top-[40%] left-[5%]"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 0.6, x: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
-          {/* <BookOpen className="w-6 h-6 text-[#FAA71A]" /> */}
-        </motion.div>
-        <motion.div
-          className="absolute bottom-[30%] right-[8%]"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 0.6, x: 0 }}
-          transition={{ duration: 1, delay: 0.9 }}
-        >
-          <Award className="w-7 h-7 text-[#AFC1DB]" />
-        </motion.div>
-
-        {/* Flying Plane Animation */}
-        <motion.div
-          className="absolute"
-          initial={{ x: -100, y: 100, opacity: 0 }}
-          animate={{
-            x: ["-10vw", "110vw"],
-            y: ["40vh", "30vh"],
-            opacity: [0, 1, 1, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            repeatDelay: 10,
-          }}
-        >
-          <Plane className="w-8 h-8 text-[#FAA71A] rotate-12" />
-        </motion.div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-6 bg-white dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div

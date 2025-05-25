@@ -1047,7 +1047,7 @@ const ApprovalSVG = () => (
           <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-[#FAA71A] to-[#ff8c00] flex items-center justify-center">
             <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
               </svg>
             </div>
           </div>
@@ -1068,7 +1068,12 @@ const ApprovalSVG = () => (
           <motion.div
             initial={{ scale: 0, rotate: -45 }}
             animate={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8, delay: 1.0, type: "spring", stiffness: 150 }}
+            transition={{
+              duration: 0.8,
+              delay: 1.0,
+              type: "spring",
+              stiffness: 150,
+            }}
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           >
             <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg border-4 border-white/50">
@@ -1122,7 +1127,11 @@ const ApprovalSVG = () => (
           <motion.div
             key={i}
             className={`absolute w-2 h-2 rounded-full ${
-              i % 3 === 0 ? 'bg-[#FAA71A]' : i % 3 === 1 ? 'bg-green-400' : 'bg-[#13294E]'
+              i % 3 === 0
+                ? "bg-[#FAA71A]"
+                : i % 3 === 1
+                ? "bg-green-400"
+                : "bg-[#13294E]"
             }`}
             style={{
               left: `${20 + i * 15}%`,
@@ -1178,55 +1187,8 @@ const ProcessSteps = () => {
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-[#13294e] relative overflow-hidden">
-      {/* Enhanced Decorative SVG shapes with animations */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.1, scale: 1 }}
-        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute top-0 right-0 w-64 h-64 -translate-y-1/4 translate-x-1/4 opacity-10 dark:opacity-5 pointer-events-none"
-      >
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill="#FAA71A"
-            d="M43.7,-56.1C57.8,-47.8,70.5,-34.4,73.3,-19.5C76.1,-4.6,69.1,12,59.5,25.4C49.9,38.7,37.7,48.7,24.7,54.9C11.8,61.1,-2,63.6,-16.1,60.6C-30.2,57.5,-44.6,49,-53.8,36.5C-63.1,23.9,-67.1,7.4,-65.6,-9.2C-64.1,-25.7,-57.1,-42.3,-44.9,-50.6C-32.7,-59,-16.4,-59,0.4,-59.5C17.2,-60,34.3,-61.1,43.7,-56.1Z"
-            transform="translate(100 100)"
-          />
-        </svg>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.1, scale: 1 }}
-        transition={{
-          duration: 2.5,
-          delay: 0.5,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        className="absolute bottom-0 left-0 w-80 h-80 translate-y-1/4 -translate-x-1/4 opacity-10 dark:opacity-5 pointer-events-none"
-      >
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill="#AFC1DB"
-            d="M39.9,-51.6C50.4,-42.8,56.9,-29.1,59.5,-15.1C62.2,-1.1,61,13.2,54.8,24.5C48.6,35.8,37.4,44.1,24.8,51.2C12.2,58.3,-1.8,64.2,-14.8,62C-27.8,59.8,-39.7,49.5,-47.2,37.3C-54.7,25.1,-57.8,10.9,-57.2,-3.1C-56.6,-17.1,-52.3,-31,-43.3,-40.1C-34.3,-49.3,-20.6,-53.7,-6.3,-46.7C8,-39.7,29.3,-60.4,39.9,-51.6Z"
-            transform="translate(100 100)"
-          />
-        </svg>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.05 }}
-        transition={{ duration: 1 }}
-        className="absolute top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 opacity-5 dark:opacity-3 pointer-events-none"
-      >
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="80" fill="#13294E" />
-        </svg>
-      </motion.div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section className="py-6">
+      <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

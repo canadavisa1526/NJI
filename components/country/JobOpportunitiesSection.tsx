@@ -31,41 +31,41 @@ export default function JobOpportunitiesSection({ country }: JobOpportunitiesSec
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className={`w-2 h-2 rounded-full ${i < dots ? color : 'bg-gray-200'}`}
+            className={`w-2 h-2 rounded-full ${i < dots ? color : 'bg-gray-200 dark:bg-gray-600'}`}
           ></div>
         ))}
-        <span className="ml-2 text-sm text-gray-600">{level}</span>
+        <span className="ml-2 text-sm text-muted-foreground">{level}</span>
       </div>
     );
   };
 
   return (
     <section className="py-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#13294E] mb-8 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#13294E] dark:text-white mb-8 text-center">
         Job Opportunities in <span className="text-[#FAA71A]">{country.name}</span>
       </h2>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {country.jobOpportunities.map((job, index) => (
-          <div 
-            key={index} 
-            className="bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300"
+          <div
+            key={index}
+            className="bg-card border border-border rounded-lg p-6 shadow-md dark:shadow-gray-800 hover:shadow-lg transition-all duration-300"
           >
             <div className="flex justify-between items-start mb-4">
-              <h3 className="text-xl font-semibold text-[#13294E]">{job.title}</h3>
+              <h3 className="text-xl font-semibold text-[#13294E] dark:text-white">{job.title}</h3>
               <div className="bg-[#13294E] text-white py-1 px-3 rounded-full text-xs">
                 {job.averageSalary}
               </div>
             </div>
-            
+
             <div className="mb-4">
-              <div className="text-sm font-medium text-gray-600 mb-1">Demand Level:</div>
+              <div className="text-sm font-medium text-muted-foreground mb-1">Demand Level:</div>
               {renderDemandLevel(job.demandLevel)}
             </div>
-            
+
             <div>
-              <div className="text-sm font-medium text-gray-600 mb-1">Requirements:</div>
-              <p className="text-gray-700">{job.requirements}</p>
+              <div className="text-sm font-medium text-muted-foreground mb-1">Requirements:</div>
+              <p className="text-muted-foreground">{job.requirements}</p>
             </div>
           </div>
         ))}

@@ -99,62 +99,8 @@ const EnhancedSuccessStories = () => {
   };
 
   return (
-    <section
-      ref={ref}
-      className="relative py-20 overflow-hidden bg-gradient-to-b from-white dark:from-[#13294E]/90 to-[#AFC1DB]/20 dark:to-[#13294E]/70 theme-section"
-    >
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        {/* Top left blob */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-[#13294E] dark:bg-[#FAA71A]"
-        />
-
-        {/* Bottom right blob */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            repeatType: "reverse",
-            delay: 1,
-          }}
-          className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-[#FAA71A] dark:bg-[#AFC1DB]"
-        />
-
-        {/* Flying planes */}
-        <motion.div
-          initial={{ x: -100, y: 50, opacity: 0 }}
-          animate={{ x: "calc(100vw + 100px)", y: -100, opacity: [0, 1, 1, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/4 left-0"
-        >
-          <Plane className="text-[#13294E] dark:text-[#FAA71A] text-4xl transform rotate-45" />
-        </motion.div>
-
-        <motion.div
-          initial={{ x: "calc(100vw + 100px)", y: 200, opacity: 0 }}
-          animate={{ x: -100, y: 300, opacity: [0, 1, 1, 0] }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-            delay: 5,
-          }}
-          className="absolute top-1/2 right-0"
-        >
-          <Plane className="text-[#FAA71A] dark:text-[#AFC1DB] text-3xl transform -rotate-45" />
-        </motion.div>
-
-        {/* Dotted world map in background */}
-        <div className="absolute inset-0 opacity-5 dark:opacity-10 bg-[url('/world-map-dots.png')] bg-no-repeat bg-center bg-contain" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section ref={ref} className="py-6">
+      <div className="max-w-7xl mx-auto px-4">
         <motion.div
           variants={containerVariants}
           initial="hidden"

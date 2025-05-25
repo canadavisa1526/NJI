@@ -50,7 +50,7 @@ export default function TopInstitutionsSection({ country }: TopInstitutionsSecti
 
   return (
     <section className="py-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#13294E] mb-8 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#13294E] dark:text-white mb-8 text-center">
         Top Institutions in <span className="text-[#FAA71A]">{country.name}</span>
       </h2>
 
@@ -58,7 +58,7 @@ export default function TopInstitutionsSection({ country }: TopInstitutionsSecti
         {displayedInstitutions.map((institution, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:translate-y-[-5px]"
+            className="bg-card border border-border rounded-lg overflow-hidden shadow-md dark:shadow-gray-800 transition-all duration-300 hover:shadow-lg hover:transform hover:translate-y-[-5px]"
           >
             <div className="relative h-40 overflow-hidden">
               <Image
@@ -75,15 +75,15 @@ export default function TopInstitutionsSection({ country }: TopInstitutionsSecti
             </div>
 
             <div className="p-4">
-              <h3 className="text-lg font-semibold text-[#13294E] mb-1 line-clamp-1">{institution.name}</h3>
-              <p className="text-sm text-gray-500 mb-2">{institution.location}</p>
-              <p className="text-sm text-gray-700 mb-4 line-clamp-2">{institution.description}</p>
+              <h3 className="text-lg font-semibold text-[#13294E] dark:text-white mb-1 line-clamp-1">{institution.name}</h3>
+              <p className="text-sm text-muted-foreground mb-2">{institution.location}</p>
+              <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{institution.description}</p>
 
               <a
                 href={institution.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-[#13294E] hover:text-[#FAA71A] text-sm font-medium transition-colors duration-200"
+                className="inline-block text-[#13294E] dark:text-blue-400 hover:text-[#FAA71A] text-sm font-medium transition-colors duration-200"
               >
                 Visit Website →
               </a>

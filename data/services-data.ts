@@ -29,8 +29,12 @@ export const services: Service[] = [
       
       From form-filling to interview prep, our visitor visa services ensure that you are well-prepared and confident throughout your application process.`,
     images: [
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1503221043305-f7498f8b7888?w=800&auto=format&fit=crop&q=60",
+      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201308/1_qvkrcb.jpg",
+      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/5_fg6il0.jpg",
+      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/4_gsaphb.jpg",
+      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/2_psrps3.jpg",
+      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/3_oasn0j.jpg"
+
     ],
     benefits: [
       "Professional guidance through complex visa applications",

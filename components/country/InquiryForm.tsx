@@ -138,18 +138,18 @@ export default function InquiryForm({ country }: InquiryFormProps) {
 
   return (
     <section className="py-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#13294E] mb-8 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#13294E] dark:text-white mb-8 text-center">
         Inquire About <span className="text-[#FAA71A]">{country}</span>
       </h2>
 
-      <div className="bg-white border border-gray-200 rounded-xl shadow-lg max-w-4xl mx-auto overflow-hidden">
+      <div className="bg-card border border-border rounded-xl shadow-lg dark:shadow-gray-800 max-w-4xl mx-auto overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="p-6 md:p-8">
             {isSubmitted ? (
               <div className="text-center py-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full mb-4">
                   <svg
-                    className="h-8 w-8 text-green-500"
+                    className="h-8 w-8 text-green-500 dark:text-green-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -162,10 +162,10 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                     />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-[#13294E] mb-2">
+                <h3 className="text-2xl font-bold text-[#13294E] dark:text-white mb-2">
                   Thank You!
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-muted-foreground mb-4">
                   Your inquiry has been submitted successfully. Our team will
                   get back to you shortly.
                 </p>
@@ -182,7 +182,7 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-foreground mb-1"
                     >
                       Full Name <span className="text-red-500">*</span>
                     </label>
@@ -192,8 +192,8 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors text-black ${
-                        errors.name ? "border-red-500" : "border-gray-300"
+                      className={`w-full px-4 py-2 border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors ${
+                        errors.name ? "border-red-500" : "border-border"
                       }`}
                     />
                     {errors.name && (
@@ -204,7 +204,7 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-foreground mb-1"
                     >
                       Email Address <span className="text-red-500">*</span>
                     </label>
@@ -214,8 +214,8 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors text-black ${
-                        errors.email ? "border-red-500" : "border-gray-300"
+                      className={`w-full px-4 py-2 border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors ${
+                        errors.email ? "border-red-500" : "border-border"
                       }`}
                     />
                     {errors.email && (
@@ -230,7 +230,7 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-foreground mb-1"
                     >
                       Phone Number <span className="text-red-500">*</span>
                     </label>
@@ -240,8 +240,8 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors text-black ${
-                        errors.phone ? "border-red-500" : "border-gray-300"
+                      className={`w-full px-4 py-2 border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors ${
+                        errors.phone ? "border-red-500" : "border-border"
                       }`}
                     />
                     {errors.phone && (
@@ -255,7 +255,7 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                 <div className="mb-4">
                   <label
                     htmlFor="howDidYouHear"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-foreground mb-1"
                   >
                     How did you hear about us?
                   </label>
@@ -264,7 +264,7 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                     name="howDidYouHear"
                     value={formData.howDidYouHear}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors"
+                    className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors"
                   >
                     <option value="">Select an option</option>
                     <option value="Google">Google</option>
@@ -278,7 +278,7 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                 <div className="mb-4">
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-foreground mb-1"
                   >
                     Message <span className="text-red-500">*</span>
                   </label>
@@ -288,8 +288,8 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2 border rounded-lg bg-transparent focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors text-black ${
-                      errors.message ? "border-red-500" : "border-gray-300"
+                    className={`w-full px-4 py-2 border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-[#FAA71A] focus:border-[#FAA71A] outline-none transition-colors ${
+                      errors.message ? "border-red-500" : "border-border"
                     }`}
                     placeholder={`I'm interested in studying in ${country}...`}
                   />
@@ -308,23 +308,23 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                       name="agreeToTerms"
                       checked={formData.agreeToTerms as boolean}
                       onChange={handleChange}
-                      className="mt-1 h-4 w-4 text-[#FAA71A] focus:ring-[#FAA71A] border-gray-300 rounded"
+                      className="mt-1 h-4 w-4 text-[#FAA71A] focus:ring-[#FAA71A] border-border rounded"
                     />
                     <label
                       htmlFor="agreeToTerms"
-                      className="ml-2 block text-sm text-gray-700"
+                      className="ml-2 block text-sm text-foreground"
                     >
                       I agree to the{" "}
                       <a
                         href="#"
-                        className="text-[#13294E] hover:text-[#FAA71A]"
+                        className="text-[#13294E] dark:text-blue-400 hover:text-[#FAA71A]"
                       >
                         Terms and Conditions
                       </a>{" "}
                       and{" "}
                       <a
                         href="#"
-                        className="text-[#13294E] hover:text-[#FAA71A]"
+                        className="text-[#13294E] dark:text-blue-400 hover:text-[#FAA71A]"
                       >
                         Privacy Policy
                       </a>{" "}
@@ -339,7 +339,7 @@ export default function InquiryForm({ country }: InquiryFormProps) {
                 </div>
 
                 {submissionError && (
-                  <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-lg">
+                  <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 rounded-lg">
                     <p>{submissionError}</p>
                   </div>
                 )}

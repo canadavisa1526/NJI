@@ -77,7 +77,7 @@ export default function CountryDetail() {
   ];
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900">
+    <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
       {isBlurred && !hasInteracted && (
         <CountryInquiryModal
           country={country.name}
