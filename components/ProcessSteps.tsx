@@ -1017,435 +1017,133 @@ const ApplicationSVG = () => (
 );
 
 const ApprovalSVG = () => (
-  <motion.svg viewBox="0 0 400 300" className="w-full h-full">
-    <defs>
-      <linearGradient id="approvalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#FAA71A" />
-        <stop offset="100%" stopColor="#13294E" />
-      </linearGradient>
-      <linearGradient id="passportGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#13294E" />
-        <stop offset="100%" stopColor="#1a365d" />
-      </linearGradient>
-      <filter id="celebrationGlow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="5" result="coloredBlur" />
-        <feMerge>
-          <feMergeNode in="coloredBlur" />
-          <feMergeNode in="SourceGraphic" />
-        </feMerge>
-      </filter>
-      <radialGradient id="spotlightGrad" cx="50%" cy="30%" r="60%">
-        <stop offset="0%" stopColor="#FAA71A" stopOpacity="0.3" />
-        <stop offset="100%" stopColor="#FAA71A" stopOpacity="0" />
-      </radialGradient>
-    </defs>
-
-    {/* Background with celebration elements */}
-    <rect width="400" height="300" fill="#f8fafc" />
-    <ellipse cx="200" cy="100" rx="150" ry="80" fill="url(#spotlightGrad)" />
-
-    {/* Confetti particles */}
-    <motion.g
-      animate={{ y: [0, 300], rotate: [0, 360] }}
-      transition={{
-        duration: 3,
-        repeat: Infinity,
-        ease: "linear",
-        staggerChildren: 0.1,
-      }}
-    >
-      <rect
-        x="50"
-        y="-10"
-        width="4"
-        height="4"
-        fill="#FAA71A"
-        transform="rotate(45)"
+  <div className="w-full h-full relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50 rounded-3xl">
+    {/* Animated background patterns */}
+    <div className="absolute inset-0">
+      <motion.div
+        className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#FAA71A]/20 to-transparent rounded-full"
+        animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
-      <rect
-        x="150"
-        y="-20"
-        width="3"
-        height="3"
-        fill="#13294E"
-        transform="rotate(30)"
+      <motion.div
+        className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#13294E]/20 to-transparent rounded-full"
+        animate={{ scale: [1, 1.3, 1], rotate: [360, 180, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
-      <rect
-        x="250"
-        y="-15"
-        width="4"
-        height="4"
-        fill="#AFC1DB"
-        transform="rotate(60)"
-      />
-      <rect
-        x="350"
-        y="-25"
-        width="3"
-        height="3"
-        fill="#FAA71A"
-        transform="rotate(90)"
-      />
-    </motion.g>
+    </div>
 
-    <motion.g
-      animate={{ y: [0, 300], rotate: [0, -360] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: 1 }}
-    >
-      <circle cx="80" cy="-10" r="2" fill="#FAA71A" />
-      <circle cx="180" cy="-20" r="1.5" fill="#13294E" />
-      <circle cx="280" cy="-15" r="2" fill="#AFC1DB" />
-      <circle cx="320" cy="-25" r="1" fill="#FAA71A" />
-    </motion.g>
-
-    {/* Desk surface */}
-    <motion.ellipse
-      cx="200"
-      cy="270"
-      rx="180"
-      ry="25"
-      fill="#AFC1DB"
-      opacity="0.2"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 0.2 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-    />
-
-    {/* Enhanced passport with realistic details */}
-    <motion.g
-      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.3 }}
-    >
-      {/* Passport shadow */}
-      <ellipse cx="200" cy="245" rx="50" ry="15" fill="#13294E" opacity="0.2" />
-
-      {/* Passport cover */}
-      <rect
-        x="150"
-        y="90"
-        width="100"
-        height="150"
-        rx="8"
-        fill="url(#passportGrad)"
-      />
-      <rect x="155" y="95" width="90" height="140" rx="5" fill="#13294E" />
-
-      {/* Passport emblem */}
-      <motion.circle
-        cx="200"
-        cy="120"
-        r="20"
-        fill="#FAA71A"
-        opacity="0.8"
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <circle cx="200" cy="120" r="15" fill="white" opacity="0.9" />
-      <text
-        x="200"
-        y="125"
-        textAnchor="middle"
-        fill="#13294E"
-        fontSize="8"
-        fontWeight="bold"
+    {/* Main content */}
+    <div className="relative z-10 h-full flex flex-col items-center justify-center p-6">
+      {/* Passport/Document illustration */}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative mb-6"
       >
-        PASSPORT
-      </text>
+        {/* Document */}
+        <div className="w-32 h-40 bg-gradient-to-b from-[#13294E] to-[#1e3a5f] rounded-lg shadow-xl relative overflow-hidden">
+          {/* Document header */}
+          <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-[#FAA71A] to-[#ff8c00] flex items-center justify-center">
+            <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+              </svg>
+            </div>
+          </div>
 
-      {/* Country name */}
-      <text
-        x="200"
-        y="145"
-        textAnchor="middle"
-        fill="#FAA71A"
-        fontSize="10"
-        fontWeight="bold"
-      >
-        REPUBLIC
-      </text>
-      <text
-        x="200"
-        y="155"
-        textAnchor="middle"
-        fill="#FAA71A"
-        fontSize="10"
-        fontWeight="bold"
-      >
-        OF DREAMS
-      </text>
+          {/* Document content */}
+          <div className="absolute top-14 left-3 right-3">
+            <div className="space-y-2">
+              <div className="h-2 bg-white/30 rounded w-3/4"></div>
+              <div className="h-2 bg-white/20 rounded w-1/2"></div>
+              <div className="h-2 bg-white/20 rounded w-2/3"></div>
+            </div>
 
-      {/* Passport pages */}
-      <motion.rect
-        x="160"
-        y="170"
-        width="80"
-        height="50"
-        rx="3"
-        fill="white"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-      />
+            {/* Photo placeholder */}
+            <div className="mt-4 w-8 h-10 bg-white/20 rounded border border-white/30"></div>
+          </div>
 
-      {/* Photo placeholder */}
-      <rect
-        x="170"
-        y="180"
-        width="25"
-        height="30"
-        rx="2"
-        fill="#AFC1DB"
-        opacity="0.3"
-      />
-      <circle cx="182" cy="190" r="6" fill="#13294E" opacity="0.5" />
-      <path
-        d="M176 200 Q182 195 188 200"
-        stroke="#13294E"
-        strokeWidth="1"
-        fill="none"
-        opacity="0.5"
-      />
-
-      {/* Personal details lines */}
-      <rect
-        x="200"
-        y="185"
-        width="35"
-        height="2"
-        rx="1"
-        fill="#13294E"
-        opacity="0.3"
-      />
-      <rect
-        x="200"
-        y="190"
-        width="30"
-        height="2"
-        rx="1"
-        fill="#13294E"
-        opacity="0.3"
-      />
-      <rect
-        x="200"
-        y="195"
-        width="35"
-        height="2"
-        rx="1"
-        fill="#13294E"
-        opacity="0.3"
-      />
-      <rect
-        x="200"
-        y="200"
-        width="25"
-        height="2"
-        rx="1"
-        fill="#13294E"
-        opacity="0.3"
-      />
-    </motion.g>
-
-    {/* Visa approval stamp with enhanced design */}
-    <motion.g
-      initial={{ scale: 0, rotate: -45, opacity: 0 }}
-      animate={{ scale: 1, rotate: 0, opacity: 1 }}
-      transition={{ duration: 1, delay: 1.0, type: "spring", stiffness: 150 }}
-    >
-      {/* Stamp background */}
-      <circle
-        cx="300"
-        cy="140"
-        r="35"
-        fill="#FAA71A"
-        filter="url(#celebrationGlow)"
-      />
-      <circle cx="300" cy="140" r="30" fill="#FAA71A" />
-      <circle
-        cx="300"
-        cy="140"
-        r="25"
-        fill="none"
-        stroke="white"
-        strokeWidth="2"
-        strokeDasharray="3,2"
-      />
-
-      {/* Stamp text */}
-      <text
-        x="300"
-        y="135"
-        textAnchor="middle"
-        fill="white"
-        fontSize="10"
-        fontWeight="bold"
-      >
-        APPROVED
-      </text>
-      <text x="300" y="148" textAnchor="middle" fill="white" fontSize="8">
-        VISA
-      </text>
-
-      {/* Date */}
-      <text
-        x="300"
-        y="170"
-        textAnchor="middle"
-        fill="#13294E"
-        fontSize="7"
-        fontWeight="bold"
-      >
-        2024-01-15
-      </text>
-
-      {/* Stamp border decoration */}
-      <motion.circle
-        cx="300"
-        cy="140"
-        r="32"
-        fill="none"
-        stroke="#FAA71A"
-        strokeWidth="1"
-        opacity="0.5"
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      />
-    </motion.g>
-
-    {/* Airplane with enhanced design and flight path */}
-    <motion.g
-      animate={{ x: [0, 15, 0], y: [0, -5, 0] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-    >
-      {/* Airplane body */}
-      <ellipse cx="100" cy="200" rx="25" ry="8" fill="#AFC1DB" />
-      <ellipse cx="110" cy="200" rx="15" ry="5" fill="white" opacity="0.8" />
-
-      {/* Wings */}
-      <ellipse cx="90" cy="195" rx="20" ry="4" fill="#13294E" />
-      <ellipse cx="90" cy="205" rx="20" ry="4" fill="#13294E" />
-
-      {/* Tail */}
-      <path d="M75 200 L70 195 L70 205 Z" fill="#13294E" />
-
-      {/* Windows */}
-      <circle cx="95" cy="200" r="2" fill="#AFC1DB" opacity="0.6" />
-      <circle cx="105" cy="200" r="2" fill="#AFC1DB" opacity="0.6" />
-      <circle cx="115" cy="200" r="2" fill="#AFC1DB" opacity="0.6" />
-    </motion.g>
-
-    {/* Flight path trail */}
-    <motion.path
-      d="M50 220 Q150 180 250 200 Q300 210 350 190"
-      stroke="#FAA71A"
-      strokeWidth="2"
-      fill="none"
-      opacity="0.4"
-      strokeDasharray="5,5"
-      animate={{ strokeDashoffset: [0, -20] }}
-      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-    />
-
-    {/* Success celebration elements */}
-    <motion.g
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.8, delay: 1.5, type: "spring", stiffness: 200 }}
-    >
-      {/* Main success badge */}
-      <circle
-        cx="200"
-        cy="50"
-        r="30"
-        fill="#FAA71A"
-        filter="url(#celebrationGlow)"
-      />
-      <circle cx="200" cy="50" r="25" fill="#FAA71A" />
-
-      {/* Success checkmark with enhanced animation */}
-      <motion.path
-        d="M185 50 L195 60 L215 40"
-        stroke="white"
-        strokeWidth="4"
-        fill="none"
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={{ duration: 1, delay: 1.7 }}
-      />
+          {/* Approval stamp overlay */}
+          <motion.div
+            initial={{ scale: 0, rotate: -45 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8, delay: 1.0, type: "spring", stiffness: 150 }}
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          >
+            <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg border-4 border-white/50">
+              <motion.svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="text-white"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 0.8, delay: 1.5 }}
+              >
+                <motion.path
+                  d="M9 12l2 2 4-4"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </motion.svg>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
 
       {/* Success text */}
-      <text
-        x="200"
-        y="90"
-        textAnchor="middle"
-        fill="#13294E"
-        fontSize="12"
-        fontWeight="bold"
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1.2 }}
+        className="text-center"
       >
-        CONGRATULATIONS!
-      </text>
-      <text x="200" y="105" textAnchor="middle" fill="#AFC1DB" fontSize="8">
-        Your visa has been approved
-      </text>
-    </motion.g>
+        <h3 className="text-xl font-bold text-[#13294E] mb-2">
+          Visa Approved!
+        </h3>
+        <p className="text-gray-600 text-sm">
+          Congratulations! Your application is successful
+        </p>
+      </motion.div>
 
-    {/* Floating celebration stars */}
-    <motion.g
-      animate={{ rotate: 360, scale: [1, 1.2, 1] }}
-      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-    >
-      <path
-        d="M350 50 L352 58 L360 60 L352 62 L350 70 L348 62 L340 60 L348 58 Z"
-        fill="#FAA71A"
-        opacity="0.6"
-      />
-    </motion.g>
-
-    <motion.g
-      animate={{ rotate: -360, scale: [1, 1.3, 1] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 1 }}
-    >
-      <path
-        d="M50 80 L52 88 L60 90 L52 92 L50 100 L48 92 L40 90 L48 88 Z"
-        fill="#13294E"
-        opacity="0.4"
-      />
-    </motion.g>
-
-    {/* Travel destination icons */}
-    <motion.g
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 2.0 }}
-    >
-      {/* Luggage */}
-      <rect x="320" y="220" width="20" height="25" rx="3" fill="#13294E" />
-      <rect x="322" y="222" width="16" height="20" rx="2" fill="#AFC1DB" />
-      <circle cx="325" cy="235" r="2" fill="#FAA71A" />
-      <circle cx="335" cy="235" r="2" fill="#FAA71A" />
-      <rect x="328" y="215" width="4" height="8" rx="2" fill="#13294E" />
-
-      {/* Globe */}
-      <circle cx="60" cy="240" r="15" fill="#AFC1DB" opacity="0.6" />
-      <path
-        d="M50 240 Q60 230 70 240 M50 240 Q60 250 70 240 M45 240 L75 240"
-        stroke="#13294E"
-        strokeWidth="1"
-        fill="none"
-      />
-    </motion.g>
-
-    {/* Final sparkle effects */}
-    <motion.g
-      animate={{ opacity: [0, 1, 0] }}
-      transition={{ duration: 1.5, repeat: Infinity, staggerChildren: 0.2 }}
-    >
-      <circle cx="280" cy="80" r="1" fill="#FAA71A" />
-      <circle cx="120" cy="60" r="1.5" fill="#13294E" />
-      <circle cx="320" cy="100" r="1" fill="#AFC1DB" />
-      <circle cx="80" cy="120" r="1.5" fill="#FAA71A" />
-    </motion.g>
-  </motion.svg>
+      {/* Celebration elements */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.8 }}
+        className="absolute inset-0 pointer-events-none"
+      >
+        {/* Confetti */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className={`absolute w-2 h-2 rounded-full ${
+              i % 3 === 0 ? 'bg-[#FAA71A]' : i % 3 === 1 ? 'bg-green-400' : 'bg-[#13294E]'
+            }`}
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${10 + (i % 2) * 20}%`,
+            }}
+            animate={{
+              y: [0, -20, 0],
+              rotate: [0, 360],
+              opacity: [0.8, 1, 0.8],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: i * 0.2,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </motion.div>
+    </div>
+  </div>
 );
 
 const ProcessSteps = () => {
