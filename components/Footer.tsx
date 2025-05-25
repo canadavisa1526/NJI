@@ -178,6 +178,10 @@ const Footer = () => {
                   <MapPin className="h-5 w-5 mt-1 text-[#faa71a]" />
                   <span>Steels Ave W, Brampton,ON, Canada, L6Y 2R7</span>
                 </p>
+                <p className="text-gray-300 flex items-center space-x-3 mb-2">
+                  <Mail className="h-5 w-5 text-[#faa71a]" />
+                  <span>support@newjourneyworld.com</span>
+                </p>
                 <p className="text-gray-300 flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-[#faa71a]" />
                   <span>+1 437-663-5437</span>
@@ -188,21 +192,39 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-gray-800 text-center">
-          <p className="text-gray-400">
-            © {currentYear} New Journey Immigration. All rights reserved |{" "}
-            <span>
-              Design and Developed by{" "}
+        <div className="mt-16 pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-gray-400 text-center md:text-left">
+              © {currentYear} New Journey Immigration. All rights reserved
+            </p>
+
+            <div className="flex flex-wrap justify-center md:justify-end items-center space-x-6 text-sm">
               <Link
-                href="https://wa.me/917046272137"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-[#faa71a] hover:text-orange-500 transition-colors"
+                href="/privacy-policy"
+                className="text-gray-400 hover:text-[#faa71a] transition-colors"
               >
-                V&V Digital
+                Privacy Policy
               </Link>
-            </span>
-          </p>
+              <Link
+                href="/terms-of-service"
+                className="text-gray-400 hover:text-[#faa71a] transition-colors"
+              >
+                Terms of Service
+              </Link>
+              <span className="text-gray-400">|</span>
+              <span className="text-gray-400">
+                Design and Developed by{" "}
+                <Link
+                  href="https://wa.me/917046272137"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#faa71a] hover:text-orange-500 transition-colors"
+                >
+                  V&V Digital
+                </Link>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

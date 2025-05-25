@@ -5,7 +5,7 @@ export const countriesDetailData = {
     flag: "https://media.istockphoto.com/id/626545182/photo/toronto-skyline-with-purple-light-toronto-ontario-canada.jpg?s=612x612&w=0&k=20&c=gTfPgxMvsUZaz7YS3EF2voErqf2MmQRpwlHnO1jVBBc=",
     description: "World-class education and quality of life",
     timelapseVideo:
-      "https://res.cloudinary.com/dka63iohc/video/upload/v1748058916/5922_Tower_New_1920x1080_l4g07n.mp4",
+      "https://res.cloudinary.com/dka63iohc/video/upload/v1744996007/nji-hero_ltq8dm.mp4",
     about: {
       description:
         "Canada stands as a beacon of educational excellence and multicultural harmony, offering international students a unique blend of high-quality education and exceptional quality of life. With its diverse landscape spanning from the Rocky Mountains to vibrant urban centers, Canada provides a safe, welcoming environment for students from around the globe. The country's education system is renowned for its research-driven approach, practical learning opportunities, and strong emphasis on innovation and technology.",
@@ -29,7 +29,7 @@ export const countriesDetailData = {
       "Family Sponsorship",
     ],
     stats: {
-      universities: "100+",
+      universities: "150+",
       students: "15K+",
       success: "98%",
     },
@@ -476,7 +476,7 @@ export const countriesDetailData = {
       "High Potential Individual Visa",
     ],
     stats: {
-      universities: "150+",
+      universities: "100+",
       students: "18K+",
       success: "95%",
     },
@@ -703,9 +703,9 @@ export const countriesDetailData = {
       "Training Visa",
     ],
     stats: {
-      universities: "43+",
+      universities: "120+",
       students: "12K+",
-      success: "94%",
+      success: "96%",
     },
     whyChoose: [
       "World-class education system with practical, career-focused learning",
@@ -924,7 +924,7 @@ export const countriesDetailData = {
     },
     features: ["Student Visa", "Job Seeker Visa", "Blue Card", "Research Visa"],
     stats: {
-      universities: "300+",
+      universities: "100+",
       students: "10K+",
       success: "93%",
     },
@@ -1151,7 +1151,7 @@ export const countriesDetailData = {
       "Research Visa",
     ],
     stats: {
-      universities: "8+",
+      universities: "80+",
       students: "5K+",
       success: "92%",
     },

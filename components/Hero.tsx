@@ -80,6 +80,8 @@ const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const [showLogoAnimation, setShowLogoAnimation] = useState(true);
+  const [videoStarted, setVideoStarted] = useState(false);
   const isMobile = useMediaQuery("(max-width: 767px)");
   const [dotCount, setDotCount] = useState(50);
 
@@ -93,7 +95,29 @@ const Hero = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play();
+      const video = videoRef.current;
+
+      const handleVideoStart = () => {
+        setVideoStarted(true);
+        // Hide logo animation after 3 seconds
+        setTimeout(() => {
+          setShowLogoAnimation(false);
+        }, 3000);
+      };
+
+      const handleVideoPlay = () => {
+        handleVideoStart();
+      };
+
+      video.addEventListener("play", handleVideoPlay);
+      video.addEventListener("loadeddata", handleVideoStart);
+
+      video.play();
+
+      return () => {
+        video.removeEventListener("play", handleVideoPlay);
+        video.removeEventListener("loadeddata", handleVideoStart);
+      };
     }
   }, []);
 
@@ -135,8 +159,8 @@ const Hero = () => {
 
   return (
     <div ref={containerRef} className="relative overflow-hidden">
-      <section className="relative h-[50vh] md:h-[70vh] pt-12 md:pt-20 pb-24 md:pb-52 flex flex-col">
-        {/* Optimized Video Background */}
+      <section className="relative h-[50vh] md:h-[70vh] lg:h-[85vh] xl:h-[90vh] pt-12 md:pt-20 pb-24 md:pb-52 flex flex-col">
+        {/* High Quality Video Background */}
         <div className="absolute inset-0 overflow-hidden z-0">
           <video
             ref={videoRef}
@@ -145,11 +169,17 @@ const Hero = () => {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             poster="/hero-poster.jpg"
           >
+            {/* High quality video source */}
             <source
-              src="https://res.cloudinary.com/dka63iohc/video/upload/v1748101668/videoplayback_gmr4o5.mp4"
+              src="https://res.cloudinary.com/dka63iohc/video/upload/q_auto:best,f_auto/v1748106480/videoplayback_zb1mgw.mp4"
+              type="video/mp4"
+            />
+            {/* Fallback medium quality */}
+            <source
+              src="https://res.cloudinary.com/dka63iohc/video/upload/q_auto:good,f_auto/v1748106480/videoplayback_zb1mgw.mp4"
               type="video/mp4"
             />
             {/* Fallback for browsers that don't support video */}
@@ -162,78 +192,149 @@ const Hero = () => {
             />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        </div>
 
-          {/* Flying Planes - Hide on small screens, show on medium and up */}
-          {/* <div className="hidden md:block">
-            {[...Array(3)].map((_, i) => (
+        {/* Animated Logo Overlay */}
+        {showLogoAnimation && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="absolute inset-0 z-30 flex items-center justify-center bg-black/20 backdrop-blur-sm"
+          >
+            <div className="text-center">
+              {/* Logo Container with Multiple Animations */}
               <motion.div
-                key={i}
-                className="absolute"
-                initial={{
-                  x: -100,
-                  y: 100 + i * 150,
-                }}
-                animate={{
-                  x: "120vw",
-                  y: [100 + i * 150, 50 + i * 150, 100 + i * 150],
-                }}
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
                 transition={{
-                  duration: 20 - i * 2,
-                  repeat: Infinity,
-                  ease: "linear",
-                  y: {
-                    duration: 10 - i,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  },
+                  duration: 1.2,
+                  ease: "easeOut",
+                  type: "spring",
+                  stiffness: 100,
                 }}
+                className="relative mb-6"
               >
-                <Plane className="h-6 w-6 md:h-8 md:w-8 text-white/30 transform -rotate-45" />
+                {/* Outer Ring Animation */}
                 <motion.div
-                  className="absolute top-1/2 right-0 h-0.5 w-12 md:w-20 origin-left"
-                  style={{
-                    background:
-                      "linear-gradient(to right, rgba(255,255,255,0.3), transparent)",
-                  }}
-                  initial={{ scaleX: 0, opacity: 0 }}
-                  animate={{
-                    scaleX: [0, 1, 0],
-                    opacity: [0, 0.5, 0],
-                  }}
+                  animate={{ rotate: 360 }}
                   transition={{
-                    duration: 2,
+                    duration: 8,
                     repeat: Infinity,
                     ease: "linear",
                   }}
+                  className="absolute inset-0 w-32 h-32 md:w-40 md:h-40 border-4 border-[#FAA71A]/30 rounded-full"
                 />
+
+                {/* Inner Ring Animation */}
+                <motion.div
+                  animate={{ rotate: -360 }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="absolute inset-2 w-28 h-28 md:w-36 md:h-36 border-2 border-[#13294E]/40 rounded-full"
+                />
+
+                {/* Logo Background Circle */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  className="relative w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-white to-gray-100 rounded-full shadow-2xl flex items-center justify-center"
+                >
+                  {/* Logo Text */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1, duration: 0.8 }}
+                    className="text-center"
+                  >
+                    <div className="text-2xl md:text-3xl font-bold text-[#13294E] mb-1">
+                      NJI
+                    </div>
+                    <div className="text-xs md:text-sm text-[#FAA71A] font-semibold">
+                      Immigration
+                    </div>
+                  </motion.div>
+
+                  {/* Pulsing Effect */}
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.1, 1],
+                      opacity: [0.5, 0.8, 0.5],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="absolute inset-0 bg-[#FAA71A]/20 rounded-full"
+                  />
+                </motion.div>
+
+                {/* Floating Particles */}
+                {[...Array(8)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{
+                      scale: 0,
+                      x: 0,
+                      y: 0,
+                    }}
+                    animate={{
+                      scale: [0, 1, 0],
+                      x: Math.cos((i * 45 * Math.PI) / 180) * 60,
+                      y: Math.sin((i * 45 * Math.PI) / 180) * 60,
+                    }}
+                    transition={{
+                      duration: 2,
+                      delay: 1.5 + i * 0.1,
+                      repeat: Infinity,
+                      repeatDelay: 1,
+                    }}
+                    className="absolute top-1/2 left-1/2 w-2 h-2 bg-[#FAA71A] rounded-full"
+                  />
+                ))}
               </motion.div>
-            ))}
-          </div> */}
 
-          {/* Animated Dots - Fewer on mobile */}
-          {/* {[...Array(dotCount)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-white/30 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.3, 0.7, 0.3],
-              }}
-              transition={{
-                duration: 2 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))} */}
-        </div>
+             
+              
 
-        {/* Enhanced Hero Content */}
+              {/* Loading Animation */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2.5, duration: 0.5 }}
+                className="mt-8"
+              >
+                <div className="flex justify-center space-x-2">
+                  {[...Array(3)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.5, 1, 0.5],
+                      }}
+                      transition={{
+                        duration: 1,
+                        repeat: Infinity,
+                        delay: i * 0.2,
+                      }}
+                      className="w-3 h-3 bg-[#FAA71A] rounded-full"
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
 
+     
+
+    
 
         {/* Stats - now at the bottom with improved responsive layout */}
 
