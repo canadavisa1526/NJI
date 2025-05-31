@@ -33,8 +33,7 @@ export const services: Service[] = [
       "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/5_fg6il0.jpg",
       "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/4_gsaphb.jpg",
       "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/2_psrps3.jpg",
-      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/3_oasn0j.jpg"
-
+      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/3_oasn0j.jpg",
     ],
     benefits: [
       "Professional guidance through complex visa applications",
@@ -118,10 +117,7 @@ export const services: Service[] = [
       Each country has its own rules — for instance, some allow work rights for dependents, while others permit only limited stay and no employment. Navigating these differences is crucial. Our team keeps updated with every regulation change and global event that may impact visa outcomes.
       
       We aim to make your family's immigration journey smooth, safe, and compliant. With our service, you stay focused on your goals while we take care of bringing your loved ones closer to you.`,
-    images: [
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=800&auto=format&fit=crop&q=60",
-    ],
+    images: [],
     benefits: [
       "Family reunification expertise",
       "Relationship documentation assistance",
@@ -197,10 +193,7 @@ export const services: Service[] = [
       New Journey Immigration collaborates with reputed insurance providers to offer cost-effective and reliable solutions. We assist in application, policy understanding, document submission, and payment methods. Whether you're enrolling in short-term or long-term coverage, our insurance support ensures peace of mind while you focus on your studies or exploration.
       
       International laws and university guidelines often mandate insurance — we ensure compliance with local requirements and help you avoid policy gaps that could affect your visa or admission. Travel safe, study stress-free, and protect yourself from unexpected disruptions with our expert insurance guidance.`,
-    images: [
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&auto=format&fit=crop&q=60",
-    ],
+    images: [],
     benefits: [
       "Comprehensive coverage options",
       "Tailored plans for students and travelers",
@@ -268,8 +261,7 @@ export const services: Service[] = [
       
       In addition, we help students purchase travel insurance alongside ticket bookings for added safety. Our personalized booking services reduce stress and ensure your flight plans are accurate, secure, and affordable.`,
     images: [
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?w=800&auto=format&fit=crop&q=60",
+     
     ],
     benefits: [
       "Competitive and flexible booking options",
@@ -340,8 +332,7 @@ export const services: Service[] = [
       
       For travelers, we offer advice on how to carry money abroad, what limits to follow, and how to comply with RBI or country-specific financial regulations. Our team ensures that your money matters are clear, compliant, and convenient.`,
     images: [
-      "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1621981386829-2b616e01551f?w=800&auto=format&fit=crop&q=60",
+      
     ],
     benefits: [
       "Education loan assistance with competitive rates",
@@ -410,8 +401,8 @@ export const services: Service[] = [
       
       Whether you're transitioning from a student visa or directly applying as a skilled worker, our team helps you begin your international career without delays or legal hassles.`,
     images: [
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=60",
+     
+      
     ],
     benefits: [
       "Open and employer-sponsored work permit assistance",
@@ -486,8 +477,7 @@ export const services: Service[] = [
       
       We also assist in post-PR steps like settling in, job finding, and eventually applying for citizenship. Our PR services are detailed, transparent, and aligned with your long-term goals.`,
     images: [
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=60",
+     
     ],
     benefits: [
       "Points-based immigration system expertise",
@@ -556,8 +546,7 @@ export const services: Service[] = [
       
       Additionally, we offer detailed feedback, test registration help, and exam-day readiness tips. With our coaching, you don't just prepare for the exam — you master it.`,
     images: [
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&auto=format&fit=crop&q=60",
+      
     ],
     benefits: [
       "Certified IELTS and PTE trainers",
@@ -627,8 +616,7 @@ export const services: Service[] = [
       
       With in-house legal advisors and expert documentation teams, our immigration process is structured, transparent, and aligned with your goals. We ensure your transition from being a temporary resident to a citizen is smooth and legally sound.`,
     images: [
-      "https://images.unsplash.com/photo-1526080652727-5b77f74eacd2?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=60",
+   
     ],
     benefits: [
       "End-to-end immigration planning",
