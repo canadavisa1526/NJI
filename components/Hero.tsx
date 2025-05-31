@@ -174,12 +174,12 @@ const Hero = () => {
           >
             {/* High quality video source */}
             <source
-              src="https://res.cloudinary.com/dka63iohc/video/upload/q_auto:best,f_auto/v1748106480/videoplayback_zb1mgw.mp4"
+              src="https://res.cloudinary.com/dka63iohc/video/upload/v1748663327/SH-abroad_1_pykail.mp4"
               type="video/mp4"
             />
             {/* Fallback medium quality */}
             <source
-              src="https://res.cloudinary.com/dka63iohc/video/upload/q_auto:good,f_auto/v1748106480/videoplayback_zb1mgw.mp4"
+              src="https://res.cloudinary.com/dka63iohc/video/upload/v1748663327/SH-abroad_1_pykail.mp4"
               type="video/mp4"
             />
             {/* Fallback for browsers that don't support video */}
