@@ -159,12 +159,12 @@ const Hero = () => {
 
   return (
     <div ref={containerRef} className="relative overflow-hidden">
-      <section className="relative h-[50vh] md:h-[70vh] lg:h-[85vh] xl:h-[90vh] pt-12 md:pt-20 pb-24 md:pb-52 flex flex-col">
+      <section className="relative h-[60vh] md:h-[70vh] lg:h-[85vh] xl:h-[90vh] pt-8 md:pt-20 pb-16 md:pb-52 flex flex-col">
         {/* High Quality Video Background */}
-        <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
           <video
             ref={videoRef}
-            className="absolute w-full h-full object-cover object-center"
+            className="absolute w-full h-full object-cover object-center min-w-full min-h-full"
             autoPlay
             muted
             loop
@@ -194,51 +194,22 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
         </div>
 
-       
-     
-
-    
-
-        {/* Stats - now at the bottom with improved responsive layout */}
-
-        {/* Gradient Wave */}
-        <div className="absolute bottom-0 left-0 right-0 z-0">
-          <svg
-            viewBox="0 0 1440 200"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-auto"
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#13294E" stopOpacity="1" />
-              </linearGradient>
-            </defs>
-            <path
-              fill="url(#waveGradient)"
-              fillOpacity="1"
-              d="M0 72L48 77.3C96 83 192 93 288 72C384 51 480 0 576 0.3C672 0 768 51 864 77.3C960 104 1056 104 1152 88C1248 72 1344 40 1392 24L1440 8V363H0V72Z"
-            />
-          </svg>
-        </div>
-
         {/* Stats section - smaller and positioned inside the wave */}
-        <div className="absolute bottom-8 md:bottom-12 left-0 right-0 z-20 px-4 md:px-8">
+        <div className="absolute bottom-4 md:bottom-12 left-0 right-0 z-20 px-2 md:px-8">
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 text-center">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
-                  className=" rounded-xl p-2 md:p-3  hover:bg-white/15 transition-all duration-300"
+                  className="rounded-xl p-1.5 md:p-3 hover:bg-white/15 transition-all duration-300"
                 >
-                  <div className="inline-flex items-center justify-center w-6 h-6 md:w-10 md:h-10 rounded-full bg-[#FAA71A]/30 text-[#FAA71A] mb-1 md:mb-2 hover:scale-110 transition-transform">
-                    <stat.icon className="h-3 w-3 md:h-5 md:w-5" />
+                  <div className="inline-flex items-center justify-center w-5 h-5 md:w-10 md:h-10 rounded-full bg-[#FAA71A]/30 text-[#FAA71A] mb-0.5 md:mb-2 hover:scale-110 transition-transform">
+                    <stat.icon className="h-2.5 w-2.5 md:h-5 md:w-5" />
                   </div>
-                  <div className="text-sm md:text-2xl font-bold text-white mb-0 md:mb-1">
+                  <div className="text-base md:text-2xl font-bold text-white mb-0 md:mb-1">
                     {stat.numericValue === "24/7" ? (
                       "24/7"
                     ) : (
@@ -249,7 +220,7 @@ const Hero = () => {
                       />
                     )}
                   </div>
-                  <div className="text-[9px] md:text-sm text-gray-200 leading-tight font-medium">
+                  <div className="text-[8px] md:text-sm text-gray-200 leading-tight font-medium">
                     {stat.label}
                   </div>
                 </motion.div>

@@ -495,7 +495,7 @@ export const countriesDetailData = {
         description:
           "One of the world's oldest universities with renowned tutorial teaching method and research excellence.",
         image:
-          "https://images.pexels.com/photos/1983070/pexels-photo-1983070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://cdn.britannica.com/03/117103-050-F4C2FC83/view-University-of-Oxford-England-Oxfordshire.jpg",
         ranking: "4th globally",
         website: "https://www.ox.ac.uk",
       },
