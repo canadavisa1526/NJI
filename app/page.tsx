@@ -111,13 +111,12 @@ export default function Home() {
       <main className="min-h-screen">
         <Hero />
         <div>
-          <section className="py-8">
-            <Suspense
-              fallback={<div className="h-32 bg-gray-100 animate-pulse" />}
-            >
-              <CountrySlider />
-            </Suspense>
-          </section>
+          <Suspense
+            fallback={<div className="h-32 bg-gray-100 animate-pulse" />}
+          >
+            <CountrySlider />
+          </Suspense>
+
           <section className="py-8">
             <Suspense
               fallback={<div className="h-64 bg-gray-100 animate-pulse" />}
@@ -139,13 +138,13 @@ export default function Home() {
               <CountryList />
             </Suspense>
           </section>
-          <section className="py-8">
-            <Suspense
-              fallback={<div className="h-96 bg-gray-100 animate-pulse" />}
-            >
-              <WhyChooseUs />
-            </Suspense>
-          </section>
+
+          <Suspense
+            fallback={<div className="h-96 bg-gray-100 animate-pulse" />}
+          >
+            <WhyChooseUs />
+          </Suspense>
+
           <section className="py-8">
             <Suspense
               fallback={<div className="h-80 bg-gray-100 animate-pulse" />}
@@ -153,13 +152,13 @@ export default function Home() {
               <Benefits />
             </Suspense>
           </section>
-          <section className="py-8">
-            <Suspense
-              fallback={<div className="h-96 bg-gray-100 animate-pulse" />}
-            >
-              <ProcessSteps />
-            </Suspense>
-          </section>
+
+          <Suspense
+            fallback={<div className="h-96 bg-gray-100 animate-pulse" />}
+          >
+            <ProcessSteps />
+          </Suspense>
+
           <section className="py-8">
             <Suspense
               fallback={<div className="h-80 bg-gray-100 animate-pulse" />}

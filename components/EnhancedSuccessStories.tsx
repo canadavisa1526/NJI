@@ -16,7 +16,7 @@ const EnhancedSuccessStories = () => {
   const [imageLoadErrors, setImageLoadErrors] = useState<
     Record<string, boolean>
   >({});
-  const [activeSlide, setActiveSlide] = useState(0);
+
 
   useEffect(() => {
     if (isInView) {
@@ -36,9 +36,9 @@ const EnhancedSuccessStories = () => {
       testimonial:
         "New Journey Immigration made my dream of studying in Canada come true!",
       image:
-        "https://res.cloudinary.com/dka63iohc/image/upload/v1747366190/hardik_s0epvq.jpg",
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1748201308/1_qvkrcb.jpg",
       imageFallback:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&auto=format&fit=crop&q=60",
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1747366190/hardik_s0epvq.jpg",
       gradient: "from-red-500/20 to-white/20",
     },
     {
@@ -317,28 +317,33 @@ const EnhancedSuccessStories = () => {
             centeredSlides={true}
             breakpoints={{
               480: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 20,
                 centeredSlides: true,
               },
               640: {
-                slidesPerView: 1.5,
+                slidesPerView: 1,
                 spaceBetween: 24,
                 centeredSlides: true,
               },
               768: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                centeredSlides: true,
+              },
+              1024: {
                 slidesPerView: 2,
                 spaceBetween: 30,
                 centeredSlides: false,
               },
-              1024: {
-                slidesPerView: 2.5,
-                spaceBetween: 32,
-                centeredSlides: true,
-              },
               1280: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 40,
+                centeredSlides: false,
+              },
+              1440: {
+                slidesPerView: 2,
+                spaceBetween: 50,
                 centeredSlides: false,
               },
             }}
@@ -354,7 +359,6 @@ const EnhancedSuccessStories = () => {
             }}
             modules={[Autoplay, Pagination]}
             className="success-swiper !py-8 md:!py-12 !overflow-visible"
-            onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
           >
             {stories.map((story, index) => (
               <SwiperSlide key={story.id} className="!h-auto">
@@ -370,7 +374,7 @@ const EnhancedSuccessStories = () => {
                 >
                   <div className="relative h-full bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm transform-gpu transition-all duration-500 group-hover:shadow-3xl group-hover:border-[#FAA71A]/30">
                     {/* Main image container */}
-                    <div className="relative h-[400px] md:h-[500px] lg:h-[600px] w-full overflow-hidden">
+                    <div className="relative h-[500px] md:h-[600px] lg:h-[750px] xl:h-[800px] w-full overflow-hidden rounded-3xl">
                       <Image
                         src={
                           imageLoadErrors[story.id]
@@ -391,10 +395,20 @@ const EnhancedSuccessStories = () => {
                       ></div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-                    
-                    
-
-                    
+                      {/* Country flag */}
+                      <motion.div
+                        className="absolute top-4 md:top-6 left-4 md:left-6 z-20"
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.3 + index * 0.1 }}
+                      >
+                        <div className="flex items-center space-x-2 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full px-3 py-2 shadow-lg">
+                          <span className="text-lg md:text-xl">{story.flag}</span>
+                          <span className="text-sm md:text-base font-semibold text-gray-800 dark:text-white">
+                            {story.country}
+                          </span>
+                        </div>
+                      </motion.div>
 
                       {/* Rating stars */}
                       <motion.div
@@ -427,6 +441,20 @@ const EnhancedSuccessStories = () => {
                           </h3>
 
                           {/* University */}
+                          <div className="flex items-center space-x-2 text-white/90">
+                            <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#FAA71A]" />
+                            <span className="text-sm md:text-base lg:text-lg font-medium">
+                              {story.university}
+                            </span>
+                          </div>
+
+                          {/* Visa type badge */}
+                          <div className="inline-flex items-center space-x-2 bg-[#FAA71A]/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+                            <Award className="w-4 h-4 text-white" />
+                            <span className="text-white text-sm md:text-base font-semibold">
+                              {story.visaType}
+                            </span>
+                          </div>
                       
                         </motion.div>
                       </div>

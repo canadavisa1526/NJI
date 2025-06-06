@@ -17,17 +17,53 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    title: "Visitor Visa",
+    title: "Visitor Visa Services – Apply for Any Country with Ease",
     slug: "visitor-visa",
     description:
-      "Plan your journey abroad with expert visitor visa support for leisure, business, or medical travel.",
-    details: `NJI Education. offers comprehensive visitor visa consultancy for individuals wishing to travel internationally for tourism, short-term business, medical purposes, or visiting family and friends. Our expert advisors understand the specific requirements for countries like the USA, Canada, UK, Australia, and many more. 
-      
-      We guide applicants through complex paperwork such as purpose declaration, invitation letters, financial proof, travel itineraries, and return commitments. Whether it's a B1/B2 visa for the US, or a tourist visa for Europe or Oceania, we provide detailed support to ensure your application meets every consulate's standards.
-      
-      Visitor visa durations vary by country and reason for travel, and renewals can be tricky. We help plan your entry and exit dates according to visa validity and even assist with possible extensions. If you're unsure about the category or eligibility, our consultants will help you choose the right path.
-      
-      From form-filling to interview prep, our visitor visa services ensure that you are well-prepared and confident throughout your application process.`,
+      "Planning to travel abroad for tourism, visiting family, attending business meetings, or medical treatment? At New Journey Immigration, we provide expert visitor visa services for all countries.",
+    details: `Planning to travel abroad for tourism, visiting family, attending business meetings, or medical treatment?
+At New Journey Immigration, we provide expert visitor visa services for all countries — guiding you step by step through the visa process so your travel dreams become reality.
+
+From application forms to interview prep, document review to follow-ups — we take care of everything. Whether you're applying from India, UAE, Nigeria, Philippines, or Canada, we've got you covered.
+
+✈️ We Provide Visitor Visa Services For:
+
+🇨🇦 Canada Visitor Visa
+Purpose: Tourism, visiting family/friends, business meetings
+Validity: Up to 10 years (multiple-entry)
+Requirements: Valid passport, invitation letter (if any), proof of funds, strong ties to home country
+Our Support: Full application prep, help with biometrics, SOP writing, interview readiness
+
+🇺🇸 USA Visitor Visa (B1/B2)
+Purpose: Business (B1), Tourism/Family (B2)
+Validity: Up to 10 years
+Key Support: DS-160 Form, Visa Fee Guidance, Interview Training, Travel History Review
+
+🇬🇧 UK Standard Visitor Visa
+Purpose: Leisure, short courses, family visits, conferences
+Stay Period: Up to 6 months
+Documents: Travel itinerary, accommodation proof, sponsor letter (if applicable), bank statements
+
+🇪🇺 Schengen Visa (Europe)
+Covers: 27 countries (e.g., France, Germany, Italy, Spain, Netherlands)
+Stay Duration: Up to 90 days within 180 days
+Requirements: Valid travel insurance, round-trip tickets, financial documents, hotel booking
+Bonus: We help create a clear travel plan across multiple countries
+
+🇦🇺 Australia Visitor Visa (Subclass 600)
+Duration: 3, 6, or 12 months
+Use Cases: Tourism, family visit, short-term stay
+Key Document: Genuine Temporary Entrant (GTE) Statement – we help you write it!
+
+🇦🇪 UAE Visit Visa
+Options: 30, 60, 90 days – single or multiple entry
+Perks: Fast approval, e-visa available
+Add-Ons: Travel insurance, hotel booking help, express processing
+
+🌏 Other Countries We Support
+We offer visitor visa services for over 60+ countries, including Singapore, Malaysia, Thailand, Japan, South Korea, New Zealand, Turkey, South Africa, Brazil, Mexico, Saudi Arabia, and more...
+
+Need help with a country not listed here? Just contact us — we probably support it too!`,
     images: [
       "https://res.cloudinary.com/dka63iohc/image/upload/v1748201308/1_qvkrcb.jpg",
       "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/5_fg6il0.jpg",
@@ -36,96 +72,194 @@ export const services: Service[] = [
       "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/3_oasn0j.jpg",
     ],
     benefits: [
-      "Professional guidance through complex visa applications",
-      "Country-specific expertise for major destinations",
-      "Documentation assistance and verification",
-      "Interview preparation and coaching",
-      "Follow-up support and status tracking",
+      "🌐 Expert Visa Consultants with in-depth knowledge of global immigration systems",
+      "📝 Personalized Document Checklists based on your destination",
+      "💼 High Approval Rates thanks to detailed case assessments",
+      "🤝 Dedicated Case Managers to assist you from start to finish",
+      "💬 Responsive Communication via phone, email, or WhatsApp",
+      "🔒 Secure & Confidential handling of all your personal documents",
+      "🛡️ Complete Travel Support – including insurance, bookings & cover letters",
+      "✍️ Statement of Purpose (SOP) & Cover Letter Writing",
+      "📄 Invitation Letter Drafting",
+      "🎯 Mock Interview Preparation",
+      "🧳 Flight & Hotel Itinerary Assistance",
+      "💳 Travel Insurance Arrangements",
+      "📋 Application Submission and Tracking",
+      "✨ Visa Refusal Review & Re-application Support",
     ],
     countries: [
-      "USA",
       "Canada",
+      "USA",
       "UK",
       "Australia",
-      "European Union",
+      "Schengen Countries (27 European Nations)",
+      "UAE",
+      "Singapore",
+      "Malaysia",
+      "Thailand",
+      "Japan",
+      "South Korea",
       "New Zealand",
+      "Turkey",
+      "South Africa",
+      "Brazil",
+      "Mexico",
+      "Saudi Arabia",
+      "60+ Countries Worldwide",
     ],
     faqs: [
       {
         id: 1,
-        question: "What documents do I need for a visitor visa application?",
+        question: "Can I apply for multiple visitor visas at once?",
         answer:
-          "For most visitor visa applications, you'll need a valid passport, completed application forms, proof of financial means, travel itinerary, invitation letter (if applicable), proof of ties to your home country, and photographs meeting specifications. Document requirements may vary by country, so we recommend consulting with our visa experts for country-specific requirements.",
+          "Yes! If you plan to visit multiple countries, we can help you coordinate applications — such as Europe + UK + UAE in one travel plan. We manage timing, documentation, and ensure each application meets specific requirements.",
       },
       {
         id: 2,
-        question: "How long does the visitor visa process typically take?",
+        question: "What happens if my visa is refused?",
         answer:
-          "Processing times vary significantly by country and season. Generally, it can take anywhere from 2-12 weeks. Peak travel seasons and holiday periods may extend processing times. We recommend applying at least 3 months before your intended travel date to accommodate any potential delays.",
+          "We'll analyze the reason, strengthen your documents, and support you in re-applying or appealing where possible. Common refusal reasons include insufficient documentation, unclear travel purpose, or inadequate financial proof.",
       },
       {
         id: 3,
-        question: "Can I extend my visitor visa while I'm abroad?",
+        question: "Is travel insurance mandatory?",
         answer:
-          "Many countries allow visitor visa extensions, but requirements vary significantly. Extensions typically require you to apply before your current visa expires, demonstrate sufficient funds, and provide a valid reason for extension. Some countries may restrict the number of extensions or total stay duration. Our consultants can guide you through specific country extension processes.",
+          "Yes, especially for Schengen and some Asian countries. We can arrange the correct insurance coverage for you. Schengen countries require minimum €30,000 coverage, while other countries have varying requirements.",
       },
       {
-        id: 101,
-        question: "What happens if my visitor visa is rejected?",
+        id: 4,
+        question: "How soon should I apply before my travel date?",
         answer:
-          "If your visa is rejected, we'll analyze the rejection reasons, address any concerns, strengthen your application, and help you reapply if appropriate. Some common reasons for rejection include insufficient documentation, unclear travel purpose, or inadequate financial proof. Our experts can help you overcome these challenges in your next application.",
+          "It's ideal to apply 1–3 months before your trip. Some countries have longer processing times, so earlier is always better. Peak seasons may require even earlier applications.",
       },
       {
-        id: 102,
+        id: 5,
+        question: "Can you assist with urgent visa processing?",
+        answer:
+          "Yes! We offer express/priority services for select countries — including UAE, UK, Canada, and more. Additional fees may apply for expedited processing.",
+      },
+      {
+        id: 6,
+        question: "What documents do I need for a visitor visa application?",
+        answer:
+          "Generally you'll need: valid passport, completed application forms, proof of financial means, travel itinerary, invitation letter (if applicable), proof of ties to home country, and photographs. Requirements vary by country.",
+      },
+      {
+        id: 7,
         question: "Can I work on a visitor visa?",
         answer:
-          "Generally, visitor visas do not permit employment. However, some countries allow limited business activities like attending meetings, conferences, or negotiations. It's crucial to understand and respect these limitations as unauthorized work can result in serious consequences including deportation and future visa bans.",
+          "Generally no. Visitor visas are for tourism, family visits, or limited business activities like meetings. Unauthorized work can result in deportation and future visa bans.",
       },
       {
-        id: 103,
-        question: "Do I need travel insurance for a visitor visa?",
+        id: 8,
+        question: "What is the maximum duration of stay allowed?",
         answer:
-          "While not all countries mandate travel insurance for visitor visas, many strongly recommend or require it. Schengen countries, for example, require minimum coverage of €30,000. We recommend comprehensive travel insurance regardless of requirements to protect against medical emergencies and trip disruptions.",
-      },
-      {
-        id: 104,
-        question:
-          "Can I apply for multiple countries' visitor visas simultaneously?",
-        answer:
-          "Yes, you can apply for multiple visitor visas concurrently, but it requires careful planning. We help coordinate application timing, manage passport logistics, and ensure each application meets specific country requirements. This is particularly useful for planning multi-country trips or backup travel options.",
-      },
-      {
-        id: 105,
-        question:
-          "What is the maximum duration of stay allowed on a visitor visa?",
-        answer:
-          "Maximum stay duration varies by country. For example, US B1/B2 visas typically allow up to 6 months per visit, Schengen visas permit 90 days within a 180-day period, and some countries offer multiple-entry visas valid for several years. We can help you understand specific duration limits and plan your travel accordingly.",
+          "Duration varies by country: US B1/B2 allows up to 6 months per visit, Schengen permits 90 days within 180 days, Canada visitor visas can be valid up to 10 years with 6-month stays.",
       },
     ],
   },
   {
-    title: "Dependent Visa",
+    title: "Dependent Visa Services - Bring Your Family Together",
     slug: "dependent-visa",
     description:
-      "Reunite with your family abroad through our reliable dependent visa services.",
-    details: `The Dependent Visa allows family members such as spouses, children, and sometimes even parents to accompany individuals who are legally residing or studying/working abroad. New Journey Immigration Education Consultants Pvt. Ltd. specializes in preparing dependent visa applications for countries including Canada, Australia, the USA, UK, and New Zealand.
-      
-      We help you determine eligibility based on your relationship, sponsor status, and host country policies. Some countries allow even unmarried partners under de facto relationships, provided there is proof of cohabitation.
-      
-      Our consultants provide assistance in compiling key documents such as marriage certificates, birth certificates, relationship proof, sponsor letters, and financial support evidence. We also guide sponsors in writing declarations and affidavits when needed.
-      
-      Each country has its own rules — for instance, some allow work rights for dependents, while others permit only limited stay and no employment. Navigating these differences is crucial. Our team keeps updated with every regulation change and global event that may impact visa outcomes.
-      
-      We aim to make your family's immigration journey smooth, safe, and compliant. With our service, you stay focused on your goals while we take care of bringing your loved ones closer to you.`,
+      "Reunite with your family abroad through our comprehensive dependent visa services for spouses, children, and family members.",
+    details: `Family Reunification Made Simple - Dependent Visa Services
+
+At New Journey Immigration, we understand that being separated from your loved ones is one of the hardest parts of living abroad. Our dependent visa services help you bring your family members to join you in your new country, ensuring you can build your future together.
+
+👨‍👩‍👧‍👦 Who Can Apply for Dependent Visas?
+
+🇨🇦 Canada Dependent Visas:
+• Spouse/Common-law Partner (including same-sex partners)
+• Dependent Children (under 22 years old)
+• Parents & Grandparents (through Super Visa or PGP)
+• Adopted Children with proper documentation
+
+🇦🇺 Australia Dependent Visas:
+• Partner Visa (Subclass 820/801, 309/100)
+• Child Visa (Subclass 101, 102, 445)
+• Parent Visa (Subclass 103, 143, 173, 884)
+• Remaining Relative Visa (Subclass 115, 835)
+
+🇺🇸 USA Family-Based Immigration:
+• Immediate Relatives (spouse, unmarried children under 21, parents)
+• Family Preference Categories (F1, F2A, F2B, F3, F4)
+• K-1 Fiancé(e) Visa
+• K-3 Spouse of US Citizen
+
+🇬🇧 UK Family Visas:
+• Spouse/Partner Visa
+• Child Dependent Visa
+• Parent Visa (Adult Dependent Relative)
+• Fiancé(e) Visa
+
+🇳🇿 New Zealand Family Category:
+• Partnership Resident Visa
+• Dependent Child Resident Visa
+• Parent Category Resident Visa
+• Adult Sibling/Adult Child Category
+
+✅ Our Comprehensive Dependent Visa Services:
+
+1. Eligibility Assessment & Pathway Selection
+• Detailed relationship assessment
+• Financial requirement evaluation
+• Best visa category recommendation
+• Timeline and cost estimation
+
+2. Document Preparation & Verification
+• Marriage certificates and relationship evidence
+• Birth certificates and family documents
+• Financial support documentation
+• Medical examinations coordination
+• Police clearance certificates
+
+3. Relationship Evidence Compilation
+• Joint bank accounts and financial records
+• Communication history (emails, calls, messages)
+• Photos and travel history together
+• Joint lease agreements or property ownership
+• Affidavits from friends and family
+
+4. Application Submission & Processing
+• Complete application form preparation
+• Document translation and certification
+• Biometrics appointment booking
+• Interview preparation (if required)
+• Regular status updates and follow-ups
+
+5. Post-Approval Support
+• Travel document guidance
+• Settlement assistance
+• Work permit applications (where applicable)
+• Healthcare enrollment
+• School enrollment for children`,
     images: [],
     benefits: [
-      "Family reunification expertise",
-      "Relationship documentation assistance",
-      "Country-specific eligibility assessment",
-      "Sponsor guidance and documentation",
-      "Post-approval settlement support",
+      "👨‍👩‍👧‍👦 Complete Family Reunification Services",
+      "📋 Expert Relationship Evidence Compilation",
+      "💰 Financial Requirement Assessment & Planning",
+      "🌍 Multi-Country Dependent Visa Expertise",
+      "⚡ Fast-Track Processing for Urgent Cases",
+      "📞 Dedicated Family Immigration Specialists",
+      "🔒 Confidential Handling of Personal Documents",
+      "💬 Interview Preparation & Coaching",
+      "🏠 Post-Arrival Settlement Assistance",
+      "👶 Child-Specific Documentation Support",
+      "💑 Same-Sex Partner Visa Expertise",
+      "📝 Affidavit & Statutory Declaration Assistance",
+      "🏥 Medical Examination Coordination",
+      "🛂 Work Permit Applications for Dependents",
     ],
-    countries: ["Canada", "Australia", "USA", "UK", "New Zealand"],
+    countries: [
+      "Canada (Spouse, Children, Parents)",
+      "Australia (Partner, Child, Parent Visas)",
+      "USA (Family-Based Immigration)",
+      "UK (Family Visas)",
+      "New Zealand (Family Category)",
+      "European Union Countries",
+      "Other Immigration Destinations",
+    ],
     faqs: [
       {
         id: 4,
@@ -182,95 +316,272 @@ export const services: Service[] = [
     ],
   },
   {
-    title: "Insurance",
+    title: "Insurance Services",
     slug: "insurance",
     description:
-      "Protect your international journey with complete travel and health insurance coverage.",
-    details: `Studying or traveling abroad involves many uncertainties. That's why New Journey Immigration Education Consultants Pvt. Ltd. provides access to trusted travel and health insurance plans to safeguard your journey. We offer complete coverage options tailored for students, tourists, and professionals traveling abroad.
-      
-      Our team helps you choose policies that include coverage for hospitalization, outpatient treatments, emergency medical evacuation, accidental death, permanent disability, and personal liability abroad. In addition, we guide you through plans that cover trip cancellation, flight delays, lost baggage, and repatriation of remains.
-      
-      New Journey Immigration collaborates with reputed insurance providers to offer cost-effective and reliable solutions. We assist in application, policy understanding, document submission, and payment methods. Whether you're enrolling in short-term or long-term coverage, our insurance support ensures peace of mind while you focus on your studies or exploration.
-      
-      International laws and university guidelines often mandate insurance — we ensure compliance with local requirements and help you avoid policy gaps that could affect your visa or admission. Travel safe, study stress-free, and protect yourself from unexpected disruptions with our expert insurance guidance.`,
+      "Welcome to New Journey Immigration Insurance Solutions. We believe that every journey deserves protection.",
+    details: `Welcome to New Journey Immigration Insurance Solutions
+We believe that every journey deserves protection. Whether you're visiting Canada, inviting family members, studying, or traveling abroad, we provide trusted, affordable, and comprehensive insurance plans tailored to your needs.
+
+With rising medical costs, travel insurance is not just recommended — it's essential. Our advisors work with leading Canadian insurance providers to ensure you are covered during your stay or trip.
+
+🌍 Who We Help
+We proudly serve:
+
+• Tourists & Temporary Visitors to Canada
+• Parents & Grandparents applying under Super Visa
+• International Students & Work Permit Holders
+• New Immigrants (PR applicants or awaiting OHIP)
+• Canadian Residents Traveling Abroad
+• Spouse Open Work Permit Holders
+• Refugees & Asylum Seekers
+• People who've been refused OHIP/MSP/other provincial health plans
+
+Whether you need a short-term policy or long-term protection, our advisors ensure you get the best coverage.
+
+✅ Types of Insurance Plans We Offer
+
+1. Visitor to Canada Insurance
+For anyone visiting Canada temporarily, including tourists, business visitors, or invited relatives.
+
+Coverage Includes:
+• Emergency medical care
+• Hospitalization
+• Prescription medication
+• Ambulance fees
+• Accidental injury coverage
+• COVID-19-related expenses (in select policies)
+
+Plan Duration: 7 days to 2 years
+Age Limit: Up to 89 years (some plans up to 99)
+
+2. Super Visa Insurance (Mandatory)
+The Canadian Super Visa requires applicants to have at least $100,000 in private medical insurance from a Canadian company — valid for at least one year.
+
+Why Choose Us?
+• Plans from Manulife, GMS, Allianz, 21st Century, etc.
+• Same-day issuance
+• Refundable if the visa is refused
+• Partial refund if your parents leave Canada early
+• Competitive rates, multi-year plans available
+
+3. International Student Insurance
+Studying in Canada? You must have health insurance if you're not covered by a provincial plan.
+
+Coverage Includes:
+• Doctor visits & emergency care
+• Eye exams & prescription drugs
+• Hospital stays & surgery
+• Dental (optional add-on)
+• 24/7 multilingual support
+
+We work with: MSH International, StudentGuard, GMS, Ingle, Morcare, and more.
+
+4. New Immigrant/Work Permit Insurance
+If you've just landed in Canada and are not yet eligible for government healthcare (e.g., OHIP in Ontario), private health insurance is critical.
+
+Key Features:
+• Affordable monthly premiums
+• Coverage for medical emergencies
+• No long waiting periods
+• Optional dental and vision plans
+
+5. Outbound Travel Insurance
+Going abroad from Canada for a vacation or business? Your provincial health plan may not cover costs outside Canada.
+
+Outbound Plans Include:
+• Trip cancellation & interruption
+• Lost/stolen luggage protection
+• Emergency medical treatment abroad
+• Flight delay compensation
+• COVID-19 & quarantine coverage`,
     images: [],
     benefits: [
-      "Comprehensive coverage options",
-      "Tailored plans for students and travelers",
-      "Expert policy comparison and selection",
-      "Visa-compliant insurance solutions",
-      "Claims assistance and support",
+      "📜 Licensed & Certified Advisors",
+      "🏦 Trusted partnerships with leading Canadian insurance companies",
+      "💸 Competitive pricing with zero hidden fees",
+      "📞 Support before, during & after your trip",
+      "📍 Local GTA-based service with Canada-wide coverage",
+      "💬 Multi-language support available (Gujarati, Hindi, Punjabi, English)",
+      "🔄 Easy policy extension, cancellation, and claim support",
+      "📋 Complete claim assistance and dispute resolution",
+      "🛡️ What's Typically Covered: Emergency Medical Treatment, Hospital Room & Board, Doctor Consultations, Prescription Drugs, Diagnostic Tests, Medical Repatriation, Ambulance & Air Ambulance",
     ],
-    countries: ["Global Coverage"],
+    countries: [
+      "Canada (Visitor Insurance)",
+      "Super Visa Insurance",
+      "International Student Coverage",
+      "New Immigrant Insurance",
+      "Outbound Travel (Worldwide)",
+      "Global Coverage Available",
+    ],
     faqs: [
       {
-        id: 7,
-        question: "Is travel insurance mandatory for international travel?",
+        id: 1,
+        question: "Is Super Visa insurance mandatory?",
         answer:
-          "While not universally mandatory, many countries now require proof of travel insurance with specific minimum coverage as part of visa applications. Even when not required, we strongly recommend comprehensive travel insurance to protect against medical emergencies, trip cancellations, and lost belongings, as international medical costs can be extremely high.",
+          "Yes, Super Visa insurance is mandatory. The Canadian government requires applicants to have at least $100,000 in private medical insurance from a Canadian company, valid for at least one year. We provide same-day issuance and refundable policies if the visa is refused.",
+      },
+      {
+        id: 2,
+        question:
+          "What's the difference between visitor insurance and Super Visa insurance?",
+        answer:
+          "Super Visa insurance has specific government requirements: minimum $100,000 coverage, must be from a Canadian company, and valid for at least one year. Visitor insurance is more flexible with various coverage amounts and durations from 7 days to 2 years.",
+      },
+      {
+        id: 3,
+        question: "Can I get a refund if my parents leave Canada early?",
+        answer:
+          "Yes, many Super Visa insurance policies offer partial refunds if your parents leave Canada before the policy expires. We help you choose policies with favorable refund terms and assist with the refund process.",
+      },
+      {
+        id: 4,
+        question:
+          "Do I need insurance if I'm a new immigrant waiting for OHIP?",
+        answer:
+          "Yes, there's typically a 3-month waiting period for OHIP coverage for new immigrants. Private health insurance is critical during this period to cover medical emergencies. We offer affordable monthly premiums with no long waiting periods.",
+      },
+      {
+        id: 5,
+        question: "What's not usually covered by travel insurance?",
+        answer:
+          "Common exclusions include: routine check-ups, cosmetic procedures, pre-existing conditions (unless specifically covered), ongoing treatment for chronic illnesses, and pregnancy & childbirth (unless add-on exists). Our advisors explain all exclusions before you purchase.",
+      },
+      {
+        id: 6,
+        question: "How do I make a claim and get support?",
+        answer:
+          "We provide complete claim support including: explaining your policy coverage, assisting with document collection, helping with claim submission, following up with insurance providers, and resolving disputes or denied claims. Having our expert by your side ensures fast approval and peace of mind.",
+      },
+      {
+        id: 7,
+        question: "Can I extend my insurance policy while in Canada?",
+        answer:
+          "Yes, most policies can be extended before they expire. We make it easy to extend your current policy, switch providers if needed, or add family members to existing policies. It's important to arrange extensions before your current coverage expires.",
       },
       {
         id: 8,
-        question: "What should my travel insurance policy cover?",
+        question: "What insurance do international students need?",
         answer:
-          "A comprehensive travel insurance policy should cover emergency medical expenses (including hospitalization and evacuation), trip cancellation/interruption, flight delays, lost/delayed baggage, personal liability, and personal accidents. For students or long-term travelers, additional coverage for routine medical care and mental health services is advisable.",
-      },
-      {
-        id: 301,
-        question: "How do I make an insurance claim while abroad?",
-        answer:
-          "Most insurers have 24/7 emergency assistance hotlines. We provide detailed guidance on the claims process, help you maintain necessary documentation, and assist with claim submissions. It's important to notify the insurer as soon as possible and keep all relevant receipts and medical reports.",
-      },
-      {
-        id: 302,
-        question: "Can I extend my insurance coverage while abroad?",
-        answer:
-          "Yes, many policies can be extended while abroad, but it's crucial to arrange this before your current coverage expires. We help evaluate extension options, compare costs, and ensure continuous coverage without gaps that could leave you vulnerable.",
-      },
-      {
-        id: 303,
-        question: "Are pre-existing conditions covered by travel insurance?",
-        answer:
-          "Coverage for pre-existing conditions varies by policy. Some insurers offer coverage with additional premiums or waiting periods. We help identify policies that match your medical needs and ensure you understand any exclusions or limitations.",
-      },
-      {
-        id: 304,
-        question:
-          "What's the difference between travel and international student insurance?",
-        answer:
-          "Student insurance typically offers more comprehensive coverage for longer periods, including routine medical care, prescription medications, and sometimes dental/vision care. Travel insurance focuses more on emergencies and trip-related issues. We help choose the right type based on your situation.",
-      },
-      {
-        id: 305,
-        question: "How does insurance coverage work in different countries?",
-        answer:
-          "Coverage can vary by destination. Some policies offer worldwide coverage, while others exclude certain countries or regions. We ensure your policy provides appropriate coverage for all your destination countries and explain any regional limitations or requirements.",
+          "International students must have health insurance if not covered by provincial plans. We provide coverage for doctor visits, emergency care, eye exams, prescription drugs, hospital stays, surgery, and optional dental add-ons with 24/7 multilingual support.",
       },
     ],
   },
   {
-    title: "Air Ticket",
+    title: "Air Ticket Booking Services - Fly Smart, Fly Affordable",
     slug: "air-ticket",
     description:
-      "Book your flight with full support on cost, timing, and visa-compliant travel routes.",
-    details: `Air travel is a major part of international education and immigration, and New Journey Immigration Education Consultants Pvt. Ltd. ensures that our clients get the best deals and travel experiences. We offer competitive and flexible air ticket booking options customized for students, families, and professionals.
-      
-      We understand the urgency and uncertainty that can come with visa processes, so our team offers expert booking management to accommodate delays or changes. We help you find the most affordable, convenient, and visa-compliant flight options that align with your travel goals and visa requirements.
-      
-      New Journey Immigration's air ticket services include airline preference guidance, optimal routes, stopover analysis, early-bird discounts, group bookings, student fares, and real-time booking confirmation. We also advise you on baggage allowances, customs, airport transfers, and connecting flights.
-      
-      In addition, we help students purchase travel insurance alongside ticket bookings for added safety. Our personalized booking services reduce stress and ensure your flight plans are accurate, secure, and affordable.`,
-    images: [
-     
-    ],
+      "Professional flight booking services with best prices, flexible options, and visa-compliant travel planning for students, families, and professionals.",
+    details: `Your Journey Begins with the Right Flight - Professional Air Ticket Services
+
+At New Journey Immigration, we understand that booking international flights can be overwhelming, especially when you're dealing with visa applications, study plans, or family relocations. Our professional air ticket booking services ensure you get the best deals, most convenient routes, and visa-compliant travel arrangements.
+
+✈️ Why Choose Our Air Ticket Services?
+
+🎯 Specialized Travel Planning:
+• Student Travel Specialists - Understanding academic calendars and budget constraints
+• Family Group Bookings - Coordinating travel for multiple family members
+• Business Travel Solutions - Flexible tickets for professionals and entrepreneurs
+• Immigration Travel - Visa-compliant bookings that support your application
+
+💰 Best Price Guarantee:
+• Real-time fare comparison across 500+ airlines
+• Exclusive student discounts and youth fares
+• Group booking discounts for families
+• Early bird offers and seasonal promotions
+• Price drop alerts and rebooking options
+
+🌍 Global Route Expertise:
+• Direct flights vs. connecting flights analysis
+• Optimal layover planning (avoiding visa requirements)
+• Multi-city itineraries for complex travel plans
+• Alternative airports for better pricing
+• Seasonal route recommendations
+
+📋 Comprehensive Booking Services:
+
+1. Pre-Booking Consultation
+• Travel requirement analysis
+• Budget planning and fare forecasting
+• Visa requirement verification
+• Travel insurance recommendations
+• Baggage allowance optimization
+
+2. Flight Search & Comparison
+• Multi-airline fare comparison
+• Route optimization for time and cost
+• Flexible date searches for best prices
+• Seat selection and meal preferences
+• Special assistance arrangements
+
+3. Booking Management
+• Secure payment processing
+• E-ticket delivery and confirmation
+• Booking modifications and cancellations
+• Travel document verification
+• 24/7 booking support
+
+4. Special Services
+• Unaccompanied minor bookings
+• Pet travel arrangements
+• Excess baggage pre-booking
+• Wheelchair and medical assistance
+• Special meal requests
+
+5. Travel Support
+• Check-in assistance and reminders
+• Flight status monitoring
+• Rebooking for delays/cancellations
+• Travel insurance claims support
+• Airport transfer coordination
+
+🎓 Student Travel Specialists:
+• Academic calendar-based booking
+• Student fare verification and discounts
+• Extra baggage allowances for students
+• Flexible change policies for study plans
+• University partnership discounts
+
+👨‍👩‍👧‍👦 Family Travel Experts:
+• Coordinated family bookings
+• Child fare calculations
+• Infant travel arrangements
+• Family seating preferences
+• Group check-in assistance
+
+💼 Business Travel Solutions:
+• Flexible business class options
+• Last-minute booking capabilities
+• Corporate account management
+• Expense reporting support
+• Priority rebooking services`,
+    images: [],
     benefits: [
-      "Competitive and flexible booking options",
-      "Special student and group fares",
-      "Visa-compliant travel planning",
-      "Baggage and customs guidance",
-      "24/7 booking assistance",
+      "✈️ Best Price Guarantee across 500+ Airlines",
+      "🎓 Exclusive Student Discounts & Youth Fares",
+      "👨‍👩‍👧‍👦 Family Group Booking Specialists",
+      "🌍 Global Route Optimization & Planning",
+      "📱 24/7 Booking Support & Assistance",
+      "💼 Flexible Business Travel Solutions",
+      "🛂 Visa-Compliant Travel Planning",
+      "🧳 Baggage Allowance Optimization",
+      "🔄 Free Rebooking for Delays/Cancellations",
+      "🛡️ Travel Insurance Integration",
+      "📋 Complete Travel Documentation Support",
+      "⚡ Last-Minute Booking Capabilities",
+      "🎯 Academic Calendar-Based Planning",
+      "💳 Secure Payment Processing",
     ],
-    countries: ["Worldwide Destinations"],
+    countries: [
+      "Canada (Toronto, Vancouver, Montreal)",
+      "USA (New York, Los Angeles, Chicago)",
+      "UK (London, Manchester, Edinburgh)",
+      "Australia (Sydney, Melbourne, Perth)",
+      "Europe (Paris, Frankfurt, Amsterdam)",
+      "Asia-Pacific (Dubai, Singapore, Tokyo)",
+      "500+ Global Destinations",
+    ],
     faqs: [
       {
         id: 9,
@@ -320,28 +631,117 @@ export const services: Service[] = [
     ],
   },
   {
-    title: "Finance (Forex & Loan)",
+    title: "Finance Services - Education Loans & Forex Solutions",
     slug: "finance",
     description:
-      "Ease your financial journey abroad with expert forex and education loan assistance.",
-    details: `Managing finances is a key aspect of studying or settling abroad. New Journey Immigration Education Consultants Pvt. Ltd. offers professional assistance in arranging education loans, foreign exchange (forex), and financial planning to support your global ambitions.
-      
-      We help students and their families access bank loans with favorable interest rates, covering tuition fees, accommodation, living costs, and travel expenses. Our experts guide you through documentation, eligibility checks, and application submissions with nationalized and private banks.
-      
-      We also provide reliable forex services so that you can safely and easily exchange currency without high commissions. From prepaid forex cards to demand drafts and direct transfers, we help you move money legally and securely.
-      
-      For travelers, we offer advice on how to carry money abroad, what limits to follow, and how to comply with RBI or country-specific financial regulations. Our team ensures that your money matters are clear, compliant, and convenient.`,
-    images: [
-      
-    ],
+      "Complete financial solutions for international education and immigration - education loans, forex services, and financial planning.",
+    details: `Your Financial Partner for International Dreams - Complete Finance Solutions
+
+At New Journey Immigration, we understand that financing your international education or immigration journey is one of the biggest challenges. Our comprehensive finance services help you secure education loans, manage foreign exchange, and plan your finances effectively for a successful international experience.
+
+💰 Education Loan Services:
+
+🏦 Bank Partnerships & Loan Options:
+• Nationalized Banks: SBI, PNB, Bank of Baroda, Canara Bank
+• Private Banks: HDFC, ICICI, Axis Bank, Kotak Mahindra
+• NBFCs: Avanse, Credila, InCred, Prodigy Finance
+• International Lenders: MPower, MPOWER Financing, Stilt
+
+📋 Loan Types We Assist With:
+• Secured Education Loans (with collateral)
+• Unsecured Education Loans (without collateral)
+• Study Abroad Loans for specific countries
+• Professional Course Loans (MBA, Engineering, Medicine)
+• Skill Development & Certification Course Loans
+
+💵 Loan Coverage:
+• Tuition Fees (up to 100% coverage)
+• Living Expenses & Accommodation
+• Travel & Visa Costs
+• Books, Equipment & Study Materials
+• Health Insurance & Medical Expenses
+• Laptop/Computer Purchase
+
+📊 Loan Amount & Terms:
+• Loan Amount: ₹4 Lakhs to ₹1.5 Crores
+• Interest Rates: 8.5% to 15% per annum
+• Repayment Period: 5 to 15 years
+• Moratorium Period: Course duration + 6 months to 1 year
+
+💱 Forex Services:
+
+🌍 Foreign Exchange Solutions:
+• Currency Exchange at competitive rates
+• Forex Cards (Multi-currency & Single-currency)
+• Demand Drafts & Wire Transfers
+• Traveler's Cheques
+• Cash Currency for immediate travel
+
+💳 Forex Card Benefits:
+• Better exchange rates than cash
+• Secure and convenient for international use
+• Multiple currency loading options
+• Online account management
+• Emergency card replacement worldwide
+• ATM withdrawals globally
+
+📈 Forex Services Include:
+• Real-time exchange rate monitoring
+• Forward booking for future requirements
+• Bulk forex for large transactions
+• Corporate forex solutions
+• Remittance services for families
+• Education fee payment solutions
+
+💼 Financial Planning Services:
+
+📋 Pre-Departure Financial Planning:
+• Total cost estimation for study abroad
+• Monthly budget planning for living expenses
+• Emergency fund recommendations
+• Tax implications and planning
+• Insurance and investment advice
+
+🎯 Loan Application Process:
+1. Eligibility Assessment & Documentation
+2. Bank Selection & Application Submission
+3. Loan Processing & Approval
+4. Disbursement Coordination
+5. Repayment Planning & Support
+
+📄 Required Documents:
+• Academic transcripts and admission letters
+• Income proof and financial statements
+• Collateral documents (if applicable)
+• Co-applicant details and guarantor information
+• Identity and address proofs
+• Passport and visa documents`,
+    images: [],
     benefits: [
-      "Education loan assistance with competitive rates",
-      "Forex services with minimal commission",
-      "Financial planning for international studies",
-      "Regulatory compliance guidance",
-      "Multiple currency options",
+      "🏦 Partnerships with 15+ Banks & NBFCs",
+      "💰 Loans up to ₹1.5 Crores with Competitive Rates",
+      "📋 Complete Documentation & Application Support",
+      "⚡ Fast-Track Loan Processing",
+      "💱 Best Forex Rates & Multi-Currency Cards",
+      "🌍 Global Remittance & Transfer Services",
+      "📊 Comprehensive Financial Planning",
+      "🔒 Secure & Compliant Financial Transactions",
+      "📞 Dedicated Loan Relationship Managers",
+      "💳 Collateral-Free Loan Options Available",
+      "📈 Real-Time Exchange Rate Monitoring",
+      "🎯 Customized Loan Solutions",
+      "📱 Online Account Management",
+      "🛡️ Emergency Financial Support",
     ],
-    countries: ["Global Financial Services"],
+    countries: [
+      "USA (Education Loans & Forex)",
+      "Canada (Study Loans & CAD Exchange)",
+      "UK (GBP Forex & Education Financing)",
+      "Australia (AUD Exchange & Study Loans)",
+      "Europe (EUR Forex & Education Loans)",
+      "Global Forex Services (50+ Currencies)",
+      "Indian Banks & NBFCs",
+    ],
     faqs: [
       {
         id: 11,
@@ -389,35 +789,124 @@ export const services: Service[] = [
     ],
   },
   {
-    title: "Work Permit",
+    title: "Work Permit Services - Your Gateway to Global Employment",
     slug: "work-permit",
     description:
-      "Pave your way to global employment with expert assistance on international work permits.",
-    details: `Work permits are crucial for individuals planning to work abroad after studies or as skilled migrants. New Journey Immigration Education Consultants Pvt. Ltd. helps you apply for country-specific work permits through legally compliant and career-aligned pathways.
-      
-      We provide support for open work permits, employer-sponsored permits, and post-study work visas. Countries like Canada, UK, and Australia offer different streams — each with its own timelines, rules, and eligibility requirements. Our consultants ensure your resume, job offer letters, education credentials, and language scores are all properly aligned.
-      
-      We assist in applying for labor market assessments (if needed), biometrics, medical exams, visa fees, and follow-up interviews. We also brief you on rights, working hours, taxation, and renewal conditions under the law of the host country.
-      
-      Whether you're transitioning from a student visa or directly applying as a skilled worker, our team helps you begin your international career without delays or legal hassles.`,
-    images: [
-     
-      
-    ],
+      "Expert assistance for international work permits, post-study work visas, and employer-sponsored work authorization across major destinations.",
+    details: `Start Your International Career - Comprehensive Work Permit Services
+
+At New Journey Immigration, we help skilled professionals, graduates, and workers obtain work permits and employment authorization in their desired countries. Our expert team navigates complex immigration laws to secure your right to work abroad legally and efficiently.
+
+🌍 Work Permit Services by Country:
+
+🇨🇦 Canada Work Permits:
+• Post-Graduation Work Permit (PGWP) - up to 3 years
+• Temporary Foreign Worker Program (TFWP)
+• International Mobility Program (IMP)
+• Open Work Permits for spouses
+• Labour Market Impact Assessment (LMIA) support
+• Global Talent Stream for tech professionals
+
+🇦🇺 Australia Work Visas:
+• Temporary Skill Shortage (TSS) Visa (Subclass 482)
+• Skilled Independent Visa (Subclass 189)
+• Skilled Nominated Visa (Subclass 190)
+• Temporary Graduate Visa (Subclass 485)
+• Working Holiday Visa (Subclass 417/462)
+• Employer Nomination Scheme (ENS) Visa
+
+🇺🇸 USA Work Authorization:
+• H-1B Specialty Occupation Visa
+• L-1 Intracompany Transfer Visa
+• O-1 Extraordinary Ability Visa
+• TN Visa for NAFTA Professionals
+• Optional Practical Training (OPT) for students
+• Employment Authorization Document (EAD)
+
+🇬🇧 UK Work Visas:
+• Skilled Worker Visa (formerly Tier 2)
+• Global Talent Visa
+• Graduate Route Visa (2 years post-study)
+• Intra-company Transfer Visa
+• Youth Mobility Scheme
+• Seasonal Worker Visa
+
+🇳🇿 New Zealand Work Visas:
+• Essential Skills Work Visa
+• Post-Study Work Visa (up to 3 years)
+• Skilled Migrant Category
+• Work to Residence Visa
+• Working Holiday Visa
+• Specific Purpose Work Visa
+
+🇪🇺 European Union Work Permits:
+• EU Blue Card for highly skilled workers
+• National work permits for specific countries
+• Intra-Corporate Transfer (ICT) permits
+• Seasonal work permits
+• Student work authorization
+
+✅ Our Work Permit Services Include:
+
+1. Eligibility Assessment & Strategy
+• Skills assessment and qualification evaluation
+• Work experience verification
+• Language proficiency requirements
+• Best pathway recommendation
+• Timeline and cost planning
+
+2. Job Search & Employer Matching
+• Resume optimization for international markets
+• Job search strategy and guidance
+• Employer outreach and networking
+• Interview preparation and coaching
+• Salary negotiation support
+
+3. Application Preparation
+• Work permit application completion
+• Supporting document compilation
+• Educational credential assessment
+• Professional reference letters
+• Medical examinations coordination
+
+4. Employer Support Services
+• Labour Market Impact Assessment (LMIA) guidance
+• Employer compliance requirements
+• Job offer letter preparation
+• Sponsorship documentation
+• Recruitment process support
+
+5. Post-Approval Services
+• Work permit renewal assistance
+• Permanent residency pathway planning
+• Family member work permits
+• Tax and social security guidance
+• Settlement and integration support`,
+    images: [],
     benefits: [
-      "Open and employer-sponsored work permit assistance",
-      "Post-study work visa guidance",
-      "Labor market assessment support",
-      "Document preparation and verification",
-      "Rights and responsibilities briefing",
+      "🌍 Multi-Country Work Permit Expertise",
+      "🎓 Post-Study Work Visa Specialists",
+      "💼 Employer-Sponsored Work Permit Support",
+      "📋 Complete LMIA & Labour Market Assessment",
+      "⚡ Fast-Track Processing for Urgent Cases",
+      "🔍 Job Search & Employer Matching Services",
+      "📝 Professional Resume & Application Optimization",
+      "💬 Interview Preparation & Coaching",
+      "🏢 Employer Compliance & Sponsorship Support",
+      "👨‍👩‍👧‍👦 Family Work Permit Applications",
+      "🔄 Work Permit Renewal & Extension Services",
+      "🛂 Permanent Residency Pathway Planning",
+      "📞 Dedicated Work Permit Specialists",
+      "🏠 Post-Arrival Settlement Support",
     ],
     countries: [
-      "Canada",
-      "Australia",
-      "UK",
-      "USA",
-      "New Zealand",
-      "European Union",
+      "Canada (PGWP, LMIA, Open Work Permits)",
+      "Australia (TSS, Skilled Visas, Graduate Visa)",
+      "UK (Skilled Worker, Graduate Route)",
+      "USA (H-1B, L-1, O-1, OPT)",
+      "New Zealand (Essential Skills, Post-Study)",
+      "European Union (EU Blue Card, National Permits)",
+      "Other Global Destinations",
     ],
     faqs: [
       {
@@ -476,9 +965,7 @@ export const services: Service[] = [
       We guide you through documentation, government fees, portal registration, and health & police verification. Once approved, PR allows you to live, work, and enjoy most benefits in your chosen country.
       
       We also assist in post-PR steps like settling in, job finding, and eventually applying for citizenship. Our PR services are detailed, transparent, and aligned with your long-term goals.`,
-    images: [
-     
-    ],
+    images: [],
     benefits: [
       "Points-based immigration system expertise",
       "Pathway selection and eligibility assessment",
@@ -534,28 +1021,131 @@ export const services: Service[] = [
     ],
   },
   {
-    title: "Coaching (IELTS & PTE)",
+    title: "IELTS & PTE Coaching - Master English Proficiency Tests",
     slug: "coaching",
     description:
-      "Ace your language proficiency test with tailored IELTS and PTE training programs.",
-    details: `At New Journey Immigration, we understand how crucial English proficiency tests like IELTS and PTE are for your international dreams. Whether it's for university admission, visa eligibility, or PR, scoring high in these exams boosts your chances significantly.
-      
-      Our certified trainers conduct regular batches with structured lesson plans, practice exams, speaking drills, and mock interviews. We provide personalized strategies based on your current skill level, target band score, and time availability.
-      
-      Our classrooms are equipped with smart teaching tools, and we offer offline and online options to suit your convenience. From grammar fundamentals to advanced writing tactics, our holistic training ensures you feel confident on test day.
-      
-      Additionally, we offer detailed feedback, test registration help, and exam-day readiness tips. With our coaching, you don't just prepare for the exam — you master it.`,
-    images: [
-      
-    ],
+      "Achieve your target IELTS and PTE scores with expert coaching, personalized training, and proven strategies from certified trainers.",
+    details: `Master English Proficiency Tests - Expert IELTS & PTE Coaching
+
+At New Journey Immigration, we understand that achieving your target IELTS or PTE score is crucial for your international education, immigration, and career goals. Our comprehensive coaching programs are designed to help you master these tests with confidence and achieve the scores you need.
+
+🎯 Why Choose Our IELTS & PTE Coaching?
+
+📊 Proven Track Record:
+• 95% of our students achieve their target scores
+• Average score improvement of 1.5 bands in IELTS
+• 15+ points improvement in PTE scores
+• 500+ successful students placed in top universities
+• Expert trainers with 10+ years of experience
+
+🏆 Comprehensive Coaching Programs:
+
+📚 IELTS Coaching (Academic & General):
+• Complete 4-module training (Listening, Reading, Writing, Speaking)
+• Band-wise targeted preparation (6.0 to 9.0)
+• Academic IELTS for university admissions
+• General IELTS for immigration purposes
+• Computer-delivered IELTS preparation
+
+💻 PTE Academic Coaching:
+• All 20 question types covered comprehensively
+• Score-based preparation (50 to 90 points)
+• Computer-based test simulation
+• AI-powered speaking practice
+• Integrated skills development
+
+🎓 Course Features & Methodology:
+
+📋 Structured Learning Approach:
+• Diagnostic test to assess current level
+• Personalized study plan creation
+• Module-wise skill development
+• Regular progress tracking
+• Intensive practice sessions
+
+🗣️ Speaking Excellence Program:
+• One-on-one speaking sessions
+• Pronunciation and fluency training
+• Topic-based discussion practice
+• Mock speaking tests with feedback
+• Confidence building exercises
+
+✍️ Writing Mastery Classes:
+• Task 1 & Task 2 comprehensive training
+• Essay structure and organization
+• Grammar and vocabulary enhancement
+• Sample answer analysis
+• Personalized feedback and correction
+
+👂 Listening Skills Development:
+• Various accent exposure (British, American, Australian)
+• Note-taking strategies
+• Question type specific techniques
+• Speed and accuracy improvement
+• Practice with authentic materials
+
+📖 Reading Comprehension Training:
+• Skimming and scanning techniques
+• Time management strategies
+• Question type analysis
+• Vocabulary building
+• Speed reading development
+
+🏫 Learning Options:
+
+🏢 Classroom Coaching:
+• Small batch sizes (8-12 students)
+• Interactive learning environment
+• Peer learning opportunities
+• Regular doubt clearing sessions
+• Flexible timing options
+
+💻 Online Coaching:
+• Live interactive sessions
+• Recorded lectures for revision
+• Digital study materials
+• Online practice tests
+• Virtual speaking practice
+
+👨‍🏫 Hybrid Learning:
+• Combination of online and offline classes
+• Flexibility to switch between modes
+• Best of both learning environments
+• Personalized attention
+• Convenient scheduling
+
+📅 Course Duration & Batches:
+• Intensive Course: 4-6 weeks
+• Regular Course: 8-12 weeks
+• Weekend Batches: 12-16 weeks
+• Crash Course: 2-3 weeks
+• Flexible timings available`,
+    images: [],
     benefits: [
-      "Certified IELTS and PTE trainers",
-      "Personalized learning strategies",
-      "Regular mock tests and performance analysis",
-      "Small batch sizes for individual attention",
-      "Online and offline learning options",
+      "🏆 95% Success Rate with Target Score Achievement",
+      "👨‍🏫 Certified Trainers with 10+ Years Experience",
+      "📊 Personalized Study Plans & Progress Tracking",
+      "🎯 Small Batch Sizes (8-12 Students) for Individual Attention",
+      "💻 Online, Offline & Hybrid Learning Options",
+      "📝 Unlimited Mock Tests & Practice Materials",
+      "🗣️ One-on-One Speaking Sessions",
+      "✍️ Personalized Writing Feedback & Correction",
+      "📚 Comprehensive Study Materials & Resources",
+      "⏰ Flexible Timing & Weekend Batches",
+      "🔄 Free Retake Classes if Target Not Achieved",
+      "📱 Mobile App with Practice Tests",
+      "🎧 Listening Practice with Multiple Accents",
+      "📈 Regular Performance Analysis & Improvement Tips",
     ],
-    countries: ["IELTS/PTE Recognized Countries"],
+    countries: [
+      "Canada (IELTS/PTE for Immigration & Study)",
+      "Australia (PTE/IELTS for PR & Education)",
+      "UK (IELTS for Study & Work Visas)",
+      "USA (IELTS/PTE for University Admissions)",
+      "New Zealand (IELTS/PTE for Immigration)",
+      "European Countries (IELTS for Education)",
+      "Global Recognition (140+ Countries)",
+    ],
     faqs: [
       {
         id: 17,
@@ -615,9 +1205,7 @@ export const services: Service[] = [
       We also support citizenship applications, language and residency requirements, and legal steps such as oath-taking ceremonies and document verification.
       
       With in-house legal advisors and expert documentation teams, our immigration process is structured, transparent, and aligned with your goals. We ensure your transition from being a temporary resident to a citizen is smooth and legally sound.`,
-    images: [
-   
-    ],
+    images: [],
     benefits: [
       "End-to-end immigration planning",
       "Citizenship application support",

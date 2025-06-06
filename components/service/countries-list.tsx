@@ -57,47 +57,60 @@ export default function CountriesList({ countries }: CountriesListProps) {
       countries[0].includes("Worldwide"));
 
   return (
-    <>
-      <h2 className="text-2xl font-bold text-[#13294E] dark:text-white mb-6 border-b border-[#AFC1DB] dark:border-gray-700 pb-2">
-        {isGlobal ? "Coverage" : "Countries Covered"}
-      </h2>
+    <div className="max-w-7xl mx-auto">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-black text-[#13294E] dark:text-white mb-6">
+          {isGlobal ? "Global Coverage" : "Countries We Serve"}
+        </h2>
+        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Trusted immigration services across multiple destinations
+        </p>
+      </div>
 
       {isGlobal ? (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="flex items-center space-x-3 p-4 bg-gradient-to-r from-[#13294E]/5 to-[#13294E]/10 dark:from-[#13294E]/20 dark:to-[#13294E]/30 rounded-lg"
-        >
-          <Globe className="h-6 w-6 text-[#13294E] dark:text-[#FAA71A]" />
-          <p className="text-gray-700 dark:text-gray-300 font-medium">
-            {countries[0]}
-          </p>
-        </motion.div>
+        <div className="relative bg-gradient-to-br from-[#13294E] to-[#FAA71A] rounded-3xl p-12 text-center text-white overflow-hidden">
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="relative">
+            <Globe className="h-20 w-20 mx-auto mb-6 opacity-90" />
+            <h3 className="text-3xl font-bold mb-4">Worldwide Service</h3>
+            <p className="text-xl opacity-90">{countries[0]}</p>
+          </div>
+        </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {countries.map((country, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="flex items-center space-x-2 p-3 rounded-md bg-gray-50 dark:bg-gray-800 border border-[#AFC1DB]/20 dark:border-gray-700 transition-all hover:border-[#AFC1DB] dark:hover:border-[#FAA71A]/50 hover:shadow-sm"
+              transition={{ delay: index * 0.05 }}
+              className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-[#FAA71A]/30"
             >
-              {flagMap[country] && (
-                <div className="relative w-6 h-4">
-                  <Image
-                    src={flagMap[country]}
-                    alt={`${country} flag`}
-                    fill
-                    className="object-cover rounded-sm"
-                  />
+              <div className="flex items-center space-x-4">
+                <div className="flex-shrink-0">
+                  {flagMap[country] ? (
+                    <div className="relative w-10 h-7 rounded-lg overflow-hidden shadow-md">
+                      <Image
+                        src={flagMap[country]}
+                        alt={`${country} flag`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-10 h-7 bg-gradient-to-br from-[#FAA71A] to-[#13294E] rounded-lg flex items-center justify-center shadow-md">
+                      <MapPin className="h-4 w-4 text-white" />
+                    </div>
+                  )}
                 </div>
-              )}
-              <span className="text-gray-700 dark:text-gray-300">{country}</span>
+                <span className="text-gray-700 dark:text-gray-300 font-semibold group-hover:text-[#13294E] dark:group-hover:text-white transition-colors">
+                  {country}
+                </span>
+              </div>
             </motion.div>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }

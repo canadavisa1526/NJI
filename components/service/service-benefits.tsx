@@ -1,5 +1,5 @@
-import { Check } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ServiceBenefitsProps {
   benefits: string[];
@@ -7,28 +7,40 @@ interface ServiceBenefitsProps {
 
 export default function ServiceBenefits({ benefits }: ServiceBenefitsProps) {
   if (!benefits.length) return null;
-  
+
   return (
-    < >
-      <h2 className="text-2xl font-bold text-[#13294E] dark:text-white mb-6 border-b border-[#AFC1DB] dark:border-gray-700 pb-2">
-        Key Benefits
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="max-w-7xl mx-auto">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-black text-[#13294E] dark:text-white mb-6">
+          Why Choose New Journey Immigration
+        </h2>
+        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Experience the difference with our professional immigration services
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {benefits.map((benefit, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className="flex items-start space-x-3 p-4 rounded-lg transition-all hover:bg-gray-50 dark:hover:bg-gray-800 border border-transparent hover:border-[#AFC1DB]/20 dark:hover:border-gray-700"
+            transition={{ delay: index * 0.05 }}
+            className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-[#FAA71A]/30"
           >
-            <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#FAA71A]/20 dark:bg-[#FAA71A]/30 flex items-center justify-center">
-              <Check className="h-3 w-3 text-[#FAA71A]" strokeWidth={3} />
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#FAA71A] to-[#13294E] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <Check className="h-6 w-6 text-white" strokeWidth={2} />
+              </div>
+              <div className="flex-1">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-medium group-hover:text-[#13294E] dark:group-hover:text-white transition-colors">
+                  {benefit}
+                </p>
+              </div>
             </div>
-            <p className="text-gray-700 dark:text-gray-300">{benefit}</p>
           </motion.div>
         ))}
       </div>
-    </>
+    </div>
   );
 }

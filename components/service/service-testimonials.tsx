@@ -14,22 +14,31 @@ interface ServiceTestimonialsProps {
 const serviceTestimonials = {
   "visitor-visa": [
     {
-      name: "Priya Sharma",
-      location: "Mumbai, India",
-      service: "US Tourist Visa",
-      rating: 5,
-      content:
-        "New Journey Immigration made my US tourist visa application seamless. Their team guided me through every step, from document preparation to interview coaching. I got my visa approved in just 3 weeks!",
-      image: "/testimonials/priya.jpg",
-    },
-    {
-      name: "Rajesh Kumar",
-      location: "Delhi, India",
+      name: "Amanpreet K.",
+      location: "Punjab, India",
       service: "Canada Visitor Visa",
       rating: 5,
       content:
-        "Excellent service for my Canada visitor visa. The team was very professional and kept me updated throughout the process. Highly recommend their services for anyone planning to visit Canada.",
-      image: "/testimonials/rajesh.jpg",
+        "New Journey Immigration handled my visitor visa to Canada with such professionalism. The entire process was smooth and stress-free!",
+      image: "/testimonials/amanpreet.jpg",
+    },
+    {
+      name: "Faisal R.",
+      location: "Dubai, UAE",
+      service: "UK Business Visa",
+      rating: 5,
+      content:
+        "I needed to attend a business conference in the UK. They got my visa approved within 10 days. Thank you so much!",
+      image: "/testimonials/faisal.jpg",
+    },
+    {
+      name: "Monica G.",
+      location: "Philippines",
+      service: "Schengen Visa",
+      rating: 5,
+      content:
+        "Their support for my Schengen application was perfect. Highly recommended!",
+      image: "/testimonials/monica.jpg",
     },
     {
       name: "Anita Patel",

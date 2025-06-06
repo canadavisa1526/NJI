@@ -78,9 +78,9 @@ export const locations = [
     services: ["Immigration Services", "IELTS Coaching", "Student Counseling"],
   },
   {
-    city: "Toronto",
+    city: "Brampton",
     country: "Canada",
-    address: "Downtown Toronto",
+    address: "Steels Ave W, Brampton",
     services: [
       "Immigration Processing",
       "Settlement Services",

@@ -8,6 +8,7 @@ import Loading from "./loading";
 import Footer from "@/components/Footer";
 import Script from "next/script";
 import { PostHogProvider } from "@/components/PostHogProvider";
+import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -285,6 +286,7 @@ export default function RootLayout({
               <Navbar />
               {children}
               <Footer />
+              <WhatsAppFloatingButton />
             </Suspense>
           </ThemeProvider>
         </PostHogProvider>
