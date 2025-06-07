@@ -64,13 +64,7 @@ Add-Ons: Travel insurance, hotel booking help, express processing
 We offer visitor visa services for over 60+ countries, including Singapore, Malaysia, Thailand, Japan, South Korea, New Zealand, Turkey, South Africa, Brazil, Mexico, Saudi Arabia, and more...
 
 Need help with a country not listed here? Just contact us — we probably support it too!`,
-    images: [
-      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201308/1_qvkrcb.jpg",
-      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/5_fg6il0.jpg",
-      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/4_gsaphb.jpg",
-      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/2_psrps3.jpg",
-      "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/3_oasn0j.jpg",
-    ],
+    images: [],
     benefits: [
       "🌐 Expert Visa Consultants with in-depth knowledge of global immigration systems",
       "📝 Personalized Document Checklists based on your destination",
@@ -92,7 +86,7 @@ Need help with a country not listed here? Just contact us — we probably suppor
       "USA",
       "UK",
       "Australia",
-      "Schengen Countries (27 European Nations)",
+      "Schengen Countries",
       "UAE",
       "Singapore",
       "Malaysia",

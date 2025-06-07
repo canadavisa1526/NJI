@@ -316,6 +316,12 @@ const EnhancedSuccessStories = () => {
             spaceBetween={20}
             centeredSlides={true}
             breakpoints={{
+              // Mobile devices - 1 card
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+                centeredSlides: true,
+              },
               480: {
                 slidesPerView: 1,
                 spaceBetween: 20,
@@ -331,6 +337,7 @@ const EnhancedSuccessStories = () => {
                 spaceBetween: 30,
                 centeredSlides: true,
               },
+              // Big screens - 2 cards
               1024: {
                 slidesPerView: 2,
                 spaceBetween: 30,
@@ -344,6 +351,11 @@ const EnhancedSuccessStories = () => {
               1440: {
                 slidesPerView: 2,
                 spaceBetween: 50,
+                centeredSlides: false,
+              },
+              1600: {
+                slidesPerView: 2,
+                spaceBetween: 60,
                 centeredSlides: false,
               },
             }}
@@ -374,7 +386,7 @@ const EnhancedSuccessStories = () => {
                 >
                   <div className="relative h-full bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm transform-gpu transition-all duration-500 group-hover:shadow-3xl group-hover:border-[#FAA71A]/30">
                     {/* Main image container */}
-                    <div className="relative h-[500px] md:h-[600px] lg:h-[750px] xl:h-[800px] w-full overflow-hidden rounded-3xl">
+                    <div className="relative h-[500px] md:h-[600px] lg:h-[650px] xl:h-[700px] 2xl:h-[650px] w-full overflow-hidden rounded-3xl">
                       <Image
                         src={
                           imageLoadErrors[story.id]

@@ -32,7 +32,7 @@ export default function TopInstitutionsSection({ country }: TopInstitutionsSecti
   if (country.topInstitutions.length < 20) {
     for (let i = 0; i < 20 - country.topInstitutions.length; i++) {
       placeholderInstitutions.push({
-        name: `${country.name} University of ${['Technology', 'Arts', 'Sciences', 'Business', 'Liberal Arts'][i % 5]} ${i + 1}`,
+        name: `${country.name} University of ${['Technology', 'Arts', 'Sciences', 'Business', 'Liberal Arts'][i % 5]} `,
         location: `${['Major', 'Capital', 'Coastal', 'Western', 'Eastern'][i % 5]} City, ${country.name}`,
         description: 'Renowned institution offering diverse programs in multiple disciplines.',
         image: placeholderImages[i % placeholderImages.length],
