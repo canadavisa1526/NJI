@@ -15,9 +15,9 @@ import {
 export const stats = [
   {
     icon: Users2,
-    value: "15000+",
+    value: "17,250+",
     label: "Successful Cases",
-    numericValue: 15000,
+    numericValue: 17250,
     suffix: "+",
   },
   {

@@ -337,25 +337,25 @@ const EnhancedSuccessStories = () => {
                 spaceBetween: 30,
                 centeredSlides: true,
               },
-              // Big screens - 2 cards
+              // Big screens - 2 cards with optimal spacing
               1024: {
                 slidesPerView: 2,
-                spaceBetween: 30,
+                spaceBetween: 24,
                 centeredSlides: false,
               },
               1280: {
                 slidesPerView: 2,
-                spaceBetween: 40,
+                spaceBetween: 32,
                 centeredSlides: false,
               },
               1440: {
                 slidesPerView: 2,
-                spaceBetween: 50,
+                spaceBetween: 40,
                 centeredSlides: false,
               },
               1600: {
                 slidesPerView: 2,
-                spaceBetween: 60,
+                spaceBetween: 48,
                 centeredSlides: false,
               },
             }}
@@ -385,8 +385,8 @@ const EnhancedSuccessStories = () => {
                   whileTap={{ scale: 0.98 }}
                 >
                   <div className="relative h-full bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm transform-gpu transition-all duration-500 group-hover:shadow-3xl group-hover:border-[#FAA71A]/30">
-                    {/* Main image container */}
-                    <div className="relative h-[500px] md:h-[600px] lg:h-[650px] xl:h-[700px] 2xl:h-[650px] w-full overflow-hidden rounded-3xl">
+                    {/* Main image container - Optimized for 2 cards on big screens */}
+                    <div className="relative h-[450px] sm:h-[500px] md:h-[550px] lg:h-[580px] xl:h-[600px] 2xl:h-[620px] w-full overflow-hidden rounded-3xl">
                       <Image
                         src={
                           imageLoadErrors[story.id]
@@ -396,9 +396,9 @@ const EnhancedSuccessStories = () => {
                         alt={`${story.name} Success Story`}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        priority={index < 3}
+                        priority={index < 2}
                         onError={() => handleImageError(story.id)}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
                       />
 
                       {/* Gradient overlays */}
@@ -407,20 +407,7 @@ const EnhancedSuccessStories = () => {
                       ></div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-                      {/* Country flag */}
-                      <motion.div
-                        className="absolute top-4 md:top-6 left-4 md:left-6 z-20"
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.3 + index * 0.1 }}
-                      >
-                        <div className="flex items-center space-x-2 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full px-3 py-2 shadow-lg">
-                          <span className="text-lg md:text-xl">{story.flag}</span>
-                          <span className="text-sm md:text-base font-semibold text-gray-800 dark:text-white">
-                            {story.country}
-                          </span>
-                        </div>
-                      </motion.div>
+                    
 
                       {/* Rating stars */}
                       <motion.div
@@ -453,21 +440,9 @@ const EnhancedSuccessStories = () => {
                           </h3>
 
                           {/* University */}
-                          <div className="flex items-center space-x-2 text-white/90">
-                            <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#FAA71A]" />
-                            <span className="text-sm md:text-base lg:text-lg font-medium">
-                              {story.university}
-                            </span>
-                          </div>
+                         
 
-                          {/* Visa type badge */}
-                          <div className="inline-flex items-center space-x-2 bg-[#FAA71A]/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-                            <Award className="w-4 h-4 text-white" />
-                            <span className="text-white text-sm md:text-base font-semibold">
-                              {story.visaType}
-                            </span>
-                          </div>
-                      
+                         
                         </motion.div>
                       </div>
                     </div>

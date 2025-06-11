@@ -16,6 +16,7 @@ import InsurancePricing from "@/components/service/insurance-pricing";
 import ServiceHeroSection from "@/components/service/service-hero-section";
 import IntegratedInquiryForm from "@/components/service/integrated-inquiry-form";
 import ServiceProcessTimeline from "@/components/service/service-process-timeline";
+import ServiceDetailsSection from "@/components/service/service-details-section";
 
 export default function ServiceDetailsPage() {
   const { slug } = useParams();
@@ -47,13 +48,21 @@ export default function ServiceDetailsPage() {
   if (!service) return <ServiceNotFound />;
 
   return (
-    <main className="min-h-screen bg-[#ffffff] dark:bg-[#13294E] relative overflow-hidden">
+    <main className="min-h-screen bg-white dark:bg-[#13294E] relative overflow-hidden">
       <ServiceHeroSection
         service={service}
         onOpenInquiry={() => setShowInquiryModal(true)}
       />
 
       <ServiceProcessTimeline serviceType={service.slug} />
+
+      {/* Service Details Section */}
+      {service.serviceDetails && service.serviceDetails.length > 0 && (
+        <ServiceDetailsSection
+          serviceDetails={service.serviceDetails}
+          serviceTitle={service.title}
+        />
+      )}
 
       {/* Inquiry Modal */}
       <AnimatePresence>
@@ -81,10 +90,10 @@ export default function ServiceDetailsPage() {
                   setShowInquiryModal(false);
                   setShowFloatingButton(true);
                 }}
-                className="absolute top-4 right-4 z-10 w-8 h-8 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full flex items-center justify-center transition-colors"
+                className="absolute top-4 right-4 z-10 w-8 h-8 bg-[#AFC1DB] dark:bg-[#13294E] hover:bg-[#FAA71A] dark:hover:bg-[#FAA71A] rounded-full flex items-center justify-center transition-colors"
               >
                 <svg
-                  className="w-4 h-4 text-gray-600 dark:text-gray-300"
+                  className="w-4 h-4 text-[#13294E] dark:text-[#AFC1DB]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -99,11 +108,11 @@ export default function ServiceDetailsPage() {
               </button>
 
               {/* Modal Header */}
-              <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+              <div className="p-6 border-b border-[#AFC1DB] dark:border-[#AFC1DB]">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#FAA71A] to-[#13294E] rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#FAA71A] rounded-xl flex items-center justify-center">
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-6 h-6 text-[#13294E]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -117,10 +126,10 @@ export default function ServiceDetailsPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#13294E] dark:text-white">
+                    <h3 className="text-xl font-bold text-[#13294E] dark:text-[#AFC1DB]">
                       Get Expert Consultation
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                    <p className="text-sm text-[#13294E] dark:text-[#AFC1DB]">
                       Start your {service.title.split(" - ")[0].toLowerCase()}{" "}
                       journey today
                     </p>
@@ -148,7 +157,6 @@ export default function ServiceDetailsPage() {
     
       {service.slug === "visitor-visa" && (
         <section className="py-16 bg-white dark:bg-[#13294E] relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAA71A]/5 via-transparent to-[#13294E]/5" />
           <div className="container mx-auto px-4 max-w-7xl relative">
             <VisaCountryDetails serviceType={service.slug} />
           </div>
@@ -157,7 +165,7 @@ export default function ServiceDetailsPage() {
 
       {service.slug === "insurance" && (
         <>
-          <section className="py-16 bg-gradient-to-br from-[#AFC1DB]/10 to-white dark:from-[#13294E] dark:to-[#1a2a4d]">
+          <section className="py-16 bg-white dark:bg-[#13294E]">
             <div className="container mx-auto px-4 max-w-7xl">
               <InsurancePlans serviceType={service.slug} />
             </div>
@@ -171,7 +179,7 @@ export default function ServiceDetailsPage() {
         </>
       )}
 
-      <section className="py-2 bg-gradient-to-br from-white via-[#AFC1DB]/10 to-[#FAA71A]/10 dark:from-[#13294E] dark:via-[#1a2a4d]/30 dark:to-[#FAA71A]/10 relative overflow-hidden">
+      <section className="py-2 bg-white dark:bg-[#13294E] relative overflow-hidden">
         
         <div className="container mx-auto px-6 max-w-7xl relative">
           <CountriesList countries={service.countries} />
@@ -179,17 +187,17 @@ export default function ServiceDetailsPage() {
       </section>
 
       {service.slug === "visitor-visa" && (
-        <section className="py-16 bg-gradient-to-r from-[#13294E]/10 via-[#AFC1DB]/5 to-[#FAA71A]/10 relative overflow-hidden">
+        <section className="py-16 bg-white dark:bg-[#13294E] relative overflow-hidden">
           <div className="absolute inset-0">
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-10 left-10 w-32 h-32 bg-[#FAA71A]/10 rounded-full blur-2xl"
+              className="absolute top-10 left-10 w-32 h-32 bg-[#FAA71A] opacity-5 rounded-full blur-2xl"
             />
             <motion.div
               animate={{ scale: [1.1, 1, 1.1] }}
               transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-10 right-10 w-40 h-40 bg-[#13294E]/10 rounded-full blur-2xl"
+              className="absolute bottom-10 right-10 w-40 h-40 bg-[#13294E] opacity-5 rounded-full blur-2xl"
             />
           </div>
           <div className="container mx-auto px-4 max-w-7xl relative">
@@ -198,7 +206,7 @@ export default function ServiceDetailsPage() {
         </section>
       )}
 
-      <section className="py-2 bg-gradient-to-br from-[#F9FAFB] to-white dark:from-[#1c2e4a] dark:to-[#13294E] relative overflow-hidden">
+      <section className="py-2 bg-white dark:bg-[#13294E] relative overflow-hidden">
         <div className="absolute inset-0">
           <motion.div
             animate={{ rotate: 360 }}
@@ -218,19 +226,19 @@ export default function ServiceDetailsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-[#AFC1DB]/20 dark:bg-[#FAA71A]/10 border border-[#FAA71A]/30 rounded-full mb-6">
+            <div className="inline-flex items-center px-4 py-2 bg-[#AFC1DB] bg-opacity-20 dark:bg-[#FAA71A] dark:bg-opacity-10 border border-[#FAA71A] rounded-full mb-6">
               <div className="w-2 h-2 bg-[#FAA71A] rounded-full mr-2 animate-pulse" />
-              <span className="text-[#13294E] dark:text-white font-semibold text-sm">
+              <span className="text-[#13294E] dark:text-[#AFC1DB] font-semibold text-sm">
                 Common Questions
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-black text-[#13294E] dark:text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-black text-[#13294E] dark:text-[#AFC1DB] mb-6">
               Got Questions?
               <span className="block text-[#FAA71A]">We Have Answers</span>
             </h2>
 
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-[#13294E] dark:text-[#AFC1DB] max-w-3xl mx-auto">
               Find answers to the most common questions about our{" "}
               {service.title.split(" - ")[0].toLowerCase()} services.
             </p>
@@ -242,12 +250,12 @@ export default function ServiceDetailsPage() {
         </div>
       </section>
 
-      <section className="py-2 bg-gradient-to-br from-[#13294E]/5 via-[#AFC1DB]/5 to-[#FAA71A]/5 relative overflow-hidden">
+      <section className="py-2 bg-white dark:bg-[#13294E] relative overflow-hidden">
         <div className="absolute inset-0">
           <motion.div
             animate={{ y: [0, -30, 0] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-[#FAA71A]/10 to-[#13294E]/10 rounded-full blur-xl"
+            className="absolute top-10 left-10 w-32 h-32 bg-[#FAA71A] opacity-5 rounded-full blur-xl"
           />
           <motion.div
             animate={{ y: [0, 30, 0] }}
@@ -257,7 +265,7 @@ export default function ServiceDetailsPage() {
               ease: "easeInOut",
               delay: 2,
             }}
-            className="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-br from-[#AFC1DB]/10 to-[#FAA71A]/10 rounded-full blur-xl"
+            className="absolute bottom-10 right-10 w-40 h-40 bg-[#AFC1DB] opacity-5 rounded-full blur-xl"
           />
         </div>
 
@@ -268,14 +276,14 @@ export default function ServiceDetailsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-white/80 dark:bg-[#13294E]/80 backdrop-blur-sm rounded-full border border-[#AFC1DB]/30 mb-6">
+            <div className="inline-flex items-center px-4 py-2 bg-white dark:bg-[#13294E] rounded-full border border-[#AFC1DB] mb-6">
               <div className="w-2 h-2 bg-[#FAA71A] rounded-full mr-2 animate-pulse" />
-              <span className="text-[#13294E] dark:text-white font-semibold text-sm">
+              <span className="text-[#13294E] dark:text-[#AFC1DB] font-semibold text-sm">
                 Explore More Services
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-black text-[#13294E] dark:text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-black text-[#13294E] dark:text-[#AFC1DB] mb-6">
               Other Services
               <span className="block text-[#FAA71A]">You Might Need</span>
             </h2>

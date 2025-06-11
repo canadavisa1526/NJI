@@ -56,25 +56,7 @@ const insurancePlansData: Record<string, Plan[]> = {
       borderColorLight: "#AFC1DB",
       borderColorDark: "#13294E",
     },
-    {
-      icon: Heart,
-      title: "Super Visa Insurance (Mandatory)",
-      subtitle: "Required $100,000 coverage from Canadian company",
-      duration: "Minimum 1 year validity",
-      ageLimit: "All ages accepted",
-      coverage: [
-        "Plans from Manulife, GMS, Allianz, 21st Century",
-        "Same-day issuance",
-        "Refundable if visa refused",
-        "Partial refund if early departure",
-        "Competitive rates, multi-year plans",
-      ],
-      color: "#FAA71A",
-      bgColorLight: "#FFF3D9",
-      bgColorDark: "rgba(250, 167, 26, 0.2)",
-      borderColorLight: "#FACB7A",
-      borderColorDark: "#FAA71A",
-    },
+    
     {
       icon: GraduationCap,
       title: "International Student Insurance",

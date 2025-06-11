@@ -483,14 +483,14 @@ const Navbar = () => {
               <div className="px-3 py-2">
                 <Button
                   className="w-full bg-[#FAA71A] hover:bg-[#FAA71A]/90 text-white shadow-md"
-                  onClick={() => {
-                    window.open(
-                      "https://calendly.com/canada-visa1526/15-minute-meeting-clone",
-                      "_blank"
-                    );
-                    // setIsAppointmentOpen(true);
-                    // setIsOpen(false);
-                  }}
+                   onClick={() => {
+                  // setIsAppointmentOpen(true)
+                  window.open(
+                    "https://calendly.com/newjourneyworld-support/30min",
+                    "_blank",
+                    "noopener,noreferrer"
+                  );
+                }}
                 >
                   Book Consultation
                 </Button>

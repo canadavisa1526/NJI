@@ -37,11 +37,11 @@ export default function ServiceHeroSection({
   const displayBenefits = service.benefits.slice(0, 6);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-white via-[#F8FAFC] to-[#AFC1DB]/20 dark:from-[#13294E] dark:via-[#1a2a4d] dark:to-gray-800 overflow-hidden">
+    <section className="relative min-h-screen bg-white dark:bg-[#13294E] overflow-hidden">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Mesh Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FAA71A]/5 via-transparent to-[#AFC1DB]/10 dark:from-[#FAA71A]/10 dark:to-[#AFC1DB]/5" />
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[#FAA71A] opacity-5" />
 
         {/* Animated Grid Pattern */}
         <motion.div
@@ -98,7 +98,7 @@ export default function ServiceHeroSection({
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-br from-[#FAA71A]/20 to-[#13294E]/10 rounded-full blur-2xl"
+          className="absolute top-20 left-10 w-40 h-40 bg-[#FAA71A] opacity-10 rounded-full blur-2xl"
         />
         <motion.div
           animate={{
@@ -112,7 +112,7 @@ export default function ServiceHeroSection({
             ease: "easeInOut",
             delay: 2,
           }}
-          className="absolute bottom-20 right-10 w-48 h-48 bg-gradient-to-tl from-[#AFC1DB]/20 to-[#FAA71A]/10 rounded-full blur-2xl"
+          className="absolute bottom-20 right-10 w-48 h-48 bg-[#AFC1DB] opacity-10 rounded-full blur-2xl"
         />
 
         {/* Medium Floating Shapes */}
@@ -128,7 +128,7 @@ export default function ServiceHeroSection({
             ease: "easeInOut",
             delay: 1,
           }}
-          className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-r from-[#13294E]/15 to-[#AFC1DB]/15 rounded-full blur-xl"
+          className="absolute top-1/3 right-1/4 w-24 h-24 bg-[#13294E] opacity-10 rounded-full blur-xl"
         />
         <motion.div
           animate={{
@@ -142,7 +142,7 @@ export default function ServiceHeroSection({
             ease: "easeInOut",
             delay: 3,
           }}
-          className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-l from-[#FAA71A]/15 to-[#13294E]/10 rounded-full blur-xl"
+          className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-[#FAA71A] opacity-10 rounded-full blur-xl"
         />
 
         {/* Geometric Shapes */}
@@ -155,7 +155,7 @@ export default function ServiceHeroSection({
             rotate: { duration: 20, repeat: Infinity, ease: "linear" },
             scale: { duration: 6, repeat: Infinity, ease: "easeInOut" },
           }}
-          className="absolute top-1/4 right-1/3 w-16 h-16 border-2 border-[#FAA71A]/30 rotate-45 blur-sm"
+          className="absolute top-1/4 right-1/3 w-16 h-16 border-2 border-[#FAA71A] opacity-30 rotate-45 blur-sm"
         />
         <motion.div
           animate={{
@@ -168,7 +168,7 @@ export default function ServiceHeroSection({
             x: { duration: 7, repeat: Infinity, ease: "easeInOut" },
             y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 },
           }}
-          className="absolute bottom-1/4 left-1/3 w-12 h-12 border-2 border-[#AFC1DB]/40 rounded-full blur-sm"
+          className="absolute bottom-1/4 left-1/3 w-12 h-12 border-2 border-[#AFC1DB] opacity-40 rounded-full blur-sm"
         />
 
         {/* Particle Effects */}
@@ -186,7 +186,7 @@ export default function ServiceHeroSection({
               ease: "easeInOut",
               delay: i * 0.6,
             }}
-            className={`absolute w-3 h-3 bg-gradient-to-r from-[#FAA71A] to-[#13294E] rounded-full blur-sm`}
+            className={`absolute w-3 h-3 bg-[#FAA71A] rounded-full blur-sm`}
             style={{
               left: `${15 + i * 10}%`,
               bottom: "5%",
@@ -204,13 +204,13 @@ export default function ServiceHeroSection({
             transition={{ delay: 0.1 }}
             className="mb-16"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-[#AFC1DB]/20">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-[#AFC1DB]">
               {/* Decorative Elements */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-[#FAA71A] to-[#13294E] rounded-full opacity-20 blur-2xl z-10" />
-              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-gradient-to-br from-[#AFC1DB] to-[#13294E] rounded-full opacity-15 blur-2xl z-10" />
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#FAA71A] rounded-full opacity-20 blur-2xl z-10" />
+              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-[#AFC1DB] rounded-full opacity-15 blur-2xl z-10" />
 
               {/* Image Container - Full Width */}
-              <div className="relative h-[70vh] min-h-[500px] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+              <div className="relative h-[70vh] min-h-[500px] bg-[#AFC1DB] dark:bg-[#13294E]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentImageIndex}
@@ -236,8 +236,8 @@ export default function ServiceHeroSection({
               
 
                 {/* Service Title Overlay */}
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-[#FAA71A] to-[#13294E] backdrop-blur-md rounded-lg px-4 py-2 shadow-lg z-20">
-                  <h2 className="text-white font-semibold text-sm">
+                <div className="absolute top-4 right-4 bg-[#FAA71A] rounded-lg px-4 py-2 shadow-lg z-20">
+                  <h2 className="text-[#13294E] font-semibold text-sm">
                     {service.title.split(" - ")[0]}
                   </h2>
                 </div>
@@ -256,7 +256,7 @@ export default function ServiceHeroSection({
                         className={`w-4 h-4 rounded-full transition-all duration-300 ${
                           index === currentImageIndex
                             ? "bg-[#FAA71A] w-10"
-                            : "bg-white/70 hover:bg-white"
+                            : "bg-[#AFC1DB] hover:bg-white"
                         }`}
                         aria-label={`Go to image ${index + 1}`}
                       />
@@ -274,13 +274,13 @@ export default function ServiceHeroSection({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center space-x-2 text-xs text-gray-500 dark:text-gray-500"
+            className="flex items-center justify-center space-x-2 text-xs text-[#13294E] dark:text-[#AFC1DB]"
           >
             <Link href="/" className="hover:text-[#FAA71A] transition-colors">
               Home
             </Link>
             <ArrowRight className="w-3 h-3" />
-            <span className="text-gray-700 dark:text-gray-300 font-medium">
+            <span className="text-[#13294E] dark:text-[#AFC1DB] font-medium">
               {service.title.split(" - ")[0]}
             </span>
           </motion.div>

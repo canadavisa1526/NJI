@@ -129,9 +129,9 @@ const Hero = () => {
   const stats = [
     {
       icon: GraduationCap,
-      value: "15,000+",
+      value: "17250+",
       label: "Students Placed",
-      numericValue: "15000",
+      numericValue: "17250",
       suffix: "+",
     },
     {
