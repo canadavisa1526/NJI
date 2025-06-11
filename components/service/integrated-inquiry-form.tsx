@@ -83,25 +83,51 @@ export default function IntegratedInquiryForm({
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Create a clean copy of the form data with timestamp
+    const formDataToSubmit = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      service: formData.service,
+      message: formData.message.trim(),
+      howDidYouHear: formData.howDidYouHear,
+      // Add a timestamp for tracking
+      timestamp: new Date().toISOString(),
+    };
+
+    console.log("Form submitted:", formDataToSubmit);
+
     try {
-      await api.post("/inquiries", formData);
-      setSubmitStatus("success");
-      setTimeout(() => {
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: defaultService || "",
-          message: "",
-          howDidYouHear: "",
-        });
-        setSubmitStatus("idle");
-        // Close modal after successful submission
-        if (isModal && onClose) {
-          onClose();
-        }
-      }, 2000);
+      // Send the form data to our API endpoint (same as other forms)
+      const response = await api.post("/inquiry", formDataToSubmit);
+
+      console.log("API response:", response.data);
+
+      if (response.data.success) {
+        console.log("Form submission successful!");
+        setSubmitStatus("success");
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            service: defaultService || "",
+            message: "",
+            howDidYouHear: "",
+          });
+          setSubmitStatus("idle");
+          // Close modal after successful submission
+          if (isModal && onClose) {
+            onClose();
+          }
+        }, 2000);
+      } else {
+        console.error("API returned error:", response.data.error);
+        setSubmitStatus("error");
+        setTimeout(() => setSubmitStatus("idle"), 3000);
+      }
     } catch (error) {
+      console.error("Error submitting form:", error);
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 3000);
     } finally {

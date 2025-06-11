@@ -191,27 +191,7 @@ export default function ServiceProcessTimeline({
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-[#13294E] rounded-2xl p-8 text-[#AFC1DB] relative overflow-hidden">
-            <div className="relative">
-              <h3 className="text-2xl font-bold mb-4 text-[#AFC1DB]">Ready to Start Your Journey?</h3>
-              <p className="text-lg mb-6 max-w-2xl mx-auto text-[#AFC1DB]">
-                Join thousands of satisfied clients who have successfully achieved their immigration goals with our expert guidance.
-              </p>
-              <button className="bg-[#FAA71A] text-[#13294E] px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5" />
-                  <span>Start Your Application</span>
-                </div>
-              </button>
-            </div>
-          </div>
-        </motion.div>
+     
       </div>
     </section>
   );

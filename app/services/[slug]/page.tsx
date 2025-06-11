@@ -17,6 +17,8 @@ import ServiceHeroSection from "@/components/service/service-hero-section";
 import IntegratedInquiryForm from "@/components/service/integrated-inquiry-form";
 import ServiceProcessTimeline from "@/components/service/service-process-timeline";
 import ServiceDetailsSection from "@/components/service/service-details-section";
+import CoachingTabsSection from "@/components/service/coaching-tabs-section";
+
 
 export default function ServiceDetailsPage() {
   const params = useParams();
@@ -57,13 +59,22 @@ export default function ServiceDetailsPage() {
 
       <ServiceProcessTimeline serviceType={service.slug} />
 
-      {/* Service Details Section */}
+      {/* Service Details Section - Conditional Rendering */}
       {service.serviceDetails && service.serviceDetails.length > 0 && (
-        <ServiceDetailsSection
-          serviceDetails={service.serviceDetails}
-          serviceTitle={service.title}
-          categories={service.categories}
-        />
+        <>
+          {service.slug === "coaching" ? (
+            <CoachingTabsSection
+              serviceDetails={service.serviceDetails}
+              categories={service.categories || []}
+            />
+          ) : (
+            <ServiceDetailsSection
+              serviceDetails={service.serviceDetails}
+              serviceTitle={service.title}
+              categories={service.categories}
+            />
+          )}
+        </>
       )}
 
       {/* Inquiry Modal */}
@@ -160,7 +171,10 @@ export default function ServiceDetailsPage() {
       {service.slug === "visitor-visa" && (
         <section className="py-16 bg-white dark:bg-[#13294E] relative overflow-hidden">
           <div className="container mx-auto px-4 max-w-7xl relative">
-            <VisaCountryDetails serviceType={service.slug} />
+            <VisaCountryDetails
+              serviceType={service.slug}
+              onOpenInquiry={() => setShowInquiryModal(true)}
+            />
           </div>
         </section>
       )}
@@ -169,7 +183,10 @@ export default function ServiceDetailsPage() {
         <>
           <section className="py-16 bg-white dark:bg-[#13294E]">
             <div className="container mx-auto px-4 max-w-7xl">
-              <InsurancePlans serviceType={service.slug} />
+              <InsurancePlans
+                serviceType={service.slug}
+                onOpenInquiry={() => setShowInquiryModal(true)}
+              />
             </div>
           </section>
 

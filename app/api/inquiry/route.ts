@@ -5,6 +5,7 @@ import {
   sendToWebhook,
   sendEmailNotification,
 } from "./google-sheets-native";
+import { sendInquiryNotification } from "@/lib/email-service";
 
 // Dynamic import for googleapis to avoid build issues
 let google: any = null;
@@ -224,11 +225,17 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Method 4: Try email notification
+    // Method 4: Send enhanced email notification
     try {
-      const emailResult = await sendEmailNotification(data);
+      const emailResult = await sendInquiryNotification(data);
       if (emailResult) {
-        console.log("Successfully sent email notification");
+        console.log("Successfully sent enhanced inquiry notification email");
+      } else {
+        // Fallback to basic email notification
+        const fallbackResult = await sendEmailNotification(data);
+        if (fallbackResult) {
+          console.log("Successfully sent fallback email notification");
+        }
       }
     } catch (emailError) {
       console.error("Email notification failed:", emailError);

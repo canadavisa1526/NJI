@@ -42,25 +42,66 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
     }));
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    try {
-      let res = await api.post("/business", formData);
-      console.log("Form submitted successfully:", res);
+    setIsSubmitting(true);
 
-      toast({
-        title: "Success!",
-        description: "Business created successfully.",
-      });
+    // Create a clean copy of the form data with timestamp
+    const partnerDataToSubmit = {
+      ...formData,
+      timestamp: new Date().toISOString(),
+    };
+
+    console.log("Partner application submitted:", partnerDataToSubmit);
+
+    try {
+      const response = await api.post("/partner", partnerDataToSubmit);
+      console.log("Partner application response:", response.data);
+
+      if (response.data.success) {
+        toast({
+          title: "Success! 🎉",
+          description: "Partner application submitted successfully. We'll review and get back to you soon!",
+        });
+
+        // Reset form
+        setFormData({
+          businessName: "",
+          ownerName: "",
+          designation: "",
+          mobile: "",
+          email: "",
+          address: "",
+          city: "",
+          state: "",
+          zipCode: "",
+          country: "",
+          targetCountries: "",
+          businessAge: "",
+          visasPerYear: "",
+          referenceSource: "",
+          website: "",
+        });
+
+        // Close modal after short delay
+        setTimeout(() => {
+          onClose();
+        }, 1500);
+      } else {
+        throw new Error(response.data.error || "Failed to submit application");
+      }
     } catch (error: any) {
+      console.error("Error submitting partner application:", error);
       toast({
-        title: "error!",
-        description: error.message,
+        title: "Error!",
+        description: error.response?.data?.error || error.message || "Failed to submit application. Please try again.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
-    onClose();
   };
 
   const formFields = [
@@ -250,9 +291,17 @@ export default function PartnerModal({ isOpen, onClose }: PartnerModalProps) {
                   </button>
                   <button
                     type="submit"
-                    className="px-6 py-2 bg-gradient-to-r from-orange-500 to-pink-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+                    disabled={isSubmitting}
+                    className="px-6 py-2 bg-gradient-to-r from-orange-500 to-pink-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center space-x-2"
                   >
-                    Submit Application
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <span>Submitting...</span>
+                      </>
+                    ) : (
+                      <span>Submit Application</span>
+                    )}
                   </button>
                 </div>
               </form>

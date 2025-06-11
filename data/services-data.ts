@@ -1210,7 +1210,7 @@ At New Journey Immigration, we understand that financing your international educ
       },
       {
         id: 2,
-        title: "Service Selection & Documentation",
+        title: "Service Selection",
         description: "Choose from GIC accounts (Canada), blocked accounts (Germany), education loans, proof of funds, and forex services",
         duration: "3-5 days",
         icon: "search",
@@ -1691,21 +1691,21 @@ At New Journey Immigration, we help skilled professionals, graduates, and worker
       },
       {
         id: 3,
-        title: "Document Preparation & Profile Creation",
+        title: "Document Preparation",
         description: "We help collect, organize, and verify your documents, language scores, and application profiles",
         duration: "14-21 days",
         icon: "documentation",
       },
       {
         id: 4,
-        title: "Application Submission & Monitoring",
+        title: "Application Submission",
         description: "We file your PR application with accuracy and track every update from the immigration department",
         duration: "7-14 days",
         icon: "submission",
       },
       {
         id: 5,
-        title: "Approval & Post-PR Settlement",
+        title: "Approval ",
         description: "We guide you on landing procedures, PR cards, medicals, and eventual citizenship",
         duration: "6-18 months",
         icon: "approval",
@@ -2005,31 +2005,52 @@ At New Journey Immigration, we understand that achieving your target IELTS or PT
       },
       {
         id: "ielts-listening",
-        title: "IELTS Listening (30 minutes)",
-        content: "Four audio recordings reflecting a variety of accents and situations. Tasks include multiple-choice, sentence completion, and matching.",
+        title: "IELTS Listening Test",
+        content: "Part 1: Conversation between 2 speakers (travel arrangements, bookings). Part 2: Monologue in everyday context (local facilities, events). Part 3: Academic discussion between 2-4 speakers (university students with tutor). Part 4: Academic lecture or monologue (scholarly subject). Total time: 30 minutes audio + 10 minutes transfer time. 40 questions total with various formats. Each correct answer worth 1 mark.",
         category: "ielts",
         icon: "headphones"
       },
       {
         id: "ielts-reading",
-        title: "IELTS Reading (60 minutes)",
-        content: "Academic: Three long texts on academic or general topics, testing comprehension and critical thinking. General Training: Passages from advertisements, workplace documents, and everyday reading materials.",
+        title: "IELTS Reading Test",
+        content: "Academic: 3 long academic texts with complex topics. General: Workplace documents, advertisements, everyday materials. Total time: 60 minutes for 40 questions. Question types: Multiple choice, True/False/Not Given, Yes/No/Not Given. Matching tasks: headings, information, features, sentence endings. Completion tasks: sentences, summaries, notes, tables, flow-charts. Each answer worth 1 mark, converted to 9-band scale.",
         category: "ielts",
-        icon: "book-open"
+        icon: "search"
       },
       {
         id: "ielts-writing",
-        title: "IELTS Writing (60 minutes)",
-        content: "Academic: Task 1 requires describing visual data; Task 2 is an essay on a topic of general interest. General Training: Task 1 is letter writing; Task 2 is a short essay.",
+        title: "IELTS Writing Test",
+        content: "Academic Task 1: Describe visual data (graphs, charts, tables) - 150 words, 20 minutes. Academic Task 2: Essay on general topic - 250 words, 40 minutes. General Task 1: Letter writing (formal/informal) - 150 words, 20 minutes. General Task 2: Essay response to argument - 250 words, 40 minutes. Assessment: Task Achievement, Coherence, Lexical Resource, Grammar. Total time: 60 minutes.",
         category: "ielts",
         icon: "edit"
       },
       {
         id: "ielts-speaking",
-        title: "IELTS Speaking (11–14 minutes)",
-        content: "Face-to-face interview consisting of introduction, short talk, and a discussion to evaluate fluency and coherence.",
+        title: "IELTS Speaking Test",
+        content: "Part 1: Introduction and familiar topics (home, family, work) - 4-5 minutes. Part 2: Individual long turn on given topic with 1 minute prep - 3-4 minutes. Part 3: Abstract discussion related to Part 2 topic - 4-5 minutes. Assessment: Fluency & Coherence, Vocabulary, Grammar, Pronunciation. Face-to-face with certified examiner. Test recorded for quality assurance. Total time: 11-14 minutes.",
         category: "ielts",
         icon: "mic"
+      },
+      {
+        id: "ielts-test-format",
+        title: "IELTS Test Format",
+        content: "Total duration: 2 hours 45 minutes. Same day: Listening, Reading, Writing (no breaks). Speaking: Same day or within 7 days. Paper-based: Traditional format, results in 13 days. Computer-delivered: Same content, faster results in 3-5 days. Both formats equally accepted worldwide.",
+        category: "ielts",
+        icon: "clock"
+      },
+      {
+        id: "ielts-scoring-system",
+        title: "IELTS Scoring System",
+        content: "9-band scale: Band 9 (Expert) to Band 1 (Non-user). Overall score: Average of 4 skills, rounded to nearest 0.5. University requirements: Usually 6.0-7.5 overall. Minimum band requirements: Often 6.0 in each skill. Immigration: Varies by country and visa type. Professional registration: Higher bands often required.",
+        category: "ielts",
+        icon: "target"
+      },
+      {
+        id: "ielts-preparation-tips",
+        title: "IELTS Success Strategies",
+        content: "Take diagnostic test to identify weak areas. Create daily study schedule with time management practice. Use authentic IELTS materials and official practice tests. Build academic vocabulary with word lists. Practice speaking by recording yourself regularly. Read academic texts and current affairs daily. Take mock tests under exam conditions. Get feedback from qualified instructors.",
+        category: "ielts",
+        icon: "trophy"
       },
       {
         id: "pte-academic",
@@ -2037,6 +2058,34 @@ At New Journey Immigration, we understand that achieving your target IELTS or PT
         content: "PTE Academic is a modern, computer-based test recognized by universities and governments worldwide. Known for its quick results and user-friendly format, it tests integrated skills by combining speaking, listening, reading, and writing tasks.",
         category: "pte",
         icon: "monitor"
+      },
+      {
+        id: "pte-speaking-writing",
+        title: "PTE Speaking & Writing",
+        content: "Personal Introduction (1 min, not scored). Read Aloud (6-7 items). Repeat Sentence (10-12 items). Describe Image (6-7 items). Re-tell Lecture (3-4 items). Answer Short Questions (10-12 items). Summarize Written Text (2-3 items). Write Essay (1-2 items). Duration: 77-93 minutes total.",
+        category: "pte",
+        icon: "mic"
+      },
+      {
+        id: "pte-reading",
+        title: "PTE Reading Section",
+        content: "Multiple Choice Single Answer (2-3 items). Multiple Choice Multiple Answers (2-3 items). Re-order Paragraphs (2-3 items). Fill in the Blanks - Reading (4-5 items). Fill in the Blanks - Reading & Writing (5-6 items). Duration: 32-41 minutes. Tests academic reading comprehension.",
+        category: "pte",
+        icon: "book"
+      },
+      {
+        id: "pte-listening",
+        title: "PTE Listening Section",
+        content: "Summarize Spoken Text (2-3 items). Multiple Choice Multiple Answers (2-3 items). Fill in the Blanks (2-3 items). Highlight Correct Summary (2-3 items). Multiple Choice Single Answer (2-3 items). Select Missing Word (2-3 items). Highlight Incorrect Words (2-3 items). Write from Dictation (3-4 items). Duration: 45-57 minutes.",
+        category: "pte",
+        icon: "headphones"
+      },
+      {
+        id: "pte-scoring",
+        title: "PTE Scoring System",
+        content: "Score range: 10-90 points (automated scoring). Communicative Skills: Listening, Reading, Speaking, Writing. Enabling Skills: Grammar, Fluency, Pronunciation, Spelling, Vocabulary. University requirements: Usually 58-65 overall, 50+ each section. Results: Available within 48 hours. Accepted by 3000+ institutions worldwide.",
+        category: "pte",
+        icon: "target"
       },
       {
         id: "celpip",

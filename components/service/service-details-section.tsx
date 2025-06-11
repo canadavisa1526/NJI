@@ -194,10 +194,19 @@ export default function ServiceDetailsSection({
           </p>
         </motion.div>
 
-        {/* Service Details Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        {/* Enhanced Service Details Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {serviceDetails.map((detail, index) => {
             const IconComponent = getIcon(detail.icon);
+
+            // Convert content to bullet points
+            const formatContent = (content: string) => {
+              const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 0);
+              const points = sentences.map(sentence => sentence.trim()).filter(point => point.length > 10);
+              return points.slice(0, 5); // Limit to 5 points max
+            };
+
+            const bulletPoints = formatContent(detail.content);
 
             return (
               <motion.div
@@ -208,46 +217,44 @@ export default function ServiceDetailsSection({
                 transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <div className="bg-white dark:bg-[#13294E] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-[#AFC1DB] hover:border-[#FAA71A] relative overflow-hidden h-full">
-                  {/* Hover Effect Background */}
-                  <div className="absolute inset-0 bg-[#FAA71A] opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+                <div className="group relative bg-gradient-to-br from-white via-white to-[#AFC1DB]/5 dark:from-[#13294E] dark:via-[#13294E] dark:to-[#13294E]/80 rounded-3xl p-8 shadow-2xl border border-[#AFC1DB]/20 hover:shadow-3xl hover:scale-[1.02] hover:border-[#FAA71A]/50 transition-all duration-500 overflow-hidden h-full">
+                  {/* Background Decorative Elements */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-[#FAA71A]/5 rounded-full -translate-y-10 translate-x-10"></div>
+                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-[#AFC1DB]/10 rounded-full translate-y-8 -translate-x-8"></div>
 
-                  {/* Content */}
-                  <div className="relative">
-                    {/* Header with Icon and Title */}
-                    <div className="flex items-start space-x-4 mb-4">
-                      {/* Icon */}
-                      <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-[#FAA71A] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                          <IconComponent className="w-6 h-6 text-[#13294E]" />
-                        </div>
-                      </div>
-
-                      {/* Title */}
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-bold text-[#13294E] dark:text-[#AFC1DB] mb-2 group-hover:text-[#FAA71A] transition-colors duration-300">
-                          {detail.title}
-                        </h3>
-                      </div>
+                  {/* Header with Icon and Title */}
+                  <div className="relative z-10 flex items-start space-x-4 mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-r from-[#FAA71A] to-[#FAA71A]/80 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-7 h-7 text-white" />
                     </div>
-
-                    {/* Content */}
-                    <div className="pl-16">
-                      <p className="text-[#13294E] dark:text-[#AFC1DB] leading-relaxed text-sm">
-                        {detail.content}
-                      </p>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-[#13294E] dark:text-[#AFC1DB] group-hover:text-[#FAA71A] transition-colors duration-300 leading-tight">
+                        {detail.title}
+                      </h3>
                     </div>
                   </div>
 
-                  {/* Bottom Accent */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#FAA71A] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                  {/* Enhanced Bullet Points */}
+                  <div className="relative z-10 space-y-4">
+                    {bulletPoints.map((point, pointIndex) => (
+                      <div key={pointIndex} className="flex items-start space-x-4 p-3 bg-gradient-to-r from-[#FAA71A]/5 to-transparent rounded-xl hover:from-[#FAA71A]/10 transition-colors duration-300">
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="w-2.5 h-2.5 bg-[#FAA71A] rounded-full shadow-sm" />
+                        </div>
+                        <p className="text-[#13294E] dark:text-[#AFC1DB] text-sm leading-relaxed font-medium">
+                          {point}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Enhanced Bottom Accent */}
+                  <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-[#FAA71A] to-[#FAA71A]/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-3xl" />
                 </div>
               </motion.div>
             );
           })}
         </div>
-
-       
       </div>
     </section>
   );

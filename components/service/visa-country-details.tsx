@@ -5,6 +5,7 @@ import { Clock, FileText, Globe, CheckCircle, Plane } from "lucide-react";
 
 interface VisaCountryDetailsProps {
   serviceType: string;
+  onOpenInquiry?: () => void;
 }
 
 const visaCountryData = {
@@ -91,6 +92,7 @@ const visaCountryData = {
 
 export default function VisaCountryDetails({
   serviceType,
+  onOpenInquiry,
 }: VisaCountryDetailsProps) {
   const countryData =
     visaCountryData[serviceType as keyof typeof visaCountryData] || [];
@@ -211,9 +213,23 @@ export default function VisaCountryDetails({
 
                 {/* CTA Button */}
                 <div className="mt-4 pt-4 border-t border-[#AFC1DB] dark:border-[#13294E]">
-                  <button className="w-full bg-[#FAA71A] text-[#13294E] py-2 px-4 rounded-lg font-medium hover:shadow-md transition-all duration-300 text-sm">
-                    Get Started with{" "}
-                    {visa.country.replace(/🇨🇦|🇺🇸|🇬🇧|🇪🇺|🇦🇺|🇦🇪/g, "").trim()}
+                  <button
+                    onClick={onOpenInquiry}
+                    className="w-full bg-[#FAA71A] text-[#13294E] py-2 px-4 rounded-lg font-medium hover:shadow-md hover:bg-[#FAA71A]/90 transition-all duration-300 text-sm group"
+                  >
+                    <span className="flex items-center justify-center space-x-2">
+                      <span>Get Started with{" "}
+                        {visa.country.replace(/🇨🇦|🇺🇸|🇬🇧|🇪🇺|🇦🇺|🇦🇪/g, "").trim()}
+                      </span>
+                      <svg
+                        className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
                   </button>
                 </div>
               </div>

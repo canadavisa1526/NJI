@@ -18,6 +18,7 @@ import {
 
 interface InsurancePlansProps {
   serviceType: string;
+  onOpenInquiry?: () => void;
 }
 
 interface Plan {
@@ -116,7 +117,7 @@ const insurancePlansData: Record<string, Plan[]> = {
   ],
 };
 
-export default function InsurancePlans({ serviceType }: InsurancePlansProps) {
+export default function InsurancePlans({ serviceType, onOpenInquiry }: InsurancePlansProps) {
   const plans = insurancePlansData[serviceType] || [];
 
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -230,12 +231,21 @@ export default function InsurancePlans({ serviceType }: InsurancePlansProps) {
                   {/* CTA Button */}
                   <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                     <button
-                      className="w-full text-white py-3 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                      onClick={onOpenInquiry}
+                      className="w-full text-white py-3 px-4 rounded-lg font-medium hover:shadow-lg hover:scale-[1.02] transition-all duration-300 flex items-center justify-center space-x-2 group"
                       style={{ backgroundColor: plan.color }}
                       type="button"
                     >
-                      <DollarSign className="w-4 h-4" />
+                      <DollarSign className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
                       <span>Get Quote for {plan.title.split(" ")[0]} Plan</span>
+                      <svg
+                        className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                     </button>
                   </div>
                 </div>
