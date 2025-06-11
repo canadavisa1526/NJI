@@ -36,7 +36,7 @@ const EnhancedSuccessStories = () => {
       testimonial:
         "New Journey Immigration made my dream of studying in Canada come true!",
       image:
-        "https://res.cloudinary.com/dka63iohc/image/upload/v1748201308/1_qvkrcb.jpg",
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1747366190/hardik_s0epvq.jpg",
       imageFallback:
         "https://res.cloudinary.com/dka63iohc/image/upload/v1747366190/hardik_s0epvq.jpg",
       gradient: "from-red-500/20 to-white/20",
@@ -121,6 +121,103 @@ const EnhancedSuccessStories = () => {
         "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60",
       gradient: "from-red-500/20 to-white/20",
     },
+    // new data 
+     {
+      id: "mihir",
+      name: "Kantaben Chaudhari",
+      country: "Singapore",
+      flag: "🇸🇬",
+      visaType: "Work Visa",
+      university: "National University of Singapore",
+      rating: 5,
+      testimonial:
+        "Seamless process and excellent guidance. Highly professional service!",
+      image:
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1748201308/1_qvkrcb.jpg",
+      imageFallback:
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60",
+      gradient: "from-red-500/20 to-white/20",
+    },
+       {
+      id: "mihir",
+      name: "Jayntibhai Chaudhari",
+      country: "Singapore",
+      flag: "🇸🇬",
+      visaType: "Work Visa",
+      university: "National University of Singapore",
+      rating: 5,
+      testimonial:
+        "Seamless process and excellent guidance. Highly professional service!",
+      image:
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/2_psrps3.jpg",
+      imageFallback:
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60",
+      gradient: "from-red-500/20 to-white/20",
+    },
+     {
+      id: "mihir",
+      name: "Bhagvanbhai Chaudhari",
+      country: "Singapore",
+      flag: "🇸🇬",
+      visaType: "Work Visa",
+      university: "National University of Singapore",
+      rating: 5,
+      testimonial:
+        "Seamless process and excellent guidance. Highly professional service!",
+      image:
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/3_oasn0j.jpg",
+      imageFallback:
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60",
+      gradient: "from-red-500/20 to-white/20",
+    },
+      {
+      id: "mihir",
+      name: "Mafiben Chaudhari",
+      country: "Singapore",
+      flag: "🇸🇬",
+      visaType: "Work Visa",
+      university: "National University of Singapore",
+      rating: 5,
+      testimonial:
+        "Seamless process and excellent guidance. Highly professional service!",
+      image:
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/4_gsaphb.jpg",
+      imageFallback:
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60",
+      gradient: "from-red-500/20 to-white/20",
+    },
+     {
+      id: "mihir",
+      name: "Gitaben Patel",
+      country: "Singapore",
+      flag: "🇸🇬",
+      visaType: "Work Visa",
+      university: "National University of Singapore",
+      rating: 5,
+      testimonial:
+        "Seamless process and excellent guidance. Highly professional service!",
+      image:
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/5_fg6il0.jpg",
+      imageFallback:
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60",
+      gradient: "from-red-500/20 to-white/20",
+    },
+     {
+      id: "mihir",
+      name: "Anila & Vivek Nayak",
+      country: "Singapore",
+      flag: "🇸🇬",
+      visaType: "Work Visa",
+      university: "National University of Singapore",
+      rating: 5,
+      testimonial:
+        "Seamless process and excellent guidance. Highly professional service!",
+      image:
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1748201309/6_ngq6a3.jpg",
+      imageFallback:
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60",
+      gradient: "from-red-500/20 to-white/20",
+    }
   ];
 
   const handleImageError = (storyId: string) => {
