@@ -145,7 +145,7 @@ const Hero = () => {
       icon: Award,
       value: "96%",
       label: "Success Rate",
-      numericValue: "99",
+      numericValue: "96",
       suffix: "%",
     },
     {

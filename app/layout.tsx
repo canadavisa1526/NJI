@@ -63,9 +63,9 @@ export const metadata: Metadata = {
   creator: "New Journey Immigration",
   publisher: "New Journey Immigration",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/svg/Asset_4.svg",
+    shortcut: "/svg/Asset_4.svg",
+    apple: "/svg/Asset_4.svg",
   },
   formatDetection: {
     email: false,
@@ -126,7 +126,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="icon" href="/favicon." type="image/png" />
         <Script
           id="schema-organization"
           type="application/ld+json"

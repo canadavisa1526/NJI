@@ -820,7 +820,7 @@ export const countriesDetailData = {
   uk: {
     name: "United Kingdom",
     slug: "uk",
-    flag: "",
+    flag: "https://images.pexels.com/photos/726484/pexels-photo-726484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     description: "Traditional excellence in education",
     timelapseVideo:
       "https://res.cloudinary.com/dka63iohc/video/upload/v1748058305/WhatsApp_Video_2025-05-17_at_6.10.35_PM_nypviy.mp4",
@@ -1889,7 +1889,7 @@ export const countriesDetailData = {
   germany: {
     name: "Germany",
     slug: "germany",
-    flag: "",
+    flag: "https://images.pexels.com/photos/109629/pexels-photo-109629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     description: "Innovation and engineering excellence",
     timelapseVideo:
       "https://res.cloudinary.com/dka63iohc/video/upload/v1748199485/Germany_Time_Lapse_Germany_In_2_Minutes_s6yotz.mp4",
@@ -2157,7 +2157,7 @@ export const countriesDetailData = {
   "new-zealand": {
     name: "New Zealand",
     slug: "new-zealand",
-    flag: "",
+        flag: "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     description: "Quality education in a scenic environment",
     timelapseVideo:
       "https://res.cloudinary.com/dka63iohc/video/upload/v1748199562/Auckland_City_Stunning_Timelapse_of_New_Zealand_s_Largest_City_hoj2em.mp4",

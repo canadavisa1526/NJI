@@ -157,13 +157,13 @@ const FeaturedSection = () => {
                 <div className="bg-white/90 dark:bg-[#AFC1DB]/10 border border-gray-200 dark:border-white/20 backdrop-blur-md rounded-xl p-6 shadow-xl">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center">
-                      <CountUp end="15000" suffix="+" duration={2.5} />
+                      <CountUp end="17250" suffix="+" duration={2.5} />
                       <div className="text-sm text-gray-800 dark:text-white">
                         Students Placed
                       </div>
                     </div>
                     <div className="text-center">
-                      <CountUp end="99" suffix="%" duration={2.5} />
+                      <CountUp end="96" suffix="%" duration={2.5} />
                       <div className="text-sm text-gray-800 dark:text-white">
                         Success Rate
                       </div>
