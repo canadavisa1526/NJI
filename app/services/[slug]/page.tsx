@@ -19,7 +19,8 @@ import ServiceProcessTimeline from "@/components/service/service-process-timelin
 import ServiceDetailsSection from "@/components/service/service-details-section";
 
 export default function ServiceDetailsPage() {
-  const { slug } = useParams();
+  const params = useParams();
+  const slug = params?.slug as string;
   const service = services.find((s) => s.slug === slug);
   const [mounted, setMounted] = useState(false);
   const [showInquiryModal, setShowInquiryModal] = useState(false);
@@ -61,6 +62,7 @@ export default function ServiceDetailsPage() {
         <ServiceDetailsSection
           serviceDetails={service.serviceDetails}
           serviceTitle={service.title}
+          categories={service.categories}
         />
       )}
 

@@ -13,17 +13,130 @@ import {
   Award,
   Clock,
   Target,
-  Star
+  Star,
+  Crown,
+  Flag,
+  Plane,
+  GraduationCap,
+  Heart,
+  Building,
+  Briefcase,
+  DollarSign,
+  CreditCard,
+  PiggyBank,
+  Lock,
+  ArrowRightLeft,
+  Info,
+  Map,
+  List,
+  Headphones,
+  Search,
+  AlertCircle,
+  Monitor,
+  Book,
+  BookOpen,
+  Edit,
+  Mic,
+  Calendar,
+  Trophy,
+  Scale,
+  Home,
+  Unlock,
+  Sun,
+  Bird,
+  Zap,
+  MapPin
 } from "lucide-react";
 
-interface ServiceDetailsSectionProps {
-  serviceDetails?: string[];
-  serviceTitle: string;
+interface ServiceDetail {
+  id: string;
+  title: string;
+  content: string;
+  category?: string;
+  icon?: string;
 }
+
+interface ServiceCategory {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface ServiceDetailsSectionProps {
+  serviceDetails?: ServiceDetail[];
+  serviceTitle: string;
+  categories?: ServiceCategory[];
+}
+
+// Icon mapping for service details
+const iconMap: Record<string, any> = {
+  globe: Globe,
+  users: Users,
+  "user-check": Users,
+  "maple-leaf": Star, // Using Star as fallback
+  crown: Crown,
+  flag: Flag,
+  kangaroo: Star, // Using Star as fallback
+  kiwi: Bird,
+  eagle: Bird,
+  "european-union": MapPin,
+  plane: Plane,
+  ticket: FileText,
+  "dollar-sign": DollarSign,
+  map: Map,
+  search: Search,
+  headphones: Headphones,
+  heart: Heart,
+  "graduation-cap": GraduationCap,
+  "alert-circle": AlertCircle,
+  shield: Shield,
+  "piggy-bank": PiggyBank,
+  "user-plus": Users,
+  "credit-card": CreditCard,
+  lock: Lock,
+  "file-text": FileText,
+  exchange: ArrowRightLeft,
+  briefcase: Briefcase,
+  unlock: Unlock,
+  sun: Sun,
+  building: Building,
+  "check-circle": CheckCircle,
+  info: Info,
+  list: List,
+  star: Star,
+  monitor: Monitor,
+  book: Book,
+  "book-open": BookOpen,
+  edit: Edit,
+  mic: Mic,
+  trophy: Trophy,
+  target: Target,
+  calendar: Calendar,
+  scale: Scale,
+  home: Home,
+  award: Award,
+  world: Globe,
+  protection: Shield,
+  approval: CheckCircle,
+  documentation: FileText,
+  submission: FileText,
+  consultation: MessageCircle,
+  assessment: TrendingUp,
+  strategy: Target,
+  training: GraduationCap,
+  default: CheckCircle
+};
+
+const getIcon = (iconName?: string) => {
+  if (!iconName) return iconMap.default;
+  return iconMap[iconName] || iconMap.default;
+};
 
 export default function ServiceDetailsSection({
   serviceDetails,
   serviceTitle,
+  categories,
 }: ServiceDetailsSectionProps) {
   if (!serviceDetails || serviceDetails.length === 0) {
     return null;
@@ -83,41 +196,55 @@ export default function ServiceDetailsSection({
 
         {/* Service Details Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {serviceDetails.map((detail, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group"
-            >
-              <div className="bg-white dark:bg-[#13294E] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-[#AFC1DB] hover:border-[#FAA71A] relative overflow-hidden h-full">
-                {/* Hover Effect Background */}
-                <div className="absolute inset-0 bg-[#FAA71A] opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
-                
-                {/* Content */}
-                <div className="relative flex items-start space-x-4">
-                  {/* Icon */}
-                  <div className="flex-shrink-0">
-                    <div className="w-10 h-10 bg-[#FAA71A] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <CheckCircle className="w-5 h-5 text-[#13294E]" />
+          {serviceDetails.map((detail, index) => {
+            const IconComponent = getIcon(detail.icon);
+
+            return (
+              <motion.div
+                key={detail.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <div className="bg-white dark:bg-[#13294E] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-[#AFC1DB] hover:border-[#FAA71A] relative overflow-hidden h-full">
+                  {/* Hover Effect Background */}
+                  <div className="absolute inset-0 bg-[#FAA71A] opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+
+                  {/* Content */}
+                  <div className="relative">
+                    {/* Header with Icon and Title */}
+                    <div className="flex items-start space-x-4 mb-4">
+                      {/* Icon */}
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 bg-[#FAA71A] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                          <IconComponent className="w-6 h-6 text-[#13294E]" />
+                        </div>
+                      </div>
+
+                      {/* Title */}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg font-bold text-[#13294E] dark:text-[#AFC1DB] mb-2 group-hover:text-[#FAA71A] transition-colors duration-300">
+                          {detail.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="pl-16">
+                      <p className="text-[#13294E] dark:text-[#AFC1DB] leading-relaxed text-sm">
+                        {detail.content}
+                      </p>
                     </div>
                   </div>
-                  
-                  {/* Text Content */}
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[#13294E] dark:text-[#AFC1DB] leading-relaxed group-hover:text-[#13294E] dark:group-hover:text-[#AFC1DB] transition-colors duration-300">
-                      {detail}
-                    </p>
-                  </div>
-                </div>
 
-                {/* Bottom Accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#FAA71A] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              </div>
-            </motion.div>
-          ))}
+                  {/* Bottom Accent */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#FAA71A] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
        

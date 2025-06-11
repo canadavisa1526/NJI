@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import { getOptimizedImageUrl, handleImageError as handleImageErrorUtil } from '@/utils/imageUtils';
 
 interface Institution {
   name: string;
@@ -18,35 +19,22 @@ interface TopInstitutionsSectionProps {
 }
 
 export default function TopInstitutionsSection({ country }: TopInstitutionsSectionProps) {
-  // This will help generate placeholder institutions
-  const placeholderImages = [
-    "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg",
-    "https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg",
-    "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg",
-    "https://images.pexels.com/photos/5676744/pexels-photo-5676744.jpeg",
-    "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg",
-  ];
-
-  // Generate additional placeholder institutions to make total 20
-  const placeholderInstitutions: Institution[] = [];
-  if (country.topInstitutions.length < 20) {
-    for (let i = 0; i < 20 - country.topInstitutions.length; i++) {
-      placeholderInstitutions.push({
-        name: `${country.name} University of ${['Technology', 'Arts', 'Sciences', 'Business', 'Liberal Arts'][i % 5]} `,
-        location: `${['Major', 'Capital', 'Coastal', 'Western', 'Eastern'][i % 5]} City, ${country.name}`,
-        description: 'Renowned institution offering diverse programs in multiple disciplines.',
-        image: placeholderImages[i % placeholderImages.length],
-        ranking: `${150 + i * 10}th globally`,
-        website: 'https://www.university.edu',
-      });
-    }
-  }
-
-  const allInstitutions = [...country.topInstitutions, ...placeholderInstitutions];
+  // Use only real institution data from the country
+  const allInstitutions = country.topInstitutions;
 
   // Show only first 8 by default, and allow "View More" functionality
   const [showAll, setShowAll] = useState(false);
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   const displayedInstitutions = showAll ? allInstitutions : allInstitutions.slice(0, 8);
+
+  const handleImageError = (index: number, originalUrl: string) => {
+    setImageErrors(prev => ({
+      ...prev,
+      [index]: true
+    }));
+    // Log the error for debugging
+    handleImageErrorUtil(originalUrl, 'institution');
+  };
 
   return (
     <section className="py-12">
@@ -62,10 +50,12 @@ export default function TopInstitutionsSection({ country }: TopInstitutionsSecti
           >
             <div className="relative h-40 overflow-hidden">
               <Image
-                src={institution.image}
+                src={imageErrors[index] ? getOptimizedImageUrl(null, 'institution') : getOptimizedImageUrl(institution.image, 'institution')}
                 alt={institution.name}
                 fill
                 className="object-cover transform transition-transform duration-500 hover:scale-110"
+                onError={() => handleImageError(index, institution.image)}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
                 <div className="inline-block px-2 py-1 bg-[#FAA71A] text-[#13294E] text-xs font-semibold rounded">

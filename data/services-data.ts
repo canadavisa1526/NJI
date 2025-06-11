@@ -12,6 +12,21 @@ export interface ProcessStep {
   icon: string;
 }
 
+export interface ServiceCategory {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface ServiceDetail {
+  id: string;
+  title: string;
+  content: string;
+  category?: string;
+  icon?: string;
+}
+
 export interface Service {
   title: string;
   slug: string;
@@ -22,7 +37,8 @@ export interface Service {
   countries: string[];
   faqs: FAQ[];
   processSteps: ProcessStep[];
-  serviceDetails?: string[];
+  serviceDetails?: ServiceDetail[];
+  categories?: ServiceCategory[];
 }
 
 export const services: Service[] = [
@@ -175,6 +191,84 @@ Need help with a country not listed here? Just contact us — we probably suppor
         icon: "approval",
       },
     ],
+    serviceDetails: [
+      {
+        id: "visitor-visa-overview",
+        title: "Comprehensive Visitor Visa Services",
+        content: "At New Journey Immigration, we provide expert visitor visa services for all countries, guiding you step by step through the visa process so your travel dreams become reality. From application forms to interview prep, document review to follow-ups — we take care of everything.",
+        category: "overview",
+        icon: "globe"
+      },
+      {
+        id: "canada-visitor-visa",
+        title: "Canada Visitor Visa",
+        content: "Purpose: Tourism, visiting family/friends, business meetings. Validity: Up to 10 years (multiple-entry). Requirements: Valid passport, invitation letter (if any), proof of funds, strong ties to home country. Our Support: Full application prep, help with biometrics, SOP writing, interview readiness.",
+        category: "country-specific",
+        icon: "maple-leaf"
+      },
+      {
+        id: "usa-visitor-visa",
+        title: "USA Visitor Visa (B1/B2)",
+        content: "Purpose: Business (B1), Tourism/Family (B2). Validity: Up to 10 years. Key Support: DS-160 Form, Visa Fee Guidance, Interview Training, Travel History Review.",
+        category: "country-specific",
+        icon: "flag"
+      },
+      {
+        id: "uk-visitor-visa",
+        title: "UK Standard Visitor Visa",
+        content: "Purpose: Leisure, short courses, family visits, conferences. Stay Period: Up to 6 months. Documents: Travel itinerary, accommodation proof, sponsor letter (if applicable), bank statements.",
+        category: "country-specific",
+        icon: "crown"
+      },
+      {
+        id: "schengen-visa",
+        title: "Schengen Visa (Europe)",
+        content: "Covers: 27 countries (e.g., France, Germany, Italy, Spain, Netherlands). Stay Duration: Up to 90 days within 180 days. Requirements: Valid travel insurance, round-trip tickets, financial documents, hotel booking. Bonus: We help create a clear travel plan across multiple countries.",
+        category: "country-specific",
+        icon: "european-union"
+      },
+      {
+        id: "australia-visitor-visa",
+        title: "Australia Visitor Visa (Subclass 600)",
+        content: "Duration: 3, 6, or 12 months. Use Cases: Tourism, family visit, short-term stay. Key Document: Genuine Temporary Entrant (GTE) Statement – we help you write it!",
+        category: "country-specific",
+        icon: "kangaroo"
+      },
+      {
+        id: "uae-visit-visa",
+        title: "UAE Visit Visa",
+        content: "Options: 30, 60, 90 days – single or multiple entry. Perks: Fast approval, e-visa available. Add-Ons: Travel insurance, hotel booking help, express processing.",
+        category: "country-specific",
+        icon: "building"
+      },
+      {
+        id: "global-coverage",
+        title: "Global Coverage - 60+ Countries",
+        content: "We offer visitor visa services for over 60+ countries, including Singapore, Malaysia, Thailand, Japan, South Korea, New Zealand, Turkey, South Africa, Brazil, Mexico, Saudi Arabia, and more. Need help with a country not listed here? Just contact us — we probably support it too!",
+        category: "coverage",
+        icon: "world"
+      }
+    ],
+    categories: [
+      {
+        id: "overview",
+        title: "Service Overview",
+        description: "Complete visitor visa solutions",
+        icon: "info"
+      },
+      {
+        id: "country-specific",
+        title: "Country-Specific Services",
+        description: "Tailored visa services by destination",
+        icon: "map"
+      },
+      {
+        id: "coverage",
+        title: "Global Coverage",
+        description: "Worldwide visa support",
+        icon: "globe"
+      }
+    ]
   },
   {
     title: "Dependent Visa Services - Bring Your Family Together",
@@ -364,15 +458,83 @@ At New Journey Immigration, we understand that being separated from your loved o
       },
     ],
     serviceDetails: [
-      "What is a Dependent Visa - A Dependent Visa allows the immediate family (spouse, children, sometimes parents) of a primary visa holder (student, worker, or permanent resident) to join them abroad. At New Journey Immigration, we make sure that your family joins you smoothly with proper documentation, timely submission, and post-visa support.",
-      "Who Can Apply - Spouses (legally married or common-law partners), Dependent children (under age limits), Parents (in certain visa categories or countries), Same-sex partners (where legally recognized)",
-      "Canada Dependent Visa - Spouse Open Work Permit (SOWP): Spouse of international students or workers, Children Visa: Allows dependent children to live and study in Canada, Parents/Grandparents Super Visa: Long-term visit for parents of PRs/Citizens. Processing Time: 2–5 months, Work Rights: Spouse can work full-time (in most cases), Children can access public schools",
-      "UK Dependent Visa - For Tier 2, Tier 4 visa holders and ILR holders, Spouse/partner and children under 18 can apply, Spouse can work in the UK (no sponsorship needed). Visa Length Matches Main Applicant, Eligible for ILR (PR) after 5 years",
-      "Australia Dependent Visa - Student or work visa holders can bring family, Spouses often receive full work rights, Can be added during or after primary visa approval. Subclass 500 (student) + family, Subclass 482/186 + spouse visa",
-      "USA Dependent Visa - F2 Visa: Spouse/children of F1 student, H4 Visa: Spouse/children of H1B workers (can apply for EAD to work), J2 Visa: Dependents of J1 visa holders. Children can study freely, Limited work rights unless EAD approved",
-      "New Zealand Dependent Visa - Student and work visa holders can sponsor spouse/children, Partner can apply for open work visa, Children get access to public education",
-      "Germany Family Reunion Visa - Available for Blue Card holders, PR holders, and students, Basic German language proof may be needed, Spouse can work; kids can join school",
+      {
+        id: "dependent-visa-overview",
+        title: "What is a Dependent Visa",
+        content: "A Dependent Visa allows the immediate family (spouse, children, sometimes parents) of a primary visa holder (student, worker, or permanent resident) to join them abroad. At New Journey Immigration, we make sure that your family joins you smoothly with proper documentation, timely submission, and post-visa support.",
+        category: "overview",
+        icon: "users"
+      },
+      {
+        id: "who-can-apply",
+        title: "Who Can Apply",
+        content: "Spouses (legally married or common-law partners), Dependent children (under age limits), Parents (in certain visa categories or countries), Same-sex partners (where legally recognized)",
+        category: "eligibility",
+        icon: "user-check"
+      },
+      {
+        id: "canada-dependent",
+        title: "Canada Dependent Visa",
+        content: "Spouse Open Work Permit (SOWP): Spouse of international students or workers, Children Visa: Allows dependent children to live and study in Canada, Parents/Grandparents Super Visa: Long-term visit for parents of PRs/Citizens. Processing Time: 2–5 months, Work Rights: Spouse can work full-time (in most cases), Children can access public schools",
+        category: "country-specific",
+        icon: "maple-leaf"
+      },
+      {
+        id: "uk-dependent",
+        title: "UK Dependent Visa",
+        content: "For Tier 2, Tier 4 visa holders and ILR holders, Spouse/partner and children under 18 can apply, Spouse can work in the UK (no sponsorship needed). Visa Length Matches Main Applicant, Eligible for ILR (PR) after 5 years",
+        category: "country-specific",
+        icon: "crown"
+      },
+      {
+        id: "australia-dependent",
+        title: "Australia Dependent Visa",
+        content: "Student or work visa holders can bring family, Spouses often receive full work rights, Can be added during or after primary visa approval. Subclass 500 (student) + family, Subclass 482/186 + spouse visa",
+        category: "country-specific",
+        icon: "kangaroo"
+      },
+      {
+        id: "usa-dependent",
+        title: "USA Dependent Visa",
+        content: "F2 Visa: Spouse/children of F1 student, H4 Visa: Spouse/children of H1B workers (can apply for EAD to work), J2 Visa: Dependents of J1 visa holders. Children can study freely, Limited work rights unless EAD approved",
+        category: "country-specific",
+        icon: "flag"
+      },
+      {
+        id: "newzealand-dependent",
+        title: "New Zealand Dependent Visa",
+        content: "Student and work visa holders can sponsor spouse/children, Partner can apply for open work visa, Children get access to public education",
+        category: "country-specific",
+        icon: "kiwi"
+      },
+      {
+        id: "germany-dependent",
+        title: "Germany Family Reunion Visa",
+        content: "Available for Blue Card holders, PR holders, and students, Basic German language proof may be needed, Spouse can work; kids can join school",
+        category: "country-specific",
+        icon: "eagle"
+      }
     ],
+    categories: [
+      {
+        id: "overview",
+        title: "Service Overview",
+        description: "Understanding dependent visas",
+        icon: "info"
+      },
+      {
+        id: "eligibility",
+        title: "Eligibility Criteria",
+        description: "Who qualifies for dependent visas",
+        icon: "check-circle"
+      },
+      {
+        id: "country-specific",
+        title: "Country-Specific Services",
+        description: "Dependent visa options by country",
+        icon: "map"
+      }
+    ]
   },
   {
     title: "Insurance Services",
@@ -551,6 +713,64 @@ Outbound Plans Include:
         icon: "protection",
       },
     ],
+    serviceDetails: [
+      {
+        id: "insurance-overview",
+        title: "Comprehensive Insurance Solutions",
+        content: "Welcome to New Journey Immigration Insurance Solutions. We believe that every journey deserves protection. Whether you're visiting Canada, inviting family members, studying, or traveling abroad, we provide trusted, affordable, and comprehensive insurance plans tailored to your needs.",
+        category: "overview",
+        icon: "shield"
+      },
+      {
+        id: "visitor-insurance",
+        title: "Visitor to Canada Insurance",
+        content: "For anyone visiting Canada temporarily, including tourists, business visitors, or invited relatives. Coverage Includes: Emergency medical care, Hospitalization, Prescription medication, Ambulance fees, Accidental injury coverage, COVID-19-related expenses (in select policies). Plan Duration: 7 days to 2 years, Age Limit: Up to 89 years (some plans up to 99)",
+        category: "insurance-types",
+        icon: "plane"
+      },
+      {
+        id: "super-visa-insurance",
+        title: "Super Visa Insurance (Mandatory)",
+        content: "The Canadian Super Visa requires applicants to have at least $100,000 in private medical insurance from a Canadian company — valid for at least one year. Why Choose Us? Plans from Manulife, GMS, Allianz, 21st Century, etc. Same-day issuance, Refundable if the visa is refused, Partial refund if your parents leave Canada early, Competitive rates, multi-year plans available",
+        category: "insurance-types",
+        icon: "heart"
+      },
+      {
+        id: "student-insurance",
+        title: "International Student Insurance",
+        content: "Studying in Canada? You must have health insurance if you're not covered by a provincial plan. Coverage Includes: Doctor visits & emergency care, Eye exams & prescription drugs, Hospital stays & surgery, Dental (optional add-on), 24/7 multilingual support. We work with: MSH International, StudentGuard, GMS, Ingle, Morcare, and more.",
+        category: "insurance-types",
+        icon: "graduation-cap"
+      },
+      {
+        id: "immigrant-insurance",
+        title: "New Immigrant/Work Permit Insurance",
+        content: "If you've just landed in Canada and are not yet eligible for government healthcare (e.g., OHIP in Ontario), private health insurance is critical. Key Features: Affordable monthly premiums, Coverage for medical emergencies, No long waiting periods, Optional dental and vision plans",
+        category: "insurance-types",
+        icon: "user-plus"
+      },
+      {
+        id: "travel-insurance",
+        title: "Outbound Travel Insurance",
+        content: "Going abroad from Canada for a vacation or business? Your provincial health plan may not cover costs outside Canada. Outbound Plans Include: Trip cancellation & interruption, Lost/stolen luggage protection, Emergency medical treatment abroad, Flight delay compensation, COVID-19 & quarantine coverage",
+        category: "insurance-types",
+        icon: "globe"
+      }
+    ],
+    categories: [
+      {
+        id: "overview",
+        title: "Service Overview",
+        description: "Complete insurance solutions",
+        icon: "info"
+      },
+      {
+        id: "insurance-types",
+        title: "Insurance Types",
+        description: "Various insurance plans available",
+        icon: "list"
+      }
+    ]
   },
   {
     title: "Air Ticket Booking Services - Fly Smart, Fly Affordable",
@@ -738,23 +958,96 @@ At New Journey Immigration, we understand that booking international flights can
       },
     ],
     serviceDetails: [
-      "Fly Anywhere with Confidence - At New Journey Immigration, we don't just book air tickets — we ensure that every flight you take is smooth, affordable, and tailored to your travel needs. Whether you're flying for immigration, study, family reunification, tourism, or business, we're here to get you the best fare with the right support.",
-      "Flight Booking Assistance - One-way or Round-trip tickets, Student, Visitor, and Immigration fares, Flexible date options, Economy to Business class bookings",
-      "Best Fare Guarantee - Live price comparison across top airlines, Lowest fare suggestions based on your travel dates, Strategic booking windows to help you save money, Alerts on airline deals, promo codes & offers",
-      "Route Expertise - India ⇄ Canada (Delhi, Ahmedabad, Mumbai, Amritsar), USA, UK, Australia, Dubai, Europe & more, Expert guidance on fastest, cheapest, or baggage-friendly routes",
-      "Personalized Fare Search - Unlike regular booking sites, we provide personalized fare search tailored to your specific travel needs and preferences",
-      "Human Travel Support - Dedicated human support throughout your booking and travel process, not just automated systems",
-      "Elderly & Parent Travel Help - Specialized assistance for senior travelers including clear instructions and support",
-      "Airport Services - Wheelchair arrangements, translator services, and special assistance coordination",
-      "Visa & Ticket Combo Planning - Integrated planning that coordinates your visa approval timeline with optimal flight booking",
-      "Parent & Elderly Traveler Assistance - Wheelchair arrangements at all airports, Easy boarding support, Special seating & meal preferences, Clear travel instructions in native languages (Hindi, Gujarati, Punjabi)",
-      "Student & Immigrant Ticketing - Extra baggage guidance, Travel date coordination with visa approval, Airport pickup suggestions (if required), Insurance and checklist assistance for first-time flyers",
-      "Emergency Travel - Same-day ticket searches for urgent travel needs due to health or family reasons, Help getting on next available flight with proper documents",
-      "Step 1: Tell Us Your Plan - Send your travel details: destination, dates, and number of passengers",
-      "Step 2: We Find the Best Fares - Our experts search real-time flight options and share the best 2–3 choices",
-      "Step 3: You Choose, We Book - You pick the best match — we handle the booking, payment, and document delivery",
-      "Step 4: Post-Booking Support - We remain available till you fly — for reschedules, seat upgrades, meals, and more"
+      {
+        id: "air-ticket-overview",
+        title: "Fly Anywhere with Confidence",
+        content: "At New Journey Immigration, we don't just book air tickets — we ensure that every flight you take is smooth, affordable, and tailored to your travel needs. Whether you're flying for immigration, study, family reunification, tourism, or business, we're here to get you the best fare with the right support.",
+        category: "overview",
+        icon: "plane"
+      },
+      {
+        id: "booking-assistance",
+        title: "Flight Booking Assistance",
+        content: "One-way or Round-trip tickets, Student, Visitor, and Immigration fares, Flexible date options, Economy to Business class bookings",
+        category: "services",
+        icon: "ticket"
+      },
+      {
+        id: "fare-guarantee",
+        title: "Best Fare Guarantee",
+        content: "Live price comparison across top airlines, Lowest fare suggestions based on your travel dates, Strategic booking windows to help you save money, Alerts on airline deals, promo codes & offers",
+        category: "services",
+        icon: "dollar-sign"
+      },
+      {
+        id: "route-expertise",
+        title: "Route Expertise",
+        content: "India ⇄ Canada (Delhi, Ahmedabad, Mumbai, Amritsar), USA, UK, Australia, Dubai, Europe & more, Expert guidance on fastest, cheapest, or baggage-friendly routes",
+        category: "services",
+        icon: "map"
+      },
+      {
+        id: "personalized-search",
+        title: "Personalized Fare Search",
+        content: "Unlike regular booking sites, we provide personalized fare search tailored to your specific travel needs and preferences",
+        category: "services",
+        icon: "search"
+      },
+      {
+        id: "human-support",
+        title: "Human Travel Support",
+        content: "Dedicated human support throughout your booking and travel process, not just automated systems",
+        category: "support",
+        icon: "headphones"
+      },
+      {
+        id: "elderly-assistance",
+        title: "Elderly & Parent Travel Help",
+        content: "Specialized assistance for senior travelers including clear instructions and support. Wheelchair arrangements at all airports, Easy boarding support, Special seating & meal preferences, Clear travel instructions in native languages (Hindi, Gujarati, Punjabi)",
+        category: "support",
+        icon: "heart"
+      },
+      {
+        id: "student-services",
+        title: "Student & Immigrant Ticketing",
+        content: "Extra baggage guidance, Travel date coordination with visa approval, Airport pickup suggestions (if required), Insurance and checklist assistance for first-time flyers",
+        category: "specialized",
+        icon: "graduation-cap"
+      },
+      {
+        id: "emergency-travel",
+        title: "Emergency Travel",
+        content: "Same-day ticket searches for urgent travel needs due to health or family reasons, Help getting on next available flight with proper documents",
+        category: "specialized",
+        icon: "alert-circle"
+      }
     ],
+    categories: [
+      {
+        id: "overview",
+        title: "Service Overview",
+        description: "Complete air ticket solutions",
+        icon: "info"
+      },
+      {
+        id: "services",
+        title: "Core Services",
+        description: "Flight booking and fare services",
+        icon: "plane"
+      },
+      {
+        id: "support",
+        title: "Support Services",
+        description: "Dedicated travel assistance",
+        icon: "headphones"
+      },
+      {
+        id: "specialized",
+        title: "Specialized Services",
+        description: "Tailored travel solutions",
+        icon: "star"
+      }
+    ]
   },
   {
     title: "Finance Services - Education Loans & Forex Solutions",
@@ -938,13 +1231,69 @@ At New Journey Immigration, we understand that financing your international educ
       },
     ],
     serviceDetails: [
-      "GIC Accounts (Guaranteed Investment Certificates) – for Canada student visa applicants (e.g., Scotiabank, CIBC, RBC)",
-      "Education Loans – for study abroad (India-based or international options)",
-      "Proof of Funds Assistance – for visa file documentation",
-      "Blocked Accounts for Germany – for German student visa",
-      "Forex & International Remittance – safe fund transfers globally",
-      "Travel Credit Cards / Prepaid Forex Cards – for smooth spending abroad"
+      {
+        id: "gic-accounts",
+        title: "GIC Accounts (Guaranteed Investment Certificates)",
+        content: "For Canada student visa applicants (e.g., Scotiabank, CIBC, RBC). Secure investment certificates required for Canadian study permits, providing proof of funds and guaranteed returns.",
+        category: "financial-products",
+        icon: "piggy-bank"
+      },
+      {
+        id: "education-loans",
+        title: "Education Loans",
+        content: "For study abroad (India-based or international options). Comprehensive loan solutions covering tuition fees, living expenses, and travel costs with competitive interest rates and flexible repayment terms.",
+        category: "financial-products",
+        icon: "graduation-cap"
+      },
+      {
+        id: "proof-of-funds",
+        title: "Proof of Funds Assistance",
+        content: "For visa file documentation. Expert assistance in organizing and presenting financial documents to meet visa requirements and demonstrate financial capability.",
+        category: "documentation",
+        icon: "file-text"
+      },
+      {
+        id: "blocked-accounts",
+        title: "Blocked Accounts for Germany",
+        content: "For German student visa requirements. Specialized blocked account setup ensuring compliance with German immigration financial requirements for student visas.",
+        category: "financial-products",
+        icon: "lock"
+      },
+      {
+        id: "forex-remittance",
+        title: "Forex & International Remittance",
+        content: "Safe fund transfers globally with competitive exchange rates, secure transactions, and multiple transfer options for international education and immigration needs.",
+        category: "forex-services",
+        icon: "globe"
+      },
+      {
+        id: "forex-cards",
+        title: "Travel Credit Cards / Prepaid Forex Cards",
+        content: "For smooth spending abroad with multi-currency support, competitive exchange rates, global acceptance, and secure international transactions.",
+        category: "forex-services",
+        icon: "credit-card"
+      }
     ],
+    categories: [
+      {
+        id: "financial-products",
+        title: "Financial Products",
+        description: "Loans, accounts, and investment solutions",
+        icon: "dollar-sign"
+      },
+      {
+        id: "documentation",
+        title: "Documentation Support",
+        description: "Financial document assistance",
+        icon: "file-text"
+      },
+      {
+        id: "forex-services",
+        title: "Forex Services",
+        description: "Currency exchange and transfer solutions",
+        icon: "exchange"
+      }
+    ]
   },
   {
     title: "Work Permit Services - Your Gateway to Global Employment",
@@ -1135,21 +1484,129 @@ At New Journey Immigration, we help skilled professionals, graduates, and worker
       },
     ],
     serviceDetails: [
-      "Work Abroad with Confidence - A Work Permit is your key to unlocking global career opportunities. Whether you want to work in Canada, Australia, the UK, the USA, or Europe, New Journey Immigration offers expert assistance for all types of work permits and related visas — from application to landing support.",
-      "Canada Employer-Specific Work Permit - Requires a valid job offer and usually a positive LMIA (Labour Market Impact Assessment) from the employer. You can only work for the employer specified.",
-      "Canada Open Work Permit (OWP) - Allows you to work for any employer in Canada. Common for spouses or common-law partners of skilled workers or international students, Post-Graduate Work Permit holders, refugees and some other categories.",
-      "Canada Post-Graduate Work Permit (PGWP) - Available to graduates of eligible Canadian designated learning institutions (DLIs). Allows international students to gain valuable Canadian work experience after completing their studies. Valid from 8 months to 3 years depending on program length.",
-      "Australia Temporary Skill Shortage Visa (Subclass 482) - Employer-sponsored visa for skilled workers filling temporary shortages.",
-      "Australia Working Holiday Visas - For youth from eligible countries seeking short-term work and travel experience.",
-      "United Kingdom Skilled Worker Visa - Requires a job offer from a UK-based licensed sponsor. Enables skilled professionals to live and work in the UK.",
-      "United Kingdom Health & Care Worker Visa - For qualified healthcare professionals working for NHS or approved organizations.",
-      "United States H1-B Visa - For skilled workers with specialty occupations and employer sponsorship.",
-      "United States L1 Visa - For intra-company transfers for employees moving to a US branch.",
-      "United States J1 Visa - For exchange visitors, interns, trainees, and scholars.",
-      "Eligibility Requirements - You may qualify for a work permit if you have a valid job offer or study completion certificate (for PGWP), meet education, experience, and language requirements, can provide required documents, biometrics, and medical checks, and have no criminal or inadmissibility issues.",
-      
-      "Why Choose New Journey Immigration - Expertise in PGWP and employer-specific permits, full assistance with LMIA and job offer validations, transparent process and fees, dedicated support from application to landing, and personal travel help for students, workers, and families."
+      {
+        id: "work-permit-overview",
+        title: "Work Abroad with Confidence",
+        content: "A Work Permit is your key to unlocking global career opportunities. Whether you want to work in Canada, Australia, the UK, the USA, or Europe, New Journey Immigration offers expert assistance for all types of work permits and related visas — from application to landing support.",
+        category: "overview",
+        icon: "briefcase"
+      },
+      {
+        id: "canada-employer-specific",
+        title: "Canada Employer-Specific Work Permit",
+        content: "Requires a valid job offer and usually a positive LMIA (Labour Market Impact Assessment) from the employer. You can only work for the employer specified.",
+        category: "canada",
+        icon: "maple-leaf"
+      },
+      {
+        id: "canada-open-work",
+        title: "Canada Open Work Permit (OWP)",
+        content: "Allows you to work for any employer in Canada. Common for spouses or common-law partners of skilled workers or international students, Post-Graduate Work Permit holders, refugees and some other categories.",
+        category: "canada",
+        icon: "unlock"
+      },
+      {
+        id: "canada-pgwp",
+        title: "Canada Post-Graduate Work Permit (PGWP)",
+        content: "Available to graduates of eligible Canadian designated learning institutions (DLIs). Allows international students to gain valuable Canadian work experience after completing their studies. Valid from 8 months to 3 years depending on program length.",
+        category: "canada",
+        icon: "graduation-cap"
+      },
+      {
+        id: "australia-tss",
+        title: "Australia Temporary Skill Shortage Visa (Subclass 482)",
+        content: "Employer-sponsored visa for skilled workers filling temporary shortages.",
+        category: "australia",
+        icon: "kangaroo"
+      },
+      {
+        id: "australia-working-holiday",
+        title: "Australia Working Holiday Visas",
+        content: "For youth from eligible countries seeking short-term work and travel experience.",
+        category: "australia",
+        icon: "sun"
+      },
+      {
+        id: "uk-skilled-worker",
+        title: "United Kingdom Skilled Worker Visa",
+        content: "Requires a job offer from a UK-based licensed sponsor. Enables skilled professionals to live and work in the UK.",
+        category: "uk",
+        icon: "crown"
+      },
+      {
+        id: "uk-health-care",
+        title: "United Kingdom Health & Care Worker Visa",
+        content: "For qualified healthcare professionals working for NHS or approved organizations.",
+        category: "uk",
+        icon: "heart"
+      },
+      {
+        id: "usa-h1b",
+        title: "United States H1-B Visa",
+        content: "For skilled workers with specialty occupations and employer sponsorship.",
+        category: "usa",
+        icon: "flag"
+      },
+      {
+        id: "usa-l1",
+        title: "United States L1 Visa",
+        content: "For intra-company transfers for employees moving to a US branch.",
+        category: "usa",
+        icon: "building"
+      },
+      {
+        id: "usa-j1",
+        title: "United States J1 Visa",
+        content: "For exchange visitors, interns, trainees, and scholars.",
+        category: "usa",
+        icon: "exchange"
+      },
+      {
+        id: "eligibility-requirements",
+        title: "Eligibility Requirements",
+        content: "You may qualify for a work permit if you have a valid job offer or study completion certificate (for PGWP), meet education, experience, and language requirements, can provide required documents, biometrics, and medical checks, and have no criminal or inadmissibility issues.",
+        category: "requirements",
+        icon: "check-circle"
+      }
     ],
+    categories: [
+      {
+        id: "overview",
+        title: "Service Overview",
+        description: "Complete work permit solutions",
+        icon: "info"
+      },
+      {
+        id: "canada",
+        title: "Canada Work Permits",
+        description: "Canadian work authorization options",
+        icon: "maple-leaf"
+      },
+      {
+        id: "australia",
+        title: "Australia Work Visas",
+        description: "Australian work visa programs",
+        icon: "kangaroo"
+      },
+      {
+        id: "uk",
+        title: "UK Work Visas",
+        description: "United Kingdom work permits",
+        icon: "crown"
+      },
+      {
+        id: "usa",
+        title: "USA Work Visas",
+        description: "United States work authorization",
+        icon: "flag"
+      },
+      {
+        id: "requirements",
+        title: "Requirements",
+        description: "Eligibility and documentation",
+        icon: "clipboard"
+      }
+    ]
   },
   {
     title: "Permanent Residency (PR)",
@@ -1255,16 +1712,64 @@ At New Journey Immigration, we help skilled professionals, graduates, and worker
       },
     ],
     serviceDetails: [
-      "Canada Permanent Residency - Express Entry (EE): For skilled professionals (via CRS points), Provincial Nominee Program (PNP): Province-specific immigration (e.g., OINP, SINP), Canadian Experience Class (CEC): For students or workers with Canadian experience, Family Sponsorship: PR for spouses, parents, or dependent children, Caregiver PR: For in-home caregivers who complete required hours, AIPP / RNIP: For Atlantic & rural regions with low population. Documents Needed: IELTS/CELPIP results, ECA (Educational Credential Assessment), Work experience letters, Proof of funds, Police clearance & medicals. Typical Timeline: 6–12 months via Express Entry (if profile is competitive)",
-      "Australia Permanent Residency - Subclass 189 (Skilled Independent): No sponsorship required, Subclass 190 (Skilled Nominated): Sponsored by state government, Subclass 491 (Skilled Work Regional): Temporary PR leading to permanent, Partner, Parent, and Business Visas are also available. PR Criteria Includes: Points-based assessment (age, English, skills, work experience), Skill assessment by bodies like ACS or VETASSESS, Proof of sponsorship (if applicable). Timeline: Invitation-based; 6–18 months depending on occupation and state nomination",
-      "New Zealand Permanent Residency - Skilled Migrant Category (SMC): Based on points, Partnership Visa: If married or in a relationship with a NZ citizen/resident, Resident to Permanent Resident: After 2 years of residency. Requirements: Job offer (in many cases), Health and character certificates, Proof of English ability",
-      "United Kingdom (Indefinite Leave to Remain – ILR) - Tier 2 visa holders after 5 years, Spouses of UK citizens after 5 years, Innovator/Start-Up visa holders after 3–5 years, Long residence: 10 years of lawful stay. Benefits of ILR: No more visa renewals, Apply for British citizenship after 1 year, Access to NHS and public funds",
-      "United States (Green Card – Lawful PR) - Family-Sponsored: Spouses, parents, siblings, or children of U.S. citizens, Employment-Based (EB-1, EB-2, EB-3): Sponsored by employer, Investment (EB-5): Invest $800,000+ in a U.S. business, Diversity Visa Lottery: For selected nationalities, Asylum-based PR after one year of residence. Process Involves: Petition by family or employer (I-130 or I-140), Adjustment of status or consular processing, Biometrics & green card interview",
-      "Germany Permanent Residency - After 33 months with EU Blue Card (21 months with B1 German), After 5 years of legal residence for workers, students, or businesspeople, Spousal PR options also available. Requirements: German integration course or language proof, Job contract and salary minimums, Health insurance and pension contributions",
-      "Other EU Countries PR (France, Portugal, Sweden) - Long-Term Residence Permit after 5 years, Citizenship by investment or golden visa (Portugal, Greece), Spouse/family reunification, Job-to-PR conversion. Each country has its own residency laws, language requirements, and integration process",
-      
-      "Why Choose New Journey Immigration - All major country PR support under one roof, 98% documentation success rate, Trusted by 1,000+ clients, Multilingual team: English, Hindi, Gujarati, Punjabi, In-person or remote services via WhatsApp, Email & Zoom, Transparent pricing & flexible payment plans"
+      {
+        id: "canada-pr",
+        title: "Canada Permanent Residency",
+        content: "Express Entry (EE): For skilled professionals (via CRS points), Provincial Nominee Program (PNP): Province-specific immigration (e.g., OINP, SINP), Canadian Experience Class (CEC): For students or workers with Canadian experience, Family Sponsorship: PR for spouses, parents, or dependent children, Caregiver PR: For in-home caregivers who complete required hours, AIPP / RNIP: For Atlantic & rural regions with low population. Documents Needed: IELTS/CELPIP results, ECA (Educational Credential Assessment), Work experience letters, Proof of funds, Police clearance & medicals. Typical Timeline: 6–12 months via Express Entry (if profile is competitive)",
+        category: "country-specific",
+        icon: "maple-leaf"
+      },
+      {
+        id: "australia-pr",
+        title: "Australia Permanent Residency",
+        content: "Subclass 189 (Skilled Independent): No sponsorship required, Subclass 190 (Skilled Nominated): Sponsored by state government, Subclass 491 (Skilled Work Regional): Temporary PR leading to permanent, Partner, Parent, and Business Visas are also available. PR Criteria Includes: Points-based assessment (age, English, skills, work experience), Skill assessment by bodies like ACS or VETASSESS, Proof of sponsorship (if applicable). Timeline: Invitation-based; 6–18 months depending on occupation and state nomination",
+        category: "country-specific",
+        icon: "kangaroo"
+      },
+      {
+        id: "newzealand-pr",
+        title: "New Zealand Permanent Residency",
+        content: "Skilled Migrant Category (SMC): Based on points, Partnership Visa: If married or in a relationship with a NZ citizen/resident, Resident to Permanent Resident: After 2 years of residency. Requirements: Job offer (in many cases), Health and character certificates, Proof of English ability",
+        category: "country-specific",
+        icon: "kiwi"
+      },
+      {
+        id: "uk-ilr",
+        title: "United Kingdom (Indefinite Leave to Remain – ILR)",
+        content: "Tier 2 visa holders after 5 years, Spouses of UK citizens after 5 years, Innovator/Start-Up visa holders after 3–5 years, Long residence: 10 years of lawful stay. Benefits of ILR: No more visa renewals, Apply for British citizenship after 1 year, Access to NHS and public funds",
+        category: "country-specific",
+        icon: "crown"
+      },
+      {
+        id: "usa-green-card",
+        title: "United States (Green Card – Lawful PR)",
+        content: "Family-Sponsored: Spouses, parents, siblings, or children of U.S. citizens, Employment-Based (EB-1, EB-2, EB-3): Sponsored by employer, Investment (EB-5): Invest $800,000+ in a U.S. business, Diversity Visa Lottery: For selected nationalities, Asylum-based PR after one year of residence. Process Involves: Petition by family or employer (I-130 or I-140), Adjustment of status or consular processing, Biometrics & green card interview",
+        category: "country-specific",
+        icon: "flag"
+      },
+      {
+        id: "germany-pr",
+        title: "Germany Permanent Residency",
+        content: "After 33 months with EU Blue Card (21 months with B1 German), After 5 years of legal residence for workers, students, or businesspeople, Spousal PR options also available. Requirements: German integration course or language proof, Job contract and salary minimums, Health insurance and pension contributions",
+        category: "country-specific",
+        icon: "eagle"
+      },
+      {
+        id: "eu-countries-pr",
+        title: "Other EU Countries PR (France, Portugal, Sweden)",
+        content: "Long-Term Residence Permit after 5 years, Citizenship by investment or golden visa (Portugal, Greece), Spouse/family reunification, Job-to-PR conversion. Each country has its own residency laws, language requirements, and integration process",
+        category: "country-specific",
+        icon: "european-union"
+      }
     ],
+    categories: [
+      {
+        id: "country-specific",
+        title: "Country-Specific PR Programs",
+        description: "Permanent residency options by country",
+        icon: "map"
+      }
+    ]
   },
   {
     title: "IELTS & PTE Coaching - Master English Proficiency Tests",
@@ -1463,34 +1968,137 @@ At New Journey Immigration, we understand that achieving your target IELTS or PT
       },
     ],
     serviceDetails: [
-      "Why English Language Tests Are Crucial - English language proficiency tests are a vital part of your journey to study, work, or settle in an English-speaking country. They prove to universities, immigration authorities, and employers that you can effectively communicate in English — an essential skill for success abroad.",
-      "High Score Benefits - Achieving a high score can open doors to prestigious institutions, job opportunities, and visa approvals. Without proper preparation, many students and professionals face unnecessary delays and stress.",
-      "IELTS (International English Language Testing System) - Accepted by over 10,000 organizations globally, IELTS is a trusted assessment of English proficiency for education, immigration, and employment.",
-      "IELTS Academic - Ideal for students applying to universities or seeking professional registration. The exam focuses on academic language skills needed in higher education and professional environments.",
-      "IELTS General Training - Designed for those migrating, working, or training in English-speaking countries. This format assesses English used in everyday social and workplace contexts.",
-      "IELTS Listening (30 minutes) - Four audio recordings reflecting a variety of accents and situations. Tasks include multiple-choice, sentence completion, and matching.",
-      "IELTS Reading (60 minutes) - Academic: Three long texts on academic or general topics, testing comprehension and critical thinking. General Training: Passages from advertisements, workplace documents, and everyday reading materials.",
-      "IELTS Writing (60 minutes) - Academic: Task 1 requires describing visual data; Task 2 is an essay on a topic of general interest. General Training: Task 1 is letter writing; Task 2 is a short essay.",
-      "IELTS Speaking (11–14 minutes) - Face-to-face interview consisting of introduction, short talk, and a discussion to evaluate fluency and coherence.",
-      "PTE (Pearson Test of English) Academic - PTE Academic is a modern, computer-based test recognized by universities and governments worldwide. Known for its quick results and user-friendly format, it tests integrated skills by combining speaking, listening, reading, and writing tasks.",
-      "CELPIP (Canadian English Language Proficiency Index Program) - The CELPIP test is designed specifically for Canadian immigration purposes. It evaluates your ability to function in everyday English and is fully computerized, offering convenience and accessibility.",
-      "Comprehensive Coaching for Guaranteed Success - We don't just prepare you for the exam—we prepare you for your future. Our certified trainers use proven methodologies to ensure you understand each module, practice thoroughly, and gain confidence.",
-      "Tailored Study Plans - Your goals are unique. We provide personalized coaching schedules, focusing more on areas where you need improvement to maximize your score.",
-      "Access to Authentic Practice Materials - Practice makes perfect! We provide official practice tests, sample questions, and mock exams that simulate real exam conditions to build your stamina and reduce anxiety.",
-      "Continuous Feedback & Motivation - Our trainers provide detailed feedback on speaking and writing tasks and keep you motivated through regular progress checks.",
-      "Beyond Coaching — Complete Visa & Admission Support - We guide you through choosing the right test, scheduling exam dates, and understanding score requirements for your study or immigration programs. Our services extend to visa application assistance, document review, and interview preparation.",
-      "Flexible Learning - Online and in-person coaching to fit your schedule",
-      "Small Group Classes - Interactive sessions for better learning",
-      "Doubt Clearing - Unlimited support for your questions",
-      "Cultural Orientation - Tips on adapting to life abroad and workplace etiquette",
-      "Affordable Packages - Competitive pricing with quality service",
-      "IELTS Academic & General Training - Complete preparation for both exam types",
-      "PTE Academic - Comprehensive computer-based test preparation",
-      "CELPIP General & LS - Specialized coaching for Canadian immigration",
-      "Spoken English & Accent Improvement - Enhanced communication skills",
-      "Visa Interview Preparation - Professional interview coaching",
-      "Study Skills, Time Management & Confidence Building Workshops - Complete skill development programs"
+      {
+        id: "english-tests-importance",
+        title: "Why English Language Tests Are Crucial",
+        content: "English language proficiency tests are a vital part of your journey to study, work, or settle in an English-speaking country. They prove to universities, immigration authorities, and employers that you can effectively communicate in English — an essential skill for success abroad.",
+        category: "overview",
+        icon: "info"
+      },
+      {
+        id: "high-score-benefits",
+        title: "High Score Benefits",
+        content: "Achieving a high score can open doors to prestigious institutions, job opportunities, and visa approvals. Without proper preparation, many students and professionals face unnecessary delays and stress.",
+        category: "overview",
+        icon: "trophy"
+      },
+      {
+        id: "ielts-overview",
+        title: "IELTS (International English Language Testing System)",
+        content: "Accepted by over 10,000 organizations globally, IELTS is a trusted assessment of English proficiency for education, immigration, and employment.",
+        category: "ielts",
+        icon: "book"
+      },
+      {
+        id: "ielts-academic",
+        title: "IELTS Academic",
+        content: "Ideal for students applying to universities or seeking professional registration. The exam focuses on academic language skills needed in higher education and professional environments.",
+        category: "ielts",
+        icon: "graduation-cap"
+      },
+      {
+        id: "ielts-general",
+        title: "IELTS General Training",
+        content: "Designed for those migrating, working, or training in English-speaking countries. This format assesses English used in everyday social and workplace contexts.",
+        category: "ielts",
+        icon: "briefcase"
+      },
+      {
+        id: "ielts-listening",
+        title: "IELTS Listening (30 minutes)",
+        content: "Four audio recordings reflecting a variety of accents and situations. Tasks include multiple-choice, sentence completion, and matching.",
+        category: "ielts",
+        icon: "headphones"
+      },
+      {
+        id: "ielts-reading",
+        title: "IELTS Reading (60 minutes)",
+        content: "Academic: Three long texts on academic or general topics, testing comprehension and critical thinking. General Training: Passages from advertisements, workplace documents, and everyday reading materials.",
+        category: "ielts",
+        icon: "book-open"
+      },
+      {
+        id: "ielts-writing",
+        title: "IELTS Writing (60 minutes)",
+        content: "Academic: Task 1 requires describing visual data; Task 2 is an essay on a topic of general interest. General Training: Task 1 is letter writing; Task 2 is a short essay.",
+        category: "ielts",
+        icon: "edit"
+      },
+      {
+        id: "ielts-speaking",
+        title: "IELTS Speaking (11–14 minutes)",
+        content: "Face-to-face interview consisting of introduction, short talk, and a discussion to evaluate fluency and coherence.",
+        category: "ielts",
+        icon: "mic"
+      },
+      {
+        id: "pte-academic",
+        title: "PTE (Pearson Test of English) Academic",
+        content: "PTE Academic is a modern, computer-based test recognized by universities and governments worldwide. Known for its quick results and user-friendly format, it tests integrated skills by combining speaking, listening, reading, and writing tasks.",
+        category: "pte",
+        icon: "monitor"
+      },
+      {
+        id: "celpip",
+        title: "CELPIP (Canadian English Language Proficiency Index Program)",
+        content: "The CELPIP test is designed specifically for Canadian immigration purposes. It evaluates your ability to function in everyday English and is fully computerized, offering convenience and accessibility.",
+        category: "celpip",
+        icon: "maple-leaf"
+      },
+      {
+        id: "comprehensive-coaching",
+        title: "Comprehensive Coaching for Guaranteed Success",
+        content: "We don't just prepare you for the exam—we prepare you for your future. Our certified trainers use proven methodologies to ensure you understand each module, practice thoroughly, and gain confidence.",
+        category: "coaching-features",
+        icon: "target"
+      },
+      {
+        id: "tailored-plans",
+        title: "Tailored Study Plans",
+        content: "Your goals are unique. We provide personalized coaching schedules, focusing more on areas where you need improvement to maximize your score.",
+        category: "coaching-features",
+        icon: "calendar"
+      },
+      {
+        id: "practice-materials",
+        title: "Access to Authentic Practice Materials",
+        content: "Practice makes perfect! We provide official practice tests, sample questions, and mock exams that simulate real exam conditions to build your stamina and reduce anxiety.",
+        category: "coaching-features",
+        icon: "file-text"
+      }
     ],
+    categories: [
+      {
+        id: "overview",
+        title: "Test Overview",
+        description: "Understanding English proficiency tests",
+        icon: "info"
+      },
+      {
+        id: "ielts",
+        title: "IELTS Preparation",
+        description: "Complete IELTS coaching program",
+        icon: "book"
+      },
+      {
+        id: "pte",
+        title: "PTE Preparation",
+        description: "Computer-based PTE coaching",
+        icon: "monitor"
+      },
+      {
+        id: "celpip",
+        title: "CELPIP Preparation",
+        description: "Canadian immigration test prep",
+        icon: "maple-leaf"
+      },
+      {
+        id: "coaching-features",
+        title: "Coaching Features",
+        description: "Our unique coaching methodology",
+        icon: "star"
+      }
+    ]
   },
   {
     title: "Immigration & Citizenship",
@@ -1593,5 +2201,100 @@ At New Journey Immigration, we understand that achieving your target IELTS or PT
         icon: "approval",
       },
     ],
+    serviceDetails: [
+      {
+        id: "immigration-overview",
+        title: "Complete Immigration & Citizenship Solutions",
+        content: "Immigrating to a new country and eventually acquiring citizenship is a life-changing decision. At New Journey Immigration Education Consultants Pvt. Ltd., we walk you through every stage — from selecting the right country and visa type to achieving permanent residency and eventually applying for citizenship.",
+        category: "overview",
+        icon: "globe"
+      },
+      {
+        id: "immigration-services",
+        title: "Comprehensive Immigration Services",
+        content: "Our immigration services include profile evaluation, points-based assessments, occupation matching, and guidance on family and employer-sponsored migration. We handle all types of immigration — skilled workers, entrepreneurs, family reunification, and students transitioning to PR.",
+        category: "immigration",
+        icon: "users"
+      },
+      {
+        id: "citizenship-support",
+        title: "Citizenship Application Support",
+        content: "We also support citizenship applications, language and residency requirements, and legal steps such as oath-taking ceremonies and document verification.",
+        category: "citizenship",
+        icon: "award"
+      },
+      {
+        id: "legal-guidance",
+        title: "Expert Legal Guidance",
+        content: "With in-house legal advisors and expert documentation teams, our immigration process is structured, transparent, and aligned with your goals. We ensure your transition from being a temporary resident to a citizen is smooth and legally sound.",
+        category: "legal",
+        icon: "scale"
+      },
+      {
+        id: "pathway-planning",
+        title: "Immigration Pathway Planning",
+        content: "We help you choose the most suitable immigration pathway based on your qualifications, experience, and goals. Whether through skilled migration, family sponsorship, or investment routes, we guide you to the best option.",
+        category: "planning",
+        icon: "map"
+      },
+      {
+        id: "documentation-support",
+        title: "Complete Documentation Support",
+        content: "Our team assists with all required documentation, from educational credentials and work experience letters to police clearances and medical examinations. We ensure all documents meet immigration standards.",
+        category: "documentation",
+        icon: "file-text"
+      },
+      {
+        id: "settlement-assistance",
+        title: "Post-Immigration Settlement Support",
+        content: "Our support doesn't end with visa approval. We provide settlement assistance including job search guidance, housing support, banking setup, and integration into your new community.",
+        category: "settlement",
+        icon: "home"
+      }
+    ],
+    categories: [
+      {
+        id: "overview",
+        title: "Service Overview",
+        description: "Complete immigration solutions",
+        icon: "info"
+      },
+      {
+        id: "immigration",
+        title: "Immigration Services",
+        description: "Visa and permanent residency support",
+        icon: "plane"
+      },
+      {
+        id: "citizenship",
+        title: "Citizenship Services",
+        description: "Naturalization and citizenship support",
+        icon: "award"
+      },
+      {
+        id: "legal",
+        title: "Legal Support",
+        description: "Expert legal guidance",
+        icon: "scale"
+      },
+      {
+        id: "planning",
+        title: "Pathway Planning",
+        description: "Strategic immigration planning",
+        icon: "map"
+      },
+      {
+        id: "documentation",
+        title: "Documentation",
+        description: "Complete document preparation",
+        icon: "file-text"
+      },
+      {
+        id: "settlement",
+        title: "Settlement Support",
+        description: "Post-arrival assistance",
+        icon: "home"
+      }
+    ]
   },
 ];

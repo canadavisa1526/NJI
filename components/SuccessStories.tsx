@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
+import { useState } from 'react';
+import { getOptimizedImageUrl } from '@/utils/imageUtils';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
