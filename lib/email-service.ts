@@ -7,8 +7,8 @@ const EMAIL_CONFIG = {
   port: parseInt(process.env.SMTP_PORT || '587'),
   secure: false, // true for 465, false for other ports
   auth: {
-    user: process.env.SMTP_USER || 'rajatsinha5467@gmail.com',
-    pass: process.env.SMTP_PASSWORD || 'flqf mdru undg flte',
+    user: process.env.SMTP_USER || 'canada.visa1526@gmail.com',
+    pass: process.env.SMTP_PASSWORD || 'aidh ayff xkxr ucph',
   },
 };
 

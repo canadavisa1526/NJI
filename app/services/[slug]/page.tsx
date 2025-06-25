@@ -167,7 +167,7 @@ export default function ServiceDetailsPage() {
         )}
       </AnimatePresence>
 
-    
+{/*     
       {service.slug === "visitor-visa" && (
         <section className="py-16 bg-white dark:bg-[#13294E] relative overflow-hidden">
           <div className="container mx-auto px-4 max-w-7xl relative">
@@ -177,9 +177,9 @@ export default function ServiceDetailsPage() {
             />
           </div>
         </section>
-      )}
+      )} */}
 
-      {service.slug === "insurance" && (
+      {/* {service.slug === "insurance" && (
         <>
           <section className="py-16 bg-white dark:bg-[#13294E]">
             <div className="container mx-auto px-4 max-w-7xl">
@@ -196,7 +196,7 @@ export default function ServiceDetailsPage() {
             </div>
           </section>
         </>
-      )}
+      )} */}
 
       <section className="py-2 bg-white dark:bg-[#13294E] relative overflow-hidden">
         

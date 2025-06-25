@@ -106,7 +106,7 @@ export default function WhyChooseUs({ serviceType }: WhyChooseUsProps) {
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-2xl font-bold mb-6 border-b border-[#AFC1DB] pb-2 text-[#13294E] dark:text-[#AFC1DB]">
-          ✅ Why Choose New Journey Immigration?
+           Why Choose New Journey Immigration?
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { getOptimizedImageUrl, handleImageError as handleImageErrorUtil } from '@/utils/imageUtils';
+import { universities } from '@/data/universities';
 
 interface Institution {
   name: string;
@@ -18,9 +19,60 @@ interface TopInstitutionsSectionProps {
   };
 }
 
+// Helper function to get universities for a specific country
+const getUniversitiesForCountry = (countryName: string) => {
+  return universities.filter((uni: any) => uni.country === countryName);
+};
+
+// Helper function to get random universities from other countries
+const getRandomUniversitiesFromOtherCountries = (excludeCountry: string, count: number) => {
+  const otherUniversities = universities.filter((uni: any) => uni.country !== excludeCountry);
+  const shuffled = otherUniversities.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+};
+
+// Helper function to merge university data with existing institution data
+const mergeInstitutionData = (existingInstitutions: Institution[], countryName: string) => {
+  const countryUniversities = getUniversitiesForCountry(countryName);
+  
+  // If we have universities data for this country, use it
+  if (countryUniversities.length > 0) {
+    return countryUniversities.map((uni: any, index: number) => ({
+      name: uni.name,
+      location: `${countryName}`,
+      description: `Leading institution in ${countryName} offering world-class education and research opportunities.`,
+      image: uni.image,
+      ranking: `Top ${index + 1} in ${countryName}`,
+      website: `https://www.${uni.name.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, '')}.edu`
+    }));
+  }
+  
+  // If no universities data for this country, use existing institutions but with random images
+  if (existingInstitutions.length > 0) {
+    const randomUniversities = getRandomUniversitiesFromOtherCountries(countryName, existingInstitutions.length);
+    
+    return existingInstitutions.map((institution: Institution, index: number) => ({
+      ...institution,
+      image: randomUniversities[index]?.image || institution.image, // Use random image if available
+    }));
+  }
+  
+  // Fallback: create generic institutions with random images
+  const randomUniversities = getRandomUniversitiesFromOtherCountries(countryName, 8);
+  
+  return randomUniversities.map((uni: any, index: number) => ({
+    name: `${countryName} University ${index + 1}`,
+    location: `${countryName}`,
+    description: `Leading institution in ${countryName} offering world-class education and research opportunities.`,
+    image: uni.image,
+    ranking: `Top ${index + 1} in ${countryName}`,
+    website: `https://www.${countryName.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, '')}university${index + 1}.edu`
+  }));
+};
+
 export default function TopInstitutionsSection({ country }: TopInstitutionsSectionProps) {
-  // Use only real institution data from the country
-  const allInstitutions = country.topInstitutions;
+  // Merge universities data with existing country data
+  const allInstitutions = mergeInstitutionData(country.topInstitutions, country.name);
 
   // Show only first 8 by default, and allow "View More" functionality
   const [showAll, setShowAll] = useState(false);

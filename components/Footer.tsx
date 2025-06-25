@@ -35,7 +35,7 @@ const Footer = () => {
     { name: "Career Guidance", href: "#" },
     { name: "Study Resources", href: "#" },
     { name: "Immigration News", href: "#" },
-    { name: "FAQs", href: "#" },
+    { name: "FAQs", href: "" },
   ];
 
   const LogoSVG = () => (
@@ -132,13 +132,20 @@ const Footer = () => {
               <ul className="space-y-1.5">
                 {quickLinks.slice(0, 5).map((link) => (
                   <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-300 hover:text-[#faa71a] flex items-center transition-colors text-sm"
-                    >
-                      <span className="w-1 h-1 bg-[#faa71a] rounded-full mr-2" />
-                      {link.name}
-                    </Link>
+                    {link.href ? (
+                      <Link
+                        href={link.href}
+                        className="text-gray-300 hover:text-[#faa71a] flex items-center transition-colors text-sm"
+                      >
+                        <span className="w-1 h-1 bg-[#faa71a] rounded-full mr-2" />
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <span className="text-gray-300 flex items-center text-sm">
+                        <span className="w-1 h-1 bg-[#faa71a] rounded-full mr-2" />
+                        {link.name}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -319,13 +326,20 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-300 hover:text-[#faa71a] flex items-center transition-colors"
-                  >
-                    <span className="w-1.5 h-1.5 bg-[#faa71a] rounded-full mr-2" />
-                    {link.name}
-                  </Link>
+                  {link.href ? (
+                    <Link
+                      href={link.href}
+                      className="text-gray-300 hover:text-[#faa71a] flex items-center transition-colors"
+                    >
+                      <span className="w-1.5 h-1.5 bg-[#faa71a] rounded-full mr-2" />
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <span className="text-gray-300 flex items-center">
+                      <span className="w-1.5 h-1.5 bg-[#faa71a] rounded-full mr-2" />
+                      {link.name}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

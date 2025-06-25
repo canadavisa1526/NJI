@@ -101,16 +101,30 @@ async function appendToSheet(data: any) {
 // API route handler for POST requests
 export async function POST(request: NextRequest) {
   try {
+    console.log("=== INQUIRY API ENDPOINT CALLED ===");
+    console.log("Request URL:", request.url);
+    console.log("Request method:", request.method);
+    console.log("Request headers:", Object.fromEntries(request.headers.entries()));
+
     // Parse the request body
     const data = await request.json();
 
     console.log("Received form data:", data);
+    console.log("Data keys:", Object.keys(data));
+
+    // Normalize the data - handle both hearAbout and howDidYouHear
+    if (data.hearAbout && !data.howDidYouHear) {
+      data.howDidYouHear = data.hearAbout;
+      console.log("Normalized hearAbout to howDidYouHear:", data.howDidYouHear);
+    }
+
     console.log("Form data types:", {
       name: typeof data.name,
       email: typeof data.email,
       phone: typeof data.phone,
       message: typeof data.message,
       howDidYouHear: typeof data.howDidYouHear,
+      hearAbout: typeof data.hearAbout,
       country: typeof data.country,
       service: typeof data.service,
     });
@@ -118,31 +132,28 @@ export async function POST(request: NextRequest) {
     // Validate common required fields
     if (!data.name || !data.email || !data.phone) {
       console.warn("Missing common required fields in form data");
+      console.warn("Received data:", { name: data.name, email: data.email, phone: data.phone });
       return NextResponse.json(
         { error: "Please provide your name, email, and phone number" },
         { status: 400 }
       );
     }
 
-    // For service inquiries, validate service, message, and howDidYouHear
-    if (data.service && (!data.message || !data.howDidYouHear)) {
-      console.warn("Missing required fields for service inquiry");
+    // For service inquiries, validate service and message (howDidYouHear is optional)
+    if (data.service && !data.message) {
+      console.warn("Missing message field for service inquiry");
       return NextResponse.json(
         {
-          error:
-            "Please fill in all required fields including message and how you heard about us",
+          error: "Please provide a message describing your inquiry",
         },
         { status: 400 }
       );
     }
 
-    // For country inquiries, validate country and howDidYouHear
-    if (data.country && !data.howDidYouHear) {
-      console.warn("Missing howDidYouHear field for country inquiry");
-      return NextResponse.json(
-        { error: "Please let us know how you heard about us" },
-        { status: 400 }
-      );
+    // For country inquiries, just ensure country is provided (message and howDidYouHear are optional)
+    if (data.country) {
+      console.log("Country inquiry detected for:", data.country);
+      // Country inquiries are valid with just name, email, phone, and country
     }
 
     // Ensure either service or country is provided

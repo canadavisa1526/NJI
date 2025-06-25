@@ -6,14 +6,14 @@ export async function POST(request: NextRequest) {
     const { type } = await request.json();
 
     if (type === 'inquiry') {
-      // Test inquiry notification
+      // Test inquiry notification (destination form)
       const testInquiryData = {
-        name: "Test User",
+        name: "Test User from Canada Page",
         email: "test@example.com",
         phone: "+91 9876543210",
-        service: "Visitor Visa Services",
-        message: "This is a test inquiry to check email notifications.",
-        howDidYouHear: "Website",
+        service: "Canada Immigration",
+        message: "This is a test inquiry from Canada destination page to check email notifications.",
+        howDidYouHear: "Google Search",
         country: "Canada",
         timestamp: new Date().toISOString(),
       };
