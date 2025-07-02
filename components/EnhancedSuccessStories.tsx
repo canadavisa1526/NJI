@@ -217,6 +217,22 @@ const EnhancedSuccessStories = () => {
       imageFallback:
         "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60",
       gradient: "from-red-500/20 to-white/20",
+    },
+     {
+      id: "mihir",
+      name: "harshaben & manoj bhai",
+      country: "Singapore",
+      flag: "🇸🇬",
+      visaType: "Work Visa",
+      university: "National University of Singapore",
+      rating: 5,
+      testimonial:
+        "Seamless process and excellent guidance. Highly professional service!",
+      image:
+        "https://res.cloudinary.com/dka63iohc/image/upload/v1751426387/WhatsApp_Image_2025-06-29_at_9.13.42_AM_c10l2e.jpg",
+      imageFallback:
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60",
+      gradient: "from-red-500/20 to-white/20",
     }
   ];
 
