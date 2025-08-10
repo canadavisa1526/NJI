@@ -250,6 +250,187 @@ export default function RootLayout({
         <link rel="preload" href="/hero-poster.jpg" as="image" />
         <link rel="preload" href="/logo.png" as="image" />
 
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-F397LCK0B1"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              // Enhanced eCommerce and Advanced Tracking Configuration
+              gtag('config', 'G-F397LCK0B1', {
+                // Enhanced measurement features
+                enhanced_measurement: true,
+                page_title: true,
+                send_page_view: true,
+
+                // Custom parameters for immigration consultancy
+                custom_map: {
+                  'custom_parameter_1': 'service_type',
+                  'custom_parameter_2': 'country_interest',
+                  'custom_parameter_3': 'consultation_type',
+                  'custom_parameter_4': 'lead_source'
+                },
+
+                // User engagement tracking
+                engagement_time_msec: 100,
+
+                // Conversion tracking
+                allow_enhanced_conversions: true,
+                allow_ad_personalization_signals: true
+              });
+
+              // Advanced Event Tracking Functions
+              window.trackEvent = function(eventName, parameters = {}) {
+                gtag('event', eventName, {
+                  event_category: parameters.category || 'engagement',
+                  event_label: parameters.label || '',
+                  value: parameters.value || 0,
+                  ...parameters
+                });
+              };
+
+              // Immigration-specific tracking functions
+              window.trackConsultation = function(type, country, service) {
+                gtag('event', 'consultation_request', {
+                  event_category: 'lead_generation',
+                  consultation_type: type,
+                  country_interest: country,
+                  service_type: service,
+                  value: 100 // Assign value to consultation requests
+                });
+              };
+
+              window.trackServiceInterest = function(service, country) {
+                gtag('event', 'service_interest', {
+                  event_category: 'engagement',
+                  service_type: service,
+                  country_interest: country,
+                  event_label: service + '_' + country
+                });
+              };
+
+              window.trackFormSubmission = function(formType, formData) {
+                gtag('event', 'form_submit', {
+                  event_category: 'lead_generation',
+                  form_type: formType,
+                  form_data: JSON.stringify(formData),
+                  value: formType === 'consultation' ? 150 : 50
+                });
+              };
+
+              window.trackDownload = function(fileName, fileType) {
+                gtag('event', 'file_download', {
+                  event_category: 'engagement',
+                  file_name: fileName,
+                  file_type: fileType,
+                  event_label: fileName
+                });
+              };
+
+              window.trackPhoneCall = function(source) {
+                gtag('event', 'phone_call_click', {
+                  event_category: 'lead_generation',
+                  call_source: source,
+                  value: 200 // High value for phone calls
+                });
+              };
+
+              window.trackWhatsAppClick = function(source, message) {
+                gtag('event', 'whatsapp_click', {
+                  event_category: 'lead_generation',
+                  whatsapp_source: source,
+                  message_type: message,
+                  value: 75
+                });
+              };
+
+              window.trackCountrySelection = function(country, source) {
+                gtag('event', 'country_selection', {
+                  event_category: 'engagement',
+                  country_selected: country,
+                  selection_source: source
+                });
+              };
+
+              window.trackScrollDepth = function(percentage) {
+                gtag('event', 'scroll', {
+                  event_category: 'engagement',
+                  scroll_depth: percentage,
+                  event_label: percentage + '%'
+                });
+              };
+
+              window.trackVideoPlay = function(videoTitle, duration) {
+                gtag('event', 'video_play', {
+                  event_category: 'engagement',
+                  video_title: videoTitle,
+                  video_duration: duration
+                });
+              };
+
+              window.trackTestimonialView = function(testimonialId) {
+                gtag('event', 'testimonial_view', {
+                  event_category: 'engagement',
+                  testimonial_id: testimonialId
+                });
+              };
+
+              // Enhanced Conversion Tracking
+              window.trackConversion = function(conversionType, value, currency = 'INR') {
+                gtag('event', 'conversion', {
+                  event_category: 'conversion',
+                  conversion_type: conversionType,
+                  value: value,
+                  currency: currency,
+                  send_to: 'G-F397LCK0B1'
+                });
+              };
+
+              // User Journey Tracking
+              window.trackUserJourney = function(stage, details) {
+                gtag('event', 'user_journey', {
+                  event_category: 'user_flow',
+                  journey_stage: stage,
+                  stage_details: details
+                });
+              };
+
+              // Page Performance Tracking
+              window.addEventListener('load', function() {
+                setTimeout(function() {
+                  const perfData = performance.getEntriesByType('navigation')[0];
+                  if (perfData) {
+                    gtag('event', 'page_performance', {
+                      event_category: 'performance',
+                      page_load_time: Math.round(perfData.loadEventEnd - perfData.fetchStart),
+                      dom_content_loaded: Math.round(perfData.domContentLoadedEventEnd - perfData.fetchStart),
+                      first_contentful_paint: Math.round(perfData.responseEnd - perfData.fetchStart)
+                    });
+                  }
+                }, 1000);
+              });
+
+              // Error Tracking
+              window.addEventListener('error', function(e) {
+                gtag('event', 'javascript_error', {
+                  event_category: 'error',
+                  error_message: e.message,
+                  error_filename: e.filename,
+                  error_lineno: e.lineno
+                });
+              });
+            `,
+          }}
+        />
+
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"
