@@ -142,7 +142,7 @@ const FeaturedSection = () => {
           >
             <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&auto=format&fit=crop&q=60"
+                src="https://res.cloudinary.com/dka63iohc/image/upload/v1754849559/photo-1523050854058-8df90110c9_1200x768_k5kgsy.jpg"
                 alt="Students studying"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
