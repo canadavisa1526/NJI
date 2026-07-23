@@ -124,7 +124,7 @@ const navItems: NavItem[] = [
         href: "/services/dependent-visa",
       },
       { title: "Insurance", icon: FileText, href: "/services/insurance" },
-      { title: "Air Ticket", icon: FileText, href: "/services/air-ticket" },
+    
       {
         title: "Finance (Forex and Loan)",
         icon: Banknote,
