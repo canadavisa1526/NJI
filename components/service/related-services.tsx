@@ -26,6 +26,7 @@ const serviceIcons = {
   "work-permit": Briefcase,
   "permanent-residency": Home,
   insurance: Shield,
+  "air-ticket": Plane,
   finance: CreditCard,
   coaching: BookOpen,
   "immigration-citizenship": Globe,
