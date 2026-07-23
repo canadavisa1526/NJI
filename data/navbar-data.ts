@@ -123,7 +123,7 @@ const navItems: NavItem[] = [
         icon: FileText,
         href: "/services/dependent-visa",
       },
-      { title: "Insurance", icon: FileText, href: "/services/insurance" },
+      
     
       {
         title: "Finance (Forex and Loan)",
