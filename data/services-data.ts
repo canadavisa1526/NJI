@@ -772,7 +772,284 @@ Outbound Plans Include:
       }
     ]
   },
- 
+ {
+    title: "Air Ticket Booking Services - Fly Smart, Fly Affordable",
+    slug: "air-ticket",
+    description:
+      "Professional flight booking services with best prices, flexible options, and visa-compliant travel planning for students, families, and professionals.",
+    details: `Your Journey Begins with the Right Flight - Professional Air Ticket Services
+
+At New Journey Immigration, we understand that booking international flights can be overwhelming, especially when you're dealing with visa applications, study plans, or family relocations. Our professional air ticket booking services ensure you get the best deals, most convenient routes, and visa-compliant travel arrangements.
+
+✈️ Why Choose Our Air Ticket Services?
+
+🎯 Specialized Travel Planning:
+• Student Travel Specialists - Understanding academic calendars and budget constraints
+• Family Group Bookings - Coordinating travel for multiple family members
+• Business Travel Solutions - Flexible tickets for professionals and entrepreneurs
+• Immigration Travel - Visa-compliant bookings that support your application
+
+💰 Best Price Guarantee:
+• Real-time fare comparison across 500+ airlines
+• Exclusive student discounts and youth fares
+• Group booking discounts for families
+• Early bird offers and seasonal promotions
+• Price drop alerts and rebooking options
+
+🌍 Global Route Expertise:
+• Direct flights vs. connecting flights analysis
+• Optimal layover planning (avoiding visa requirements)
+• Multi-city itineraries for complex travel plans
+• Alternative airports for better pricing
+• Seasonal route recommendations
+
+📋 Comprehensive Booking Services:
+
+1. Pre-Booking Consultation
+• Travel requirement analysis
+• Budget planning and fare forecasting
+• Visa requirement verification
+• Travel insurance recommendations
+• Baggage allowance optimization
+
+2. Flight Search & Comparison
+• Multi-airline fare comparison
+• Route optimization for time and cost
+• Flexible date searches for best prices
+• Seat selection and meal preferences
+• Special assistance arrangements
+
+3. Booking Management
+• Secure payment processing
+• E-ticket delivery and confirmation
+• Booking modifications and cancellations
+• Travel document verification
+• 24/7 booking support
+
+4. Special Services
+• Unaccompanied minor bookings
+• Pet travel arrangements
+• Excess baggage pre-booking
+• Wheelchair and medical assistance
+• Special meal requests
+
+5. Travel Support
+• Check-in assistance and reminders
+• Flight status monitoring
+• Rebooking for delays/cancellations
+• Travel insurance claims support
+• Airport transfer coordination
+
+🎓 Student Travel Specialists:
+• Academic calendar-based booking
+• Student fare verification and discounts
+• Extra baggage allowances for students
+• Flexible change policies for study plans
+• University partnership discounts
+
+👨‍👩‍👧‍👦 Family Travel Experts:
+• Coordinated family bookings
+• Child fare calculations
+• Infant travel arrangements
+• Family seating preferences
+• Group check-in assistance
+
+💼 Business Travel Solutions:
+• Flexible business class options
+• Last-minute booking capabilities
+• Corporate account management
+• Expense reporting support
+• Priority rebooking services`,
+    images: [],
+    benefits: [
+      "✈️ Best Price Guarantee across 500+ Airlines",
+      "🎓 Exclusive Student Discounts & Youth Fares",
+      "👨‍👩‍👧‍👦 Family Group Booking Specialists",
+      "🌍 Global Route Optimization & Planning",
+      "📱 24/7 Booking Support & Assistance",
+      "💼 Flexible Business Travel Solutions",
+      "🛂 Visa-Compliant Travel Planning",
+      "🧳 Baggage Allowance Optimization",
+      "🔄 Free Rebooking for Delays/Cancellations",
+      "🛡️ Travel Insurance Integration",
+      "📋 Complete Travel Documentation Support",
+      "⚡ Last-Minute Booking Capabilities",
+      "🎯 Academic Calendar-Based Planning",
+      "💳 Secure Payment Processing",
+    ],
+    countries: [
+     
+    ],
+    faqs: [
+      {
+        id: 9,
+        question: "When is the best time to book international flights?",
+        answer:
+          "Generally, booking 3-5 months before departure offers the best balance of availability and price for international flights. However, this can vary by destination and season. For peak travel periods (summer, major holidays), booking 5-6 months ahead is advisable. We monitor fare trends and can advise on optimal booking times for your specific route.",
+      },
+      {
+        id: 10,
+        question: "Do I need a confirmed return ticket for visa applications?",
+        answer:
+          "Most countries require proof of onward travel or return travel arrangements for visitor visa applications. While some accept flight reservations or itineraries without payment, others require confirmed (paid) tickets. This creates a dilemma, as you need a visa to travel but need travel proof for the visa. We can provide appropriate documentation to satisfy visa requirements without unnecessary financial risk.",
+      },
+      {
+        id: 401,
+        question:
+          "What's the difference between refundable and non-refundable tickets?",
+        answer:
+          "Refundable tickets typically cost more but offer flexibility to change or cancel flights with minimal fees. Non-refundable tickets are cheaper but have strict change/cancellation penalties. We help evaluate which option best suits your needs based on visa timing and travel certainty.",
+      },
+      {
+        id: 402,
+        question:
+          "How can I maximize baggage allowance for international flights?",
+        answer:
+          "Baggage allowances vary by airline, route, and ticket class. We help select airlines offering generous allowances, explain how to purchase extra baggage efficiently, and provide packing strategies to maximize your allowance while staying within regulations.",
+      },
+      {
+        id: 403,
+        question:
+          "What happens if my flight is cancelled or significantly delayed?",
+        answer:
+          "Your rights depend on the airline, route, and reason for disruption. We assist with rebooking, compensation claims, and arranging accommodation if needed. We also help ensure your new travel arrangements align with visa validity and other commitments.",
+      },
+      {
+        id: 404,
+        question: "Are student discounts available for international flights?",
+        answer:
+          "Many airlines offer special fares for students and youth travelers. These often include extra baggage allowance and flexible change policies. We help verify eligibility and access these discounts through our partnerships with airlines and student travel organizations.",
+      },
+      {
+        id: 405,
+        question: "How do layovers affect visa requirements?",
+        answer:
+          "Some layovers require transit visas, while others don't if you stay in the international transit area. We help plan routes that minimize visa requirements and ensure you understand any transit documentation needed for your journey.",
+      },
+    ],
+    processSteps: [
+      {
+        id: 1,
+        title: "Travel Planning",
+        description: "Discuss your travel dates, destinations, and preferences with our experts",
+        duration: "20 mins",
+        icon: "consultation",
+      },
+      {
+        id: 2,
+        title: "Flight Search",
+        description: "Find the best flight options with competitive prices and suitable timings",
+        duration: "1-2 hours",
+        icon: "search",
+      },
+      {
+        id: 3,
+        title: "Booking Confirmation",
+        description: "Secure your flight booking with payment processing and confirmation",
+        duration: "30 mins",
+        icon: "submission",
+      },
+      {
+        id: 4,
+        title: "Ticket Delivery",
+        description: "Receive your e-tickets and travel documentation via email",
+        duration: "Instant",
+        icon: "approval",
+      },
+    ],
+    serviceDetails: [
+      {
+        id: "air-ticket-overview",
+        title: "Fly Anywhere with Confidence",
+        content: "At New Journey Immigration, we don't just book air tickets — we ensure that every flight you take is smooth, affordable, and tailored to your travel needs. Whether you're flying for immigration, study, family reunification, tourism, or business, we're here to get you the best fare with the right support.",
+        category: "overview",
+        icon: "plane"
+      },
+      {
+        id: "booking-assistance",
+        title: "Flight Booking Assistance",
+        content: "One-way or Round-trip tickets, Student, Visitor, and Immigration fares, Flexible date options, Economy to Business class bookings",
+        category: "services",
+        icon: "ticket"
+      },
+      {
+        id: "fare-guarantee",
+        title: "Best Fare Guarantee",
+        content: "Live price comparison across top airlines, Lowest fare suggestions based on your travel dates, Strategic booking windows to help you save money, Alerts on airline deals, promo codes & offers",
+        category: "services",
+        icon: "dollar-sign"
+      },
+      {
+        id: "route-expertise",
+        title: "Route Expertise",
+        content: "India ⇄ Canada (Delhi, Ahmedabad, Mumbai, Amritsar), USA, UK, Australia, Dubai, Europe & more, Expert guidance on fastest, cheapest, or baggage-friendly routes",
+        category: "services",
+        icon: "map"
+      },
+      {
+        id: "personalized-search",
+        title: "Personalized Fare Search",
+        content: "Unlike regular booking sites, we provide personalized fare search tailored to your specific travel needs and preferences",
+        category: "services",
+        icon: "search"
+      },
+      {
+        id: "human-support",
+        title: "Human Travel Support",
+        content: "Dedicated human support throughout your booking and travel process, not just automated systems",
+        category: "support",
+        icon: "headphones"
+      },
+      {
+        id: "elderly-assistance",
+        title: "Elderly & Parent Travel Help",
+        content: "Specialized assistance for senior travelers including clear instructions and support. Wheelchair arrangements at all airports, Easy boarding support, Special seating & meal preferences, Clear travel instructions in native languages (Hindi, Gujarati, Punjabi)",
+        category: "support",
+        icon: "heart"
+      },
+      {
+        id: "student-services",
+        title: "Student & Immigrant Ticketing",
+        content: "Extra baggage guidance, Travel date coordination with visa approval, Airport pickup suggestions (if required), Insurance and checklist assistance for first-time flyers",
+        category: "specialized",
+        icon: "graduation-cap"
+      },
+      {
+        id: "emergency-travel",
+        title: "Emergency Travel",
+        content: "Same-day ticket searches for urgent travel needs due to health or family reasons, Help getting on next available flight with proper documents",
+        category: "specialized",
+        icon: "alert-circle"
+      }
+    ],
+    categories: [
+      {
+        id: "overview",
+        title: "Service Overview",
+        description: "Complete air ticket solutions",
+        icon: "info"
+      },
+      {
+        id: "services",
+        title: "Core Services",
+        description: "Flight booking and fare services",
+        icon: "plane"
+      },
+      {
+        id: "support",
+        title: "Support Services",
+        description: "Dedicated travel assistance",
+        icon: "headphones"
+      },
+      {
+        id: "specialized",
+        title: "Specialized Services",
+        description: "Tailored travel solutions",
+        icon: "star"
+      }
+    ]
+  },
+
   {
     title: "Finance Services - Education Loans & Forex Solutions",
     slug: "finance",
