@@ -77,16 +77,7 @@ export const locations = [
     address: "City Center, Mehsana",
     services: ["Immigration Services", "IELTS Coaching", "Student Counseling"],
   },
-  {
-    city: "Brampton",
-    country: "Canada",
-    address: "Steels Ave W, Brampton",
-    services: [
-      "Immigration Processing",
-      "Settlement Services",
-      "Job Assistance",
-    ],
-  },
+  
   {
     city: "Ahmedabad",
     country: "India",
@@ -115,7 +106,7 @@ export const founder = {
 export const teamMembers = [
   {
     name: "Dimple",
-    role: "Director of Canada Branch",
+    role: "Co-Partner ",
     image: "/team/dimple.jpeg",
     bio: "20+ years of experience in Canadian immigration processes, guiding clients with personalized, transparent advice.",
     location: "Toronto, Canada",
